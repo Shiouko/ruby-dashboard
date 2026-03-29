@@ -553,7 +553,7 @@ a:visited { color: #800080; }
             <div class="widget">
               <div class="widget-header">
                 <span class="widget-title">🌤 Weather</span>
-                <span class="widget-action" id="weather-location">Kuala Lumpur</span>
+                <span class="widget-action" id="weather-location">Tapah Road, Perak</span>
               </div>
               <div class="widget-body">
                 <div class="weather-block">
@@ -684,7 +684,7 @@ updateClock();
 // --- Weather ---
 async function loadWeather() {
   try {
-    const resp = await fetch('https://wttr.in/Kuala+Lumpur?format=%C|%t|%w|%h');
+    const resp = await fetch('https://wttr.in/Tapah+Road+Perak?format=%C|%t|%w|%h');
     const data = await resp.text();
     const parts = data.split('|');
     if (parts.length >= 4) {
