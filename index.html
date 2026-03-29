@@ -568,14 +568,55 @@ a:visited { color: #800080; }
         </tr>
       </table>
 
-      <!-- EMAIL -->
+      <!-- RANDOM ANIME QUOTE -->
       <div class="widget">
         <div class="widget-header">
-          <span class="widget-title">📧 Recent Emails <span class="badge" id="email-unread">0</span></span>
-          <a href="https://mail.google.com" target="_blank" style="font-size:9px; color:#0000FF;">Open Gmail</a>
+          <span class="widget-title">💭 Random Anime Quote</span>
+          <span class="widget-action" id="new-quote-btn" onclick="loadAnimeQuote()">[Get New]</span>
         </div>
-        <div class="widget-body" id="email-list">
-          <div class="loading">Loading emails...</div>
+        <div class="widget-body" id="anime-quote">
+          <div class="loading">Loading quote...</div>
+        </div>
+      </div>
+
+      <!-- SERVER HEALTH -->
+      <div class="widget">
+        <div class="widget-header">
+          <span class="widget-title">🖥 Server Health</span>
+        </div>
+        <div class="widget-body">
+          <div class="status-item">
+            <span class="status-label">Uptime</span>
+            <span class="status-value ok" id="uptime">--</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">User Agent</span>
+            <span class="status-value" id="user-agent" style="font-size:8px; color:#666; max-width:200px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">--</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Screen</span>
+            <span class="status-value" id="screen-res">--</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Platform</span>
+            <span class="status-value" id="platform-info">--</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Language</span>
+            <span class="status-value" id="lang-info">--</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Timezone</span>
+            <span class="status-value" id="tz-info">--</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Public IP</span>
+            <span class="status-value" id="ip-info">--</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Connection</span>
+            <span class="status-value" id="conn-info">--</span>
+          </div>
         </div>
       </div>
 
@@ -727,6 +768,61 @@ async function loadGitHub() {
   }
 }
 loadGitHub();
+
+// --- Anime Quote ---
+async function loadAnimeQuote() {
+  const container = document.getElementById('anime-quote');
+  container.innerHTML = '<div class="loading">Loading quote...</div>';
+  try {
+    // Try animechan API
+    const resp = await fetch('https://api.animechan.io/v1/quotes/random');
+    const data = await resp.json();
+    container.innerHTML =
+      '<div style="font-style:italic; padding:4px 0; color:#333;">"' + data.data.quote + '"</div>' +
+      '<div style="font-size:9px; color:#999; margin-top:4px;">— ' + data.data.character + ' (' + data.data.anime + ')</div>';
+  } catch(e) {
+    // Fallback quotes
+    const quotes = [
+      { q: "People's dreams... have no ends!", c: "Blackbeard", a: "One Piece" },
+      { q: "I want to be the very best, like no one ever was.", c: "Ash Ketchum", a: "Pokemon" },
+      { q: "It's not the face makes someone a monster. It's the choices they make.", c: "Naruto", a: "Naruto" },
+      { q: "If you don't take risks, you can't create a future.", c: "Monkey D. Luffy", a: "One Piece" },
+      { q: "Hard work is what makes your dreams come true.", c: "Rock Lee", a: "Naruto" },
+    ];
+    const q = quotes[Math.floor(Math.random() * quotes.length)];
+    container.innerHTML =
+      '<div style="font-style:italic; padding:4px 0; color:#333;">"' + q.q + '"</div>' +
+      '<div style="font-size:9px; color:#999; margin-top:4px;">— ' + q.c + ' (' + q.a + ')</div>';
+  }
+}
+loadAnimeQuote();
+
+// --- Server Health ---
+async function loadServerHealth() {
+  // User Agent
+  document.getElementById('user-agent').textContent = navigator.userAgent.substring(0, 60) + '...';
+  // Screen
+  document.getElementById('screen-res').textContent = window.screen.width + 'x' + window.screen.height;
+  // Platform
+  document.getElementById('platform-info').textContent = navigator.platform || 'Unknown';
+  // Language
+  document.getElementById('lang-info').textContent = navigator.language || 'Unknown';
+  // Timezone
+  document.getElementById('tz-info').textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  // Connection
+  if (navigator.connection) {
+    document.getElementById('conn-info').textContent = navigator.connection.effectiveType || navigator.connection.type || '--';
+  }
+  // Public IP
+  try {
+    const resp = await fetch('https://api.ipify.org?format=json');
+    const data = await resp.json();
+    document.getElementById('ip-info').textContent = data.ip;
+  } catch(e) {
+    document.getElementById('ip-info').textContent = 'Unavailable';
+  }
+}
+loadServerHealth();
 
 // --- News (static for now, daily briefing updates this) ---
 function loadNews() {
