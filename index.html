@@ -586,7 +586,7 @@ a:visited { color: #800080; }
         </div>
         <div class="widget-body">
           <div class="status-item">
-            <span class="status-label">Uptime</span>
+            <span class="status-label">Page Loaded</span>
             <span class="status-value ok" id="uptime">--</span>
           </div>
           <div class="status-item">
@@ -774,20 +774,32 @@ async function loadAnimeQuote() {
   const container = document.getElementById('anime-quote');
   container.innerHTML = '<div class="loading">Loading quote...</div>';
   try {
-    // Try animechan API
     const resp = await fetch('https://api.animechan.io/v1/quotes/random');
-    const data = await resp.json();
-    container.innerHTML =
-      '<div style="font-style:italic; padding:4px 0; color:#333;">"' + data.data.quote + '"</div>' +
-      '<div style="font-size:9px; color:#999; margin-top:4px;">— ' + data.data.character + ' (' + data.data.anime + ')</div>';
+    const raw = await resp.json();
+    // API might return {data:{...}} or direct object
+    const d = raw.data || raw;
+    const quote = d.quote || d.content || '';
+    const char = d.character || d.characterName || 'Unknown';
+    const anime = d.anime || d.animeName || 'Unknown';
+    if (quote) {
+      container.innerHTML =
+        '<div style="font-style:italic; padding:4px 0; color:#333;">"' + quote + '"</div>' +
+        '<div style="font-size:9px; color:#999; margin-top:4px;">— ' + char + ' (' + anime + ')</div>';
+    } else {
+      throw new Error('No quote in response');
+    }
   } catch(e) {
-    // Fallback quotes
     const quotes = [
       { q: "People's dreams... have no ends!", c: "Blackbeard", a: "One Piece" },
       { q: "I want to be the very best, like no one ever was.", c: "Ash Ketchum", a: "Pokemon" },
-      { q: "It's not the face makes someone a monster. It's the choices they make.", c: "Naruto", a: "Naruto" },
+      { q: "It's not the face that makes someone a monster. It's the choices they make.", c: "Naruto", a: "Naruto" },
       { q: "If you don't take risks, you can't create a future.", c: "Monkey D. Luffy", a: "One Piece" },
       { q: "Hard work is what makes your dreams come true.", c: "Rock Lee", a: "Naruto" },
+      { q: "In this world, wherever there is light, there are also shadows.", c: "Madara Uchiha", a: "Naruto" },
+      { q: "The world isn't perfect. But it's there for us, doing the best it can.", c: "Roy Mustang", a: "FMA: Brotherhood" },
+      { q: "Reject common sense to make the impossible possible.", c: "Simon", a: "Gurren Lagann" },
+      { q: "A lesson without pain is meaningless.", c: "Edward Elric", a: "FMA: Brotherhood" },
+      { q: "Knowing what it feels to be in pain, is exactly why we try to be kind to others.", c: "Jiraiya", a: "Naruto" },
     ];
     const q = quotes[Math.floor(Math.random() * quotes.length)];
     container.innerHTML =
@@ -799,6 +811,9 @@ loadAnimeQuote();
 
 // --- Server Health ---
 async function loadServerHealth() {
+  // Page load time
+  const loadTime = performance.timing ? (performance.timing.loadEventEnd - performance.timing.navigationStart) : 0;
+  document.getElementById('uptime').textContent = loadTime > 0 ? loadTime + 'ms' : Date.now() - window._pageStart + 'ms';
   // User Agent
   document.getElementById('user-agent').textContent = navigator.userAgent.substring(0, 60) + '...';
   // Screen
@@ -812,6 +827,8 @@ async function loadServerHealth() {
   // Connection
   if (navigator.connection) {
     document.getElementById('conn-info').textContent = navigator.connection.effectiveType || navigator.connection.type || '--';
+  } else {
+    document.getElementById('conn-info').textContent = '--';
   }
   // Public IP
   try {
@@ -822,7 +839,8 @@ async function loadServerHealth() {
     document.getElementById('ip-info').textContent = 'Unavailable';
   }
 }
-loadServerHealth();
+window._pageStart = Date.now();
+setTimeout(loadServerHealth, 500);
 
 // --- News (static for now, daily briefing updates this) ---
 function loadNews() {
