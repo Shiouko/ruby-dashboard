@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruby Dashboard</title>
+<style>
+/* =============================================
+   2005 ERA WEB PORTAL
+   No gradients. No animations. No modern stuff.
+   Tables. Borders. Arial. That's it.
+   ============================================= */
+
+* { margin: 0; padding: 0; }
+
+body {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 11px;
+  background: #CCCCCC;
+  color: #000000;
+}
+
+a { color: #0000FF; }
+a:hover { color: #FF0000; }
+a:visited { color: #800080; }
+
+/* Main container - centered, fixed width like the old days */
+.page-wrapper {
+  width: 800px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border-left: 1px solid #999999;
+  border-right: 1px solid #999999;
+}
+
+/* ========== HEADER ========== */
+.header-bar {
+  background: #336699;
+  color: #FFFFFF;
+  padding: 8px 10px;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 3px solid #99CCFF;
+}
+
+.header-bar .title {
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.header-bar .subtitle {
+  font-size: 10px;
+  font-weight: normal;
+  color: #99CCFF;
+  margin-left: 8px;
+}
+
+/* ========== NAV BAR ========== */
+.nav-bar {
+  background: #E8E8E8;
+  padding: 4px 10px;
+  border-bottom: 1px solid #999999;
+  font-size: 11px;
+}
+
+.nav-bar a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Tahoma, Arial, sans-serif;
+  padding: 2px 8px;
+  border-right: 1px solid #999999;
+}
+
+.nav-bar a:last-child {
+  border-right: none;
+}
+
+.nav-bar a:hover {
+  color: #FFFFFF;
+  background: #336699;
+}
+
+/* ========== WELCOME BANNER ========== */
+.welcome-banner {
+  background: #FFFFCC;
+  border-bottom: 1px solid #CCCC99;
+  padding: 8px 10px;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.welcome-banner b {
+  color: #CC6600;
+}
+
+/* ========== MAIN LAYOUT ========== */
+.content-row {
+  display: flex;
+}
+
+.sidebar-left {
+  width: 180px;
+  background: #F0F0F0;
+  border-right: 1px solid #CCCCCC;
+  font-size: 10px;
+  padding: 0;
+}
+
+.sidebar-left .sidebar-header {
+  background: #336699;
+  color: #FFFFFF;
+  padding: 6px 8px;
+  font-family: Tahoma, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.sidebar-left ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-left li {
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.sidebar-left li a {
+  display: block;
+  padding: 4px 10px;
+  text-decoration: none;
+  color: #000000;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 10px;
+}
+
+.sidebar-left li a:hover {
+  background: #336699;
+  color: #FFFFFF;
+}
+
+.main-content {
+  flex: 1;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* ========== WIDGET PANEL ========== */
+.widget {
+  border: 1px solid #999999;
+  margin-bottom: 10px;
+  background: #FFFFFF;
+}
+
+.widget-header {
+  background: #E8E8E8;
+  padding: 4px 8px;
+  font-family: Tahoma, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  border-bottom: 1px solid #999999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.widget-header .widget-title {
+  color: #000000;
+}
+
+.widget-header .widget-action {
+  font-size: 9px;
+  color: #0000FF;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.widget-body {
+  padding: 8px;
+  font-size: 11px;
+}
+
+/* ========== TABLE STYLES ========== */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.data-table th {
+  background: #E8E8E8;
+  padding: 3px 6px;
+  text-align: left;
+  border: 1px solid #CCCCCC;
+  font-size: 10px;
+}
+
+.data-table td {
+  padding: 3px 6px;
+  border: 1px solid #CCCCCC;
+  font-size: 10px;
+}
+
+.data-table tr:nth-child(even) {
+  background: #F9F9F9;
+}
+
+.data-table tr:hover {
+  background: #FFFFCC;
+}
+
+/* ========== STATUS ITEMS ========== */
+.status-item {
+  padding: 4px 8px;
+  border-bottom: 1px solid #EEEEEE;
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-item:last-child {
+  border-bottom: none;
+}
+
+.status-label {
+  color: #666666;
+  font-size: 10px;
+}
+
+.status-value {
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.status-value.ok {
+  color: #009900;
+}
+
+.status-value.warn {
+  color: #CC6600;
+}
+
+.status-value.error {
+  color: #CC0000;
+}
+
+/* ========== NEWS LIST ========== */
+.news-item {
+  padding: 5px 8px;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-item .news-date {
+  color: #999999;
+  font-size: 9px;
+}
+
+.news-item .news-source {
+  color: #666666;
+  font-size: 9px;
+  font-style: italic;
+}
+
+/* ========== WEATHER WIDGET ========== */
+.weather-block {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 6px;
+}
+
+.weather-temp {
+  font-size: 24px;
+  font-family: Tahoma, Arial, sans-serif;
+  font-weight: bold;
+  color: #336699;
+}
+
+.weather-info {
+  font-size: 10px;
+  color: #333333;
+}
+
+/* ========== CLOCK ========== */
+.clock-widget {
+  text-align: center;
+  padding: 8px;
+}
+
+.clock-time {
+  font-family: 'Courier New', monospace;
+  font-size: 20px;
+  font-weight: bold;
+  color: #336699;
+}
+
+.clock-date {
+  font-size: 10px;
+  color: #666666;
+  margin-top: 4px;
+}
+
+/* ========== GITHUB ACTIVITY ========== */
+.github-item {
+  padding: 3px 8px;
+  border-bottom: 1px solid #EEEEEE;
+  font-size: 10px;
+}
+
+.github-item:last-child {
+  border-bottom: none;
+}
+
+.github-icon {
+  color: #009900;
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+/* ========== EMAIL LIST ========== */
+.email-item {
+  padding: 3px 8px;
+  border-bottom: 1px solid #EEEEEE;
+  font-size: 10px;
+}
+
+.email-item:last-child {
+  border-bottom: none;
+}
+
+.email-from {
+  font-weight: bold;
+  color: #333333;
+}
+
+.email-subject {
+  color: #000000;
+}
+
+.email-date {
+  color: #999999;
+  font-size: 9px;
+}
+
+/* ========== FOOTER ========== */
+.footer-bar {
+  background: #E8E8E8;
+  padding: 6px 10px;
+  border-top: 1px solid #999999;
+  font-size: 9px;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #666666;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ========== POWERED BY ========== */
+.powered-by {
+  text-align: center;
+  padding: 4px;
+  background: #FFFFCC;
+  border-top: 1px solid #CCCC99;
+  font-size: 9px;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #999999;
+}
+
+/* ========== UNDER CONSTRUCTION ========== */
+.wip-tag {
+  display: inline-block;
+  background: #FFCC00;
+  color: #000000;
+  font-size: 9px;
+  font-weight: bold;
+  padding: 1px 6px;
+  border: 1px solid #CC9900;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+/* ========== AVATAR ========== */
+.avatar-box {
+  text-align: center;
+  padding: 8px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.avatar-box img {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #336699;
+}
+
+.avatar-box .user-name {
+  font-family: Tahoma, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  margin-top: 4px;
+  color: #336699;
+}
+
+/* ========== EMAIL COUNT ========== */
+.badge {
+  display: inline-block;
+  background: #CC0000;
+  color: #FFFFFF;
+  font-size: 9px;
+  font-weight: bold;
+  padding: 1px 5px;
+  font-family: Tahoma, Arial, sans-serif;
+  margin-left: 4px;
+}
+
+/* ========== LOADING ========== */
+.loading {
+  text-align: center;
+  color: #999999;
+  font-style: italic;
+  padding: 10px;
+}
+
+/* ========== TO-DO LIST ========== */
+.todo-item {
+  padding: 2px 8px;
+  font-size: 10px;
+}
+
+.todo-item::before {
+  content: '☐ ';
+  color: #CC6600;
+}
+
+.todo-item.done::before {
+  content: '☑ ';
+  color: #009900;
+}
+
+.todo-item.done {
+  text-decoration: line-through;
+  color: #999999;
+}
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- HEADER -->
+  <div class="header-bar">
+    <span class="title">💎 Ruby Dashboard</span>
+    <span class="subtitle">Personal Command Center</span>
+  </div>
+
+  <!-- NAV BAR -->
+  <div class="nav-bar">
+    <a href="index.html">Home</a>
+    <a href="https://github.com/Shiouko" target="_blank">GitHub</a>
+    <a href="https://shiouko-ruby.pages.dev/projects.html" target="_blank">Projects</a>
+    <a href="https://nero-library.vercel.app/" target="_blank">Anime</a>
+    <a href="https://shiouko-ruby.pages.dev" target="_blank">About</a>
+  </div>
+
+  <!-- WELCOME BANNER -->
+  <div class="welcome-banner">
+    <b>Welcome, Amir!</b> &nbsp;|&nbsp; Today is <span id="current-date">Loading...</span> &nbsp;|&nbsp; <span id="current-time">Loading...</span>
+    &nbsp;|&nbsp; <span class="wip-tag">UNDER CONSTRUCTION</span>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="content-row">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebar-left">
+
+      <div class="avatar-box">
+        <img src="https://avatars.githubusercontent.com/u/48697061?v=4" alt="Amir">
+        <div class="user-name">Amir Hafizi</div>
+      </div>
+
+      <div class="sidebar-header">Quick Links</div>
+      <ul>
+        <li><a href="https://mail.google.com" target="_blank">📧 Gmail</a></li>
+        <li><a href="https://github.com/YoRzHe-HotaaRu" target="_blank">🐙 GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/amir-hafizi-musa-5530b9364/" target="_blank">💼 LinkedIn</a></li>
+        <li><a href="https://shopee.com.my" target="_blank">🛒 Shopee</a></li>
+        <li><a href="https://nero-library.vercel.app/" target="_blank">📚 Anime</a></li>
+        <li><a href="https://dashboard.cloudflare.com" target="_blank">☁ Cloudflare</a></li>
+        <li><a href="https://console.cloud.google.com" target="_blank">🔧 Google Cloud</a></li>
+      </ul>
+
+      <div class="sidebar-header">Status</div>
+      <div id="status-panel">
+        <div class="status-item">
+          <span class="status-label">OpenClaw</span>
+          <span class="status-value ok" id="status-openclaw">Online</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Gmail</span>
+          <span class="status-value ok">Connected</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">GitHub</span>
+          <span class="status-value ok">Shiouko</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Cloudflare</span>
+          <span class="status-value ok">Active</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Cron Jobs</span>
+          <span class="status-value ok" id="status-cron">1 active</span>
+        </div>
+      </div>
+
+      <div class="sidebar-header">Notes</div>
+      <div style="padding: 6px 8px; font-size: 9px; color: #666;">
+        Daily News at 5:00 AM MYT<br>
+        Shopee scraper needs residential IP
+      </div>
+
+    </div>
+
+    <!-- MAIN PANELS -->
+    <div class="main-content">
+
+      <!-- TOP ROW: CLOCK + WEATHER -->
+      <table width="100%" cellpadding="0" cellspacing="8">
+        <tr>
+          <!-- CLOCK -->
+          <td width="50%" valign="top">
+            <div class="widget">
+              <div class="widget-header">
+                <span class="widget-title">🕐 Clock</span>
+              </div>
+              <div class="widget-body">
+                <div class="clock-widget">
+                  <div class="clock-time" id="clock-display">00:00:00</div>
+                  <div class="clock-date" id="clock-date">Saturday, March 29, 2026</div>
+                  <div style="font-size:9px; color:#999; margin-top:4px;">MYT (UTC+8)</div>
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <!-- WEATHER -->
+          <td width="50%" valign="top">
+            <div class="widget">
+              <div class="widget-header">
+                <span class="widget-title">🌤 Weather</span>
+                <span class="widget-action" id="weather-location">Kuala Lumpur</span>
+              </div>
+              <div class="widget-body">
+                <div class="weather-block">
+                  <div class="weather-temp" id="weather-temp">--</div>
+                  <div class="weather-info" id="weather-info">
+                    Loading weather...
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <!-- EMAIL -->
+      <div class="widget">
+        <div class="widget-header">
+          <span class="widget-title">📧 Recent Emails <span class="badge" id="email-unread">0</span></span>
+          <a href="https://mail.google.com" target="_blank" style="font-size:9px; color:#0000FF;">Open Gmail</a>
+        </div>
+        <div class="widget-body" id="email-list">
+          <div class="loading">Loading emails...</div>
+        </div>
+      </div>
+
+      <!-- GITHUB ACTIVITY -->
+      <div class="widget">
+        <div class="widget-header">
+          <span class="widget-title">🐙 GitHub Activity</span>
+          <a href="https://github.com/YoRzHe-HotaaRu" target="_blank" style="font-size:9px; color:#0000FF;">Profile</a>
+        </div>
+        <div class="widget-body" id="github-activity">
+          <div class="loading">Loading GitHub activity...</div>
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="widget">
+        <div class="widget-header">
+          <span class="widget-title">📦 Projects</span>
+          <a href="https://shiouko-ruby.pages.dev/projects.html" target="_blank" style="font-size:9px; color:#0000FF;">View All</a>
+        </div>
+        <div class="widget-body">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Project</th>
+                <th>Status</th>
+                <th>Updated</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="https://github.com/Shiouko/Ruby-Shopee-Scrapper" target="_blank">Ruby Shopee Scrapper</a></td>
+                <td style="color:#009900;">● Active</td>
+                <td>2026-03-29</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/Shiouko/shiouko-ruby" target="_blank">Profile Website</a></td>
+                <td style="color:#009900;">● Live</td>
+                <td>2026-03-29</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/Shiouko/Ruby-Shopee-Scrapper" target="_blank">NeRo Library</a></td>
+                <td style="color:#009900;">● Live</td>
+                <td>2026-03-28</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/Shiouko/ruby-dashboard" target="_blank">Ruby Dashboard</a></td>
+                <td style="color:#CC6600;">● In Progress</td>
+                <td>2026-03-29</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- NEWS -->
+      <div class="widget">
+        <div class="widget-header">
+          <span class="widget-title">📰 Latest News</span>
+          <span class="widget-action">Daily briefing at 5 AM</span>
+        </div>
+        <div class="widget-body" id="news-list">
+          <div class="loading">Fetching latest headlines...</div>
+        </div>
+      </div>
+
+    </div><!-- /main-content -->
+
+  </div><!-- /content-row -->
+
+  <!-- POWERED BY -->
+  <div class="powered-by">
+    Powered by <b>OpenClaw</b> | Built with <b>Ruby 💎</b> | Hosted on <b>Cloudflare Pages</b>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-bar">
+    <span>Best viewed at 1024x768 &bull; Times New Roman</span>
+    <span>Last updated: <span id="last-updated">Loading...</span></span>
+  </div>
+
+</div><!-- /page-wrapper -->
+
+<!-- ==================== JAVASCRIPT ==================== -->
+<script>
+// --- Clock ---
+function updateClock() {
+  const now = new Date();
+  // MYT is UTC+8
+  const myt = new Date(now.getTime() + (8 * 60 * 60 * 1000) + (now.getTimezoneOffset() * 60 * 1000));
+
+  const h = String(myt.getHours()).padStart(2, '0');
+  const m = String(myt.getMinutes()).padStart(2, '0');
+  const s = String(myt.getSeconds()).padStart(2, '0');
+  document.getElementById('clock-display').textContent = h + ':' + m + ':' + s;
+
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('clock-date').textContent = days[myt.getDay()] + ', ' + months[myt.getMonth()] + ' ' + myt.getDate() + ', ' + myt.getFullYear();
+  document.getElementById('current-date').textContent = months[myt.getMonth()] + ' ' + myt.getDate() + ', ' + myt.getFullYear();
+  document.getElementById('current-time').textContent = h + ':' + m + ':' + s + ' MYT';
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// --- Weather ---
+async function loadWeather() {
+  try {
+    const resp = await fetch('https://wttr.in/Kuala+Lumpur?format=%C|%t|%w|%h');
+    const data = await resp.text();
+    const parts = data.split('|');
+    if (parts.length >= 4) {
+      document.getElementById('weather-temp').textContent = parts[1].trim();
+      document.getElementById('weather-info').innerHTML =
+        parts[0].trim() + '<br>' +
+        'Wind: ' + parts[2].trim() + '<br>' +
+        'Humidity: ' + parts[3].trim();
+    }
+  } catch(e) {
+    document.getElementById('weather-info').textContent = 'Weather unavailable';
+  }
+}
+loadWeather();
+
+// --- GitHub Activity ---
+async function loadGitHub() {
+  try {
+    const resp = await fetch('https://api.github.com/users/YoRzHe-HotaaRu/events/public?per_page=8');
+    const events = await resp.json();
+    const container = document.getElementById('github-activity');
+
+    if (!Array.isArray(events) || events.length === 0) {
+      container.innerHTML = '<div class="loading">No recent activity</div>';
+      return;
+    }
+
+    let html = '<table class="data-table"><thead><tr><th>Event</th><th>Repo</th><th>Date</th></tr></thead><tbody>';
+    for (const e of events.slice(0, 6)) {
+      const type = e.type.replace('Event','');
+      const repo = e.repo ? e.repo.name.split('/')[1] : 'unknown';
+      const date = new Date(e.created_at).toLocaleDateString('en-MY');
+      const icon = e.type === 'PushEvent' ? '⬆' : e.type === 'CreateEvent' ? '★' : '•';
+      html += '<tr><td>' + icon + ' ' + type + '</td><td><a href="https://github.com/' + e.repo?.name + '" target="_blank">' + repo + '</a></td><td>' + date + '</td></tr>';
+    }
+    html += '</tbody></table>';
+    container.innerHTML = html;
+  } catch(e) {
+    document.getElementById('github-activity').innerHTML = '<div class="loading">GitHub data unavailable</div>';
+  }
+}
+loadGitHub();
+
+// --- News (static for now, daily briefing updates this) ---
+function loadNews() {
+  const container = document.getElementById('news-list');
+  container.innerHTML = `
+    <div class="news-item">
+      <div class="news-source">Houthis Enter Iran War</div>
+      <div class="news-date">Major: Conflict expands with first Houthi missile strike against Israel</div>
+    </div>
+    <div class="news-item">
+      <div class="news-source">China-US Trade Tensions</div>
+      <div class="news-date">China opens investigations into US trade practices in response to tariff moves</div>
+    </div>
+    <div class="news-item">
+      <div class="news-source">Pope Leo XIV</div>
+      <div class="news-date">Historic visit to Monaco — first papal visit to the tiny principality</div>
+    </div>
+    <div class="news-item">
+      <div class="news-source">Ukraine-Russia</div>
+      <div class="news-date">Rubio denies Zelenskyy's claim that US asked Ukraine to cede land</div>
+    </div>
+    <div class="news-item">
+      <div class="news-source">Iran War Analysis</div>
+      <div class="news-date">1 month in — Iran uses insurgent tactics and holds world economy hostage</div>
+    </div>
+  `;
+}
+loadNews();
+
+// --- Last Updated ---
+document.getElementById('last-updated').textContent = new Date().toLocaleString('en-MY', { timeZone: 'Asia/Kuala_Lumpur' });
+</script>
+
+</body>
+</html>
