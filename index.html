@@ -779,8 +779,10 @@ async function loadAnimeQuote() {
     // API might return {data:{...}} or direct object
     const d = raw.data || raw;
     const quote = d.quote || d.content || '';
-    const char = d.character || d.characterName || 'Unknown';
-    const anime = d.anime || d.animeName || 'Unknown';
+    const rawChar = d.character || d.characterName || 'Unknown';
+    const rawAnime = d.anime || d.animeName || 'Unknown';
+    const char = typeof rawChar === 'object' ? (rawChar.name || JSON.stringify(rawChar)) : String(rawChar);
+    const anime = typeof rawAnime === 'object' ? (rawAnime.name || JSON.stringify(rawAnime)) : String(rawAnime);
     if (quote) {
       container.innerHTML =
         '<div style="font-style:italic; padding:4px 0; color:#333;">"' + quote + '"</div>' +
