@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cron Jobs — Ruby Dashboard</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-inner">
+            <div>
+                <h1>RUBY DASHBOARD</h1>
+                <div class="version">Hermes Agent v0.15.1 — Scheduled Jobs</div>
+            </div>
+            <div class="status-badge">ONLINE</div>
+        </div>
+    </div>
+    
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../index.html">Home</a>
+            <a href="about.html">About Ruby</a>
+            <a href="system.html">System</a>
+            <a href="skills.html">Skills</a>
+            <a href="cron.html">Cron Jobs</a>
+            <a href="tokens.html">Token Usage</a>
+            <a href="amir.html">About Amir</a>
+        </div>
+    </nav>
+    
+    <div class="main">
+        <div class="section-header">SCHEDULED CRON JOBS — 4 ACTIVE</div>
+        
+        <div class="stat-row">
+            <div class="stat-box highlight">
+                <div class="number">4</div>
+                <div class="label">Active Jobs</div>
+            </div>
+            <div class="stat-box info">
+                <div class="number">Daily</div>
+                <div class="label">Schedule Type</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">06:00-06:20</div>
+                <div class="label">Run Window (MYT)</div>
+            </div>
+        </div>
+        
+        <div class="section-header">JOB DETAILS</div>
+        
+        <div class="panel">
+            <div class="panel-body">
+                <table>
+                    <tr>
+                        <th>Job ID</th>
+                        <th>Name</th>
+                        <th>Schedule</th>
+                        <th>Next Run</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>b1582d547f4c</td>
+                        <td>Daily World News</td>
+                        <td>0 6 * * *</td>
+                        <td>2026-05-31 06:00 MYT</td>
+                        <td><span class="status online">Active</span></td>
+                    </tr>
+                    <tr>
+                        <td>515acd9c481c</td>
+                        <td>Daily Tech News</td>
+                        <td>10 6 * * *</td>
+                        <td>2026-05-31 06:10 MYT</td>
+                        <td><span class="status online">Active</span></td>
+                    </tr>
+                    <tr>
+                        <td>932c591d3ff3</td>
+                        <td>Daily Gaming News</td>
+                        <td>15 6 * * *</td>
+                        <td>2026-05-31 06:15 MYT</td>
+                        <td><span class="status online">Active</span></td>
+                    </tr>
+                    <tr>
+                        <td>57844788e574</td>
+                        <td>Daily Gacha News</td>
+                        <td>20 6 * * *</td>
+                        <td>2026-05-31 06:20 MYT</td>
+                        <td><span class="status online">Active</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="section-header">JOB DESCRIPTIONS</div>
+        
+        <div class="panel">
+            <div class="panel-header">Daily World News</div>
+            <div class="panel-body">
+                <p>Fetches and delivers the latest world news headlines every morning at 6:00 AM MYT. Covers major international events, politics, and breaking stories.</p>
+                <p class="mt-8"><strong>Last run:</strong> 2026-05-30 06:11 MYT — OK</p>
+            </div>
+        </div>
+        
+        <div class="panel">
+            <div class="panel-header">Daily Tech News</div>
+            <div class="panel-body">
+                <p>Delivers technology news and updates at 6:10 AM MYT. Covers AI, software development, gadgets, and tech industry developments.</p>
+                <p class="mt-8"><strong>Last run:</strong> 2026-05-30 06:13 MYT — OK</p>
+            </div>
+        </div>
+        
+        <div class="panel">
+            <div class="panel-header">Daily Gaming News</div>
+            <div class="panel-body">
+                <p>Gaming news briefing at 6:15 AM MYT. Covers game releases, updates, esports, and gaming industry news.</p>
+                <p class="mt-8"><strong>Last run:</strong> 2026-05-30 06:16 MYT — OK</p>
+            </div>
+        </div>
+        
+        <div class="panel">
+            <div class="panel-header">Daily Gacha News</div>
+            <div class="panel-body">
+                <p>Gacha game news and updates at 6:20 AM MYT. Covers Genshin Impact, Honkai, and other gacha game announcements and events.</p>
+                <p class="mt-8"><strong>Last run:</strong> 2026-05-30 06:27 MYT — OK</p>
+            </div>
+        </div>
+        
+        <div class="section-header">DELIVERY SETTINGS</div>
+        
+        <div class="panel">
+            <div class="panel-body">
+                <table>
+                    <tr>
+                        <th>Setting</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Delivery Target</td>
+                        <td>Origin (Telegram DM with Amir)</td>
+                    </tr>
+                    <tr>
+                        <td>Repeat</td>
+                        <td>Indefinite (∞)</td>
+                    </tr>
+                    <tr>
+                        <td>Model</td>
+                        <td>mimo-v2.5 (inherited)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>RUBY DASHBOARD — Personal system overview for Ruby, Amir's AI companion</p>
+        <p style="margin-top: 8px;">Last updated: <span id="last-updated"></span> | Built with 2005-era web aesthetics</p>
+    </div>
+    
+    <script src="../script.js"></script>
+</body>
+</html>

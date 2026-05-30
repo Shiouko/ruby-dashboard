@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System — Ruby Dashboard</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-inner">
+            <div>
+                <h1>RUBY DASHBOARD</h1>
+                <div class="version">Hermes Agent v0.15.1 — System Information</div>
+            </div>
+            <div class="status-badge">ONLINE</div>
+        </div>
+    </div>
+    
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../index.html">Home</a>
+            <a href="about.html">About Ruby</a>
+            <a href="system.html">System</a>
+            <a href="skills.html">Skills</a>
+            <a href="cron.html">Cron Jobs</a>
+            <a href="tokens.html">Token Usage</a>
+            <a href="amir.html">About Amir</a>
+        </div>
+    </nav>
+    
+    <div class="main">
+        <div class="section-header">HERMES AGENT CONFIGURATION</div>
+        
+        <div class="panel">
+            <div class="panel-body">
+                <table>
+                    <tr>
+                        <th>Setting</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Model</td>
+                        <td>mimo-v2.5</td>
+                    </tr>
+                    <tr>
+                        <td>Provider</td>
+                        <td>opencode-go</td>
+                    </tr>
+                    <tr>
+                        <td>API Mode</td>
+                        <td>chat_completions</td>
+                    </tr>
+                    <tr>
+                        <td>Max Turns</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>Reasoning Effort</td>
+                        <td>medium</td>
+                    </tr>
+                    <tr>
+                        <td>Tool Enforcement</td>
+                        <td>auto</td>
+                    </tr>
+                    <tr>
+                        <td>Compression</td>
+                        <td>Enabled (threshold: 0.5, target: 0.2)</td>
+                    </tr>
+                    <tr>
+                        <td>Config Version</td>
+                        <td>24</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="section-header">HOST SYSTEM</div>
+        
+        <div class="panel">
+            <div class="panel-body">
+                <table>
+                    <tr>
+                        <th>Component</th>
+                        <th>Details</th>
+                    </tr>
+                    <tr>
+                        <td>Hostname</td>
+                        <td>Ruby</td>
+                    </tr>
+                    <tr>
+                        <td>Operating System</td>
+                        <td>Debian GNU/Linux 13 (trixie)</td>
+                    </tr>
+                    <tr>
+                        <td>Kernel</td>
+                        <td>6.12.90+deb13.1-amd64</td>
+                    </tr>
+                    <tr>
+                        <td>Architecture</td>
+                        <td>x86_64</td>
+                    </tr>
+                    <tr>
+                        <td>Python</td>
+                        <td>3.11.15</td>
+                    </tr>
+                    <tr>
+                        <td>Node.js</td>
+                        <td>via npx (wrangler available)</td>
+                    </tr>
+                    <tr>
+                        <td>Hermes Home</td>
+                        <td>/home/ruby/.hermes</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="section-header">CONNECTED PLATFORMS</div>
+        
+        <div class="panel">
+            <div class="panel-body">
+                <table>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Status</th>
+                        <th>PID</th>
+                    </tr>
+                    <tr>
+                        <td>Telegram</td>
+                        <td><span class="status online">Connected</span></td>
+                        <td>8717</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="section-header">MCP SERVERS</div>
+        
+        <div class="panel">
+            <div class="panel-body">
+                <table>
+                    <tr>
+                        <th>Server</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Tools</th>
+                    </tr>
+                    <tr>
+                        <td>Exa Search</td>
+                        <td>HTTP (Remote)</td>
+                        <td><span class="status online">Active</span></td>
+                        <td>web_search_exa, web_fetch_exa, list_prompts, get_prompt, list_resources, read_resource</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="section-header">VOICE & TRANSCRIPTION</div>
+        
+        <div class="panel">
+            <div class="panel-body">
+                <table>
+                    <tr>
+                        <th>Component</th>
+                        <th>Provider</th>
+                        <th>Details</th>
+                    </tr>
+                    <tr>
+                        <td>TTS (Text-to-Speech)</td>
+                        <td>Edge TTS</td>
+                        <td>Voice: en-US-AriaNeural</td>
+                    </tr>
+                    <tr>
+                        <td>STT (Speech-to-Text)</td>
+                        <td>Local (faster-whisper)</td>
+                        <td>Model: base</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="section-header">ENABLED TOOLSETS</div>
+        
+        <div class="panel">
+            <div class="panel-body">
+                <span class="tag">web</span>
+                <span class="tag green">browser</span>
+                <span class="tag">terminal</span>
+                <span class="tag green">file</span>
+                <span class="tag">code_execution</span>
+                <span class="tag green">vision</span>
+                <span class="tag">image_gen</span>
+                <span class="tag green">tts</span>
+                <span class="tag">skills</span>
+                <span class="tag green">todo</span>
+                <span class="tag">memory</span>
+                <span class="tag green">session_search</span>
+                <span class="tag">clarify</span>
+                <span class="tag green">delegation</span>
+                <span class="tag">cronjob</span>
+                <span class="tag green">messaging</span>
+                <span class="tag">computer_use</span>
+            </div>
+        </div>
+        
+        <div class="section-header">DISABLED TOOLSETS</div>
+        
+        <div class="panel">
+            <div class="panel-body">
+                <span class="tag red">video</span>
+                <span class="tag red">video_gen</span>
+                <span class="tag red">x_search</span>
+                <span class="tag red">moa</span>
+                <span class="tag red">homeassistant</span>
+                <span class="tag red">spotify</span>
+                <span class="tag red">yuanbao</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>RUBY DASHBOARD — Personal system overview for Ruby, Amir's AI companion</p>
+        <p style="margin-top: 8px;">Last updated: <span id="last-updated"></span> | Built with 2005-era web aesthetics</p>
+    </div>
+    
+    <script src="../script.js"></script>
+</body>
+</html>
