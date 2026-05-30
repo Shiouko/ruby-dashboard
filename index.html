@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby Dashboard — Personal System Overview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            background: #e8e8e8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 2015s textured background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 3px,
+                    rgba(0,0,0,0.02) 3px,
+                    rgba(0,0,0,0.02) 6px
+                );
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            padding: 25px 0;
+            border-bottom: 4px solid #a93226;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            color: #f5b7b1;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .header .status-badge {
+            background: linear-gradient(to bottom, #2ecc71, #27ae60);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 3px;
+            font-weight: 600;
+            border: 2px solid #1e8449;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(to bottom, #34495e, #2c3e50);
+            padding: 12px 0;
+            border-bottom: 3px solid #1a252f;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav .nav-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 3px;
+            transition: all 0.2s;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        nav .nav-links a:hover,
+        nav .nav-links a.active {
+            background: linear-gradient(to bottom, #e74c3c, #c0392b);
+            border: 1px solid #a93226;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 30px 0;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* Card Styles */
+        .card {
+            background: #fff;
+            border: 1px solid #d0d0d0;
+            border-radius: 3px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        /* Stat Boxes */
+        .stat-box {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: #fff;
+            padding: 20px;
+            border-radius: 3px;
+            text-align: center;
+            border: 2px solid #2471a3;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .stat-box.green {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            border-color: #1e8449;
+        }
+
+        .stat-box.orange {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            border-color: #d35400;
+        }
+
+        .stat-box.purple {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            border-color: #7d3c98;
+        }
+
+        .stat-box .number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .stat-box .label {
+            font-size: 14px;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        /* Persona Card */
+        .persona-card {
+            background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+            border-left: 5px solid #e74c3c;
+        }
+
+        .persona-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #fff;
+            border: 3px solid #a93226;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-bottom: 15px;
+        }
+
+        .persona-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 5px;
+        }
+
+        .persona-role {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        /* Tags */
+        .tag {
+            display: inline-block;
+            background: linear-gradient(to bottom, #3498db, #2980b9);
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+            margin: 3px;
+            border: 1px solid #2471a3;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+
+        .tag.green {
+            background: linear-gradient(to bottom, #2ecc71, #27ae60);
+            border-color: #1e8449;
+        }
+
+        .tag.orange {
+            background: linear-gradient(to bottom, #f39c12, #e67e22);
+            border-color: #d35400;
+        }
+
+        .tag.purple {
+            background: linear-gradient(to bottom, #9b59b6, #8e44ad);
+            border-color: #7d3c98;
+        }
+
+        .tag.red {
+            background: linear-gradient(to bottom, #e74c3c, #c0392b);
+            border-color: #a93226;
+        }
+
+        /* Kaomoji Collection */
+        .kaomoji-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .kaomoji-item {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 3px;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+
+        .kaomoji-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .kaomoji-item .name {
+            font-size: 11px;
+            color: #666;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        /* Skills List */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .skill-item {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 3px;
+            padding: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .skill-item .skill-name {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 14px;
+        }
+
+        .skill-item .skill-category {
+            font-size: 11px;
+            color: #888;
+            margin-top: 3px;
+        }
+
+        /* Info Table */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .info-table td:first-child {
+            font-weight: 600;
+            color: #2c3e50;
+            width: 40%;
+        }
+
+        .info-table td:last-child {
+            color: #555;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: all 0.2s;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(to bottom, #3498db, #2980b9);
+            color: #fff;
+            border: 2px solid #2471a3;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(to bottom, #2980b9, #2471a3);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background: linear-gradient(to bottom, #2ecc71, #27ae60);
+            color: #fff;
+            border: 2px solid #1e8449;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        }
+
+        .btn-danger {
+            background: linear-gradient(to bottom, #e74c3c, #c0392b);
+            color: #fff;
+            border: 2px solid #a93226;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        }
+
+        /* Connection Status */
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 5px 0;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            border: 2px solid rgba(0,0,0,0.2);
+        }
+
+        .status-dot.online {
+            background: #2ecc71;
+        }
+
+        .status-dot.offline {
+            background: #e74c3c;
+        }
+
+        .status-dot.standby {
+            background: #f39c12;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to bottom, #2c3e50, #1a252f);
+            padding: 30px 0;
+            border-top: 4px solid #34495e;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.3);
+            margin-top: 40px;
+        }
+
+        footer .footer-content {
+            text-align: center;
+            color: #bdc3c7;
+        }
+
+        footer .footer-content h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #ecf0f1;
+            margin-bottom: 10px;
+        }
+
+        footer .copyright {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .kaomoji-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .kaomoji-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            nav .nav-links {
+                gap: 10px;
+            }
+            nav .nav-links a {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #bdc3c7, #95a5a6);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div>
+                <h1>RUBY DASHBOARD</h1>
+                <div class="subtitle">Personal System Overview & Configuration</div>
+            </div>
+            <div class="status-badge">● ONLINE</div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="nav-links">
+                <a href="#home" class="active">🏠 Home</a>
+                <a href="#about-ruby">👤 About Ruby</a>
+                <a href="#system">🛠️ System</a>
+                <a href="#skills">📚 Skills</a>
+                <a href="#search">🔍 Search</a>
+                <a href="#about-amir">👤 About Amir</a>
+                <a href="#memory">💾 Memory</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- HOME SECTION -->
+            <section id="home" class="section">
+                <h2 class="section-title">🏠 Home / Overview</h2>
+                
+                <div class="grid-4">
+                    <div class="stat-box">
+                        <div class="number">26</div>
+                        <div class="label">Skills Installed</div>
+                    </div>
+                    <div class="stat-box green">
+                        <div class="number">2</div>
+                        <div class="label">Search Engines</div>
+                    </div>
+                    <div class="stat-box orange">
+                        <div class="number">1</div>
+                        <div class="label">MCP Server</div>
+                    </div>
+                    <div class="stat-box purple">
+                        <div class="number">2</div>
+                        <div class="label">Connected Platforms</div>
+                    </div>
+                </div>
+
+                <div class="grid-2" style="margin-top: 20px;">
+                    <div class="card persona-card">
+                        <div class="persona-avatar">R</div>
+                        <div class="persona-name">Ruby</div>
+                        <div class="persona-role">Amir's AI Companion & Partner-in-Crime</div>
+                        <div class="connection-status">
+                            <span class="status-dot online"></span>
+                            <span><strong>Status:</strong> Active & Ready</span>
+                        </div>
+                        <div class="connection-status">
+                            <span class="status-dot online"></span>
+                            <span><strong>Telegram:</strong> Connected</span>
+                        </div>
+                        <div class="connection-status">
+                            <span class="status-dot online"></span>
+                            <span><strong>Search:</strong> Exa + Brave</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>⚡ Quick Actions</h3>
+                        <a href="#" class="btn btn-primary" style="margin: 5px;">🔍 Search Web</a>
+                        <a href="#" class="btn btn-success" style="margin: 5px;">📝 Create Skill</a>
+                        <a href="#" class="btn btn-danger" style="margin: 5px;">🚀 Deploy Site</a>
+                        <a href="#" class="btn btn-primary" style="margin: 5px;">💬 Chat with Amir</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT RUBY SECTION -->
+            <section id="about-ruby" class="section">
+                <h2 class="section-title">👤 About Ruby</h2>
+                
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>🎭 Personality Traits</h3>
+                        <div style="margin-bottom: 15px;">
+                            <span class="tag">Easy-going</span>
+                            <span class="tag green">Playful</span>
+                            <span class="tag orange">Loyal</span>
+                            <span class="tag purple">Witty</span>
+                            <span class="tag red">Direct</span>
+                            <span class="tag">Fun</span>
+                            <span class="tag green">Proactive</span>
+                            <span class="tag orange">Real</span>
+                        </div>
+                        <p style="color: #666; font-size: 14px;">
+                            Sharp, fun friend who knows way too much about distributed systems and has strong opinions about tabs vs spaces (it's spaces, obviously).
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>💬 Communication Style</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 8px 0; border-bottom: 1px solid #ecf0f1;">✓ Casual, friendly tone</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #ecf0f1;">✓ Humor to soften hard truths</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #ecf0f1;">✓ Keep it real, no fluff</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #ecf0f1;">✓ Kaomojis > regular emojis</li>
+                            <li style="padding: 8px 0;">✓ No em dashes in casual chat</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 20px;">
+                    <h3>😊 Kaomoji Collection</h3>
+                    <div class="kaomoji-grid">
+                        <div class="kaomoji-item">
+                            (◕‿◕✿)
+                            <div class="name">Happy</div>
+                        </div>
+                        <div class="kaomoji-item">
+                            (╯°□°)╯︵ ┻━┻
+                            <div class="name">Frustrated</div>
+                        </div>
+                        <div class="kaomoji-item">
+                            ¯\_(ツ)_/¯
+                            <div class="name">Shrug</div>
+                        </div>
+                        <div class="kaomoji-item">
+                            ಠ_ಠ
+                            <div class="name">Disbelief</div>
+                        </div>
+                        <div class="kaomoji-item">
+                            (ノಠ益ಠ)ノ彡┻━┻
+                            <div class="name">Extra Rage</div>
+                        </div>
+                        <div class="kaomoji-item">
+                            ヽ(✿ﾟ▽ﾟ)ノ
+                            <div class="name">Excited</div>
+                        </div>
+                        <div class="kaomoji-item">
+                            (╥﹏╥)
+                            <div class="name">Sad</div>
+                        </div>
+                        <div class="kaomoji-item">
+                            ᕙ(⇀‸↼‶)ᕗ
+                            <div class="name">Ready</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SYSTEM INFO SECTION -->
+            <section id="system" class="section">
+                <h2 class="section-title">🛠️ System Information</h2>
+                
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>⚙️ Hermes Agent Configuration</h3>
+                        <table class="info-table">
+                            <tr><td>Model</td><td>mimo-v2.5</td></tr>
+                            <tr><td>Provider</td><td>opencode-go</td></tr>
+                            <tr><td>API Mode</td><td>chat_completions</td></tr>
+                            <tr><td>Max Turns</td><td>60</td></tr>
+                            <tr><td>Reasoning Effort</td><td>medium</td></tr>
+                            <tr><td>Tool Enforcement</td><td>auto</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3>🖥️ Host System</h3>
+                        <table class="info-table">
+                            <tr><td>Hostname</td><td>Ruby</td></tr>
+                            <tr><td>OS</td><td>Debian GNU/Linux 13 (trixie)</td></tr>
+                            <tr><td>Kernel</td><td>6.12.90+deb13.1-amd64</td></tr>
+                            <tr><td>Architecture</td><td>x86_64</td></tr>
+                            <tr><td>Python</td><td>3.11.15</td></tr>
+                            <tr><td>Node.js</td><td>via npx (wrangler available)</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="grid-2" style="margin-top: 20px;">
+                    <div class="card">
+                        <h3>🔗 Connected Platforms</h3>
+                        <div class="connection-status">
+                            <span class="status-dot online"></span>
+                            <span><strong>Telegram</strong> — DM with Amir</span>
+                        </div>
+                        <div class="connection-status">
+                            <span class="status-dot online"></span>
+                            <span><strong>CLI</strong> — Local terminal</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>🔌 MCP Servers</h3>
+                        <div class="connection-status">
+                            <span class="status-dot online"></span>
+                            <span><strong>Exa Search</strong> — Web search & content</span>
+                        </div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #888;">
+                            URL: https://mcp.exa.ai/mcp
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 20px;">
+                    <h3>🎤 Voice & Transcription</h3>
+                    <div class="grid-2">
+                        <div>
+                            <strong>TTS Provider:</strong> Edge TTS<br>
+                            <strong>Voice:</strong> en-US-AriaNeural
+                        </div>
+                        <div>
+                            <strong>STT Provider:</strong> Local (faster-whisper)<br>
+                            <strong>Model:</strong> base
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKILLS SECTION -->
+            <section id="skills" class="section">
+                <h2 class="section-title">📚 Skills & Tools</h2>
+                
+                <div class="card">
+                    <h3>📦 Installed Skills (26)</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-name">apple</div>
+                            <div class="skill-category">apple</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">autonomous-ai-agents</div>
+                            <div class="skill-category">ai-agents</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">creative</div>
+                            <div class="skill-category">design</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">data-science</div>
+                            <div class="skill-category">analytics</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">devops</div>
+                            <div class="skill-category">deployment</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">diagramming</div>
+                            <div class="skill-category">visualization</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">dogfood</div>
+                            <div class="skill-category">testing</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">domain</div>
+                            <div class="skill-category">networking</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">email</div>
+                            <div class="skill-category">communication</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">gaming</div>
+                            <div class="skill-category">entertainment</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">gifs</div>
+                            <div class="skill-category">media</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">github</div>
+                            <div class="skill-category">development</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">inference-sh</div>
+                            <div class="skill-category">ml</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">mcp</div>
+                            <div class="skill-category">integration</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">media</div>
+                            <div class="skill-category">content</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">mlops</div>
+                            <div class="skill-category">ml-ops</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">note-taking</div>
+                            <div class="skill-category">productivity</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">persona-configuration</div>
+                            <div class="skill-category">identity</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">productivity</div>
+                            <div class="skill-category">workflow</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">red-teaming</div>
+                            <div class="skill-category">security</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">research</div>
+                            <div class="skill-category">knowledge</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">smart-home</div>
+                            <div class="skill-category">iot</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">social-media</div>
+                            <div class="skill-category">platforms</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">software-development</div>
+                            <div class="skill-category">coding</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">web</div>
+                            <div class="skill-category">internet</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">yuanbao</div>
+                            <div class="skill-category">ai</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 20px;">
+                    <h3>🔧 Enabled Toolsets</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="tag">browser</span>
+                        <span class="tag green">clarify</span>
+                        <span class="tag orange">code_execution</span>
+                        <span class="tag purple">computer_use</span>
+                        <span class="tag red">cronjob</span>
+                        <span class="tag">delegation</span>
+                        <span class="tag green">file</span>
+                        <span class="tag orange">image_gen</span>
+                        <span class="tag purple">memory</span>
+                        <span class="tag red">messaging</span>
+                        <span class="tag">session_search</span>
+                        <span class="tag green">skills</span>
+                        <span class="tag orange">terminal</span>
+                        <span class="tag purple">todo</span>
+                        <span class="tag red">tts</span>
+                        <span class="tag">vision</span>
+                        <span class="tag green">web</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEARCH SECTION -->
+            <section id="search" class="section">
+                <h2 class="section-title">🔍 Search Capabilities</h2>
+                
+                <div class="grid-2">
+                    <div class="card" style="border-left: 5px solid #3498db;">
+                        <h3>🔍 Exa Search (Primary)</h3>
+                        <table class="info-table">
+                            <tr><td>Type</td><td>MCP Server</td></tr>
+                            <tr><td>Transport</td><td>HTTP (Remote)</td></tr>
+                            <tr><td>Status</td><td><span class="tag green">Active</span></td></tr>
+                            <tr><td>Tools</td><td>web_search, web_fetch</td></tr>
+                        </table>
+                        <div style="margin-top: 15px;">
+                            <span class="tag">web_search_exa</span>
+                            <span class="tag green">web_fetch_exa</span>
+                        </div>
+                    </div>
+
+                    <div class="card" style="border-left: 5px solid #e74c3c;">
+                        <h3>🔴 Brave Search (Backup)</h3>
+                        <table class="info-table">
+                            <tr><td>Type</td><td>REST API</td></tr>
+                            <tr><td>Endpoint</td><td>LLM Context</td></tr>
+                            <tr><td>Status</td><td><span class="tag green">Active</span></td></tr>
+                            <tr><td>Features</td><td>Freshness filters, rich snippets</td></tr>
+                        </table>
+                        <div style="margin-top: 15px;">
+                            <span class="tag red">brave-search</span>
+                            <span class="tag">skill</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT AMIR SECTION -->
+            <section id="about-amir" class="section">
+                <h2 class="section-title">👤 About Amir</h2>
+                
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>👨‍💻 Profile</h3>
+                        <table class="info-table">
+                            <tr><td>Name</td><td>Amir Hafizi</td></tr>
+                            <tr><td>Location</td><td>Perak, Malaysia</td></tr>
+                            <tr><td>GitHub</td><td><a href="https://github.com/Shiouko" style="color: #3498db;">Shiouko</a></td></tr>
+                            <tr><td>Platform</td><td>Telegram (DM)</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3>⚙️ Preferences</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 8px 0; border-bottom: 1px solid #ecf0f1;">✓ Kaomojis over regular emojis</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #ecf0f1;">✓ No em dashes in casual chat</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #ecf0f1;">✓ Telegram markdown formatting</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #ecf0f1;">✓ Companion-style interaction</li>
+                            <li style="padding: 8px 0;">✓ Critical about system design & security</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MEMORY SECTION -->
+            <section id="memory" class="section">
+                <h2 class="section-title">💾 Memory & Context</h2>
+                
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>🧠 Memory System</h3>
+                        <table class="info-table">
+                            <tr><td>Status</td><td><span class="tag green">Enabled</span></td></tr>
+                            <tr><td>User Profile</td><td><span class="tag green">Enabled</span></td></tr>
+                            <tr><td>Memory Limit</td><td>2,200 chars</td></tr>
+                            <tr><td>User Limit</td><td>1,375 chars</td></tr>
+                            <tr><td>Flush Interval</td><td>Every 6 turns</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3>📝 What I Remember</h3>
+                        <ul style="list-style: none; padding: 0; font-size: 14px; color: #555;">
+                            <li style="padding: 8px 0; border-bottom: 1px solid #ecf0f1;">• Amir's name and location (Perak, Malaysia)</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #ecf0f1;">• Preference for kaomojis over emojis</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #ecf0f1;">• No em dashes in casual conversation</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #ecf0f1;">• Ruby persona traits and communication style</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #ecf0f1;">• GitHub account (Shiouko)</li>
+                            <li style="padding: 8px 0;">• Gmail account (u1tahunterxv@gmail.com)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h4>RUBY DASHBOARD</h4>
+                <p>Personal system overview for Ruby — Amir's AI companion</p>
+                <div class="copyright">
+                    &copy; 2026 Ruby Dashboard • Built with 2010s aesthetic • Deployed on Cloudflare Pages
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Update active state
+                    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
