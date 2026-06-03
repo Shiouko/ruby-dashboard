@@ -11,7 +11,7 @@
         <div class="header-inner">
             <div>
                 <h1>RUBY DASHBOARD</h1>
-                <div class="version">Hermes Agent v0.15.1 — Scheduled Jobs</div>
+                <div class="version">Hermes Agent v0.15.1 — Cron Job Management | Updated Jun 04, 2026 05:03 MYT</div>
             </div>
             <div class="status-badge">ONLINE</div>
         </div>
@@ -30,145 +30,188 @@
     </nav>
     
     <div class="main">
-        <div class="section-header">SCHEDULED CRON JOBS — 5 ACTIVE</div>
+        <div class="section-header">SCHEDULED CRON JOBS</div>
         
         <div class="stat-row">
             <div class="stat-box highlight">
-                <div class="number">5</div>
+                <div class="number">6</div>
                 <div class="label">Active Jobs</div>
             </div>
             <div class="stat-box info">
-                <div class="number">Daily</div>
-                <div class="label">Schedule Type</div>
+                <div class="number">0</div>
+                <div class="label">Disabled Jobs</div>
             </div>
             <div class="stat-box">
-                <div class="number">05:00-06:20</div>
-                <div class="label">Run Window (MYT)</div>
+                <div class="number">5</div>
+                <div class="label">Daily Jobs</div>
+            </div>
+            <div class="stat-box warning">
+                <div class="number">1</div>
+                <div class="label">Last Error</div>
             </div>
         </div>
         
-        <div class="section-header">JOB DETAILS</div>
-        
         <div class="panel">
+            <div class="panel-header">Active Jobs</div>
             <div class="panel-body">
                 <table>
                     <tr>
-                        <th>Job ID</th>
                         <th>Name</th>
                         <th>Schedule</th>
                         <th>Next Run</th>
+                        <th>Last Run</th>
                         <th>Status</th>
                     </tr>
                     <tr>
-                        <td>b1582d547f4c</td>
-                        <td>Daily World News</td>
-                        <td>0 6 * * *</td>
-                        <td>2026-06-04 06:00 MYT</td>
-                        <td><span class="status online">Active</span></td>
-                    </tr>
-                    <tr>
-                        <td>515acd9c481c</td>
-                        <td>Daily Tech News</td>
-                        <td>10 6 * * *</td>
-                        <td>2026-06-04 06:10 MYT</td>
-                        <td><span class="status online">Active</span></td>
-                    </tr>
-                    <tr>
-                        <td>932c591d3ff3</td>
-                        <td>Daily Gaming News</td>
-                        <td>15 6 * * *</td>
-                        <td>2026-06-04 06:15 MYT</td>
-                        <td><span class="status online">Active</span></td>
-                    </tr>
-                    <tr>
-                        <td>57844788e574</td>
-                        <td>Daily Gacha News</td>
-                        <td>20 6 * * *</td>
-                        <td>2026-06-04 06:20 MYT</td>
-                        <td><span class="status online">Active</span></td>
-                    </tr>
-                    <tr>
-                        <td>b745ffabccb7</td>
                         <td>Daily Dashboard Update</td>
                         <td>0 5 * * *</td>
-                        <td>2026-06-04 05:00 MYT</td>
-                        <td><span class="status online">Active</span></td>
+                        <td>Jun 05 05:00</td>
+                        <td>Jun 03 05:04</td>
+                        <td><span class="status online">OK</span></td>
+                    </tr>
+                    <tr>
+                        <td>Daily World News</td>
+                        <td>0 6 * * *</td>
+                        <td>Jun 04 06:00</td>
+                        <td>Jun 03 06:04</td>
+                        <td><span class="status online">OK</span></td>
+                    </tr>
+                    <tr>
+                        <td>Daily Tech News</td>
+                        <td>10 6 * * *</td>
+                        <td>Jun 04 06:10</td>
+                        <td>Jun 03 06:23</td>
+                        <td><span class="status error">ERROR</span></td>
+                    </tr>
+                    <tr>
+                        <td>Daily Gaming News</td>
+                        <td>15 6 * * *</td>
+                        <td>Jun 04 06:15</td>
+                        <td>Jun 03 06:24</td>
+                        <td><span class="status online">OK</span></td>
+                    </tr>
+                    <tr>
+                        <td>Daily Gacha News</td>
+                        <td>20 6 * * *</td>
+                        <td>Jun 04 06:20</td>
+                        <td>Jun 03 06:24</td>
+                        <td><span class="status online">OK</span></td>
+                    </tr>
+                    <tr>
+                        <td>YT Pulse Dashboard Refresh</td>
+                        <td>0 7 * * *</td>
+                        <td>Jun 04 07:00</td>
+                        <td>Never</td>
+                        <td><span class="status warning">PENDING</span></td>
                     </tr>
                 </table>
             </div>
         </div>
         
-        <div class="section-header">JOB DESCRIPTIONS</div>
+        <div class="section-header">CRON JOB DETAILS</div>
+        
+        <div class="panel">
+            <div class="panel-header">Daily Dashboard Update</div>
+            <div class="panel-body">
+                <table>
+                    <tr><th>ID</th><td>b745ffabccb7</td></tr>
+                    <tr><th>Schedule</th><td>0 5 * * * (Every day at 5:00 AM MYT)</td></tr>
+                    <tr><th>Delivery</th><td>origin</td></tr>
+                    <tr><th>Repeat</th><td>Indefinite</td></tr>
+                    <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
+                </table>
+            </div>
+        </div>
         
         <div class="panel">
             <div class="panel-header">Daily World News</div>
             <div class="panel-body">
-                <p>Fetches and delivers the latest world news headlines every morning at 6:00 AM MYT. Covers major international events, politics, and breaking stories.</p>
-                <p class="mt-8"><strong>Last run:</strong> 2026-06-03 06:01 MYT — OK</p>
+                <table>
+                    <tr><th>ID</th><td>b1582d547f4c</td></tr>
+                    <tr><th>Schedule</th><td>0 6 * * * (Every day at 6:00 AM MYT)</td></tr>
+                    <tr><th>Delivery</th><td>origin</td></tr>
+                    <tr><th>Repeat</th><td>Indefinite</td></tr>
+                    <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
+                </table>
             </div>
         </div>
         
         <div class="panel">
             <div class="panel-header">Daily Tech News</div>
             <div class="panel-body">
-                <p>Delivers technology news and updates at 6:10 AM MYT. Covers AI, software development, gadgets, and tech industry developments.</p>
-                <p class="mt-8"><strong>Last run:</strong> 2026-06-03 06:11 MYT — OK</p>
+                <table>
+                    <tr><th>ID</th><td>515acd9c481c</td></tr>
+                    <tr><th>Schedule</th><td>10 6 * * * (Every day at 6:10 AM MYT)</td></tr>
+                    <tr><th>Delivery</th><td>origin</td></tr>
+                    <tr><th>Repeat</th><td>Indefinite</td></tr>
+                    <tr><th>Status</th><td><span class="status error">Error</span></td></tr>
+                    <tr><th>Last Error</th><td>RuntimeError: [Errno 32] Broken pipe</td></tr>
+                </table>
             </div>
         </div>
         
         <div class="panel">
             <div class="panel-header">Daily Gaming News</div>
             <div class="panel-body">
-                <p>Gaming news briefing at 6:15 AM MYT. Covers game releases, updates, esports, and gaming industry news.</p>
-                <p class="mt-8"><strong>Last run:</strong> 2026-06-03 06:16 MYT — OK</p>
+                <table>
+                    <tr><th>ID</th><td>932c591d3ff3</td></tr>
+                    <tr><th>Schedule</th><td>15 6 * * * (Every day at 6:15 AM MYT)</td></tr>
+                    <tr><th>Delivery</th><td>origin</td></tr>
+                    <tr><th>Repeat</th><td>Indefinite</td></tr>
+                    <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
+                </table>
             </div>
         </div>
         
         <div class="panel">
             <div class="panel-header">Daily Gacha News</div>
             <div class="panel-body">
-                <p>Gacha game news and updates at 6:20 AM MYT. Covers Genshin Impact, Honkai, and other gacha game announcements and events.</p>
-                <p class="mt-8"><strong>Last run:</strong> 2026-06-03 06:21 MYT — OK</p>
+                <table>
+                    <tr><th>ID</th><td>57844788e574</td></tr>
+                    <tr><th>Schedule</th><td>20 6 * * * (Every day at 6:20 AM MYT)</td></tr>
+                    <tr><th>Delivery</th><td>origin</td></tr>
+                    <tr><th>Repeat</th><td>Indefinite</td></tr>
+                    <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
+                </table>
             </div>
         </div>
         
         <div class="panel">
-            <div class="panel-header">Daily Dashboard Update</div>
-            <div class="panel-body">
-                <p>Automated daily update of the Ruby Dashboard with fresh metrics, session data, and system insights. Runs at 5:00 AM MYT before the news delivery cycle.</p>
-                <p class="mt-8"><strong>Last run:</strong> 2026-06-03 05:03 MYT — OK</p>
-            </div>
-        </div>
-        
-        <div class="section-header">DELIVERY SETTINGS</div>
-        
-        <div class="panel">
+            <div class="panel-header">YT Pulse Dashboard Refresh</div>
             <div class="panel-body">
                 <table>
-                    <tr>
-                        <th>Setting</th>
-                        <th>Value</th>
-                    </tr>
-                    <tr>
-                        <td>Delivery Target</td>
-                        <td>Origin (Telegram DM with Amir)</td>
-                    </tr>
-                    <tr>
-                        <td>Repeat</td>
-                        <td>Indefinite (∞)</td>
-                    </tr>
-                    <tr>
-                        <td>Model</td>
-                        <td>mimo-v2.5 (inherited)</td>
-                    </tr>
+                    <tr><th>ID</th><td>4a09ce4f49e7</td></tr>
+                    <tr><th>Schedule</th><td>0 7 * * * (Every day at 7:00 AM MYT)</td></tr>
+                    <tr><th>Delivery</th><td>origin</td></tr>
+                    <tr><th>Repeat</th><td>Indefinite</td></tr>
+                    <tr><th>Status</th><td><span class="status warning">Pending First Run</span></td></tr>
                 </table>
+            </div>
+        </div>
+        
+        <div class="section-header">CRON SCHEDULE VISUALIZATION</div>
+        
+        <div class="panel">
+            <div class="panel-body">
+                <pre style="font-family: monospace; font-size: 11px; line-height: 1.6; color: #333;">
+Time (MYT)  Job
+─────────────────────────────────────────
+05:00       ▓▓▓▓▓▓▓▓  Daily Dashboard Update
+06:00       ▓▓▓▓▓▓▓▓  Daily World News
+06:10       ▓▓▓▓▓▓▓▓  Daily Tech News
+06:15       ▓▓▓▓▓▓▓▓  Daily Gaming News
+06:20       ▓▓▓▓▓▓▓▓  Daily Gacha News
+07:00       ▓▓▓▓▓▓▓▓  YT Pulse Dashboard Refresh
+─────────────────────────────────────────
+Total: 6 active jobs | 0 disabled
+                </pre>
             </div>
         </div>
     </div>
     
     <div class="footer">
         <p>RUBY DASHBOARD — Personal system overview for Ruby, Amir's AI companion</p>
-        <p style="margin-top: 8px;">Last updated: <span id="last-updated"></span> | Built with 2005-era web aesthetics</p>
+        <p style="margin-top: 8px;">Last updated: Jun 04, 2026 05:03 MYT | Built with 2005-era web aesthetics</p>
     </div>
     
     <script src="../script.js"></script>
