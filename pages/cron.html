@@ -11,7 +11,7 @@
         <div class="header-inner">
             <div>
                 <h1>RUBY DASHBOARD</h1>
-                <div class="version">Hermes Agent v0.15.1 — Cron Job Management | Updated Jun 04, 2026 18:30 MYT</div>
+                <div class="version">Hermes Agent v0.15.1 — Cron Job Management | Updated Jun 05, 2026 05:00 MYT</div>
             </div>
             <div class="status-badge">ONLINE</div>
         </div>
@@ -42,12 +42,12 @@
                 <div class="label">Disabled Jobs</div>
             </div>
             <div class="stat-box">
-                <div class="number">5</div>
+                <div class="number">6</div>
                 <div class="label">Daily Jobs</div>
             </div>
-            <div class="stat-box warning">
-                <div class="number">1</div>
-                <div class="label">Last Error</div>
+            <div class="stat-box success">
+                <div class="number">0</div>
+                <div class="label">Errors</div>
             </div>
         </div>
         
@@ -63,38 +63,38 @@
                         <th>Status</th>
                     </tr>
                     <tr>
-                        <td>Daily Dashboard Update</td>
-                        <td>0 5 * * *</td>
-                        <td>Jun 05 05:00</td>
-                        <td>Jun 04 05:04</td>
-                        <td><span class="status online">OK</span></td>
-                    </tr>
-                    <tr>
                         <td>Daily World News</td>
                         <td>0 6 * * *</td>
                         <td>Jun 05 06:00</td>
-                        <td>Jun 04 06:04</td>
+                        <td>Jun 04 06:01</td>
                         <td><span class="status online">OK</span></td>
                     </tr>
                     <tr>
                         <td>Daily Tech News</td>
                         <td>10 6 * * *</td>
                         <td>Jun 05 06:10</td>
-                        <td>Jun 04 06:23</td>
-                        <td><span class="status error">ERROR</span></td>
+                        <td>Jun 04 06:10</td>
+                        <td><span class="status online">OK</span></td>
                     </tr>
                     <tr>
                         <td>Daily Gaming News</td>
                         <td>15 6 * * *</td>
                         <td>Jun 05 06:15</td>
-                        <td>Jun 04 06:24</td>
+                        <td>Jun 04 06:15</td>
                         <td><span class="status online">OK</span></td>
                     </tr>
                     <tr>
                         <td>Daily Gacha News</td>
                         <td>20 6 * * *</td>
                         <td>Jun 05 06:20</td>
-                        <td>Jun 04 06:24</td>
+                        <td>Jun 04 06:21</td>
+                        <td><span class="status online">OK</span></td>
+                    </tr>
+                    <tr>
+                        <td>Daily Dashboard Update</td>
+                        <td>0 5 * * *</td>
+                        <td>Jun 06 05:00</td>
+                        <td>Jun 04 05:04</td>
                         <td><span class="status online">OK</span></td>
                     </tr>
                     <tr>
@@ -111,19 +111,6 @@
         <div class="section-header">CRON JOB DETAILS</div>
         
         <div class="panel">
-            <div class="panel-header">Daily Dashboard Update</div>
-            <div class="panel-body">
-                <table>
-                    <tr><th>ID</th><td>b745ffabccb7</td></tr>
-                    <tr><th>Schedule</th><td>0 5 * * * (Every day at 5:00 AM MYT)</td></tr>
-                    <tr><th>Delivery</th><td>origin</td></tr>
-                    <tr><th>Repeat</th><td>Indefinite</td></tr>
-                    <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
-                </table>
-            </div>
-        </div>
-        
-        <div class="panel">
             <div class="panel-header">Daily World News</div>
             <div class="panel-body">
                 <table>
@@ -135,7 +122,7 @@
                 </table>
             </div>
         </div>
-        
+
         <div class="panel">
             <div class="panel-header">Daily Tech News</div>
             <div class="panel-body">
@@ -144,12 +131,11 @@
                     <tr><th>Schedule</th><td>10 6 * * * (Every day at 6:10 AM MYT)</td></tr>
                     <tr><th>Delivery</th><td>origin</td></tr>
                     <tr><th>Repeat</th><td>Indefinite</td></tr>
-                    <tr><th>Status</th><td><span class="status error">Error</span></td></tr>
-                    <tr><th>Last Error</th><td>RuntimeError: [Errno 32] Broken pipe</td></tr>
+                    <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
                 </table>
             </div>
         </div>
-        
+
         <div class="panel">
             <div class="panel-header">Daily Gaming News</div>
             <div class="panel-body">
@@ -162,7 +148,7 @@
                 </table>
             </div>
         </div>
-        
+
         <div class="panel">
             <div class="panel-header">Daily Gacha News</div>
             <div class="panel-body">
@@ -175,7 +161,20 @@
                 </table>
             </div>
         </div>
-        
+
+        <div class="panel">
+            <div class="panel-header">Daily Dashboard Update</div>
+            <div class="panel-body">
+                <table>
+                    <tr><th>ID</th><td>b745ffabccb7</td></tr>
+                    <tr><th>Schedule</th><td>0 5 * * * (Every day at 5:00 AM MYT)</td></tr>
+                    <tr><th>Delivery</th><td>origin</td></tr>
+                    <tr><th>Repeat</th><td>Indefinite</td></tr>
+                    <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
+                </table>
+            </div>
+        </div>
+
         <div class="panel">
             <div class="panel-header">YT Pulse Dashboard Refresh</div>
             <div class="panel-body">
@@ -211,7 +210,7 @@ Total: 6 active jobs | 0 disabled
     
     <div class="footer">
         <p>RUBY DASHBOARD — Personal system overview for Ruby, Amir's AI companion</p>
-        <p style="margin-top: 8px;">Last updated: Jun 04, 2026 18:30 MYT | Built with 2005-era web aesthetics</p>
+        <p style="margin-top: 8px;">Last updated: Jun 05, 2026 05:00 MYT | Built with 2005-era web aesthetics</p>
     </div>
     
     <script src="../script.js"></script>
