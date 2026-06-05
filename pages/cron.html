@@ -12,7 +12,7 @@
         <div class="header-inner">
             <div>
                 <h1>RUBY DASHBOARD</h1>
-                <div class="version">Hermes Agent v0.15.1 — Cron Job Management | Updated Jun 05, 2026 05:00 MYT</div>
+                <div class="version">Hermes Agent v0.15.1 — Cron Job Management | Updated Jun 06, 2026 05:00 MYT</div>
             </div>
             <div class="status-badge">ONLINE</div>
         </div>
@@ -32,11 +32,11 @@
     </nav>
     
     <div class="main">
-        <div class="section-header">SCHEDULED CRON JOBS</div>
+        <div class="section-header">SCHEDULED CRON JOBS — 9 ACTIVE</div>
         
         <div class="stat-row">
             <div class="stat-box highlight">
-                <div class="number">6</div>
+                <div class="number">9</div>
                 <div class="label">Active Jobs</div>
             </div>
             <div class="stat-box info">
@@ -46,6 +46,10 @@
             <div class="stat-box">
                 <div class="number">6</div>
                 <div class="label">Daily Jobs</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">3</div>
+                <div class="label">Recurring Jobs</div>
             </div>
             <div class="stat-box success">
                 <div class="number">0</div>
@@ -67,43 +71,64 @@
                     <tr>
                         <td>Daily World News</td>
                         <td>0 6 * * *</td>
-                        <td>Jun 05 06:00</td>
-                        <td>Jun 04 06:01</td>
+                        <td>Jun 06 06:00</td>
+                        <td>Jun 05 06:01</td>
                         <td><span class="status online">OK</span></td>
                     </tr>
                     <tr>
                         <td>Daily Tech News</td>
                         <td>10 6 * * *</td>
+                        <td>Jun 06 06:10</td>
                         <td>Jun 05 06:10</td>
-                        <td>Jun 04 06:10</td>
                         <td><span class="status online">OK</span></td>
                     </tr>
                     <tr>
                         <td>Daily Gaming News</td>
                         <td>15 6 * * *</td>
-                        <td>Jun 05 06:15</td>
-                        <td>Jun 04 06:15</td>
+                        <td>Jun 06 06:15</td>
+                        <td>Jun 05 06:16</td>
                         <td><span class="status online">OK</span></td>
                     </tr>
                     <tr>
                         <td>Daily Gacha News</td>
                         <td>20 6 * * *</td>
-                        <td>Jun 05 06:20</td>
-                        <td>Jun 04 06:21</td>
+                        <td>Jun 06 06:20</td>
+                        <td>Jun 05 06:21</td>
                         <td><span class="status online">OK</span></td>
                     </tr>
                     <tr>
                         <td>Daily Dashboard Update</td>
                         <td>0 5 * * *</td>
-                        <td>Jun 06 05:00</td>
-                        <td>Jun 04 05:04</td>
+                        <td>Jun 07 05:00</td>
+                        <td>Jun 05 05:04</td>
                         <td><span class="status online">OK</span></td>
                     </tr>
                     <tr>
                         <td>YT Pulse Dashboard Refresh</td>
                         <td>0 7 * * *</td>
+                        <td>Jun 06 07:00</td>
                         <td>Jun 05 07:00</td>
-                        <td>Jun 04 07:01</td>
+                        <td><span class="status online">OK</span></td>
+                    </tr>
+                    <tr>
+                        <td>Session Auto-Summarizer</td>
+                        <td>every 240m</td>
+                        <td>~4h</td>
+                        <td>Jun 06 02:22</td>
+                        <td><span class="status online">OK</span></td>
+                    </tr>
+                    <tr>
+                        <td>Vault Auto-Committer</td>
+                        <td>every 60m</td>
+                        <td>~1h</td>
+                        <td>Jun 06 04:14</td>
+                        <td><span class="status online">OK</span></td>
+                    </tr>
+                    <tr>
+                        <td>Session Journal Populator</td>
+                        <td>every 360m</td>
+                        <td>~6h</td>
+                        <td>running</td>
                         <td><span class="status online">OK</span></td>
                     </tr>
                 </table>
@@ -189,6 +214,45 @@
                 </table>
             </div>
         </div>
+
+        <div class="panel">
+            <div class="panel-header">Session Auto-Summarizer</div>
+            <div class="panel-body">
+                <table>
+                    <tr><th>ID</th><td>45abf82f0e15</td></tr>
+                    <tr><th>Schedule</th><td>every 240m (Every 4 hours)</td></tr>
+                    <tr><th>Delivery</th><td>origin</td></tr>
+                    <tr><th>Repeat</th><td>Indefinite</td></tr>
+                    <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">Vault Auto-Committer</div>
+            <div class="panel-body">
+                <table>
+                    <tr><th>ID</th><td>240361972bf9</td></tr>
+                    <tr><th>Schedule</th><td>every 60m (Every hour)</td></tr>
+                    <tr><th>Delivery</th><td>origin</td></tr>
+                    <tr><th>Repeat</th><td>Indefinite</td></tr>
+                    <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">Session Journal Populator</div>
+            <div class="panel-body">
+                <table>
+                    <tr><th>ID</th><td>e5144eeb9a40</td></tr>
+                    <tr><th>Schedule</th><td>every 360m (Every 6 hours)</td></tr>
+                    <tr><th>Delivery</th><td>origin</td></tr>
+                    <tr><th>Repeat</th><td>Indefinite</td></tr>
+                    <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
+                </table>
+            </div>
+        </div>
         
         <div class="section-header">CRON SCHEDULE VISUALIZATION</div>
         
@@ -203,8 +267,12 @@ Time (MYT)  Job
 06:15       ▓▓▓▓▓▓▓▓  Daily Gaming News
 06:20       ▓▓▓▓▓▓▓▓  Daily Gacha News
 07:00       ▓▓▓▓▓▓▓▓  YT Pulse Dashboard Refresh
+───── Recurring (auto) ─────
+every 1h    ░░░░░░░░  Vault Auto-Committer
+every 4h    ░░░░░░░░  Session Auto-Summarizer
+every 6h    ░░░░░░░░  Session Journal Populator
 ─────────────────────────────────────────
-Total: 6 active jobs | 0 disabled
+Total: 9 active jobs | 0 disabled
                 </pre>
             </div>
         </div>
@@ -212,7 +280,7 @@ Total: 6 active jobs | 0 disabled
     
     <div class="footer">
         <p>RUBY DASHBOARD — Personal system overview for Ruby, Amir's AI companion</p>
-        <p style="margin-top: 8px;">Last updated: Jun 05, 2026 05:00 MYT | Built with 2005-era web aesthetics</p>
+        <p style="margin-top: 8px;">Last updated: Jun 06, 2026 05:00 MYT | Built with 2005-era web aesthetics</p>
     </div>
     
     <script src="../script.js"></script>
