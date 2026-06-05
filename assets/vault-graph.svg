@@ -1,0 +1,124 @@
+<!-- Ruby's Vault Knowledge Graph — SVG Visualization -->
+<!-- Generated Jun 05, 2026 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" style="background: #F8F8F8; border: 1px solid #CCCCCC;">
+  <defs>
+    <style>
+      .node-label { font-family: Tahoma, Arial, sans-serif; font-size: 10px; fill: #333333; text-anchor: middle; }
+      .edge { stroke: #B0C4DE; stroke-width: 1.5; opacity: 0.6; }
+      .node-circle { stroke: #FFFFFF; stroke-width: 2; cursor: pointer; }
+      .node-circle:hover { stroke: #336699; stroke-width: 3; filter: brightness(1.1); }
+      .legend-text { font-family: Tahoma, Arial, sans-serif; font-size: 9px; fill: #666666; }
+      .title-text { font-family: Tahoma, Arial, sans-serif; font-size: 14px; fill: #003366; font-weight: bold; }
+    </style>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="25" text-anchor="middle" class="title-text">🧠 VAULT KNOWLEDGE GRAPH</text>
+  <text x="400" y="40" text-anchor="middle" class="legend-text">12 notes • 20 connections • Hover to highlight</text>
+  
+  <!-- Edges (connections between notes) -->
+  <!-- Index connections -->
+  <line x1="400" y1="80" x2="200" y2="200" class="edge" data-from="index" data-to="amir"/>
+  <line x1="400" y1="80" x2="600" y2="200" class="edge" data-from="index" data-to="ruby"/>
+  <line x1="400" y1="80" x2="400" y2="200" class="edge" data-from="index" data-to="projects-overview"/>
+  <line x1="400" y1="80" x2="300" y2="350" class="edge" data-from="index" data-to="learnings-overview"/>
+  <line x1="400" y1="80" x2="500" y2="350" class="edge" data-from="index" data-to="sessions"/>
+  
+  <!-- Amir connections -->
+  <line x1="200" y1="200" x2="150" y2="350" class="edge" data-from="amir" data-to="ruby-dashboard"/>
+  <line x1="200" y1="200" x2="250" y2="450" class="edge" data-from="amir" data-to="warframe"/>
+  <line x1="200" y1="200" x2="100" y2="450" class="edge" data-from="amir" data-to="yt-pulse"/>
+  
+  <!-- Ruby connections -->
+  <line x1="600" y1="200" x2="150" y2="350" class="edge" data-from="ruby" data-to="ruby-dashboard"/>
+  <line x1="600" y1="200" x2="250" y2="450" class="edge" data-from="ruby" data-to="warframe"/>
+  <line x1="600" y1="200" x2="100" y2="450" class="edge" data-from="ruby" data-to="yt-pulse"/>
+  <line x1="600" y1="200" x2="350" y2="450" class="edge" data-from="ruby" data-to="tool-quirks"/>
+  <line x1="600" y1="200" x2="450" y2="450" class="edge" data-from="ruby" data-to="debugging"/>
+  
+  <!-- Projects Overview connections -->
+  <line x1="400" y1="200" x2="150" y2="350" class="edge" data-from="projects-overview" data-to="ruby-dashboard"/>
+  <line x1="400" y1="200" x2="250" y2="450" class="edge" data-from="projects-overview" data-to="warframe"/>
+  <line x1="400" y1="200" x2="100" y2="450" class="edge" data-from="projects-overview" data-to="yt-pulse"/>
+  
+  <!-- Learnings Overview connections -->
+  <line x1="300" y1="350" x2="350" y2="450" class="edge" data-from="learnings-overview" data-to="tool-quirks"/>
+  <line x1="300" y1="350" x2="450" y2="450" class="edge" data-from="learnings-overview" data-to="debugging"/>
+  
+  <!-- Session connections -->
+  <line x1="500" y1="350" x2="150" y2="350" class="edge" data-from="sessions" data-to="ruby-dashboard"/>
+  <line x1="500" y1="350" x2="200" y2="200" class="edge" data-from="sessions" data-to="amir"/>
+  
+  <!-- Nodes -->
+  <!-- Index (Root) -->
+  <circle cx="400" cy="80" r="20" fill="#336699" class="node-circle" data-id="index"/>
+  <text x="400" y="84" class="node-label" fill="#FFFFFF" font-weight="bold">I</text>
+  
+  <!-- People -->
+  <circle cx="200" cy="200" r="18" fill="#009900" class="node-circle" data-id="amir"/>
+  <text x="200" y="204" class="node-label" fill="#FFFFFF">A</text>
+  
+  <circle cx="600" cy="200" r="18" fill="#FF6699" class="node-circle" data-id="ruby"/>
+  <text x="600" y="204" class="node-label" fill="#FFFFFF">R</text>
+  
+  <!-- Projects Overview -->
+  <circle cx="400" cy="200" r="16" fill="#FF9900" class="node-circle" data-id="projects-overview"/>
+  <text x="400" y="204" class="node-label" fill="#FFFFFF">P</text>
+  
+  <!-- Individual Projects -->
+  <circle cx="150" cy="350" r="14" fill="#FFCC66" class="node-circle" data-id="ruby-dashboard"/>
+  <text x="150" y="354" class="node-label" font-size="8">RD</text>
+  
+  <circle cx="250" cy="450" r="14" fill="#FFCC66" class="node-circle" data-id="warframe"/>
+  <text x="250" y="454" class="node-label" font-size="8">WF</text>
+  
+  <circle cx="100" cy="450" r="14" fill="#FFCC66" class="node-circle" data-id="yt-pulse"/>
+  <text x="100" y="454" class="node-label" font-size="8">YT</text>
+  
+  <!-- Learnings Overview -->
+  <circle cx="300" cy="350" r="16" fill="#9966CC" class="node-circle" data-id="learnings-overview"/>
+  <text x="300" y="354" class="node-label" fill="#FFFFFF">L</text>
+  
+  <!-- Individual Learnings -->
+  <circle cx="350" cy="450" r="12" fill="#CC99FF" class="node-circle" data-id="tool-quirks"/>
+  <text x="350" y="454" class="node-label" font-size="8">TQ</text>
+  
+  <circle cx="450" cy="450" r="12" fill="#CC99FF" class="node-circle" data-id="debugging"/>
+  <text x="450" y="454" class="node-label" font-size="8">DP</text>
+  
+  <!-- Sessions -->
+  <circle cx="500" cy="350" r="14" fill="#66CCCC" class="node-circle" data-id="sessions"/>
+  <text x="500" y="354" class="node-label" fill="#FFFFFF">S</text>
+  
+  <!-- Templates -->
+  <circle cx="650" cy="450" r="12" fill="#99CCCC" class="node-circle" data-id="templates"/>
+  <text x="650" y="454" class="node-label" fill="#FFFFFF">T</text>
+  
+  <!-- Legend -->
+  <rect x="620" y="60" width="170" height="130" fill="#FFFFFF" stroke="#CCCCCC" rx="4"/>
+  <text x="630" y="80" class="legend-text" font-weight="bold">Legend:</text>
+  <circle cx="640" cy="95" r="6" fill="#336699"/>
+  <text x="655" y="98" class="legend-text">Index (Root)</text>
+  <circle cx="640" cy="115" r="6" fill="#009900"/>
+  <text x="655" y="118" class="legend-text">People</text>
+  <circle cx="640" cy="135" r="6" fill="#FF9900"/>
+  <text x="655" y="138" class="legend-text">Projects</text>
+  <circle cx="640" cy="155" r="6" fill="#9966CC"/>
+  <text x="655" y="158" class="legend-text">Learnings</text>
+  <circle cx="640" cy="175" r="6" fill="#66CCCC"/>
+  <text x="655" y="178" class="legend-text">Sessions</text>
+  
+  <!-- Node Labels (positioned near nodes) -->
+  <text x="400" y="55" class="node-label" font-weight="bold">Index</text>
+  <text x="200" y="230" class="node-label">Amir</text>
+  <text x="600" y="230" class="node-label">Ruby</text>
+  <text x="400" y="230" class="node-label">Projects</text>
+  <text x="150" y="380" class="node-label" font-size="8">Ruby Dashboard</text>
+  <text x="250" y="480" class="node-label" font-size="8">Warframe</text>
+  <text x="100" y="480" class="node-label" font-size="8">YT Pulse</text>
+  <text x="300" y="380" class="node-label">Learnings</text>
+  <text x="350" y="480" class="node-label" font-size="8">Tool Quirks</text>
+  <text x="450" y="480" class="node-label" font-size="8">Debugging</text>
+  <text x="500" y="380" class="node-label">Sessions</text>
+  <text x="650" y="480" class="node-label" font-size="8">Templates</text>
+</svg>
