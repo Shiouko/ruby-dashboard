@@ -6,6 +6,65 @@
     <title>Projects — Ruby Dashboard</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="stylesheet" href="../styles.css">
+    <style>
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .project-card {
+            border: 1px solid #333;
+            background: #1a1a2e;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color 0.2s;
+        }
+        .project-card:hover {
+            border-color: #e94560;
+        }
+        .project-card h3 {
+            color: #e94560;
+            margin: 0 0 8px 0;
+            font-family: monospace;
+            font-size: 16px;
+        }
+        .project-card p {
+            color: #aaa;
+            margin: 0 0 12px 0;
+            font-size: 12px;
+        }
+        .project-card .tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .project-card .links {
+            margin-top: auto;
+        }
+        .project-card .links a {
+            font-size: 11px;
+            font-family: monospace;
+        }
+        /* Featured project spans full width */
+        .project-card.featured {
+            grid-column: 1 / -1;
+        }
+        .project-card.featured h3 {
+            font-size: 20px;
+        }
+        .project-card.featured p {
+            font-size: 13px;
+        }
+        @media (max-width: 600px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="header">
@@ -35,79 +94,75 @@
     <div class="main">
         <div class="section-header">PROJECTS</div>
 
-        <!-- Ruby Dashboard -->
-        <div class="panel" style="margin-bottom: 16px;">
-            <div style="padding: 16px;">
-                <h3 style="color: #e94560; margin: 0 0 8px 0; font-family: monospace;">Ruby Dashboard</h3>
-                <p style="color: #aaa; margin: 0 0 8px 0; font-size: 12px;">Personal system overview for Ruby</p>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+        <div class="projects-grid">
+            <!-- Ruby Dashboard — Featured -->
+            <div class="project-card featured">
+                <h3>Ruby Dashboard</h3>
+                <p>Personal system overview for Ruby</p>
+                <div class="tags">
                     <span class="tag green">Live</span>
                     <span class="tag">HTML</span>
                     <span class="tag">CSS</span>
                     <span class="tag">Hermes Agent data</span>
                 </div>
-                <div>
-                    <a href="https://master.ruby-dashboard.pages.dev" target="_blank" style="color: #e94560; font-size: 11px; font-family: monospace;">LIVE SITE →</a>
+                <div class="links">
+                    <a href="https://master.ruby-dashboard.pages.dev" target="_blank" style="color: #e94560;">LIVE SITE →</a>
                     <span style="color: #666; margin: 0 8px;">|</span>
-                    <a href="https://github.com/Shiouko/ruby-dashboard" target="_blank" style="color: #aaa; font-size: 11px; font-family: monospace;">SOURCE →</a>
+                    <a href="https://github.com/Shiouko/ruby-dashboard" target="_blank" style="color: #aaa;">SOURCE →</a>
                 </div>
             </div>
-        </div>
 
-        <!-- Flappy Bird -->
-        <div class="panel" style="margin-bottom: 16px;">
-            <div style="padding: 16px;">
-                <h3 style="color: #e94560; margin: 0 0 8px 0; font-family: monospace;">Flappy Bird</h3>
-                <p style="color: #aaa; margin: 0 0 8px 0; font-size: 12px;">Classic Flappy Bird clone</p>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+            <!-- Flappy Bird -->
+            <div class="project-card">
+                <h3>Flappy Bird</h3>
+                <p>Classic Flappy Bird clone</p>
+                <div class="tags">
                     <span class="tag green">Live</span>
                     <span class="tag">HTML5 Canvas</span>
                     <span class="tag">JavaScript</span>
                 </div>
-                <div>
-                    <a href="https://flappy-bird-8sn.pages.dev" target="_blank" style="color: #e94560; font-size: 11px; font-family: monospace;">LIVE SITE →</a>
+                <div class="links">
+                    <a href="https://flappy-bird-8sn.pages.dev" target="_blank" style="color: #e94560;">LIVE SITE →</a>
                     <span style="color: #666; margin: 0 8px;">|</span>
-                    <a href="https://github.com/Shiouko/flappy-bird" target="_blank" style="color: #aaa; font-size: 11px; font-family: monospace;">SOURCE →</a>
+                    <a href="https://github.com/Shiouko/flappy-bird" target="_blank" style="color: #aaa;">SOURCE →</a>
                 </div>
             </div>
-        </div>
 
-        <!-- YT Pulse -->
-        <div class="panel" style="margin-bottom: 16px;">
-            <div style="padding: 16px;">
-                <h3 style="color: #e94560; margin: 0 0 8px 0; font-family: monospace;">YT Pulse</h3>
-                <p style="color: #aaa; margin: 0 0 8px 0; font-size: 12px;">YouTube analytics and subscription dashboard</p>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+            <!-- YT Pulse -->
+            <div class="project-card">
+                <h3>YT Pulse</h3>
+                <p>YouTube analytics and subscription dashboard</p>
+                <div class="tags">
                     <span class="tag green">Live</span>
                     <span class="tag">Python</span>
                     <span class="tag">HTML</span>
                 </div>
-                <div>
-                    <a href="https://yt-pulse-asb.pages.dev" target="_blank" style="color: #e94560; font-size: 11px; font-family: monospace;">LIVE SITE →</a>
+                <div class="links">
+                    <a href="https://yt-pulse-asb.pages.dev" target="_blank" style="color: #e94560;">LIVE SITE →</a>
                     <span style="color: #666; margin: 0 8px;">|</span>
-                    <a href="https://github.com/Shiouko/yt-pulse" target="_blank" style="color: #aaa; font-size: 11px; font-family: monospace;">SOURCE →</a>
+                    <a href="https://github.com/Shiouko/yt-pulse" target="_blank" style="color: #aaa;">SOURCE →</a>
                 </div>
             </div>
-        </div>
 
-        <!-- Ruby Retro -->
-        <div class="panel" style="margin-bottom: 16px;">
-            <div style="padding: 16px;">
-                <h3 style="color: #e94560; margin: 0 0 8px 0; font-family: monospace;">Ruby Retro</h3>
-                <p style="color: #aaa; margin: 0 0 8px 0; font-size: 12px;">Retro-themed dashboard variant</p>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+            <!-- Ruby Retro -->
+            <div class="project-card" style="grid-column: 1 / -1;">
+                <h3>Ruby Retro</h3>
+                <p>Retro-themed dashboard variant</p>
+                <div class="tags">
                     <span class="tag green">Live</span>
                     <span class="tag">HTML</span>
                     <span class="tag">CSS</span>
                 </div>
-                <div>
-                    <a href="https://ruby-retro.pages.dev" target="_blank" style="color: #e94560; font-size: 11px; font-family: monospace;">LIVE SITE →</a>
+                <div class="links">
+                    <a href="https://ruby-retro.pages.dev" target="_blank" style="color: #e94560;">LIVE SITE →</a>
                 </div>
             </div>
         </div>
 
-        <p>RUBY DASHBOARD — Personal system overview for Ruby, Amir's AI companion</p>
-        <p style="margin-top: 8px;">Last updated: Jun 06, 2026 18:15 MYT | Built with 2005-era web aesthetics</p>
+        <div class="footer" style="margin-top: 24px;">
+            <p>RUBY DASHBOARD — Personal system overview for Ruby, Amir's AI companion</p>
+            <p style="margin-top: 8px;">Last updated: Jun 06, 2026 18:30 MYT | Built with 2005-era web aesthetics</p>
+        </div>
     </div>
     
     <script src="../script.js"></script>
