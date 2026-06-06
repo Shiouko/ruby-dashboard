@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250">
+  <rect width="400" height="250" fill="#1a1a2e"/>
+  <rect x="0" y="0" width="400" height="40" fill="#0f3460"/>
+  <text x="20" y="28" fill="#e94560" font-family="monospace" font-size="14" font-weight="bold">RUBY-DASHBOARD</text>
+  <circle cx="370" cy="20" r="6" fill="#4ade80"/>
+  <rect x="20" y="60" width="360" height="8" rx="4" fill="#0f3460" opacity="0.5"/>
+  <rect x="20" y="80" width="280" height="8" rx="4" fill="#0f3460" opacity="0.3"/>
+  <rect x="20" y="100" width="320" height="8" rx="4" fill="#0f3460" opacity="0.4"/>
+  <rect x="20" y="130" width="170" height="100" rx="8" fill="#0f3460" opacity="0.3"/>
+  <rect x="210" y="130" width="170" height="100" rx="8" fill="#0f3460" opacity="0.3"/>
+  <text x="200" y="185" fill="#e94560" font-family="monospace" font-size="11" text-anchor="middle" opacity="0.7">LIVE SITE</text>
+</svg>
