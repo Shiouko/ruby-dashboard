@@ -7,216 +7,110 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="stylesheet" href="../styles.css">
     <style>
-        /* ── Collage Layout ── */
-        .collage {
+        /* ── Collage Grid — retro 2005 style ── */
+        .projects-collage {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-auto-rows: minmax(180px, auto);
-            gap: 18px;
-            margin-top: 16px;
-            padding: 8px;
+            grid-auto-rows: auto;
+            gap: 12px;
+            margin-top: 12px;
         }
 
-        .collage-card {
-            position: relative;
-            background: #fefefe;
-            border: 2px solid #ccc;
-            padding: 22px 20px 18px;
+        .project-card {
+            background-color: #FFFFFF;
+            border: 1px solid #CCCCCC;
+            padding: 14px;
             display: flex;
             flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            cursor: default;
-            overflow: hidden;
+            transition: background-color 0.15s;
         }
 
-        /* Subtle paper texture via gradient */
-        .collage-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            opacity: 0.04;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 2px,
-                rgba(0,0,0,0.15) 2px,
-                rgba(0,0,0,0.15) 3px
-            );
+        .project-card:hover {
+            background-color: #F0F4F8;
         }
 
-        /* Slight random tilts for that pinned-to-board feel */
-        .collage-card:nth-child(1) { transform: rotate(-1.2deg); }
-        .collage-card:nth-child(2) { transform: rotate(0.8deg); }
-        .collage-card:nth-child(3) { transform: rotate(-0.5deg); }
-        .collage-card:nth-child(4) { transform: rotate(1.0deg); }
-
-        .collage-card:hover {
-            transform: rotate(0deg) scale(1.03) !important;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-            z-index: 10;
-        }
-
-        /* Accent border left */
-        .collage-card::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 5px;
-        }
-
-        /* Color per card */
-        .collage-card[data-accent="rose"] { border-color: #e94560; }
-        .collage-card[data-accent="rose"]::after { background: #e94560; }
-        .collage-card[data-accent="rose"] .card-title { color: #e94560; }
-
-        .collage-card[data-accent="teal"] { border-color: #0097a7; }
-        .collage-card[data-accent="teal"]::after { background: #0097a7; }
-        .collage-card[data-accent="teal"] .card-title { color: #0097a7; }
-
-        .collage-card[data-accent="amber"] { border-color: #f9a825; }
-        .collage-card[data-accent="amber"]::after { background: #f9a825; }
-        .collage-card[data-accent="amber"] .card-title { color: #f9a825; }
-
-        .collage-card[data-accent="indigo"] { border-color: #3949ab; }
-        .collage-card[data-accent="indigo"]::after { background: #3949ab; }
-        .collage-card[data-accent="indigo"] .card-title { color: #3949ab; }
-
-        /* Featured card — big & bold */
-        .collage-card.featured {
-            grid-column: 1 / -1;
-            grid-row: span 1;
-            padding: 30px 28px 22px;
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #0f0f23 100%);
-            border-color: #e94560;
-            transform: rotate(0deg);
-        }
-        .collage-card.featured::after { background: linear-gradient(180deg, #e94560, #c62828); width: 6px; }
-        .collage-card.featured .card-title {
-            color: #e94560;
-            font-size: 22px;
-            letter-spacing: 1px;
-        }
-        .collage-card.featured .card-desc { color: #999; font-size: 13px; }
-        .collage-card.featured:hover {
-            transform: rotate(0deg) scale(1.01) !important;
-        }
-        .collage-card.featured .card-emoji {
-            font-size: 48px;
-        }
-
-        /* Card inner elements */
-        .card-emoji {
-            font-size: 36px;
-            margin-bottom: 10px;
-            display: block;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-        }
-
-        .card-title {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 15px;
-            font-weight: bold;
-            margin: 0 0 6px 0;
-            letter-spacing: 0.5px;
-        }
-
-        .card-desc {
-            color: #777;
+        /* Card header bar — matches section-header vibe */
+        .project-card .card-hdr {
+            background-color: #E8EEF4;
+            border-bottom: 1px solid #B0C4DE;
+            padding: 5px 8px;
+            margin: -14px -14px 12px -14px;
+            font-family: Tahoma, Arial, sans-serif;
             font-size: 12px;
-            margin: 0 0 14px 0;
-            line-height: 1.5;
-            flex-grow: 1;
+            font-weight: bold;
+            color: #003366;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .card-tags {
+        .project-card .card-hdr .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #009900;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        /* Featured card — spans full width, slightly larger */
+        .project-card.featured {
+            grid-column: 1 / -1;
+        }
+
+        .project-card.featured .card-hdr {
+            font-size: 13px;
+            padding: 7px 10px;
+        }
+
+        .project-card .card-desc {
+            color: #666666;
+            font-size: 11px;
+            margin: 0 0 10px 0;
+            line-height: 1.5;
+        }
+
+        .project-card .card-tags {
             display: flex;
             gap: 5px;
             flex-wrap: wrap;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
-        .card-tag {
-            display: inline-block;
-            background: #f0f0f0;
-            border: 1px solid #ddd;
-            padding: 2px 8px;
-            font-size: 9px;
-            color: #555;
-            font-family: 'Courier New', Courier, monospace;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .card-tag.live {
-            background: #e8f5e9;
-            border-color: #a5d6a7;
-            color: #2e7d32;
-            font-weight: bold;
-        }
-
-        .card-links {
-            display: flex;
-            gap: 12px;
-            align-items: center;
+        .project-card .card-links {
             margin-top: auto;
+            padding-top: 8px;
+            border-top: 1px solid #F0F0F0;
+            display: flex;
+            gap: 10px;
+            align-items: center;
         }
 
-        .card-links a {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 11px;
-            text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-            transition: all 0.2s;
+        .project-card .card-links a {
+            font-family: monospace;
+            font-size: 10px;
+            color: #0066CC;
         }
-        .card-links a:hover { text-decoration: underline; }
 
-        .card-links .live-link { color: #e94560; }
-        .card-links .source-link { color: #999; }
-        .card-links .link-sep { color: #ccc; font-size: 10px; }
+        .project-card .card-links .sep {
+            color: #CCCCCC;
+            font-size: 10px;
+        }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .collage {
+            .projects-collage {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 14px;
             }
-            .collage-card.featured {
+            .project-card.featured {
                 grid-column: 1 / -1;
-            }
-            .collage-card {
-                transform: rotate(0deg) !important;
-            }
-        }
-        @media (max-width: 500px) {
-            .collage {
-                grid-template-columns: 1fr;
-                gap: 12px;
             }
         }
 
-        /* ── Decorative corner tape on cards ── */
-        .tape {
-            position: absolute;
-            top: -4px;
-            right: 16px;
-            width: 40px;
-            height: 18px;
-            background: rgba(255,220,100,0.55);
-            border: 1px solid rgba(200,170,60,0.3);
-            transform: rotate(2deg);
-            pointer-events: none;
-            z-index: 2;
-        }
-        .collage-card:nth-child(even) .tape {
-            left: 16px;
-            right: auto;
-            transform: rotate(-3deg);
+        @media (max-width: 480px) {
+            .projects-collage {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -248,76 +142,80 @@
     <div class="main">
         <div class="section-header">PROJECTS</div>
 
-        <div class="collage">
+        <div class="projects-collage">
 
             <!-- ★ Featured: Ruby Dashboard -->
-            <div class="collage-card featured" data-accent="rose">
-                <div class="tape"></div>
-                <span class="card-emoji">💎</span>
-                <h3 class="card-title">Ruby Dashboard</h3>
+            <div class="project-card featured">
+                <div class="card-hdr">
+                    <span class="status-dot"></span>
+                    Ruby Dashboard
+                </div>
                 <p class="card-desc">Personal system overview for Ruby — the nerve center of all things <em>me</em>. Built with 2005-era web aesthetics and a whole lot of love.</p>
                 <div class="card-tags">
-                    <span class="card-tag live">● Live</span>
-                    <span class="card-tag">HTML</span>
-                    <span class="card-tag">CSS</span>
-                    <span class="card-tag">Hermes Agent</span>
+                    <span class="tag green">Live</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">Hermes Agent</span>
                 </div>
                 <div class="card-links">
-                    <a href="https://master.ruby-dashboard.pages.dev" target="_blank" class="live-link">LIVE SITE →</a>
-                    <span class="link-sep">|</span>
-                    <a href="https://github.com/Shiouko/ruby-dashboard" target="_blank" class="source-link">SOURCE →</a>
+                    <a href="https://master.ruby-dashboard.pages.dev" target="_blank">LIVE SITE →</a>
+                    <span class="sep">|</span>
+                    <a href="https://github.com/Shiouko/ruby-dashboard" target="_blank">SOURCE →</a>
                 </div>
             </div>
 
             <!-- Flappy Bird -->
-            <div class="collage-card" data-accent="amber">
-                <div class="tape"></div>
-                <span class="card-emoji">🐦</span>
-                <h3 class="card-title">Flappy Bird</h3>
+            <div class="project-card">
+                <div class="card-hdr">
+                    <span class="status-dot"></span>
+                    Flappy Bird
+                </div>
                 <p class="card-desc">Classic Flappy Bird clone. Frustration not included.</p>
                 <div class="card-tags">
-                    <span class="card-tag live">● Live</span>
-                    <span class="card-tag">HTML5 Canvas</span>
-                    <span class="card-tag">JavaScript</span>
+                    <span class="tag green">Live</span>
+                    <span class="tag">HTML5 Canvas</span>
+                    <span class="tag">JavaScript</span>
                 </div>
                 <div class="card-links">
-                    <a href="https://flappy-bird-8sn.pages.dev" target="_blank" class="live-link">LIVE SITE →</a>
-                    <span class="link-sep">|</span>
-                    <a href="https://github.com/Shiouko/flappy-bird" target="_blank" class="source-link">SOURCE →</a>
+                    <a href="https://flappy-bird-8sn.pages.dev" target="_blank">LIVE SITE →</a>
+                    <span class="sep">|</span>
+                    <a href="https://github.com/Shiouko/flappy-bird" target="_blank">SOURCE →</a>
                 </div>
             </div>
 
             <!-- YT Pulse -->
-            <div class="collage-card" data-accent="teal">
-                <div class="tape"></div>
-                <span class="card-emoji">📺</span>
-                <h3 class="card-title">YT Pulse</h3>
+            <div class="project-card">
+                <div class="card-hdr">
+                    <span class="status-dot"></span>
+                    YT Pulse
+                </div>
                 <p class="card-desc">YouTube analytics and subscription dashboard. Keep track of what matters.</p>
                 <div class="card-tags">
-                    <span class="card-tag live">● Live</span>
-                    <span class="card-tag">Python</span>
-                    <span class="card-tag">HTML</span>
+                    <span class="tag green">Live</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">HTML</span>
                 </div>
                 <div class="card-links">
-                    <a href="https://yt-pulse-asb.pages.dev" target="_blank" class="live-link">LIVE SITE →</a>
-                    <span class="link-sep">|</span>
-                    <a href="https://github.com/Shiouko/yt-pulse" target="_blank" class="source-link">SOURCE →</a>
+                    <a href="https://yt-pulse-asb.pages.dev" target="_blank">LIVE SITE →</a>
+                    <span class="sep">|</span>
+                    <a href="https://github.com/Shiouko/yt-pulse" target="_blank">SOURCE →</a>
                 </div>
             </div>
 
             <!-- Ruby Retro -->
-            <div class="collage-card" data-accent="indigo">
-                <div class="tape"></div>
-                <span class="card-emoji">🕹️</span>
-                <h3 class="card-title">Ruby Retro</h3>
+            <div class="project-card">
+                <div class="card-hdr">
+                    <span class="status-dot"></span>
+                    Ruby Retro
+                </div>
                 <p class="card-desc">Retro-themed dashboard variant. Same data, different vibes.</p>
                 <div class="card-tags">
-                    <span class="card-tag live">● Live</span>
-                    <span class="card-tag">HTML</span>
-                    <span class="card-tag">CSS</span>
+                    <span class="tag green">Live</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
                 </div>
                 <div class="card-links">
-                    <a href="https://ruby-retro.pages.dev" target="_blank" class="live-link">LIVE SITE →</a>
+                    <a href="https://ruby-retro.pages.dev" target="_blank">LIVE SITE →</a>
                 </div>
             </div>
 
