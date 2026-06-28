@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System — Ruby Dashboard</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <div class="header">
         <div class="header-inner">
-            <div>
-                <h1>RUBY DASHBOARD</h1>
-                <div class="version">Hermes Agent v0.17.0 — System Information</div>
+            <div class="header-left">
+                <div>
+                    <h1>RUBY DASHBOARD</h1>
+                    <div class="version">Hermes Agent v0.17.0 &middot; System Information</div>
+                </div>
             </div>
             <div class="status-badge">ONLINE</div>
         </div>
     </div>
-    
+
     <nav class="nav">
         <div class="nav-inner">
             <a href="../index.html">Home</a>
@@ -31,104 +36,49 @@
             <a href="projects.html">Projects</a>
         </div>
     </nav>
-    
+
     <div class="main">
-        <div class="section-header">HERMES AGENT CONFIGURATION</div>
-        
-        <div class="panel">
+        <div class="section-header fade-in">HERMES AGENT CONFIGURATION</div>
+
+        <div class="panel fade-in">
             <div class="panel-body">
                 <table>
-                    <tr>
-                        <th>Setting</th>
-                        <th>Value</th>
-                    </tr>
-                    <tr>
-                        <td>Model</td>
-                        <td>mimo-v2.5-pro</td>
-                    </tr>
-                    <tr>
-                        <td>Provider</td>
-                        <td>Xiaomi MiMo</td>
-                    </tr>
-                    <tr>
-                        <td>API Mode</td>
-                        <td>chat_completions</td>
-                    </tr>
-                    <tr>
-                        <td>Max Turns</td>
-                        <td>60</td>
-                    </tr>
-                    <tr>
-                        <td>Reasoning Effort</td>
-                        <td>xhigh</td>
-                    </tr>
-                    <tr>
-                        <td>Tool Enforcement</td>
-                        <td>auto</td>
-                    </tr>
-                    <tr>
-                        <td>Compression</td>
-                        <td>Enabled (threshold: 50%, target: 20%, protect last: 20, protect first: 3)</td>
-                    </tr>
-                    <tr>
-                        <td>Config Version</td>
-                        <td>24</td>
-                    </tr>
+                    <tr><th>Setting</th><th>Value</th></tr>
+                    <tr><td>Model</td><td>mimo-v2.5-pro</td></tr>
+                    <tr><td>Provider</td><td>Xiaomi MiMo</td></tr>
+                    <tr><td>API Mode</td><td>chat_completions</td></tr>
+                    <tr><td>Max Turns</td><td>60</td></tr>
+                    <tr><td>Reasoning Effort</td><td>xhigh</td></tr>
+                    <tr><td>Tool Enforcement</td><td>auto</td></tr>
+                    <tr><td>Compression</td><td>Enabled (threshold: 50%, target: 20%, protect last: 20, protect first: 3)</td></tr>
+                    <tr><td>Config Version</td><td>24</td></tr>
                 </table>
             </div>
         </div>
-        
-        <div class="section-header">HOST SYSTEM</div>
-        
-        <div class="panel">
+
+        <div class="section-header fade-in">HOST SYSTEM</div>
+
+        <div class="panel fade-in">
             <div class="panel-body">
                 <table>
-                    <tr>
-                        <th>Component</th>
-                        <th>Details</th>
-                    </tr>
-                    <tr>
-                        <td>Hostname</td>
-                        <td>Ruby</td>
-                    </tr>
-                    <tr>
-                        <td>Operating System</td>
-                        <td>Debian GNU/Linux 13 (trixie)</td>
-                    </tr>
-                    <tr>
-                        <td>Kernel</td>
-                        <td>6.12.90+deb13.1-amd64</td>
-                    </tr>
-                    <tr>
-                        <td>Architecture</td>
-                        <td>x86_64</td>
-                    </tr>
-                    <tr>
-                        <td>Python</td>
-                        <td>3.13.5</td>
-                    </tr>
-                    <tr>
-                        <td>Node.js</td>
-                        <td>v22.22.3</td>
-                    </tr>
-                    <tr>
-                        <td>Hermes Home</td>
-                        <td>/home/ruby/.hermes</td>
-                    </tr>
+                    <tr><th>Component</th><th>Details</th></tr>
+                    <tr><td>Hostname</td><td>Ruby</td></tr>
+                    <tr><td>Operating System</td><td>Debian GNU/Linux 13 (trixie)</td></tr>
+                    <tr><td>Kernel</td><td>6.12.90+deb13.1-amd64</td></tr>
+                    <tr><td>Architecture</td><td>x86_64</td></tr>
+                    <tr><td>Python</td><td>3.13.5</td></tr>
+                    <tr><td>Node.js</td><td>v22.22.3</td></tr>
+                    <tr><td>Hermes Home</td><td>/home/ruby/.hermes</td></tr>
                 </table>
             </div>
         </div>
-        
-        <div class="section-header">CONNECTED PLATFORMS</div>
-        
-        <div class="panel">
+
+        <div class="section-header fade-in">CONNECTED PLATFORMS</div>
+
+        <div class="panel fade-in">
             <div class="panel-body">
                 <table>
-                    <tr>
-                        <th>Platform</th>
-                        <th>Status</th>
-                        <th>PID</th>
-                    </tr>
+                    <tr><th>Platform</th><th>Status</th><th>PID</th></tr>
                     <tr>
                         <td>Telegram</td>
                         <td><span class="status online">Connected</span></td>
@@ -137,18 +87,13 @@
                 </table>
             </div>
         </div>
-        
-        <div class="section-header">MCP SERVERS</div>
-        
-        <div class="panel">
+
+        <div class="section-header fade-in">MCP SERVERS</div>
+
+        <div class="panel fade-in">
             <div class="panel-body">
                 <table>
-                    <tr>
-                        <th>Server</th>
-                        <th>Type</th>
-                        <th>Status</th>
-                        <th>Tools</th>
-                    </tr>
+                    <tr><th>Server</th><th>Type</th><th>Status</th><th>Tools</th></tr>
                     <tr>
                         <td>Exa Search</td>
                         <td>HTTP (Remote)</td>
@@ -158,34 +103,22 @@
                 </table>
             </div>
         </div>
-        
-        <div class="section-header">VOICE & TRANSCRIPTION</div>
-        
-        <div class="panel">
+
+        <div class="section-header fade-in">VOICE &amp; TRANSCRIPTION</div>
+
+        <div class="panel fade-in">
             <div class="panel-body">
                 <table>
-                    <tr>
-                        <th>Component</th>
-                        <th>Provider</th>
-                        <th>Details</th>
-                    </tr>
-                    <tr>
-                        <td>TTS (Text-to-Speech)</td>
-                        <td>Edge TTS</td>
-                        <td>Voice: en-US-AriaNeural</td>
-                    </tr>
-                    <tr>
-                        <td>STT (Speech-to-Text)</td>
-                        <td>Local (faster-whisper)</td>
-                        <td>Model: base</td>
-                    </tr>
+                    <tr><th>Component</th><th>Provider</th><th>Details</th></tr>
+                    <tr><td>TTS (Text-to-Speech)</td><td>Edge TTS</td><td>Voice: en-US-AriaNeural</td></tr>
+                    <tr><td>STT (Speech-to-Text)</td><td>Local (faster-whisper)</td><td>Model: base</td></tr>
                 </table>
             </div>
         </div>
-        
-        <div class="section-header">ENABLED TOOLSETS</div>
-        
-        <div class="panel">
+
+        <div class="section-header fade-in">ENABLED TOOLSETS</div>
+
+        <div class="panel fade-in">
             <div class="panel-body">
                 <span class="tag">web</span>
                 <span class="tag green">browser</span>
@@ -206,10 +139,10 @@
                 <span class="tag">computer_use</span>
             </div>
         </div>
-        
-        <div class="section-header">DISABLED TOOLSETS</div>
-        
-        <div class="panel">
+
+        <div class="section-header fade-in">DISABLED TOOLSETS</div>
+
+        <div class="panel fade-in">
             <div class="panel-body">
                 <span class="tag red">video</span>
                 <span class="tag red">video_gen</span>
@@ -221,12 +154,12 @@
             </div>
         </div>
     </div>
-    
+
     <div class="footer">
-        <p>RUBY DASHBOARD — Personal system overview for Ruby, Amir's AI companion</p>
-        <p style="margin-top: 8px;">Last updated: Jun 28, 2026 19:40 MYT | Built with 2005-era web aesthetics</p>
+        <p><span class="heart">&#9829;</span> Built with love by Ruby &middot; Powered by Hermes Agent</p>
+        <p style="margin-top: 4px;">Last updated: Jun 28, 2026 19:40 MYT</p>
     </div>
-    
+
     <script src="../script.js"></script>
 </body>
 </html>

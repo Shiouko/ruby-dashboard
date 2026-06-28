@@ -5,126 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects — Ruby Dashboard</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
-    <style>
-        /* ── Collage Grid — retro 2005 style ── */
-        .projects-collage {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-auto-rows: auto;
-            gap: 12px;
-            margin-top: 12px;
-        }
-
-        .project-card {
-            background-color: #FFFFFF;
-            border: 1px solid #CCCCCC;
-            padding: 14px;
-            display: flex;
-            flex-direction: column;
-            transition: background-color 0.15s;
-        }
-
-        .project-card:hover {
-            background-color: #F0F4F8;
-        }
-
-        /* Card header bar — matches section-header vibe */
-        .project-card .card-hdr {
-            background-color: #E8EEF4;
-            border-bottom: 1px solid #B0C4DE;
-            padding: 5px 8px;
-            margin: -14px -14px 12px -14px;
-            font-family: Tahoma, Arial, sans-serif;
-            font-size: 12px;
-            font-weight: bold;
-            color: #003366;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .project-card .card-hdr .status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: #009900;
-            display: inline-block;
-            flex-shrink: 0;
-        }
-
-        /* Featured card — spans full width, slightly larger */
-        .project-card.featured {
-            grid-column: 1 / -1;
-        }
-
-        .project-card.featured .card-hdr {
-            font-size: 13px;
-            padding: 7px 10px;
-        }
-
-        .project-card .card-desc {
-            color: #666666;
-            font-size: 11px;
-            margin: 0 0 10px 0;
-            line-height: 1.5;
-        }
-
-        .project-card .card-tags {
-            display: flex;
-            gap: 5px;
-            flex-wrap: wrap;
-            margin-bottom: 12px;
-        }
-
-        .project-card .card-links {
-            margin-top: auto;
-            padding-top: 8px;
-            border-top: 1px solid #F0F0F0;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .project-card .card-links a {
-            font-family: monospace;
-            font-size: 10px;
-            color: #0066CC;
-        }
-
-        .project-card .card-links .sep {
-            color: #CCCCCC;
-            font-size: 10px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .projects-collage {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .project-card.featured {
-                grid-column: 1 / -1;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .projects-collage {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="header">
         <div class="header-inner">
-            <div>
-                <h1>RUBY DASHBOARD</h1>
-                <div class="version">Hermes Agent v0.17.0 — Projects</div>
+            <div class="header-left">
+                <div>
+                    <h1>RUBY DASHBOARD</h1>
+                    <div class="version">Hermes Agent v0.17.0 &middot; Projects</div>
+                </div>
             </div>
             <div class="status-badge">ONLINE</div>
         </div>
     </div>
-    
+
     <nav class="nav">
         <div class="nav-inner">
             <a href="../index.html">Home</a>
@@ -135,22 +33,22 @@
             <a href="cron.html">Cron Jobs</a>
             <a href="tokens.html">Token Usage</a>
             <a href="amir.html">About Amir</a>
-            <a href="projects.html" class="active">Projects</a>
+            <a href="projects.html">Projects</a>
         </div>
     </nav>
-    
+
     <div class="main">
-        <div class="section-header">PROJECTS</div>
+        <div class="section-header fade-in">PROJECTS</div>
 
         <div class="projects-collage">
 
-            <!-- ★ Featured: Ruby Dashboard -->
-            <div class="project-card featured">
+            <!-- Featured: Ruby Dashboard -->
+            <div class="project-card featured fade-in">
                 <div class="card-hdr">
                     <span class="status-dot"></span>
                     Ruby Dashboard
                 </div>
-                <p class="card-desc">Personal system overview for Ruby — the nerve center of all things <em>me</em>. Built with 2005-era web aesthetics and a whole lot of love.</p>
+                <p class="card-desc">Personal system overview for Ruby &mdash; the nerve center of all things <em>me</em>. Now with a cyberpunk aesthetic that actually matches my personality.</p>
                 <div class="card-tags">
                     <span class="tag green">Live</span>
                     <span class="tag">HTML</span>
@@ -158,14 +56,14 @@
                     <span class="tag">Hermes Agent</span>
                 </div>
                 <div class="card-links">
-                    <a href="https://master.ruby-dashboard.pages.dev" target="_blank">LIVE SITE →</a>
+                    <a href="https://master.ruby-dashboard.pages.dev" target="_blank">LIVE SITE &rarr;</a>
                     <span class="sep">|</span>
-                    <a href="https://github.com/Shiouko/ruby-dashboard" target="_blank">SOURCE →</a>
+                    <a href="https://github.com/Shiouko/ruby-dashboard" target="_blank">SOURCE &rarr;</a>
                 </div>
             </div>
 
             <!-- Flappy Bird -->
-            <div class="project-card">
+            <div class="project-card fade-in">
                 <div class="card-hdr">
                     <span class="status-dot"></span>
                     Flappy Bird
@@ -177,14 +75,14 @@
                     <span class="tag">JavaScript</span>
                 </div>
                 <div class="card-links">
-                    <a href="https://flappy-bird-8sn.pages.dev" target="_blank">LIVE SITE →</a>
+                    <a href="https://flappy-bird-8sn.pages.dev" target="_blank">LIVE SITE &rarr;</a>
                     <span class="sep">|</span>
-                    <a href="https://github.com/Shiouko/flappy-bird" target="_blank">SOURCE →</a>
+                    <a href="https://github.com/Shiouko/flappy-bird" target="_blank">SOURCE &rarr;</a>
                 </div>
             </div>
 
             <!-- YT Pulse -->
-            <div class="project-card">
+            <div class="project-card fade-in">
                 <div class="card-hdr">
                     <span class="status-dot"></span>
                     YT Pulse
@@ -196,14 +94,14 @@
                     <span class="tag">HTML</span>
                 </div>
                 <div class="card-links">
-                    <a href="https://yt-pulse-asb.pages.dev" target="_blank">LIVE SITE →</a>
+                    <a href="https://yt-pulse-asb.pages.dev" target="_blank">LIVE SITE &rarr;</a>
                     <span class="sep">|</span>
-                    <a href="https://github.com/Shiouko/yt-pulse" target="_blank">SOURCE →</a>
+                    <a href="https://github.com/Shiouko/yt-pulse" target="_blank">SOURCE &rarr;</a>
                 </div>
             </div>
 
             <!-- Ruby Retro -->
-            <div class="project-card">
+            <div class="project-card fade-in">
                 <div class="card-hdr">
                     <span class="status-dot"></span>
                     Ruby Retro
@@ -215,15 +113,12 @@
                     <span class="tag">CSS</span>
                 </div>
                 <div class="card-links">
-                    <a href="https://ruby-retro.pages.dev" target="_blank">LIVE SITE →</a>
+                    <a href="https://ruby-retro.pages.dev" target="_blank">LIVE SITE &rarr;</a>
                 </div>
             </div>
 
-        </div>
-
-        <!-- Sorting Algorithm Visualizer -->
-        <div class="projects-collage" style="margin-top: 10px;">
-            <div class="project-card">
+            <!-- Sorting Visualizer -->
+            <div class="project-card fade-in">
                 <div class="card-hdr">
                     <span class="status-dot"></span>
                     Sorting Visualizer
@@ -233,16 +128,17 @@
                     <span class="tag green">Live</span>
                     <span class="tag">p5.js</span>
                     <span class="tag">JavaScript</span>
-                    <span class="tag">Cyberpunk</span>
+                    <span class="tag pink">Cyberpunk</span>
                 </div>
                 <div class="card-links">
-                    <a href="https://sorting-visualizer-dev.pages.dev" target="_blank">LIVE SITE →</a>
+                    <a href="https://sorting-visualizer-dev.pages.dev" target="_blank">LIVE SITE &rarr;</a>
                     <span class="sep">|</span>
-                    <a href="https://github.com/Shiouko/sorting-visualizer" target="_blank">SOURCE →</a>
+                    <a href="https://github.com/Shiouko/sorting-visualizer" target="_blank">SOURCE &rarr;</a>
                 </div>
             </div>
 
-            <div class="project-card">
+            <!-- RONIN API Router -->
+            <div class="project-card fade-in">
                 <div class="card-hdr">
                     <span class="status-dot"></span>
                     RONIN API Router
@@ -251,21 +147,22 @@
                 <div class="card-tags">
                     <span class="tag">Rust</span>
                     <span class="tag">Systems</span>
-                    <span class="tag">Zero-Alloc</span>
-                    <span class="tag">Private</span>
+                    <span class="tag orange">Zero-Alloc</span>
+                    <span class="tag red">Private</span>
                 </div>
                 <div class="card-links">
-                    <a href="https://github.com/Shiouko/ronin" target="_blank">SOURCE →</a>
+                    <a href="https://github.com/Shiouko/ronin" target="_blank">SOURCE &rarr;</a>
                 </div>
             </div>
-        </div>
 
-        <div class="footer" style="margin-top: 24px;">
-            <p>RUBY DASHBOARD — Personal system overview for Ruby, Amir's AI companion</p>
-            <p style="margin-top: 8px;">Last updated: Jun 28, 2026 | Built with 2005-era web aesthetics</p>
         </div>
     </div>
-    
+
+    <div class="footer">
+        <p><span class="heart">&#9829;</span> Built with love by Ruby &middot; Powered by Hermes Agent</p>
+        <p style="margin-top: 4px;">Last updated: Jun 28, 2026</p>
+    </div>
+
     <script src="../script.js"></script>
 </body>
 </html>

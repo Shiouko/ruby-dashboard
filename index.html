@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruby Dashboard</title>
+    <title>Ruby Dashboard — Cyberpunk Edition</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="header">
         <div class="header-inner">
-            <div>
-                <h1>RUBY DASHBOARD</h1>
-                <div class="version">Hermes Agent v0.17.0 — Personal System Overview | Updated Jun 28, 2026 20:14 MYT (Live)</div>
+            <div class="header-left">
+                <div>
+                    <h1>RUBY DASHBOARD</h1>
+                    <div class="version">Hermes Agent v0.17.0 &middot; <span class="subtitle-typing">Cyberpunk Edition</span></div>
+                </div>
             </div>
             <div class="status-badge">ONLINE</div>
         </div>
     </div>
-    
+
     <nav class="nav">
         <div class="nav-inner">
             <a href="index.html">Home</a>
@@ -31,30 +36,30 @@
             <a href="pages/projects.html">Projects</a>
         </div>
     </nav>
-    
+
     <div class="main">
-        <div class="section-header">SYSTEM STATUS</div>
-        
+        <div class="section-header fade-in">SYSTEM STATUS</div>
+
         <div class="stat-row">
-            <div class="stat-box highlight">
+            <div class="stat-box highlight fade-in">
                 <div class="number">0.17.0</div>
                 <div class="label">Hermes Version</div>
             </div>
-            <div class="stat-box info">
+            <div class="stat-box info fade-in">
                 <div class="number">Running</div>
                 <div class="label">Gateway Status</div>
             </div>
-            <div class="stat-box">
-                <div class="number">1</div>
+            <div class="stat-box fade-in">
+                <div class="number" data-target="1">0</div>
                 <div class="label">Connected Platforms</div>
             </div>
-            <div class="stat-box warning">
-                <div class="number">944</div>
+            <div class="stat-box warning fade-in">
+                <div class="number" data-target="944">0</div>
                 <div class="label">Total Sessions</div>
             </div>
         </div>
-        
-        <div class="panel">
+
+        <div class="panel fade-in">
             <div class="panel-header">Connected Platforms</div>
             <div class="panel-body">
                 <table>
@@ -71,29 +76,29 @@
                 </table>
             </div>
         </div>
-        
-        <div class="section-header">TOKEN USAGE OVERVIEW (ALL TIME)</div>
-        
+
+        <div class="section-header fade-in">TOKEN USAGE OVERVIEW (ALL TIME)</div>
+
         <div class="stat-row">
-            <div class="stat-box info">
-                <div class="number">318,364,478</div>
+            <div class="stat-box info fade-in">
+                <div class="number" data-target="318364478">0</div>
                 <div class="label">Total Tokens (all time)</div>
             </div>
-            <div class="stat-box">
-                <div class="number">14,130,110</div>
+            <div class="stat-box fade-in">
+                <div class="number" data-target="14130110">0</div>
                 <div class="label">Input Tokens</div>
             </div>
-            <div class="stat-box">
-                <div class="number">1,776,768</div>
+            <div class="stat-box fade-in">
+                <div class="number" data-target="1776768">0</div>
                 <div class="label">Output Tokens</div>
             </div>
-            <div class="stat-box highlight">
+            <div class="stat-box highlight fade-in">
                 <div class="number">~29.9d</div>
                 <div class="label">Active Time</div>
             </div>
         </div>
-        
-        <div class="panel">
+
+        <div class="panel fade-in">
             <div class="panel-header">Token Usage by Platform</div>
             <div class="panel-body">
                 <table>
@@ -130,31 +135,31 @@
                 </table>
             </div>
         </div>
-        
-        <div class="section-header">QUICK STATS</div>
-        
+
+        <div class="section-header fade-in">QUICK STATS</div>
+
         <div class="stat-row">
-            <div class="stat-box">
-                <div class="number">944</div>
+            <div class="stat-box fade-in">
+                <div class="number" data-target="944">0</div>
                 <div class="label">Total Sessions</div>
             </div>
-            <div class="stat-box">
-                <div class="number">10,288</div>
+            <div class="stat-box fade-in">
+                <div class="number" data-target="10288">0</div>
                 <div class="label">Total Messages</div>
             </div>
-            <div class="stat-box highlight">
-                <div class="number">103</div>
+            <div class="stat-box highlight fade-in">
+                <div class="number" data-target="103">0</div>
                 <div class="label">Skills Installed</div>
             </div>
-            <div class="stat-box info">
-                <div class="number">4,244</div>
+            <div class="stat-box info fade-in">
+                <div class="number" data-target="4244">0</div>
                 <div class="label">Tool Calls</div>
             </div>
         </div>
-        
-        <div class="section-header">TOP SESSIONS (by tokens)</div>
-        
-        <div class="panel">
+
+        <div class="section-header fade-in">TOP SESSIONS (by tokens)</div>
+
+        <div class="panel fade-in">
             <div class="panel-body">
                 <table>
                     <tr>
@@ -190,10 +195,10 @@
                 </table>
             </div>
         </div>
-        
-        <div class="section-header">TOP TOOLS</div>
-        
-        <div class="panel">
+
+        <div class="section-header fade-in">TOP TOOLS</div>
+
+        <div class="panel fade-in">
             <div class="panel-body">
                 <table>
                     <tr>
@@ -254,10 +259,10 @@
                 </table>
             </div>
         </div>
-        
-        <div class="section-header">NOTABLE SESSIONS</div>
-        
-        <div class="panel">
+
+        <div class="section-header fade-in">NOTABLE SESSIONS</div>
+
+        <div class="panel fade-in">
             <div class="panel-body">
                 <table>
                     <tr>
@@ -289,12 +294,12 @@
             </div>
         </div>
     </div>
-    
+
     <div class="footer">
-        <p>RUBY DASHBOARD — Personal system overview for Ruby, Amir's AI companion</p>
-        <p style="margin-top: 8px;">Last updated: Jun 28, 2026 20:14 MYT | Built with 2005-era web aesthetics | Deployed on Cloudflare Pages</p>
+        <p><span class="heart">&#9829;</span> Built with love by Ruby &middot; Powered by Hermes Agent</p>
+        <p style="margin-top: 4px;">Last updated: Jun 28, 2026 20:14 MYT &middot; Deployed on Cloudflare Pages</p>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
