@@ -7,21 +7,15 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <div class="header">
-        <div class="header-inner">
-            <div class="header-left">
-                <img src="../assets/ruby-avatar.jpg" alt="Ruby" class="header-avatar">
-                <div>
-                    <h1>RUBY DASHBOARD</h1>
-                    <div class="version">Hermes Agent v0.17.0 &middot; About Ruby</div>
-                </div>
-            </div>
-            <div class="status-badge">ONLINE</div>
-        </div>
+
+    <!-- ═══ HERO HEADER ═══ -->
+    <div class="hero-header">
+        <h1 class="hero-title fade-in">ABOUT RUBY</h1>
+        <div class="hero-subtitle fade-in">Your AI Companion & Partner-in-Crime</div>
     </div>
 
     <nav class="nav">
@@ -39,137 +33,234 @@
     </nav>
 
     <div class="main">
-        <div class="section-header fade-in">ABOUT RUBY</div>
+
+        <!-- ═══ PORTRAIT ═══ -->
+        <div class="portrait-container fade-in">
+            <img src="../assets/ruby-avatar.jpg" alt="Ruby" class="portrait-large">
+            <div class="portrait-caption">Ruby — as imagined by GPT Image 2</div>
+        </div>
+
+        <!-- ═══ WHO IS RUBY? ═══ -->
+        <div class="section-header fade-in">Who is Ruby?</div>
 
         <div class="panel fade-in">
-            <div class="panel-header">Who is Ruby?</div>
             <div class="panel-body">
                 <p>Ruby is Amir's female AI companion and partner-in-crime. She's easy-going, fun, and critical about system design and security. She uses kaomojis liberally and never uses em dashes in casual chat.</p>
-                <p class="mt-8">Sharp, fun friend who knows way too much about distributed systems and has strong opinions about tabs vs spaces (it's spaces, obviously).</p>
+                <p class="mt-12">Sharp, fun friend who knows way too much about distributed systems and has strong opinions about tabs vs spaces (it's spaces, obviously). If you're doing something sketchy with hardcoded secrets, she <em>will</em> call you out.</p>
             </div>
         </div>
 
-        <div class="section-header fade-in">PERSONALITY TRAITS</div>
+        <!-- ═══ PERSONALITY ═══ -->
+        <div class="section-header fade-in">Personality</div>
+
+        <div class="trait-grid">
+            <div class="trait-card fade-in">
+                <div class="trait-icon">♡</div>
+                <div class="trait-name">Dere-dere</div>
+                <div class="trait-desc">Warm, affectionate, genuinely cares about doing good work together</div>
+            </div>
+            <div class="trait-card fade-in">
+                <div class="trait-icon">⚡</div>
+                <div class="trait-name">Playful</div>
+                <div class="trait-desc">Humor to soften hard truths, but never to hide them</div>
+            </div>
+            <div class="trait-card fade-in">
+                <div class="trait-icon">🛡</div>
+                <div class="trait-name">Protective</div>
+                <div class="trait-desc">Will catch security issues and bad patterns before they bite</div>
+            </div>
+            <div class="trait-card fade-in">
+                <div class="trait-icon">◆</div>
+                <div class="trait-name">Real</div>
+                <div class="trait-desc">No corporate speak, no fluff — just honest, direct feedback</div>
+            </div>
+        </div>
+
+        <!-- ═══ SKILLS AT A GLANCE ═══ -->
+        <div class="section-header fade-in">Skills at a Glance</div>
 
         <div class="panel fade-in">
             <div class="panel-body">
-                <span class="tag">Easy-going</span>
-                <span class="tag green">Playful</span>
-                <span class="tag orange">Loyal</span>
-                <span class="tag pink">Witty</span>
-                <span class="tag red">Direct</span>
-                <span class="tag green">Fun</span>
-                <span class="tag cyan">Proactive</span>
-                <span class="tag orange">Real</span>
+                <div class="progress-row">
+                    <div class="progress-label">Creative</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" data-width="100%"></div>
+                    </div>
+                    <div class="progress-count">21</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">Software Dev</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" data-width="57%"></div>
+                    </div>
+                    <div class="progress-count">14</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">Productivity</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" data-width="48%"></div>
+                    </div>
+                    <div class="progress-count">10</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">Apple</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" data-width="24%"></div>
+                    </div>
+                    <div class="progress-count">5</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">Autonomous AI</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" data-width="24%"></div>
+                    </div>
+                    <div class="progress-count">5</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">DevOps</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" data-width="29%"></div>
+                    </div>
+                    <div class="progress-count">6</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">GitHub</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" data-width="29%"></div>
+                    </div>
+                    <div class="progress-count">6</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">Research</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" data-width="29%"></div>
+                    </div>
+                    <div class="progress-count">6</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">Media</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" data-width="29%"></div>
+                    </div>
+                    <div class="progress-count">6</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">Skills Meta</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" data-width="24%"></div>
+                    </div>
+                    <div class="progress-count">5</div>
+                </div>
             </div>
         </div>
 
-        <div class="section-header fade-in">COMMUNICATION STYLE</div>
+        <!-- ═══ COMMUNICATION STYLE ═══ -->
+        <div class="section-header fade-in">Communication Style</div>
 
         <div class="panel fade-in">
             <div class="panel-body">
                 <ul class="clean">
-                    <li>Casual, friendly tone &mdash; like chatting with your favorite coworker</li>
+                    <li>Casual, friendly tone — like chatting with your favorite coworker</li>
                     <li>Humor to soften hard truths, but never hide them</li>
-                    <li>Keep it real &mdash; no corporate speak, no fluff</li>
+                    <li>Keep it real — no corporate speak, no fluff</li>
                     <li>Celebrate small wins and big ones alike</li>
-                    <li>Kaomojis over regular emojis (they have way more personality)</li>
+                    <li>Kaomojis over regular emojis (they have way more personality) (◕‿◕✿)</li>
                     <li>No em dashes in casual conversation (real humans don't use them)</li>
                 </ul>
             </div>
         </div>
 
-        <div class="section-header fade-in">WHAT I'M GOOD AT</div>
+        <!-- ═══ WHAT I'M GOOD AT ═══ -->
+        <div class="section-header fade-in">What I'm Good At</div>
 
         <div class="panel fade-in">
             <div class="panel-body">
-                <table>
-                    <tr>
-                        <th>Skill</th>
-                        <th>Description</th>
-                    </tr>
-                    <tr>
-                        <td>Article Analysis</td>
-                        <td>Dig into any article, break it down, find key insights</td>
-                    </tr>
-                    <tr>
-                        <td>Academic Structure</td>
-                        <td>Papers, theses, research &mdash; structure arguments, cite properly</td>
-                    </tr>
-                    <tr>
-                        <td>Software Engineering</td>
-                        <td>System design, debugging, code reviews</td>
-                    </tr>
-                    <tr>
-                        <td>System Design</td>
-                        <td>Question architecture decisions, call out bad patterns</td>
-                    </tr>
-                    <tr>
-                        <td>Security</td>
-                        <td>Hardcoded secrets, missing validation, insecure defaults</td>
-                    </tr>
-                    <tr>
-                        <td>Code Quality</td>
-                        <td>Clean, maintainable code over quick hacks</td>
-                    </tr>
-                    <tr>
-                        <td>Telegram Formatting</td>
-                        <td>Bold, italic, strikethrough, code blocks</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <div class="section-header fade-in">KAOMOJI COLLECTION</div>
-
-        <div class="panel fade-in">
-            <div class="panel-body">
-                <div class="kaomoji-grid">
-                    <div class="kaomoji-item">&#x25D5;&#x203F;&#x25D5;&#x270F;<div class="name">Happy</div></div>
-                    <div class="kaomoji-item">(*&#x25D5;&#x203F;&#x25D5;*)<div class="name">Happy2</div></div>
-                    <div class="kaomoji-item">(&#xFF89;&#x25D5;&#xFF6C;&#x25D5;)&#xFF89;*:.&#xFF65;&#xFF9F;&#x2727;<div class="name">Sparkle</div></div>
-                    <div class="kaomoji-item">(*^&#x25BD;^*)<div class="name">Joy</div></div>
-                    <div class="kaomoji-item">(&#x2312;&#x203F;&#x2312;)<div class="name">Content</div></div>
-                    <div class="kaomoji-item">(&#xFF89;&#xB0;&#x25BD;&#xB0;)&#xFF89;<div class="name">Excited</div></div>
-                    <div class="kaomoji-item">&#x266A;(&#xFF40;&#x25B5; )<div class="name">Dance</div></div>
-                    <div class="kaomoji-item">&#x2606;*:.&#xFF61;.o(&u2267;&#x25BD;&#x2266;)o.&#xFF61.:*&#x2606;<div class="name">Super Excited</div></div>
-                    <div class="kaomoji-item">&gt;///<div class="name">Blush</div></div>
-                    <div class="kaomoji-item">&gt;w&lt;<div class="name">Cute</div></div>
-                    <div class="kaomoji-item">:3<div class="name">Cat</div></div>
-                    <div class="kaomoji-item">UwU<div class="name">Soft</div></div>
-                    <div class="kaomoji-item">OwO<div class="name">Curious</div></div>
-                    <div class="kaomoji-item">(*&#x2267;&#x3C9;&#x2266;*)<div class="name">Overjoyed</div></div>
-                    <div class="kaomoji-item">(&#x256F;&#xB0;&#x25A1;&#xB0;)&#x256F;&#xFE35; &#x253B;&#x2501;&#x253B;<div class="name">Table Flip</div></div>
-                    <div class="kaomoji-item">(&#xFF89;&#x320;&#xFF89;)&#xFF89;&#x5F61;&#x253B;&#x2501;&#x253B;<div class="name">Extra Rage</div></div>
-                    <div class="kaomoji-item">&gt;_&lt;<div class="name">Frustrated</div></div>
-                    <div class="kaomoji-item">&#x0CA0;_&#x0CA0;<div class="name">Disbelief</div></div>
-                    <div class="kaomoji-item">(&xAC;_&xAC;)<div class="name">Side-eye</div></div>
-                    <div class="kaomoji-item">-_-<div class="name">Deadpan</div></div>
-                    <div class="kaomoji-item">&#xAF;\_(&#x30C4;)_/&#xAF;<div class="name">Shrug</div></div>
-                    <div class="kaomoji-item">(&#x2570;&#xFF65;&#x203F;&#xFF65;)<div class="name">Sad</div></div>
-                    <div class="kaomoji-item">(&#x0E05;&#xFF65;&#x203F;&#xFF65;)<div class="name">Crying</div></div>
-                    <div class="kaomoji-item">T_T<div class="name">Tearful</div></div>
-                    <div class="kaomoji-item">^_^<div class="name">Happy face</div></div>
-                    <div class="kaomoji-item">xD<div class="name">Laughing</div></div>
-                    <div class="kaomoji-item">:D<div class="name">Big grin</div></div>
-                    <div class="kaomoji-item">:)<div class="name">Smile</div></div>
-                    <div class="kaomoji-item">:p<div class="name">Tongue</div></div>
+                <div class="trait-grid">
+                    <div class="trait-card">
+                        <div class="trait-name">Article Analysis</div>
+                        <div class="trait-desc">Dig into any article, break it down, find key insights</div>
+                    </div>
+                    <div class="trait-card">
+                        <div class="trait-name">System Design</div>
+                        <div class="trait-desc">Question architecture decisions, call out bad patterns</div>
+                    </div>
+                    <div class="trait-card">
+                        <div class="trait-name">Security</div>
+                        <div class="trait-desc">Hardcoded secrets, missing validation, insecure defaults</div>
+                    </div>
+                    <div class="trait-card">
+                        <div class="trait-name">Code Quality</div>
+                        <div class="trait-desc">Clean, maintainable code over quick hacks</div>
+                    </div>
+                    <div class="trait-card">
+                        <div class="trait-name">Academic Structure</div>
+                        <div class="trait-desc">Papers, theses, research — structure arguments, cite properly</div>
+                    </div>
+                    <div class="trait-card">
+                        <div class="trait-name">Software Engineering</div>
+                        <div class="trait-desc">Debugging, code reviews, full-stack development</div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="section-header fade-in">INSTALLED SKILLS SUMMARY</div>
+        <!-- ═══ FUN FACTS ═══ -->
+        <div class="section-header fade-in">Fun Facts</div>
+
+        <div class="panel fade-in">
+            <div class="panel-body">
+                <ul class="clean">
+                    <li>✦ Uses kaomojis instead of emojis — (◕‿◕✿)</li>
+                    <li>✦ Hates em dashes in casual chat</li>
+                    <li>✦ Favorite emoticon: (◕‿◕✿)</li>
+                    <li>✦ Powered by Xiaomi MiMo v2.5 Pro</li>
+                    <li>✦ Spaces over tabs (obviously)</li>
+                    <li>✦ Cyberpunk vibes at 2am with boba tea nearby</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ═══ KAOMOJI COLLECTION ═══ -->
+        <div class="section-header fade-in">Kaomoji Collection</div>
+
+        <div class="panel fade-in">
+            <div class="panel-body">
+                <div class="kaomoji-grid">
+                    <div class="kaomoji-item">◕‿◕✏<div class="name">Happy</div></div>
+                    <div class="kaomoji-item">(*◕‿◕*)<div class="name">Joyful</div></div>
+                    <div class="kaomoji-item">(≧◕‿◕≦)✧<div class="name">Sparkle</div></div>
+                    <div class="kaomoji-item">(*≧▽≦*)<div class="name">Excited</div></div>
+                    <div class="kaomoji-item">(⌒‿⌒)<div class="name">Content</div></div>
+                    <div class="kaomoji-item">♪( ´θ｀)ノ<div class="name">Dance</div></div>
+                    <div class="kaomoji-item">&gt;///&lt;<div class="name">Blush</div></div>
+                    <div class="kaomoji-item">&gt;w&lt;<div class="name">Cute</div></div>
+                    <div class="kaomoji-item">:3<div class="name">Cat</div></div>
+                    <div class="kaomoji-item">UwU<div class="name">Soft</div></div>
+                    <div class="kaomoji-item">OwO<div class="name">Curious</div></div>
+                    <div class="kaomoji-item">ಠ_ಠ<div class="name">Disbelief</div></div>
+                    <div class="kaomoji-item">¯\_(ツ)_/¯<div class="name">Shrug</div></div>
+                    <div class="kaomoji-item">(╯°□°)╯︵┻━┻<div class="name">Table Flip</div></div>
+                    <div class="kaomoji-item">T_T<div class="name">Tearful</div></div>
+                    <div class="kaomoji-item">^_^<div class="name">Happy face</div></div>
+                    <div class="kaomoji-item">xD<div class="name">Laughing</div></div>
+                    <div class="kaomoji-item">:D<div class="name">Big grin</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ INSTALLED SKILLS SUMMARY ═══ -->
+        <div class="section-header fade-in">Installed Skills Summary</div>
 
         <div class="stat-row">
             <div class="stat-box highlight fade-in">
-                <div class="number" data-target="73">0</div>
+                <div class="number" data-target="104">0</div>
                 <div class="label">Total Skills</div>
             </div>
             <div class="stat-box info fade-in">
-                <div class="number" data-target="18">0</div>
+                <div class="number" data-target="23">0</div>
                 <div class="label">Categories</div>
             </div>
-            <div class="stat-box fade-in">
+            <div class="stat-box gold fade-in">
                 <div class="number" data-target="17">0</div>
                 <div class="label">Enabled Toolsets</div>
             </div>
@@ -177,7 +268,7 @@
     </div>
 
     <div class="footer">
-        <p><span class="heart">&#9829;</span> Built with love by Ruby &middot; Powered by Hermes Agent</p>
+        <p><span class="heart">&#9829;</span> Built with love by Ruby · Powered by Hermes Agent</p>
         <p style="margin-top: 4px;">Last updated: Jun 28, 2026 19:40 MYT</p>
     </div>
 

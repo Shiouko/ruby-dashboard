@@ -7,20 +7,14 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <div class="header">
-        <div class="header-inner">
-            <div class="header-left">
-                <div>
-                    <h1>RUBY DASHBOARD</h1>
-                    <div class="version">Hermes Agent v0.17.0 &middot; System Information</div>
-                </div>
-            </div>
-            <div class="status-badge">ONLINE</div>
-        </div>
+
+    <div class="hero-header">
+        <h1 class="hero-title fade-in">SYSTEM</h1>
+        <div class="hero-subtitle fade-in">Hermes Agent Configuration & Host Details</div>
     </div>
 
     <nav class="nav">
@@ -38,109 +32,124 @@
     </nav>
 
     <div class="main">
-        <div class="section-header fade-in">HERMES AGENT CONFIGURATION</div>
+
+        <!-- ═══ HERMES CONFIG ═══ -->
+        <div class="section-header fade-in">Hermes Agent Configuration</div>
 
         <div class="panel fade-in">
             <div class="panel-body">
                 <table>
                     <tr><th>Setting</th><th>Value</th></tr>
-                    <tr><td>Model</td><td>mimo-v2.5-pro</td></tr>
+                    <tr><td>Model</td><td class="mono">mimo-v2.5-pro</td></tr>
                     <tr><td>Provider</td><td>Xiaomi MiMo</td></tr>
-                    <tr><td>API Mode</td><td>chat_completions</td></tr>
-                    <tr><td>Max Turns</td><td>60</td></tr>
-                    <tr><td>Reasoning Effort</td><td>xhigh</td></tr>
-                    <tr><td>Tool Enforcement</td><td>auto</td></tr>
+                    <tr><td>API Mode</td><td class="mono">chat_completions</td></tr>
+                    <tr><td>Max Turns</td><td class="mono">60</td></tr>
+                    <tr><td>Reasoning Effort</td><td class="mono">xhigh</td></tr>
+                    <tr><td>Tool Enforcement</td><td class="mono">auto</td></tr>
                     <tr><td>Compression</td><td>Enabled (threshold: 50%, target: 20%, protect last: 20, protect first: 3)</td></tr>
-                    <tr><td>Config Version</td><td>24</td></tr>
+                    <tr><td>Config Version</td><td class="mono">24</td></tr>
                 </table>
             </div>
         </div>
 
-        <div class="section-header fade-in">HOST SYSTEM</div>
+        <!-- ═══ HOST SYSTEM ═══ -->
+        <div class="section-header fade-in">Host System</div>
 
         <div class="panel fade-in">
             <div class="panel-body">
                 <table>
                     <tr><th>Component</th><th>Details</th></tr>
-                    <tr><td>Hostname</td><td>Ruby</td></tr>
+                    <tr><td>Hostname</td><td class="mono">Ruby</td></tr>
                     <tr><td>Operating System</td><td>Debian GNU/Linux 13 (trixie)</td></tr>
-                    <tr><td>Kernel</td><td>6.12.90+deb13.1-amd64</td></tr>
-                    <tr><td>Architecture</td><td>x86_64</td></tr>
-                    <tr><td>Python</td><td>3.13.5</td></tr>
-                    <tr><td>Node.js</td><td>v22.22.3</td></tr>
-                    <tr><td>Hermes Home</td><td>/home/ruby/.hermes</td></tr>
+                    <tr><td>Kernel</td><td class="mono">6.12.90+deb13.1-amd64</td></tr>
+                    <tr><td>Architecture</td><td class="mono">x86_64</td></tr>
+                    <tr><td>Python</td><td class="mono">3.13.5</td></tr>
+                    <tr><td>Node.js</td><td class="mono">v22.22.3</td></tr>
+                    <tr><td>Hermes Home</td><td class="mono">/home/ruby/.hermes</td></tr>
                 </table>
             </div>
         </div>
 
-        <div class="section-header fade-in">CONNECTED PLATFORMS</div>
+        <!-- ═══ CONNECTED PLATFORMS ═══ -->
+        <div class="section-header fade-in">Connected Platforms</div>
+
+        <div class="panel fade-in">
+            <div class="panel-body" style="display: flex; align-items: center; gap: 16px;">
+                <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 2s ease-in-out infinite;"></span>
+                <div style="flex: 1;">
+                    <div style="font-weight: 600;">Telegram</div>
+                    <div style="font-size: 0.72rem; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">PID: 8717</div>
+                </div>
+                <span class="status online">Connected</span>
+            </div>
+        </div>
+
+        <!-- ═══ MCP SERVERS ═══ -->
+        <div class="section-header fade-in">MCP Servers</div>
+
+        <div class="panel fade-in">
+            <div class="panel-body" style="display: flex; align-items: center; gap: 16px;">
+                <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 2s ease-in-out infinite;"></span>
+                <div style="flex: 1;">
+                    <div style="font-weight: 600;">Exa Search</div>
+                    <div style="font-size: 0.72rem; color: var(--text-dim);">HTTP (Remote) · 6 tools available</div>
+                </div>
+                <span class="status online">Active</span>
+            </div>
+        </div>
 
         <div class="panel fade-in">
             <div class="panel-body">
-                <table>
-                    <tr><th>Platform</th><th>Status</th><th>PID</th></tr>
-                    <tr>
-                        <td>Telegram</td>
-                        <td><span class="status online">Connected</span></td>
-                        <td>8717</td>
-                    </tr>
-                </table>
+                <div style="font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Available Tools</div>
+                <span class="tag cyan">web_search_exa</span>
+                <span class="tag cyan">web_fetch_exa</span>
+                <span class="tag cyan">list_prompts</span>
+                <span class="tag cyan">get_prompt</span>
+                <span class="tag cyan">list_resources</span>
+                <span class="tag cyan">read_resource</span>
             </div>
         </div>
 
-        <div class="section-header fade-in">MCP SERVERS</div>
-
-        <div class="panel fade-in">
-            <div class="panel-body">
-                <table>
-                    <tr><th>Server</th><th>Type</th><th>Status</th><th>Tools</th></tr>
-                    <tr>
-                        <td>Exa Search</td>
-                        <td>HTTP (Remote)</td>
-                        <td><span class="status online">Active</span></td>
-                        <td>web_search_exa, web_fetch_exa, list_prompts, get_prompt, list_resources, read_resource</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <div class="section-header fade-in">VOICE &amp; TRANSCRIPTION</div>
+        <!-- ═══ VOICE & TRANSCRIPTION ═══ -->
+        <div class="section-header fade-in">Voice & Transcription</div>
 
         <div class="panel fade-in">
             <div class="panel-body">
                 <table>
                     <tr><th>Component</th><th>Provider</th><th>Details</th></tr>
-                    <tr><td>TTS (Text-to-Speech)</td><td>Edge TTS</td><td>Voice: en-US-AriaNeural</td></tr>
-                    <tr><td>STT (Speech-to-Text)</td><td>Local (faster-whisper)</td><td>Model: base</td></tr>
+                    <tr><td>TTS (Text-to-Speech)</td><td>Edge TTS</td><td class="mono">Voice: en-US-AriaNeural</td></tr>
+                    <tr><td>STT (Speech-to-Text)</td><td>Local (faster-whisper)</td><td class="mono">Model: base</td></tr>
                 </table>
             </div>
         </div>
 
-        <div class="section-header fade-in">ENABLED TOOLSETS</div>
+        <!-- ═══ ENABLED TOOLSETS ═══ -->
+        <div class="section-header fade-in">Enabled Toolsets</div>
 
         <div class="panel fade-in">
             <div class="panel-body">
-                <span class="tag">web</span>
+                <span class="tag green">web</span>
                 <span class="tag green">browser</span>
-                <span class="tag">terminal</span>
+                <span class="tag green">terminal</span>
                 <span class="tag green">file</span>
-                <span class="tag">code_execution</span>
+                <span class="tag green">code_execution</span>
                 <span class="tag green">vision</span>
-                <span class="tag">image_gen</span>
+                <span class="tag green">image_gen</span>
                 <span class="tag green">tts</span>
-                <span class="tag">skills</span>
+                <span class="tag green">skills</span>
                 <span class="tag green">todo</span>
-                <span class="tag">memory</span>
+                <span class="tag green">memory</span>
                 <span class="tag green">session_search</span>
-                <span class="tag">clarify</span>
+                <span class="tag green">clarify</span>
                 <span class="tag green">delegation</span>
-                <span class="tag">cronjob</span>
+                <span class="tag green">cronjob</span>
                 <span class="tag green">messaging</span>
-                <span class="tag">computer_use</span>
+                <span class="tag green">computer_use</span>
             </div>
         </div>
 
-        <div class="section-header fade-in">DISABLED TOOLSETS</div>
+        <!-- ═══ DISABLED TOOLSETS ═══ -->
+        <div class="section-header fade-in">Disabled Toolsets</div>
 
         <div class="panel fade-in">
             <div class="panel-body">
@@ -156,7 +165,7 @@
     </div>
 
     <div class="footer">
-        <p><span class="heart">&#9829;</span> Built with love by Ruby &middot; Powered by Hermes Agent</p>
+        <p><span class="heart">&#9829;</span> Built with love by Ruby · Powered by Hermes Agent</p>
         <p style="margin-top: 4px;">Last updated: Jun 28, 2026 19:40 MYT</p>
     </div>
 

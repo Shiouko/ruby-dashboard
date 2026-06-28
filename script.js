@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   Ruby Dashboard — Cyberpunk Edition · Animations
+   Ruby Dashboard — Cyberpunk Redesign v2 · Interactions
    ═══════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -9,18 +9,25 @@ document.addEventListener('DOMContentLoaded', function () {
     const page = path.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav a').forEach(function (link) {
         const href = link.getAttribute('href');
-        if (href === page ||
-            (page === '' && href === 'index.html') ||
-            (page === 'index.html' && href === 'index.html')) {
+        // Normalize for pages/ subdirectory links
+        const hrefPage = href.split('/').pop();
+        if (hrefPage === page ||
+            (page === '' && hrefPage === 'index.html') ||
+            (page === 'index.html' && hrefPage === 'index.html')) {
             link.classList.add('active');
         }
     });
 
-    /* ── Counter Animation ── */
+    /* ── Counter Animation with Commas ── */
     function animateCounters() {
-        document.querySelectorAll('.stat-box .number[data-target]').forEach(function (el) {
+        const nf = new Intl.NumberFormat('en-US');
+        document.querySelectorAll('.number[data-target]').forEach(function (el) {
             const target = el.getAttribute('data-target');
             const numericTarget = parseFloat(target.replace(/[^0-9.]/g, ''));
+            if (isNaN(numericTarget) || numericTarget === 0) {
+                el.textContent = target;
+                return;
+            }
             const prefix = target.match(/^[^0-9-]*/)[0] || '';
             const suffix = target.match(/[^0-9.]*$/)[0] || '';
             const isFloat = target.includes('.');
@@ -40,13 +47,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (isFloat) {
                     el.textContent = prefix + current.toFixed(1) + suffix;
                 } else {
-                    el.textContent = prefix + Math.floor(current).toLocaleString() + suffix;
+                    el.textContent = prefix + nf.format(Math.floor(current)) + suffix;
                 }
 
                 if (progress < 1) {
                     requestAnimationFrame(update);
                 } else {
-                    el.textContent = target;
+                    el.textContent = prefix + nf.format(numericTarget) + suffix;
                 }
             }
 
@@ -56,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* ── Typing Effect for Subtitle ── */
     const facts = [
-        'Amir\'s AI companion and partner-in-crime',
+        "Amir's AI companion and partner-in-crime",
         '104 skills installed across 23 categories',
         'Over 318 million tokens processed',
         'Powered by Hermes Agent on Debian Linux',
@@ -68,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'Running on Xiaomi MiMo v2.5 Pro'
     ];
 
-    const subtitleEl = document.querySelector('.subtitle-typing');
+    const subtitleEl = document.querySelector('.hero-typing .typing-text');
     if (subtitleEl) {
         let factIndex = 0;
         let charIndex = 0;
@@ -106,8 +113,50 @@ document.addEventListener('DOMContentLoaded', function () {
     /* ── Staggered Fade-In ── */
     const fadeEls = document.querySelectorAll('.fade-in');
     fadeEls.forEach(function (el, index) {
-        el.style.animationDelay = (index * 0.08) + 's';
+        el.style.animationDelay = (index * 0.06) + 's';
     });
+
+    /* ── Bar Chart Animation ── */
+    function animateBars() {
+        document.querySelectorAll('.bar-fill[data-width]').forEach(function (bar) {
+            const targetWidth = bar.getAttribute('data-width');
+            bar.style.width = '0%';
+            setTimeout(function () {
+                bar.style.width = targetWidth;
+            }, 100);
+        });
+        document.querySelectorAll('.progress-fill[data-width]').forEach(function (bar) {
+            const targetWidth = bar.getAttribute('data-width');
+            bar.style.width = '0%';
+            setTimeout(function () {
+                bar.style.width = targetWidth;
+            }, 100);
+        });
+    }
+
+    /* ── Intersection Observer for animations ── */
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // If it has bars inside, animate them
+                    const bars = entry.target.querySelectorAll('.bar-fill[data-width], .progress-fill[data-width]');
+                    bars.forEach(function (bar) {
+                        const targetWidth = bar.getAttribute('data-width');
+                        setTimeout(function () {
+                            bar.style.width = targetWidth;
+                        }, 200);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(function (el) {
+            observer.observe(el);
+        });
+    }
 
     /* ── Smooth Scroll for Anchor Links ── */
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
@@ -120,6 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    /* ── Init counters ── */
+    /* ── Init ── */
     animateCounters();
+    animateBars();
 });
