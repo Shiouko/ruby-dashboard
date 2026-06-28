@@ -1033,13 +1033,32 @@ pre {
 }
 
 .portrait-large {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--ruby);
-    box-shadow: 0 0 30px rgba(224, 17, 95, 0.4), 0 0 80px rgba(224, 17, 95, 0.15);
-    animation: rubyGlow 3s ease-in-out infinite;
+    border: 3px solid #ff69b4;
+    box-shadow: 
+        0 0 20px rgba(255, 105, 180, 0.6),
+        0 0 40px rgba(255, 105, 180, 0.4),
+        0 0 80px rgba(255, 105, 180, 0.2),
+        inset 0 0 20px rgba(255, 105, 180, 0.1);
+    animation: neonPulse 2s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+    0%, 100% { 
+        box-shadow: 
+            0 0 20px rgba(255, 105, 180, 0.6),
+            0 0 40px rgba(255, 105, 180, 0.4),
+            0 0 80px rgba(255, 105, 180, 0.2);
+    }
+    50% { 
+        box-shadow: 
+            0 0 30px rgba(255, 105, 180, 0.8),
+            0 0 60px rgba(255, 105, 180, 0.5),
+            0 0 100px rgba(255, 105, 180, 0.3);
+    }
 }
 
 .portrait-caption {
