@@ -57,29 +57,60 @@
                 <div class="label">Gateway Status</div>
             </div>
             <div class="stat-box fade-in">
-                <div class="number" data-target="3">0</div>
+                <div class="number" data-target="1">0</div>
                 <div class="label">Platforms</div>
             </div>
             <div class="stat-box gold fade-in">
-                <div class="number" data-target="954">0</div>
+                <div class="number" data-target="979">0</div>
                 <div class="label">Total Sessions</div>
             </div>
         </div>
 
-        <!-- ═══ TOKEN OVERVIEW ═══ -->
-        <div class="section-header">Token Overview</div>
+        <!-- ═══ TOKEN USAGE BAR CHART ═══ -->
+        <div class="section-header">Token Usage by Platform</div>
+
+        <div class="panel fade-in">
+            <div class="panel-body">
+                <div class="bar-chart">
+                    <div class="bar-row">
+                        <div class="bar-label">Telegram</div>
+                        <div class="bar-track">
+                            <div class="bar-fill ruby" data-width="77.3%"></div>
+                        </div>
+                        <div class="bar-value">241,297,079</div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label">Cron</div>
+                        <div class="bar-track">
+                            <div class="bar-fill gold" data-width="20.0%"></div>
+                        </div>
+                        <div class="bar-value">62,332,926</div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label">Subagent</div>
+                        <div class="bar-track">
+                            <div class="bar-fill cyan" data-width="2.7%"></div>
+                        </div>
+                        <div class="bar-value">8,472,396</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ TOKEN STATS ═══ -->
+        <div class="section-header">Token Overview (All Time)</div>
 
         <div class="stat-row">
             <div class="stat-box highlight fade-in">
-                <div class="number" data-target="273051405">0</div>
+                <div class="number" data-target="312102401">0</div>
                 <div class="label">Total Tokens</div>
             </div>
             <div class="stat-box fade-in">
-                <div class="number" data-target="13055631">0</div>
+                <div class="number" data-target="14111804">0</div>
                 <div class="label">Input Tokens</div>
             </div>
             <div class="stat-box fade-in">
-                <div class="number" data-target="1588606">0</div>
+                <div class="number" data-target="1816837">0</div>
                 <div class="label">Output Tokens</div>
             </div>
             <div class="stat-box gold fade-in">
@@ -92,75 +123,30 @@
         <div class="section-header">Quick Stats</div>
 
         <div class="stat-row">
-            <div class="stat-box fade-in">
-                <div class="number" data-target="954">0</div>
+            <div class="stat-box gold fade-in">
+                <div class="number" data-target="979">0</div>
                 <div class="label">Sessions</div>
             </div>
             <div class="stat-box fade-in">
-                <div class="number" data-target="9542">0</div>
+                <div class="number" data-target="9886">0</div>
                 <div class="label">Messages</div>
             </div>
             <div class="stat-box highlight fade-in">
-                <div class="number" data-target="104">0</div>
+                <div class="number" data-target="76">0</div>
                 <div class="label">Skills Installed</div>
             </div>
             <div class="stat-box info fade-in">
-                <div class="number" data-target="3919">0</div>
+                <div class="number" data-target="4104">0</div>
                 <div class="label">Tool Calls</div>
             </div>
         </div>
 
-        <!-- ═══ TOKEN USAGE BY PLATFORM ═══ -->
-        <div class="section-header">Token Usage by Platform</div>
-
-        <div class="panel fade-in">
-            <div class="panel-body">
-                <div class="bar-chart">
-                    <div class="bar-row">
-                        <div class="bar-label">Telegram</div>
-                        <div class="bar-track">
-                            <div class="bar-fill ruby" data-width="75.5%"></div>
-                        </div>
-                        <div class="bar-value">206,161,309</div>
-                    </div>
-                    <div class="bar-row">
-                        <div class="bar-label">Cron</div>
-                        <div class="bar-track">
-                            <div class="bar-fill gold" data-width="23.1%"></div>
-                        </div>
-                        <div class="bar-value">63,030,997</div>
-                    </div>
-                    <div class="bar-row">
-                        <div class="bar-label">Subagent</div>
-                        <div class="bar-track">
-                            <div class="bar-fill cyan" data-width="1.4%"></div>
-                        </div>
-                        <div class="bar-value">3,859,099</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ═══ PLATFORM BREAKDOWN ═══ -->
-        <div class="section-header">Platform Breakdown</div>
-
-        <div class="panel fade-in">
-            <div class="panel-body">
-                <table>
-                    <tr><th>Platform</th><th>Sessions</th><th>Messages</th><th>Tokens</th></tr>
-                    <tr><td>Telegram</td><td>50</td><td>3,863</td><td>206,161,309</td></tr>
-                    <tr><td>Cron</td><td>897</td><td>5,404</td><td>63,030,997</td></tr>
-                    <tr><td>Subagent</td><td>7</td><td>275</td><td>3,859,099</td></tr>
-                </table>
-            </div>
-        </div>
-
         <!-- ═══ TOP SESSIONS ═══ -->
-        <div class="section-header">Top Sessions</div>
+        <div class="section-header">Top Sessions (by tokens)</div>
 
         <div class="session-list fade-in">
             <div class="session-card">
-                <div class="session-rank">1</div>
+                <div class="session-rank">🥇</div>
                 <div class="session-info">
                     <div class="session-name">Current Web Search Approach</div>
                     <div class="session-meta">378 msgs</div>
@@ -168,15 +154,7 @@
                 <div class="session-tokens">51,849,836</div>
             </div>
             <div class="session-card">
-                <div class="session-rank">2</div>
-                <div class="session-info">
-                    <div class="session-name">Untitled (Jun 04)</div>
-                    <div class="session-meta">232 msgs</div>
-                </div>
-                <div class="session-tokens">12,838,620</div>
-            </div>
-            <div class="session-card">
-                <div class="session-rank">3</div>
+                <div class="session-rank">🥈</div>
                 <div class="session-info">
                     <div class="session-name">Thanks and Offer</div>
                     <div class="session-meta">253 msgs</div>
@@ -184,20 +162,28 @@
                 <div class="session-tokens">15,341,030</div>
             </div>
             <div class="session-card">
-                <div class="session-rank">4</div>
-                <div class="session-info">
-                    <div class="session-name">Daily Gacha News Cronjob Improvements</div>
-                    <div class="session-meta">202 msgs</div>
-                </div>
-                <div class="session-tokens">9,935,353</div>
-            </div>
-            <div class="session-card">
-                <div class="session-rank">5</div>
+                <div class="session-rank">🥉</div>
                 <div class="session-info">
                     <div class="session-name">Sharing Excited News</div>
                     <div class="session-meta">92 msgs</div>
                 </div>
                 <div class="session-tokens">6,500,000</div>
+            </div>
+            <div class="session-card">
+                <div class="session-rank" style="color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">4</div>
+                <div class="session-info">
+                    <div class="session-name">Untitled (Jun 04)</div>
+                    <div class="session-meta">232 msgs</div>
+                </div>
+                <div class="session-tokens">12,838,620</div>
+            </div>
+            <div class="session-card">
+                <div class="session-rank" style="color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">5</div>
+                <div class="session-info">
+                    <div class="session-name">Daily Gacha News Cronjob Improvements</div>
+                    <div class="session-meta">202 msgs</div>
+                </div>
+                <div class="session-tokens">9,935,353</div>
             </div>
         </div>
 
@@ -210,14 +196,14 @@
                     <div class="bar-row">
                         <div class="bar-label">terminal</div>
                         <div class="bar-track">
-                            <div class="bar-fill ruby" data-width="100%"></div>
+                            <div class="bar-fill ruby" data-width="100.0%"></div>
                         </div>
                         <div class="bar-value">613 (43.6%)</div>
                     </div>
                     <div class="bar-row">
                         <div class="bar-label">patch</div>
                         <div class="bar-track">
-                            <div class="bar-fill gold" data-width="23%"></div>
+                            <div class="bar-fill gold" data-width="23.0%"></div>
                         </div>
                         <div class="bar-value">141 (10.0%)</div>
                     </div>
@@ -236,7 +222,7 @@
                         <div class="bar-value">108 (7.7%)</div>
                     </div>
                     <div class="bar-row">
-                        <div class="bar-label">mcp_exa_web_search</div>
+                        <div class="bar-label">mcp_exa_web_search_exa</div>
                         <div class="bar-track">
                             <div class="bar-fill amber" data-width="11.3%"></div>
                         </div>
@@ -245,7 +231,7 @@
                     <div class="bar-row">
                         <div class="bar-label">todo</div>
                         <div class="bar-track">
-                            <div class="bar-fill pink" data-width="7.2%"></div>
+                            <div class="bar-fill ruby" data-width="7.2%"></div>
                         </div>
                         <div class="bar-value">44 (3.1%)</div>
                     </div>
@@ -253,17 +239,19 @@
             </div>
         </div>
 
-        <!-- ═══ CONNECTED PLATFORMS ═══ -->
-        <div class="section-header">Connected Platforms</div>
+        <!-- ═══ PLATFORMS ═══ -->
+        <div class="section-header">Platforms</div>
 
         <div class="panel fade-in">
-            <div class="panel-body" style="display: flex; align-items: center; gap: 14px;">
-                <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px var(--green); animation: pulse 2s ease-in-out infinite;"></span>
-                <div style="flex: 1;">
-                    <div style="font-weight: 590; font-size: 0.82rem;">Telegram</div>
-                    <div style="font-size: 0.68rem; color: var(--text-quaternary);">Connected - Last active Jun 30, 2026 05:00 MYT</div>
+            <div class="panel-body" style="display: flex; align-items: center; gap: 16px;">
+                <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 2s ease-in-out infinite;"></span>
+                <div>
+                    <div style="font-weight: 600; font-size: 0.9rem;">Telegram</div>
+                    <div style="font-size: 0.72rem; color: var(--text-dim);">Connected &middot; Last active Jul 01, 2026 05:00 MYT</div>
                 </div>
-                <span class="status online">Connected</span>
+                <div style="margin-left: auto;">
+                    <span class="status online">Connected</span>
+                </div>
             </div>
         </div>
 
@@ -272,7 +260,7 @@
     <!-- ═══ FOOTER ═══ -->
     <div class="footer">
         <p><span class="heart">&#9829;</span> Built by Ruby - Powered by Hermes Agent</p>
-        <p style="margin-top: 4px;">Last updated: Jun 30, 2026 - Deployed on Cloudflare Pages</p>
+        <p style="margin-top: 4px;">Last updated: Jul 01, 2026 05:00 MYT - Deployed on Cloudflare Pages</p>
     </div>
 
     <script src="script.js"></script>
