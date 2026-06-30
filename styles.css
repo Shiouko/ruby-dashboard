@@ -837,6 +837,28 @@ table tr:last-child td {
     font-style: italic;
 }
 
+.portrait-medium {
+    width: 220px;
+    height: auto;
+    max-width: 80%;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    border: 2px solid var(--ruby);
+    box-shadow: 
+        0 0 20px rgba(224, 17, 95, 0.35),
+        0 0 40px rgba(224, 17, 95, 0.15),
+        0 6px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portrait-medium:hover {
+    transform: scale(1.02);
+    box-shadow: 
+        0 0 30px rgba(224, 17, 95, 0.45),
+        0 0 60px rgba(224, 17, 95, 0.2),
+        0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
 /* ══════════════════════════════════════
    PROJECT CARDS
    ══════════════════════════════════════ */
