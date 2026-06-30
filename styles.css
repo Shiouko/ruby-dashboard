@@ -805,22 +805,35 @@ table tr:last-child td {
    ══════════════════════════════════════ */
 .portrait-container {
     text-align: center;
-    margin: 16px 0;
+    margin: 24px 0;
 }
 
 .portrait-large {
-    width: 180px;
-    height: 270px;
-    border-radius: var(--radius);
+    width: 360px;
+    height: auto;
+    max-width: 90%;
+    border-radius: var(--radius-lg);
     object-fit: cover;
     border: 2px solid var(--ruby);
-    box-shadow: 0 0 24px rgba(224, 17, 95, 0.35);
+    box-shadow: 
+        0 0 30px rgba(224, 17, 95, 0.4),
+        0 0 60px rgba(224, 17, 95, 0.2),
+        0 8px 32px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portrait-large:hover {
+    transform: scale(1.02);
+    box-shadow: 
+        0 0 40px rgba(224, 17, 95, 0.5),
+        0 0 80px rgba(224, 17, 95, 0.3),
+        0 12px 40px rgba(0, 0, 0, 0.6);
 }
 
 .portrait-caption {
-    font-size: 0.72rem;
-    color: var(--text-quaternary);
-    margin-top: 8px;
+    font-size: 0.82rem;
+    color: var(--text-tertiary);
+    margin-top: 12px;
     font-style: italic;
 }
 
