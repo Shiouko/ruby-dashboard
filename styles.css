@@ -1,41 +1,65 @@
 /* ═══════════════════════════════════════════════════════════
-   Ruby Dashboard — Linear-Inspired Dark Theme
-   Premium SaaS quality · Ruby-red accent · Monitor surfaces
+   Ruby Dashboard — Premium Ruby Design
+   Warm dark theme · Ruby glows · Animated gradients · Alive
    ═══════════════════════════════════════════════════════════ */
 
 /* ── Design Tokens ── */
 :root {
-    --bg-deep: #08090a;
-    --bg-panel: #0f1011;
-    --bg-card: #191a1b;
-    --bg-elevated: #1e1f21;
-    --bg-hover: #222325;
-    --border: rgba(255,255,255,0.08);
-    --border-subtle: rgba(255,255,255,0.05);
-    --border-hover: rgba(255,255,255,0.12);
+    /* Backgrounds - warm, not cold */
+    --bg-deep: #0d0d0d;
+    --bg-panel: #141414;
+    --bg-card: #1a1a1a;
+    --bg-card-hover: #222222;
+    --bg-elevated: #252525;
+
+    /* Ruby palette - FULL spectrum */
     --ruby: #e0115f;
+    --ruby-dark: #8b0000;
     --ruby-glow: #ff1a6c;
     --ruby-light: #ff4d8d;
-    --ruby-dim: rgba(224,17,95,0.12);
+    --ruby-dim: rgba(224, 17, 95, 0.12);
+    --ruby-ghost: rgba(224, 17, 95, 0.05);
+
+    /* Gold palette */
     --gold: #d4a853;
-    --gold-bright: #e8c46a;
-    --green: #30a46c;
-    --green-dim: rgba(48,164,108,0.12);
-    --cyan: #00b4d8;
-    --cyan-dim: rgba(0,180,216,0.12);
-    --amber: #e5943a;
-    --amber-dim: rgba(229,148,58,0.12);
+    --gold-bright: #ffd700;
+    --gold-dim: rgba(212, 168, 83, 0.12);
+
+    /* Accent colors - vibrant */
+    --cyan: #00d4ff;
+    --cyan-dim: rgba(0, 212, 255, 0.12);
+    --green: #00c853;
+    --green-dim: rgba(0, 200, 83, 0.12);
+    --amber: #ff9500;
+    --amber-dim: rgba(255, 149, 0, 0.12);
     --pink: #f778ba;
-    --text: #f7f8f8;
-    --text-secondary: #d0d6e0;
-    --text-tertiary: #8a8f98;
-    --text-quaternary: #62666d;
+
+    /* Text - warm, not cold */
+    --text: #f5f0eb;
+    --text-secondary: #c8c0b8;
+    --text-tertiary: #8a8278;
+    --text-quaternary: #5a5550;
+
+    /* Borders - ruby-tinted */
+    --border: #333333;
+    --border-subtle: #2a2a2a;
+    --border-ruby: rgba(224, 17, 95, 0.15);
+    --border-hover: rgba(224, 17, 95, 0.3);
+
+    /* Glass effects */
+    --glass-bg: rgba(26, 26, 26, 0.6);
+    --glass-border: rgba(224, 17, 95, 0.15);
+
+    /* Shadows with ruby tint */
+    --shadow-sm: 0 2px 8px rgba(224, 17, 95, 0.08);
+    --shadow-md: 0 4px 16px rgba(224, 17, 95, 0.12);
+    --shadow-lg: 0 8px 32px rgba(224, 17, 95, 0.16);
+    --shadow-glow: 0 0 20px rgba(224, 17, 95, 0.3);
+
+    /* Radius */
     --radius: 8px;
     --radius-sm: 6px;
     --radius-lg: 12px;
-    --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
-    --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
 }
 
 /* ── Reset ── */
@@ -63,16 +87,37 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-::selection {
-    background: rgba(224,17,95,0.3);
-    color: var(--text);
+/* ── Animated Mesh Gradient Background ── */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at 20% 0%, rgba(224, 17, 95, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 100%, rgba(212, 168, 83, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(224, 17, 95, 0.03) 0%, transparent 60%);
+    animation: bgMesh 25s ease-in-out infinite alternate;
 }
 
-/* ── Custom Scrollbar ── */
+@keyframes bgMesh {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+/* ── Ruby Selection ── */
+::selection {
+    background: rgba(224, 17, 95, 0.35);
+    color: #fff;
+}
+
+/* ── Custom Scrollbar — Ruby tint ── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-deep); }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.14); }
+::-webkit-scrollbar-thumb { background: rgba(224, 17, 95, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(224, 17, 95, 0.5); }
 
 /* ── Links ── */
 a {
@@ -82,6 +127,7 @@ a {
 }
 a:hover {
     color: var(--ruby-glow);
+    text-shadow: 0 0 8px rgba(224, 17, 95, 0.3);
 }
 
 /* ── Typography ── */
@@ -90,16 +136,22 @@ h1, h2, h3, .section-header, .header h1 {
     font-feature-settings: "cv01", "ss03";
 }
 
+.hero-title-display {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
 .mono, code, .stat-box .number, pre {
     font-family: 'JetBrains Mono', 'Fira Code', monospace;
     font-feature-settings: "cv01", "ss03";
 }
 
 /* ══════════════════════════════════════
-   NAVIGATION — Sticky top bar
+   NAVIGATION — Sticky top bar with ruby underline
    ══════════════════════════════════════ */
 .nav {
-    background: rgba(8,9,10,0.85);
+    background: rgba(13, 13, 13, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     position: sticky;
@@ -144,12 +196,13 @@ h1, h2, h3, .section-header, .header h1 {
     left: 14px;
     right: 14px;
     height: 2px;
-    background: var(--ruby);
+    background: linear-gradient(90deg, var(--ruby-dark), var(--ruby), var(--ruby-light));
     border-radius: 1px;
+    box-shadow: 0 0 8px rgba(224, 17, 95, 0.4);
 }
 
 /* ══════════════════════════════════════
-   PAGE HEADER — Compact, left-aligned
+   PAGE HEADER — Compact with Ruby avatar glow
    ══════════════════════════════════════ */
 .page-header {
     max-width: 1200px;
@@ -165,8 +218,14 @@ h1, h2, h3, .section-header, .header h1 {
     height: 72px;
     border-radius: var(--radius-sm);
     object-fit: cover;
-    border: 1px solid var(--border);
+    border: 2px solid var(--ruby);
+    box-shadow: 0 0 20px rgba(224, 17, 95, 0.4);
     flex-shrink: 0;
+    transition: box-shadow 0.3s ease;
+}
+
+.page-header .avatar:hover {
+    box-shadow: 0 0 30px rgba(224, 17, 95, 0.6);
 }
 
 .page-header-text h1 {
@@ -190,6 +249,7 @@ h1, h2, h3, .section-header, .header h1 {
     color: var(--text-quaternary);
 }
 
+/* ── Pulsing Green Status Dot ── */
 .page-header .status-dot {
     width: 8px;
     height: 8px;
@@ -215,7 +275,8 @@ h1, h2, h3, .section-header, .header h1 {
     height: 120px;
     border-radius: var(--radius);
     object-fit: cover;
-    border: 1px solid var(--border);
+    border: 2px solid var(--ruby);
+    box-shadow: 0 0 20px rgba(224, 17, 95, 0.4);
     margin-bottom: 12px;
 }
 
@@ -239,15 +300,19 @@ h1, h2, h3, .section-header, .header h1 {
     font-size: 0.75rem;
 }
 
-.hero-header .hero-typing {
+/* ── Typing Cursor with Ruby Glow ── */
+.hero-header .hero-typing,
+.hero-typing {
     font-size: 0.78rem;
     color: var(--text-quaternary);
     min-height: 1.4em;
     margin-top: 4px;
 }
 
-.hero-header .hero-typing .cursor {
-    border-right: 2px solid var(--ruby);
+.hero-typing .cursor {
+    color: var(--ruby-glow);
+    text-shadow: 0 0 8px var(--ruby-glow);
+    border-right: 2px solid var(--ruby-glow);
     padding-right: 2px;
     animation: blink 1s step-end infinite;
 }
@@ -266,7 +331,7 @@ h1, h2, h3, .section-header, .header h1 {
     font-weight: 590;
     font-family: 'JetBrains Mono', monospace;
     letter-spacing: 1.5px;
-    border: 1px solid rgba(48,164,108,0.2);
+    border: 1px solid rgba(0, 200, 83, 0.2);
     border-radius: 20px;
     text-transform: uppercase;
     white-space: nowrap;
@@ -291,7 +356,7 @@ h1, h2, h3, .section-header, .header h1 {
     padding: 24px 24px 48px;
 }
 
-/* ── Section Headers ── */
+/* ── Section Headers with ruby accent line ── */
 .section-header {
     font-size: 0.7rem;
     font-weight: 590;
@@ -313,11 +378,11 @@ h1, h2, h3, .section-header, .header h1 {
     content: '';
     flex: 1;
     height: 1px;
-    background: var(--border-subtle);
+    background: linear-gradient(90deg, var(--border-subtle), transparent);
 }
 
 /* ══════════════════════════════════════
-   STAT BOXES — Monitor density
+   STAT BOXES — Color-coded with glow
    ══════════════════════════════════════ */
 .stat-row {
     display: grid;
@@ -333,12 +398,14 @@ h1, h2, h3, .section-header, .header h1 {
     padding: 14px 14px 12px;
     position: relative;
     overflow: hidden;
-    transition: border-color 0.15s ease, background 0.15s ease;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .stat-box:hover {
-    border-color: var(--border-hover);
+    border-color: var(--border-ruby);
     background: var(--bg-card);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
 }
 
 .stat-box .number {
@@ -359,21 +426,33 @@ h1, h2, h3, .section-header, .header h1 {
     font-weight: 510;
 }
 
-/* Stat box accent variants */
-.stat-box.highlight .number { color: var(--ruby-glow); }
+/* Stat box accent variants — Ruby (highlight) */
+.stat-box.highlight .number { color: var(--ruby-glow); text-shadow: 0 0 12px rgba(224, 17, 95, 0.3); }
 .stat-box.highlight { border-left: 2px solid var(--ruby); }
+.stat-box.highlight:hover { box-shadow: 0 4px 16px rgba(224, 17, 95, 0.15); }
 
-.stat-box.success .number { color: var(--green); }
-
-.stat-box.gold .number { color: var(--gold-bright); }
+/* Stat box accent variants — Gold */
+.stat-box.gold .number { color: var(--gold-bright); text-shadow: 0 0 12px rgba(212, 168, 83, 0.3); }
 .stat-box.gold { border-left: 2px solid var(--gold); }
+.stat-box.gold:hover { box-shadow: 0 4px 16px rgba(212, 168, 83, 0.15); }
 
-.stat-box.info .number { color: var(--cyan); }
+/* Stat box accent variants — Cyan (info) */
+.stat-box.info .number, .stat-box.cyan .number { color: var(--cyan); text-shadow: 0 0 12px rgba(0, 212, 255, 0.3); }
+.stat-box.info, .stat-box.cyan { border-left: 2px solid var(--cyan); }
+.stat-box.info:hover, .stat-box.cyan:hover { box-shadow: 0 4px 16px rgba(0, 212, 255, 0.15); }
 
-.stat-box.amber .number { color: var(--amber); }
+/* Stat box accent variants — Green (success) */
+.stat-box.success .number { color: var(--green); text-shadow: 0 0 12px rgba(0, 200, 83, 0.3); }
+.stat-box.success { border-left: 2px solid var(--green); }
+.stat-box.success:hover { box-shadow: 0 4px 16px rgba(0, 200, 83, 0.15); }
+
+/* Stat box accent variants — Amber */
+.stat-box.amber .number { color: var(--amber); text-shadow: 0 0 12px rgba(255, 149, 0, 0.3); }
+.stat-box.amber { border-left: 2px solid var(--amber); }
+.stat-box.amber:hover { box-shadow: 0 4px 16px rgba(255, 149, 0, 0.15); }
 
 /* ══════════════════════════════════════
-   PANELS / CARDS
+   PANELS / CARDS — Glass with ruby-tinted borders
    ══════════════════════════════════════ */
 .panel {
     background: var(--bg-panel);
@@ -381,15 +460,16 @@ h1, h2, h3, .section-header, .header h1 {
     border-radius: var(--radius);
     margin-bottom: 8px;
     overflow: hidden;
-    transition: border-color 0.15s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .panel:hover {
-    border-color: var(--border-hover);
+    border-color: var(--border-ruby);
+    box-shadow: var(--shadow-md);
 }
 
 .panel-header {
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     border-bottom: 1px solid var(--border-subtle);
     padding: 10px 16px;
     font-size: 0.72rem;
@@ -409,7 +489,7 @@ h1, h2, h3, .section-header, .header h1 {
 }
 
 /* ══════════════════════════════════════
-   BAR CHARTS — Inline progress
+   BAR CHARTS — Gradient fills
    ══════════════════════════════════════ */
 .bar-chart {
     display: flex;
@@ -435,7 +515,7 @@ h1, h2, h3, .section-header, .header h1 {
 
 .bar-track {
     height: 6px;
-    background: rgba(255,255,255,0.04);
+    background: rgba(255, 255, 255, 0.04);
     border-radius: 3px;
     overflow: hidden;
 }
@@ -447,12 +527,13 @@ h1, h2, h3, .section-header, .header h1 {
     width: 0%;
 }
 
-.bar-fill.ruby { background: var(--ruby); }
-.bar-fill.gold { background: var(--gold); }
-.bar-fill.cyan { background: var(--cyan); }
-.bar-fill.green { background: var(--green); }
-.bar-fill.amber { background: var(--amber); }
-.bar-fill.pink { background: var(--pink); }
+/* Gradient bar fills */
+.bar-fill.ruby { background: linear-gradient(90deg, var(--ruby-dark), var(--ruby)); }
+.bar-fill.gold { background: linear-gradient(90deg, #b8860b, var(--gold)); }
+.bar-fill.cyan { background: linear-gradient(90deg, #0099aa, var(--cyan)); }
+.bar-fill.green { background: linear-gradient(90deg, #008844, var(--green)); }
+.bar-fill.amber { background: linear-gradient(90deg, #cc7600, var(--amber)); }
+.bar-fill.pink { background: linear-gradient(90deg, #cc4488, var(--pink)); }
 
 .bar-value {
     font-family: 'JetBrains Mono', monospace;
@@ -479,12 +560,13 @@ h1, h2, h3, .section-header, .header h1 {
     background: var(--bg-panel);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    transition: background 0.15s ease, border-color 0.15s ease;
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .session-card:hover {
     background: var(--bg-card);
-    border-color: var(--border-hover);
+    border-color: var(--border-ruby);
+    box-shadow: var(--shadow-sm);
 }
 
 .session-rank {
@@ -526,7 +608,7 @@ table {
 }
 
 table th {
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     border-bottom: 1px solid var(--border);
     padding: 8px 12px;
     text-align: left;
@@ -544,7 +626,7 @@ table td {
 }
 
 table tr:hover td {
-    background: rgba(255,255,255,0.015);
+    background: rgba(224, 17, 95, 0.03);
 }
 
 table tr:last-child td {
@@ -556,7 +638,7 @@ table tr:last-child td {
 }
 
 /* ══════════════════════════════════════
-   TAGS — Minimal chips
+   TAGS — Colored chips
    ══════════════════════════════════════ */
 .tag {
     display: inline-flex;
@@ -565,20 +647,21 @@ table tr:last-child td {
     font-size: 0.68rem;
     font-weight: 510;
     color: var(--text-tertiary);
-    background: rgba(255,255,255,0.04);
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--border-subtle);
     border-radius: 4px;
     margin: 2px 3px 2px 0;
     font-family: 'JetBrains Mono', monospace;
     letter-spacing: 0;
+    transition: background 0.15s ease;
 }
 
-.tag.green { color: var(--green); background: var(--green-dim); border-color: rgba(48,164,108,0.15); }
-.tag.cyan { color: var(--cyan); background: var(--cyan-dim); border-color: rgba(0,180,216,0.15); }
-.tag.gold { color: var(--gold); background: rgba(212,168,83,0.1); border-color: rgba(212,168,83,0.15); }
-.tag.ruby, .tag.red { color: var(--ruby-glow); background: var(--ruby-dim); border-color: rgba(224,17,95,0.15); }
-.tag.orange, .tag.amber { color: var(--amber); background: var(--amber-dim); border-color: rgba(229,148,58,0.15); }
-.tag.pink { color: var(--pink); background: rgba(247,120,186,0.1); border-color: rgba(247,120,186,0.15); }
+.tag.green { color: var(--green); background: var(--green-dim); border-color: rgba(0, 200, 83, 0.15); }
+.tag.cyan { color: var(--cyan); background: var(--cyan-dim); border-color: rgba(0, 212, 255, 0.15); }
+.tag.gold { color: var(--gold); background: var(--gold-dim); border-color: rgba(212, 168, 83, 0.15); }
+.tag.ruby, .tag.red { color: var(--ruby-glow); background: var(--ruby-dim); border-color: rgba(224, 17, 95, 0.15); }
+.tag.orange, .tag.amber { color: var(--amber); background: var(--amber-dim); border-color: rgba(255, 149, 0, 0.15); }
+.tag.pink { color: var(--pink); background: rgba(247, 120, 186, 0.1); border-color: rgba(247, 120, 186, 0.15); }
 
 /* ══════════════════════════════════════
    STATUS INDICATORS
@@ -597,6 +680,7 @@ table tr:last-child td {
 .status.online {
     color: var(--green);
     background: var(--green-dim);
+    box-shadow: 0 0 8px rgba(0, 200, 83, 0.15);
 }
 
 .status.offline {
@@ -618,11 +702,13 @@ table tr:last-child td {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 16px;
-    transition: border-color 0.15s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .trait-card:hover {
-    border-color: var(--border-hover);
+    border-color: var(--border-ruby);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
 }
 
 .trait-icon {
@@ -662,14 +748,14 @@ table tr:last-child td {
 
 .progress-track {
     height: 4px;
-    background: rgba(255,255,255,0.04);
+    background: rgba(255, 255, 255, 0.04);
     border-radius: 2px;
     overflow: hidden;
 }
 
 .progress-fill {
     height: 100%;
-    background: var(--ruby);
+    background: linear-gradient(90deg, var(--ruby-dark), var(--ruby));
     border-radius: 2px;
     transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     width: 0%;
@@ -698,11 +784,12 @@ table tr:last-child td {
     padding: 10px 8px;
     text-align: center;
     font-size: 1rem;
-    transition: border-color 0.15s ease;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .kaomoji-item:hover {
     border-color: var(--ruby-dim);
+    box-shadow: 0 0 12px rgba(224, 17, 95, 0.1);
 }
 
 .kaomoji-item .name {
@@ -726,7 +813,8 @@ table tr:last-child td {
     height: 270px;
     border-radius: var(--radius);
     object-fit: cover;
-    border: 1px solid var(--border);
+    border: 2px solid var(--ruby);
+    box-shadow: 0 0 24px rgba(224, 17, 95, 0.35);
 }
 
 .portrait-caption {
@@ -750,12 +838,14 @@ table tr:last-child td {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 20px;
-    transition: border-color 0.15s ease, background 0.15s ease;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .project-card:hover {
-    border-color: var(--border-hover);
+    border-color: var(--border-ruby);
     background: var(--bg-card);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
 }
 
 .project-card.featured {
@@ -778,6 +868,7 @@ table tr:last-child td {
     height: 6px;
     border-radius: 50%;
     background: var(--green);
+    box-shadow: 0 0 6px var(--green);
     flex-shrink: 0;
 }
 
@@ -826,7 +917,7 @@ table tr:last-child td {
 }
 
 /* ══════════════════════════════════════
-   FOOTER
+   FOOTER — Ruby heart
    ══════════════════════════════════════ */
 .footer {
     max-width: 1200px;
@@ -840,6 +931,7 @@ table tr:last-child td {
 
 .footer .heart {
     color: var(--ruby);
+    text-shadow: 0 0 8px rgba(224, 17, 95, 0.4);
 }
 
 /* ══════════════════════════════════════
@@ -896,7 +988,8 @@ ul.clean li::before {
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background: var(--text-quaternary);
+    background: var(--ruby);
+    box-shadow: 0 0 4px rgba(224, 17, 95, 0.3);
 }
 
 /* ══════════════════════════════════════
