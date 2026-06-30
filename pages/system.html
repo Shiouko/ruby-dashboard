@@ -3,38 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System — Ruby Dashboard</title>
+    <title>System - Ruby Dashboard</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;510;590&family=JetBrains+Mono:wght@400;510&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
     <div class="hero-header">
-        <h1 class="hero-title fade-in">SYSTEM</h1>
+        <h1 class="hero-title fade-in">System</h1>
         <div class="hero-subtitle fade-in">Hermes Agent Configuration & Host Details</div>
     </div>
 
     <nav class="nav">
         <div class="nav-inner">
-            <a href="../index.html">Home</a>
-            <a href="about.html">About Ruby</a>
-            <a href="system.html">System</a>
-            <a href="vault.html">Vault</a>
+            <a href="../index.html">Overview</a>
+            <a href="tokens.html">Tokens</a>
             <a href="skills.html">Skills</a>
             <a href="cron.html">Cron Jobs</a>
-            <a href="tokens.html">Token Usage</a>
-            <a href="amir.html">About Amir</a>
+            <a href="system.html">System</a>
+            <a href="vault.html">Vault</a>
             <a href="projects.html">Projects</a>
+            <a href="about.html">About Ruby</a>
+            <a href="amir.html">About Amir</a>
         </div>
     </nav>
 
     <div class="main">
 
         <!-- ═══ HERMES CONFIG ═══ -->
-        <div class="section-header fade-in">Hermes Agent Configuration</div>
+        <div class="section-header">Hermes Agent Configuration</div>
 
         <div class="panel fade-in">
             <div class="panel-body">
@@ -53,7 +53,7 @@
         </div>
 
         <!-- ═══ HOST SYSTEM ═══ -->
-        <div class="section-header fade-in">Host System</div>
+        <div class="section-header">Host System</div>
 
         <div class="panel fade-in">
             <div class="panel-body">
@@ -71,28 +71,28 @@
         </div>
 
         <!-- ═══ CONNECTED PLATFORMS ═══ -->
-        <div class="section-header fade-in">Connected Platforms</div>
+        <div class="section-header">Connected Platforms</div>
 
         <div class="panel fade-in">
-            <div class="panel-body" style="display: flex; align-items: center; gap: 16px;">
-                <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 2s ease-in-out infinite;"></span>
+            <div class="panel-body" style="display: flex; align-items: center; gap: 14px;">
+                <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px var(--green); animation: pulse 2s ease-in-out infinite;"></span>
                 <div style="flex: 1;">
-                    <div style="font-weight: 600;">Telegram</div>
-                    <div style="font-size: 0.72rem; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">PID: 8717</div>
+                    <div style="font-weight: 590;">Telegram</div>
+                    <div style="font-size: 0.68rem; color: var(--text-quaternary); font-family: 'JetBrains Mono', monospace;">PID: 8717</div>
                 </div>
                 <span class="status online">Connected</span>
             </div>
         </div>
 
         <!-- ═══ MCP SERVERS ═══ -->
-        <div class="section-header fade-in">MCP Servers</div>
+        <div class="section-header">MCP Servers</div>
 
         <div class="panel fade-in">
-            <div class="panel-body" style="display: flex; align-items: center; gap: 16px;">
-                <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 2s ease-in-out infinite;"></span>
+            <div class="panel-body" style="display: flex; align-items: center; gap: 14px;">
+                <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px var(--green); animation: pulse 2s ease-in-out infinite;"></span>
                 <div style="flex: 1;">
-                    <div style="font-weight: 600;">Exa Search</div>
-                    <div style="font-size: 0.72rem; color: var(--text-dim);">HTTP (Remote) · 6 tools available</div>
+                    <div style="font-weight: 590;">Exa Search</div>
+                    <div style="font-size: 0.68rem; color: var(--text-quaternary);">HTTP (Remote) - 6 tools available</div>
                 </div>
                 <span class="status online">Active</span>
             </div>
@@ -100,7 +100,7 @@
 
         <div class="panel fade-in">
             <div class="panel-body">
-                <div style="font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Available Tools</div>
+                <div style="font-size: 0.68rem; color: var(--text-quaternary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; font-weight: 510;">Available Tools</div>
                 <span class="tag cyan">web_search_exa</span>
                 <span class="tag cyan">web_fetch_exa</span>
                 <span class="tag cyan">list_prompts</span>
@@ -111,7 +111,7 @@
         </div>
 
         <!-- ═══ VOICE & TRANSCRIPTION ═══ -->
-        <div class="section-header fade-in">Voice & Transcription</div>
+        <div class="section-header">Voice & Transcription</div>
 
         <div class="panel fade-in">
             <div class="panel-body">
@@ -124,7 +124,7 @@
         </div>
 
         <!-- ═══ ENABLED TOOLSETS ═══ -->
-        <div class="section-header fade-in">Enabled Toolsets</div>
+        <div class="section-header">Enabled Toolsets</div>
 
         <div class="panel fade-in">
             <div class="panel-body">
@@ -149,7 +149,7 @@
         </div>
 
         <!-- ═══ DISABLED TOOLSETS ═══ -->
-        <div class="section-header fade-in">Disabled Toolsets</div>
+        <div class="section-header">Disabled Toolsets</div>
 
         <div class="panel fade-in">
             <div class="panel-body">
@@ -165,8 +165,8 @@
     </div>
 
     <div class="footer">
-        <p><span class="heart">&#9829;</span> Built with love by Ruby · Powered by Hermes Agent</p>
-        <p style="margin-top: 4px;">Last updated: Jun 28, 2026 19:40 MYT</p>
+        <p><span class="heart">&#9829;</span> Built by Ruby - Powered by Hermes Agent</p>
+        <p style="margin-top: 4px;">Last updated: Jun 30, 2026</p>
     </div>
 
     <script src="../script.js"></script>

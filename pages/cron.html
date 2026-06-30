@@ -3,60 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cron Jobs — Ruby Dashboard</title>
+    <title>Cron Jobs - Ruby Dashboard</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;510;590&family=JetBrains+Mono:wght@400;510&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <!-- ═══ HERO HEADER ═══ -->
+
     <div class="hero-header">
-        <img src="../assets/ruby-avatar.jpg" alt="Ruby" class="hero-avatar fade-in">
-        <h1 class="hero-title fade-in">RUBY</h1>
-        <div class="hero-subtitle fade-in">
-            Hermes Agent v0.17.0 <span class="version">· Cron Jobs — Ruby Dashboard</span>
-        </div>
-        <div class="hero-typing fade-in">
-            <span class="typing-text"></span><span class="cursor">&nbsp;</span>
-        </div>
-        <div class="status-badge fade-in">ONLINE</div>
+        <h1 class="hero-title fade-in">Cron Jobs</h1>
+        <div class="hero-subtitle fade-in">9 active scheduled jobs</div>
     </div>
 
     <nav class="nav">
         <div class="nav-inner">
-            <a href="../index.html">Home</a>
-            <a href="about.html">About Ruby</a>
-            <a href="system.html">System</a>
-            <a href="vault.html">Vault</a>
+            <a href="../index.html">Overview</a>
+            <a href="tokens.html">Tokens</a>
             <a href="skills.html">Skills</a>
             <a href="cron.html">Cron Jobs</a>
-            <a href="tokens.html">Token Usage</a>
-            <a href="amir.html">About Amir</a>
+            <a href="system.html">System</a>
+            <a href="vault.html">Vault</a>
             <a href="projects.html">Projects</a>
+            <a href="about.html">About Ruby</a>
+            <a href="amir.html">About Amir</a>
         </div>
     </nav>
 
     <div class="main">
-        <div class="section-header fade-in">SCHEDULED CRON JOBS &mdash; 9 ACTIVE</div>
+        <div class="section-header">Overview</div>
 
         <div class="stat-row">
             <div class="stat-box highlight fade-in">
                 <div class="number" data-target="9">0</div>
                 <div class="label">Active Jobs</div>
             </div>
-            <div class="stat-box info fade-in">
+            <div class="stat-box fade-in">
                 <div class="number" data-target="0">0</div>
-                <div class="label">Disabled Jobs</div>
+                <div class="label">Disabled</div>
             </div>
             <div class="stat-box fade-in">
                 <div class="number" data-target="6">0</div>
-                <div class="label">Daily Jobs</div>
+                <div class="label">Daily</div>
             </div>
             <div class="stat-box fade-in">
                 <div class="number" data-target="3">0</div>
-                <div class="label">Recurring Jobs</div>
+                <div class="label">Recurring</div>
             </div>
             <div class="stat-box success fade-in">
                 <div class="number" data-target="0">0</div>
@@ -64,123 +57,124 @@
             </div>
         </div>
 
+        <div class="section-header">Active Jobs</div>
+
         <div class="panel fade-in">
-            <div class="panel-header">Active Jobs</div>
             <div class="panel-body">
                 <table>
                     <tr><th>Name</th><th>Schedule</th><th>Next Run</th><th>Last Run</th><th>Status</th></tr>
-                    <tr><td>Daily World News</td><td>0 6 * * *</td><td>Jun 06 06:00</td><td>Jun 05 06:01</td><td><span class="status online">OK</span></td></tr>
-                    <tr><td>Daily Tech News</td><td>10 6 * * *</td><td>Jun 06 06:10</td><td>Jun 05 06:10</td><td><span class="status online">OK</span></td></tr>
-                    <tr><td>Daily Gaming News</td><td>15 6 * * *</td><td>Jun 06 06:15</td><td>Jun 05 06:16</td><td><span class="status online">OK</span></td></tr>
-                    <tr><td>Daily Gacha News</td><td>20 6 * * *</td><td>Jun 06 06:20</td><td>Jun 05 06:21</td><td><span class="status online">OK</span></td></tr>
-                    <tr><td>Daily Dashboard Update</td><td>0 5 * * *</td><td>Jun 07 05:00</td><td>Jun 05 05:04</td><td><span class="status online">OK</span></td></tr>
-                    <tr><td>YT Pulse Dashboard Refresh</td><td>0 7 * * *</td><td>Jun 06 07:00</td><td>Jun 05 07:00</td><td><span class="status online">OK</span></td></tr>
-                    <tr><td>Session Auto-Summarizer</td><td>every 240m</td><td>~4h</td><td>Jun 06 02:22</td><td><span class="status online">OK</span></td></tr>
-                    <tr><td>Vault Auto-Committer</td><td>every 60m</td><td>~1h</td><td>Jun 06 04:14</td><td><span class="status online">OK</span></td></tr>
-                    <tr><td>Session Journal Populator</td><td>every 360m</td><td>~6h</td><td>running</td><td><span class="status online">OK</span></td></tr>
+                    <tr><td>Daily World News</td><td class="mono">0 6 * * *</td><td>Jun 30 06:00</td><td>Jun 29 06:01</td><td><span class="status online">OK</span></td></tr>
+                    <tr><td>Daily Tech News</td><td class="mono">10 6 * * *</td><td>Jun 30 06:10</td><td>Jun 29 06:10</td><td><span class="status online">OK</span></td></tr>
+                    <tr><td>Daily Gaming News</td><td class="mono">15 6 * * *</td><td>Jun 30 06:15</td><td>Jun 29 06:16</td><td><span class="status online">OK</span></td></tr>
+                    <tr><td>Daily Gacha News</td><td class="mono">20 6 * * *</td><td>Jun 30 06:20</td><td>Jun 29 06:21</td><td><span class="status online">OK</span></td></tr>
+                    <tr><td>Daily Dashboard Update</td><td class="mono">0 5 * * *</td><td>Jul 01 05:00</td><td>Jun 29 05:04</td><td><span class="status online">OK</span></td></tr>
+                    <tr><td>YT Pulse Dashboard Refresh</td><td class="mono">0 7 * * *</td><td>Jun 30 07:00</td><td>Jun 29 07:00</td><td><span class="status online">OK</span></td></tr>
+                    <tr><td>Session Auto-Summarizer</td><td class="mono">every 240m</td><td>~4h</td><td>Jun 30 02:22</td><td><span class="status online">OK</span></td></tr>
+                    <tr><td>Vault Auto-Committer</td><td class="mono">every 60m</td><td>~1h</td><td>Jun 30 04:14</td><td><span class="status online">OK</span></td></tr>
+                    <tr><td>Session Journal Populator</td><td class="mono">every 360m</td><td>~6h</td><td>running</td><td><span class="status online">OK</span></td></tr>
                 </table>
             </div>
         </div>
 
-        <div class="section-header fade-in">CRON JOB DETAILS</div>
+        <div class="section-header">Schedule Visualization</div>
+
+        <div class="panel fade-in">
+            <div class="panel-body">
+                <pre style="font-size: 0.72rem; color: var(--text-secondary); line-height: 1.8; overflow-x: auto;">Time (MYT)  Job
+──────────────────────────────────────────────
+05:00       ████████  Daily Dashboard Update
+06:00       ████████  Daily World News
+06:10       ████████  Daily Tech News
+06:15       ████████  Daily Gaming News
+06:20       ████████  Daily Gacha News
+07:00       ████████  YT Pulse Dashboard Refresh
+───── Recurring (auto) ─────
+every 1h    ░░░░░░░░  Vault Auto-Committer
+every 4h    ░░░░░░░░  Session Auto-Summarizer
+every 6h    ░░░░░░░░  Session Journal Populator
+──────────────────────────────────────────────
+Total: 9 active jobs | 0 disabled</pre>
+            </div>
+        </div>
+
+        <div class="section-header">Job Details</div>
 
         <div class="panel fade-in"><div class="panel-header">Daily World News</div><div class="panel-body"><table>
-            <tr><th>ID</th><td>b1582d547f4c</td></tr>
-            <tr><th>Schedule</th><td>0 6 * * * (Every day at 6:00 AM MYT)</td></tr>
+            <tr><th>ID</th><td class="mono">b1582d547f4c</td></tr>
+            <tr><th>Schedule</th><td class="mono">0 6 * * * (Every day at 6:00 AM MYT)</td></tr>
             <tr><th>Delivery</th><td>origin</td></tr>
             <tr><th>Repeat</th><td>Indefinite</td></tr>
             <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
         </table></div></div>
 
         <div class="panel fade-in"><div class="panel-header">Daily Tech News</div><div class="panel-body"><table>
-            <tr><th>ID</th><td>515acd9c481c</td></tr>
-            <tr><th>Schedule</th><td>10 6 * * * (Every day at 6:10 AM MYT)</td></tr>
+            <tr><th>ID</th><td class="mono">515acd9c481c</td></tr>
+            <tr><th>Schedule</th><td class="mono">10 6 * * * (Every day at 6:10 AM MYT)</td></tr>
             <tr><th>Delivery</th><td>origin</td></tr>
             <tr><th>Repeat</th><td>Indefinite</td></tr>
             <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
         </table></div></div>
 
         <div class="panel fade-in"><div class="panel-header">Daily Gaming News</div><div class="panel-body"><table>
-            <tr><th>ID</th><td>932c591d3ff3</td></tr>
-            <tr><th>Schedule</th><td>15 6 * * * (Every day at 6:15 AM MYT)</td></tr>
+            <tr><th>ID</th><td class="mono">932c591d3ff3</td></tr>
+            <tr><th>Schedule</th><td class="mono">15 6 * * * (Every day at 6:15 AM MYT)</td></tr>
             <tr><th>Delivery</th><td>origin</td></tr>
             <tr><th>Repeat</th><td>Indefinite</td></tr>
             <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
         </table></div></div>
 
         <div class="panel fade-in"><div class="panel-header">Daily Gacha News</div><div class="panel-body"><table>
-            <tr><th>ID</th><td>57844788e574</td></tr>
-            <tr><th>Schedule</th><td>20 6 * * * (Every day at 6:20 AM MYT)</td></tr>
+            <tr><th>ID</th><td class="mono">57844788e574</td></tr>
+            <tr><th>Schedule</th><td class="mono">20 6 * * * (Every day at 6:20 AM MYT)</td></tr>
             <tr><th>Delivery</th><td>origin</td></tr>
             <tr><th>Repeat</th><td>Indefinite</td></tr>
             <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
         </table></div></div>
 
         <div class="panel fade-in"><div class="panel-header">Daily Dashboard Update</div><div class="panel-body"><table>
-            <tr><th>ID</th><td>b745ffabccb7</td></tr>
-            <tr><th>Schedule</th><td>0 5 * * * (Every day at 5:00 AM MYT)</td></tr>
+            <tr><th>ID</th><td class="mono">b745ffabccb7</td></tr>
+            <tr><th>Schedule</th><td class="mono">0 5 * * * (Every day at 5:00 AM MYT)</td></tr>
             <tr><th>Delivery</th><td>origin</td></tr>
             <tr><th>Repeat</th><td>Indefinite</td></tr>
             <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
         </table></div></div>
 
         <div class="panel fade-in"><div class="panel-header">YT Pulse Dashboard Refresh</div><div class="panel-body"><table>
-            <tr><th>ID</th><td>4a09ce4f49e7</td></tr>
-            <tr><th>Schedule</th><td>0 7 * * * (Every day at 7:00 AM MYT)</td></tr>
+            <tr><th>ID</th><td class="mono">4a09ce4f49e7</td></tr>
+            <tr><th>Schedule</th><td class="mono">0 7 * * * (Every day at 7:00 AM MYT)</td></tr>
             <tr><th>Delivery</th><td>origin</td></tr>
             <tr><th>Repeat</th><td>Indefinite</td></tr>
             <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
         </table></div></div>
 
         <div class="panel fade-in"><div class="panel-header">Session Auto-Summarizer</div><div class="panel-body"><table>
-            <tr><th>ID</th><td>45abf82f0e15</td></tr>
-            <tr><th>Schedule</th><td>every 240m (Every 4 hours)</td></tr>
+            <tr><th>ID</th><td class="mono">45abf82f0e15</td></tr>
+            <tr><th>Schedule</th><td class="mono">every 240m (Every 4 hours)</td></tr>
             <tr><th>Delivery</th><td>origin</td></tr>
             <tr><th>Repeat</th><td>Indefinite</td></tr>
             <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
         </table></div></div>
 
         <div class="panel fade-in"><div class="panel-header">Vault Auto-Committer</div><div class="panel-body"><table>
-            <tr><th>ID</th><td>240361972bf9</td></tr>
-            <tr><th>Schedule</th><td>every 60m (Every hour)</td></tr>
+            <tr><th>ID</th><td class="mono">240361972bf9</td></tr>
+            <tr><th>Schedule</th><td class="mono">every 60m (Every hour)</td></tr>
             <tr><th>Delivery</th><td>origin</td></tr>
             <tr><th>Repeat</th><td>Indefinite</td></tr>
             <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
         </table></div></div>
 
         <div class="panel fade-in"><div class="panel-header">Session Journal Populator</div><div class="panel-body"><table>
-            <tr><th>ID</th><td>e5144eeb9a40</td></tr>
-            <tr><th>Schedule</th><td>every 360m (Every 6 hours)</td></tr>
+            <tr><th>ID</th><td class="mono">e5144eeb9a40</td></tr>
+            <tr><th>Schedule</th><td class="mono">every 360m (Every 6 hours)</td></tr>
             <tr><th>Delivery</th><td>origin</td></tr>
             <tr><th>Repeat</th><td>Indefinite</td></tr>
             <tr><th>Status</th><td><span class="status online">Active</span></td></tr>
         </table></div></div>
-
-        <div class="section-header fade-in">CRON SCHEDULE VISUALIZATION</div>
-
-        <div class="panel fade-in">
-            <div class="panel-body">
-                <pre>Time (MYT)  Job
-&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
-05:00       &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;  Daily Dashboard Update
-06:00       &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;  Daily World News
-06:10       &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;  Daily Tech News
-06:15       &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;  Daily Gaming News
-06:20       &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;  Daily Gacha News
-07:00       &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;  YT Pulse Dashboard Refresh
-&#9472;&#9472;&#9472;&#9472;&#9472; Recurring (auto) &#9472;&#9472;&#9472;&#9472;&#9472;
-every 1h    &#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;  Vault Auto-Committer
-every 4h    &#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;  Session Auto-Summarizer
-every 6h    &#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;  Session Journal Populator
-&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;
-Total: 9 active jobs | 0 disabled</pre>
-            </div>
-        </div>
     </div>
 
     <div class="footer">
-        <p><span class="heart">&#9829;</span> Built with love by Ruby &middot; Powered by Hermes Agent</p>
-        <p style="margin-top: 4px;">Last updated: Jun 06, 2026 05:00 MYT</p>
+        <p><span class="heart">&#9829;</span> Built by Ruby - Powered by Hermes Agent</p>
+        <p style="margin-top: 4px;">Last updated: Jun 30, 2026</p>
     </div>
 
     <script src="../script.js"></script>

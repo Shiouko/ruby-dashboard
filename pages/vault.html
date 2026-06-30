@@ -3,43 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vault — Ruby Dashboard</title>
+    <title>Vault - Ruby Dashboard</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;510;590&family=JetBrains+Mono:wght@400;510&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
     <div class="hero-header">
-        <h1 class="hero-title fade-in">VAULT</h1>
-        <div class="hero-subtitle fade-in">Ruby's Knowledge Graph — Obsidian Vault</div>
+        <h1 class="hero-title fade-in">Vault</h1>
+        <div class="hero-subtitle fade-in">Ruby's Knowledge Graph - Obsidian Vault</div>
     </div>
 
     <nav class="nav">
         <div class="nav-inner">
-            <a href="../index.html">Home</a>
-            <a href="about.html">About Ruby</a>
-            <a href="system.html">System</a>
-            <a href="vault.html">Vault</a>
+            <a href="../index.html">Overview</a>
+            <a href="tokens.html">Tokens</a>
             <a href="skills.html">Skills</a>
             <a href="cron.html">Cron Jobs</a>
-            <a href="tokens.html">Token Usage</a>
-            <a href="amir.html">About Amir</a>
+            <a href="system.html">System</a>
+            <a href="vault.html">Vault</a>
             <a href="projects.html">Projects</a>
+            <a href="about.html">About Ruby</a>
+            <a href="amir.html">About Amir</a>
         </div>
     </nav>
 
     <div class="main">
 
         <!-- ═══ KNOWLEDGE GRAPH ═══ -->
-        <div class="section-header fade-in">Knowledge Graph</div>
+        <div class="section-header">Knowledge Graph</div>
 
         <div class="panel fade-in">
             <div class="panel-body text-center">
                 <img src="../assets/vault-graph.svg" alt="Vault Knowledge Graph" style="max-width: 100%; height: auto; border-radius: var(--radius-sm);">
-                <div class="mt-8" style="font-size: 0.72rem; color: var(--text-dim);">12 notes · 20 wikilinks · Interactive hover</div>
+                <div class="mt-8" style="font-size: 0.68rem; color: var(--text-quaternary);">12 notes - 20 wikilinks - Interactive hover</div>
             </div>
         </div>
 
@@ -64,52 +64,22 @@
         </div>
 
         <!-- ═══ FOLDER BREAKDOWN ═══ -->
-        <div class="section-header fade-in">Folder Breakdown</div>
+        <div class="section-header">Folder Breakdown</div>
 
         <div class="panel fade-in">
             <div class="panel-body">
                 <div class="bar-chart">
-                    <div class="bar-row">
-                        <div class="bar-label">Sessions</div>
-                        <div class="bar-track">
-                            <div class="bar-fill ruby" data-width="67%"></div>
-                        </div>
-                        <div class="bar-value">6</div>
-                    </div>
-                    <div class="bar-row">
-                        <div class="bar-label">Learnings</div>
-                        <div class="bar-track">
-                            <div class="bar-fill gold" data-width="33%"></div>
-                        </div>
-                        <div class="bar-value">3</div>
-                    </div>
-                    <div class="bar-row">
-                        <div class="bar-label">People</div>
-                        <div class="bar-track">
-                            <div class="bar-fill cyan" data-width="22%"></div>
-                        </div>
-                        <div class="bar-value">2</div>
-                    </div>
-                    <div class="bar-row">
-                        <div class="bar-label">Projects</div>
-                        <div class="bar-track">
-                            <div class="bar-fill green" data-width="11%"></div>
-                        </div>
-                        <div class="bar-value">1</div>
-                    </div>
-                    <div class="bar-row">
-                        <div class="bar-label">Templates</div>
-                        <div class="bar-track">
-                            <div class="bar-fill amber" data-width="11%"></div>
-                        </div>
-                        <div class="bar-value">1</div>
-                    </div>
+                    <div class="bar-row"><div class="bar-label">Sessions</div><div class="bar-track"><div class="bar-fill ruby" data-width="67%"></div></div><div class="bar-value">6</div></div>
+                    <div class="bar-row"><div class="bar-label">Learnings</div><div class="bar-track"><div class="bar-fill gold" data-width="33%"></div></div><div class="bar-value">3</div></div>
+                    <div class="bar-row"><div class="bar-label">People</div><div class="bar-track"><div class="bar-fill cyan" data-width="22%"></div></div><div class="bar-value">2</div></div>
+                    <div class="bar-row"><div class="bar-label">Projects</div><div class="bar-track"><div class="bar-fill green" data-width="11%"></div></div><div class="bar-value">1</div></div>
+                    <div class="bar-row"><div class="bar-label">Templates</div><div class="bar-track"><div class="bar-fill amber" data-width="11%"></div></div><div class="bar-value">1</div></div>
                 </div>
             </div>
         </div>
 
         <!-- ═══ NOTES INVENTORY ═══ -->
-        <div class="section-header fade-in">Notes Inventory</div>
+        <div class="section-header">Notes Inventory</div>
 
         <div class="panel fade-in">
             <div class="panel-header">All Notes (19)</div>
@@ -122,7 +92,7 @@
                     <tr><td><a href="https://github.com/Shiouko/ruby-knowledge-vault/blob/master/Projects/Overview.md">Overview.md</a></td><td>Projects</td><td><span class="tag">projects</span></td><td>Jun 05</td></tr>
                     <tr><td><a href="https://github.com/Shiouko/ruby-knowledge-vault/blob/master/Learnings/Overview.md">Overview.md</a></td><td>Learnings</td><td><span class="tag">learnings</span></td><td>Jun 05</td></tr>
                     <tr><td><a href="https://github.com/Shiouko/ruby-knowledge-vault/blob/master/Learnings/tool-quirks.md">tool-quirks.md</a></td><td>Learnings</td><td><span class="tag">learnings</span> <span class="tag gold">tools</span></td><td>Jun 05</td></tr>
-                    <tr><td><a href="https://github.com/Shiouko/ruby-knowledge-vault/blob/master/Learnings/debugging-patterns.md">debugging-patterns.md</a></td><td>Learnings</td><td><span class="tag">learnings</span> <span class="tag orange">debugging</span></td><td>Jun 05</td></tr>
+                    <tr><td><a href="https://github.com/Shiouko/ruby-knowledge-vault/blob/master/Learnings/debugging-patterns.md">debugging-patterns.md</a></td><td>Learnings</td><td><span class="tag">learnings</span> <span class="tag amber">debugging</span></td><td>Jun 05</td></tr>
                     <tr><td><a href="https://github.com/Shiouko/ruby-knowledge-vault/blob/master/Sessions/2026-06-05.md">2026-06-05.md</a></td><td>Sessions</td><td><span class="tag">session</span></td><td>Jun 05</td></tr>
                     <tr><td><a href="https://github.com/Shiouko/ruby-knowledge-vault/blob/master/Sessions/2026-06-06.md">2026-06-06.md</a></td><td>Sessions</td><td><span class="tag">session</span></td><td>Jun 06</td></tr>
                     <tr><td><a href="https://github.com/Shiouko/ruby-knowledge-vault/blob/master/Sessions/2026-06-09.md">2026-06-09.md</a></td><td>Sessions</td><td><span class="tag">session</span></td><td>Jun 09</td></tr>
@@ -139,36 +109,36 @@
         </div>
 
         <!-- ═══ VAULT AUTOMATION ═══ -->
-        <div class="section-header fade-in">Vault Automation</div>
+        <div class="section-header">Vault Automation</div>
 
         <div class="panel fade-in">
-            <div class="panel-body" style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="panel-body" style="display: flex; flex-direction: column; gap: 0;">
                 <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border-subtle);">
                     <span class="status online">Active</span>
                     <div style="flex: 1;">
-                        <div style="font-weight: 600; font-size: 0.85rem;">Session Auto-Summarizer</div>
-                        <div style="font-size: 0.7rem; color: var(--text-dim);">Every 4 hours · Summarizes recent sessions</div>
+                        <div style="font-weight: 590; font-size: 0.82rem;">Session Auto-Summarizer</div>
+                        <div style="font-size: 0.68rem; color: var(--text-quaternary);">Every 4 hours - Summarizes recent sessions</div>
                     </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border-subtle);">
                     <span class="status online">Active</span>
                     <div style="flex: 1;">
-                        <div style="font-weight: 600; font-size: 0.85rem;">Vault Auto-Committer</div>
-                        <div style="font-size: 0.7rem; color: var(--text-dim);">Every hour · Commits vault changes to git</div>
+                        <div style="font-weight: 590; font-size: 0.82rem;">Vault Auto-Committer</div>
+                        <div style="font-size: 0.68rem; color: var(--text-quaternary);">Every hour - Commits vault changes to git</div>
                     </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0;">
                     <span class="status online">Active</span>
                     <div style="flex: 1;">
-                        <div style="font-weight: 600; font-size: 0.85rem;">Session Journal Populator</div>
-                        <div style="font-size: 0.7rem; color: var(--text-dim);">Every 6 hours · Updates daily session notes</div>
+                        <div style="font-weight: 590; font-size: 0.82rem;">Session Journal Populator</div>
+                        <div style="font-size: 0.68rem; color: var(--text-quaternary);">Every 6 hours - Updates daily session notes</div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- ═══ QUICK LINKS ═══ -->
-        <div class="section-header fade-in">Quick Links</div>
+        <div class="section-header">Quick Links</div>
 
         <div class="panel fade-in">
             <div class="panel-body">
@@ -180,8 +150,8 @@
     </div>
 
     <div class="footer">
-        <p><span class="heart">&#9829;</span> Built with love by Ruby · Powered by Hermes Agent</p>
-        <p style="margin-top: 4px;">Last updated: Jun 28, 2026 19:40 MYT</p>
+        <p><span class="heart">&#9829;</span> Built by Ruby - Powered by Hermes Agent</p>
+        <p style="margin-top: 4px;">Last updated: Jun 30, 2026</p>
     </div>
 
     <script src="../script.js"></script>
