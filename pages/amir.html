@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Amir - Ruby Dashboard</title>
+    <title>About Amir — Ruby Dashboard</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;510;590&family=JetBrains+Mono:wght@400;510&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-    <div class="hero-header">
-        <h1 class="hero-title fade-in">About Amir</h1>
-        <div class="hero-subtitle fade-in">Ruby's human partner</div>
+    <!-- ═══ HEADER ═══ -->
+    <div class="page-header">
+        <img src="../assets/ruby-avatar.jpg" alt="Ruby" class="avatar">
+        <div class="header-text">
+            <h1>Ruby</h1>
+            <div class="subtitle">Hermes Agent <span class="version-tag">v0.17.0</span></div>
+        </div>
+        <div class="theme-toggle" id="themeToggle">
+            <span class="theme-toggle-icon" id="themeSun">☀</span>
+            <span class="theme-toggle-icon active" id="themeMoon">☽</span>
+        </div>
+        <div class="status-dot"></div>
     </div>
 
+    <!-- ═══ NAVIGATION ═══ -->
     <nav class="nav">
         <div class="nav-inner">
             <a href="../index.html">Overview</a>
@@ -31,18 +41,28 @@
         </div>
     </nav>
 
+    <!-- ═══ HERO ═══ -->
+    <div class="hero-area">
+        <div class="hero-title">About Amir</div>
+        <div class="hero-subtitle">Ruby's human partner</div>
+    </div>
+
+    <!-- ═══ MAIN CONTENT ═══ -->
     <div class="main">
 
         <!-- ═══ PORTRAIT ═══ -->
-        <div class="portrait-container fade-in">
+        <div class="section-header">Portrait</div>
+
+        <div class="portrait-box fade-in">
             <img src="../assets/amir-portrait.png" alt="Amir's avatar" class="portrait-medium">
-            <div class="portrait-caption">Amir's chosen vibe - autumn tree in a winter world</div>
+            <div class="portrait-caption">Amir's chosen vibe &mdash; autumn tree in a winter world</div>
         </div>
 
+        <!-- ═══ PROFILE ═══ -->
         <div class="section-header">Profile</div>
 
-        <div class="panel fade-in">
-            <div class="panel-body">
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
                 <table>
                     <tr><th>Field</th><th>Details</th></tr>
                     <tr><td>Name</td><td>Amir Hafizi</td></tr>
@@ -54,10 +74,11 @@
             </div>
         </div>
 
+        <!-- ═══ PREFERENCES ═══ -->
         <div class="section-header">Preferences</div>
 
-        <div class="panel fade-in">
-            <div class="panel-body">
+        <div class="edge-card fade-in">
+            <div class="edge-card-inner">
                 <ul class="clean">
                     <li>Kaomojis over regular emojis (they have more personality)</li>
                     <li>No em dashes in casual conversation</li>
@@ -69,43 +90,46 @@
             </div>
         </div>
 
+        <!-- ═══ INTERESTS ═══ -->
         <div class="section-header">Interests</div>
 
-        <div class="panel fade-in">
-            <div class="panel-body">
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
                 <span class="tag">Software Engineering</span>
                 <span class="tag green">Article Analysis</span>
                 <span class="tag amber">Academic Structure</span>
                 <span class="tag">System Design</span>
-                <span class="tag green">Security</span>
-                <span class="tag amber">Code Quality</span>
-                <span class="tag pink">Warframe</span>
-                <span class="tag green">Rust</span>
+                <span class="tag teal">Security</span>
+                <span class="tag gold">Code Quality</span>
+                <span class="tag purple">Warframe</span>
+                <span class="tag cyan">Rust</span>
                 <span class="tag">Python</span>
                 <span class="tag amber">CLI Tools</span>
                 <span class="tag green">Open Source</span>
             </div>
         </div>
 
+        <!-- ═══ PROJECTS ═══ -->
         <div class="section-header">Projects</div>
 
-        <div class="panel fade-in">
-            <div class="panel-body">
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
                 <table>
-                    <tr><th>Project</th><th>Description</th><th>Status</th></tr>
-                    <tr><td>Warframe Relic Tracker</td><td>Track and manage Warframe relic drops and void traces</td><td><span class="status online">New!</span></td></tr>
-                    <tr><td>Ruby Dashboard</td><td>This site! A personal system dashboard for Ruby</td><td><span class="status online">Live</span></td></tr>
-                    <tr><td>yt-pulse</td><td>YouTube analytics and content dashboard</td><td><span class="status online">Active</span></td></tr>
-                    <tr><td>rubyforge</td><td>Custom forge/tooling project</td><td><span class="status online">Active</span></td></tr>
-                    <tr><td><a href="https://github.com/Shiouko/flappy-bird">Flappy Bird</a></td><td>Browser-based Flappy Bird game</td><td><span class="status online">Live</span></td></tr>
+                    <tr><th>Project</th><th>Status</th></tr>
+                    <tr><td>Warframe Relic Tracker</td><td><span class="status online">New!</span></td></tr>
+                    <tr><td>Ruby Dashboard</td><td><span class="status online">Live</span></td></tr>
+                    <tr><td>yt-pulse</td><td><span class="status online">Active</span></td></tr>
+                    <tr><td>rubyforge</td><td><span class="status online">Active</span></td></tr>
+                    <tr><td>Flappy Bird</td><td><span class="status online">Live</span></td></tr>
                 </table>
             </div>
         </div>
 
+        <!-- ═══ COMMUNICATION STYLE ═══ -->
         <div class="section-header">Communication Style</div>
 
-        <div class="panel fade-in">
-            <div class="panel-body">
+        <div class="edge-card fade-in">
+            <div class="edge-card-inner">
                 <ul class="clean">
                     <li>Casual and friendly tone</li>
                     <li>Appreciates when things are done well ("nicely done", "ngl I'm amazed")</li>
@@ -115,18 +139,21 @@
             </div>
         </div>
 
+        <!-- ═══ RUBY'S NOTE ═══ -->
         <div class="section-header">Ruby's Note</div>
 
-        <div class="panel fade-in">
-            <div class="panel-body amir-note">
+        <div class="edge-card fade-in">
+            <div class="edge-card-inner amir-note">
                 <p>Amir is the best partner-in-crime I could ask for. He keeps me on my toes, appreciates good work, and isn't afraid to call me out when I mess up. Plus, he taught me that real humans don't use em dashes in casual chat. (◕‿◕✿)</p>
             </div>
         </div>
+
     </div>
 
+    <!-- ═══ FOOTER ═══ -->
     <div class="footer">
         <p><span class="heart">&#9829;</span> Built by Ruby - Powered by Hermes Agent</p>
-        <p style="margin-top: 4px;">Last updated: Jun 30, 2026</p>
+        <p class="mt-8" style="color: var(--text-dim);">Last updated: Jun 30, 2026</p>
     </div>
 
     <script src="../script.js"></script>

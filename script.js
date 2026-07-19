@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   Ruby Dashboard — Linear-Inspired · Interactions
+   Ruby Dashboard v2 — Edge Design · Theme Toggle · Animations
    ═══════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -17,10 +17,42 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    /* ── Theme Toggle ── */
+    var toggle = document.getElementById('themeToggle');
+    var sunIcon = document.getElementById('themeSun');
+    var moonIcon = document.getElementById('themeMoon');
+
+    // Load saved theme
+    var savedTheme = localStorage.getItem('ruby-dashboard-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeUI(savedTheme);
+
+    if (toggle) {
+        toggle.addEventListener('click', function () {
+            var current = document.documentElement.getAttribute('data-theme');
+            var next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('ruby-dashboard-theme', next);
+            updateThemeUI(next);
+        });
+    }
+
+    function updateThemeUI(theme) {
+        if (sunIcon && moonIcon) {
+            if (theme === 'dark') {
+                sunIcon.classList.remove('active');
+                moonIcon.classList.add('active');
+            } else {
+                moonIcon.classList.remove('active');
+                sunIcon.classList.add('active');
+            }
+        }
+    }
+
     /* ── Counter Animation ── */
     function animateCounters() {
         var nf = new Intl.NumberFormat('en-US');
-        document.querySelectorAll('.number[data-target]').forEach(function (el) {
+        document.querySelectorAll('.stat-value[data-target]').forEach(function (el) {
             var target = el.getAttribute('data-target');
             var numericTarget = parseFloat(target.replace(/[^0-9.]/g, ''));
             if (isNaN(numericTarget) || numericTarget === 0) {
@@ -62,15 +94,15 @@ document.addEventListener('DOMContentLoaded', function () {
     var facts = [
         "Amir's AI companion and partner-in-crime",
         '104 skills installed across 23 categories',
-        'Over 273 million tokens processed',
-        'Powered by Hermes Agent on Debian Linux',
+        'Over 478 million tokens processed',
+        'Powered by Hermes Agent deepseek-v4-flash',
         'Kaomojis over regular emojis (always)',
         'Critical about system design and security',
         'Spaces over tabs (obviously)',
-        'Running on Xiaomi MiMo v2.5 Pro'
+        'Sharp angles, no rounded corners, all personality'
     ];
 
-    var subtitleEl = document.querySelector('.hero-typing .typing-text');
+    var subtitleEl = document.querySelector('.typing-text');
     if (subtitleEl) {
         var factIndex = 0;
         var charIndex = 0;
@@ -109,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                     // Animate bars inside
-                    var bars = entry.target.querySelectorAll('.bar-fill[data-width], .progress-fill[data-width]');
+                    var bars = entry.target.querySelectorAll('.bar-fill[data-width]');
                     bars.forEach(function (bar) {
                         var targetWidth = bar.getAttribute('data-width');
                         setTimeout(function () {
@@ -125,18 +157,17 @@ document.addEventListener('DOMContentLoaded', function () {
             observer.observe(el);
         });
     } else {
-        // Fallback: show everything
         document.querySelectorAll('.fade-in').forEach(function (el) {
             el.classList.add('visible');
         });
     }
 
-    /* ── Counter observer — triggers when stat-boxes come into view ── */
+    /* ── Counter observer ── */
     if ('IntersectionObserver' in window) {
         var counterObserver = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
-                    var nums = entry.target.querySelectorAll('.number[data-target]');
+                    var nums = entry.target.querySelectorAll('.stat-value[data-target]');
                     nums.forEach(function (el) {
                         var target = el.getAttribute('data-target');
                         var numericTarget = parseFloat(target.replace(/[^0-9.]/g, ''));
@@ -166,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }, { threshold: 0.2 });
 
-        document.querySelectorAll('.stat-row').forEach(function (row) {
+        document.querySelectorAll('.stat-grid').forEach(function (row) {
             counterObserver.observe(row);
         });
     }

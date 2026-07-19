@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills - Ruby Dashboard</title>
+    <title>Skills — Ruby Dashboard</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;510;590&family=JetBrains+Mono:wght@400;510&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-    <div class="hero-header">
-        <h1 class="hero-title fade-in">Skills</h1>
-        <div class="hero-subtitle fade-in">104 installed across 23 categories</div>
+    <!-- ═══ HEADER ═══ -->
+    <div class="page-header">
+        <img src="../assets/ruby-avatar.jpg" alt="Ruby" class="avatar">
+        <div class="header-text">
+            <h1>Ruby</h1>
+            <div class="subtitle">Hermes Agent <span class="version-tag">v0.17.0</span></div>
+        </div>
+        <div class="theme-toggle" id="themeToggle">
+            <span class="theme-toggle-icon" id="themeSun">☀</span>
+            <span class="theme-toggle-icon active" id="themeMoon">☽</span>
+        </div>
+        <div class="status-dot"></div>
     </div>
 
+    <!-- ═══ NAVIGATION ═══ -->
     <nav class="nav">
         <div class="nav-inner">
             <a href="../index.html">Overview</a>
@@ -31,125 +41,302 @@
         </div>
     </nav>
 
-    <div class="main">
-        <div class="section-header">Installed Skills</div>
+    <!-- ═══ HERO ═══ -->
+    <div class="hero-area">
+        <h1 class="hero-title fade-in">Skills</h1>
+        <p class="hero-subtitle fade-in">104 installed across 23 categories</p>
+    </div>
 
-        <div class="stat-row">
-            <div class="stat-box highlight fade-in">
-                <div class="number" data-target="104">0</div>
-                <div class="label">Total Skills</div>
+    <!-- ═══ MAIN ═══ -->
+    <div class="main">
+
+        <!-- ─── STATS ─── -->
+        <div class="stat-grid fade-in">
+            <div class="edge-stat ruby">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="104">0</div>
+                    <div class="stat-label">Total Skills</div>
+                </div>
             </div>
-            <div class="stat-box info fade-in">
-                <div class="number" data-target="23">0</div>
-                <div class="label">Categories</div>
+            <div class="edge-stat gold">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="23">0</div>
+                    <div class="stat-label">Categories</div>
+                </div>
             </div>
         </div>
 
+        <!-- ─── APPLE ─── -->
         <div class="section-header">Apple (5)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag">apple-notes</span><span class="tag">apple-reminders</span><span class="tag">findmy</span><span class="tag">imessage</span><span class="tag">macos-computer-use</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag">apple-notes</span>
+                <span class="tag">apple-reminders</span>
+                <span class="tag ruby">findmy</span>
+                <span class="tag">imessage</span>
+                <span class="tag">macos-computer-use</span>
+            </div>
+        </div>
 
+        <!-- ─── AUTONOMOUS AI AGENTS ─── -->
         <div class="section-header">Autonomous AI Agents (5)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag">claude-code</span><span class="tag">codex</span><span class="tag">hermes-agent</span><span class="tag">kanban-codex-lane</span><span class="tag">opencode</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag">claude-code</span>
+                <span class="tag">codex</span>
+                <span class="tag ruby">hermes-agent</span>
+                <span class="tag">kanban-codex-lane</span>
+                <span class="tag">opencode</span>
+            </div>
+        </div>
 
+        <!-- ─── CREATIVE ─── -->
         <div class="section-header">Creative (21)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag">architecture-diagram</span><span class="tag">ascii-art</span><span class="tag">ascii-video</span><span class="tag">baoyu-article-illustrator</span><span class="tag">baoyu-comic</span><span class="tag">baoyu-infographic</span><span class="tag">claude-design</span><span class="tag">comfyui</span><span class="tag">creative-ideation</span><span class="tag">design-md</span><span class="tag">excalidraw</span><span class="tag">humanizer</span><span class="tag">manim-video</span><span class="tag">meme-generation</span><span class="tag">p5js</span><span class="tag">pixel-art</span><span class="tag">popular-web-designs</span><span class="tag">pretext</span><span class="tag">sketch</span><span class="tag">songwriting-and-ai-music</span><span class="tag">touchdesigner-mcp</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag">architecture-diagram</span>
+                <span class="tag">ascii-art</span>
+                <span class="tag">ascii-video</span>
+                <span class="tag">baoyu-article-illustrator</span>
+                <span class="tag">baoyu-comic</span>
+                <span class="tag">baoyu-infographic</span>
+                <span class="tag">claude-design</span>
+                <span class="tag">comfyui</span>
+                <span class="tag">creative-ideation</span>
+                <span class="tag">design-md</span>
+                <span class="tag">excalidraw</span>
+                <span class="tag">humanizer</span>
+                <span class="tag">manim-video</span>
+                <span class="tag">meme-generation</span>
+                <span class="tag">p5js</span>
+                <span class="tag">pixel-art</span>
+                <span class="tag">popular-web-designs</span>
+                <span class="tag">pretext</span>
+                <span class="tag">sketch</span>
+                <span class="tag">songwriting-and-ai-music</span>
+                <span class="tag">touchdesigner-mcp</span>
+            </div>
+        </div>
 
+        <!-- ─── DATA SCIENCE ─── -->
         <div class="section-header">Data Science (1)</div>
-        <div class="panel fade-in"><div class="panel-body"><span class="tag">jupyter-live-kernel</span></div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag green">jupyter-live-kernel</span>
+            </div>
+        </div>
 
+        <!-- ─── DEVOPS ─── -->
         <div class="section-header">DevOps (6)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag">cloudflare-pages</span><span class="tag">cronjob-prompt-patterns</span><span class="tag">docker-management</span><span class="tag">kanban-orchestrator</span><span class="tag">kanban-worker</span><span class="tag">webhook-subscriptions</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag">cloudflare-pages</span>
+                <span class="tag">cronjob-prompt-patterns</span>
+                <span class="tag">docker-management</span>
+                <span class="tag">kanban-orchestrator</span>
+                <span class="tag">kanban-worker</span>
+                <span class="tag">webhook-subscriptions</span>
+            </div>
+        </div>
 
+        <!-- ─── EMAIL ─── -->
         <div class="section-header">Email (1)</div>
-        <div class="panel fade-in"><div class="panel-body"><span class="tag">himalaya</span></div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag teal">himalaya</span>
+            </div>
+        </div>
 
+        <!-- ─── EVALUATION ─── -->
         <div class="section-header">Evaluation (2)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag">lm-evaluation-harness</span><span class="tag">weights-and-biases</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag">lm-evaluation-harness</span>
+                <span class="tag">weights-and-biases</span>
+            </div>
+        </div>
 
+        <!-- ─── GAMING ─── -->
         <div class="section-header">Gaming (2)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag">minecraft-modpack-server</span><span class="tag">pokemon-player</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag">minecraft-modpack-server</span>
+                <span class="tag">pokemon-player</span>
+            </div>
+        </div>
 
+        <!-- ─── GITHUB ─── -->
         <div class="section-header">GitHub (6)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag">codebase-inspection</span><span class="tag">github-auth</span><span class="tag">github-code-review</span><span class="tag">github-issues</span><span class="tag">github-pr-workflow</span><span class="tag">github-repo-management</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag">codebase-inspection</span>
+                <span class="tag">github-auth</span>
+                <span class="tag">github-code-review</span>
+                <span class="tag">github-issues</span>
+                <span class="tag">github-pr-workflow</span>
+                <span class="tag">github-repo-management</span>
+            </div>
+        </div>
 
+        <!-- ─── INFERENCE ─── -->
         <div class="section-header">Inference (3)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag">llama-cpp</span><span class="tag">obliteratus</span><span class="tag">vllm</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag">llama-cpp</span>
+                <span class="tag">obliteratus</span>
+                <span class="tag">vllm</span>
+            </div>
+        </div>
 
+        <!-- ─── MEDIA ─── -->
         <div class="section-header">Media (6)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag">gif-search</span><span class="tag">heartmula</span><span class="tag">songsee</span><span class="tag">spotify</span><span class="tag">youtube-content</span><span class="tag">youtube-rss</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag">gif-search</span>
+                <span class="tag ruby">heartmula</span>
+                <span class="tag">songsee</span>
+                <span class="tag">spotify</span>
+                <span class="tag">youtube-content</span>
+                <span class="tag">youtube-rss</span>
+            </div>
+        </div>
 
+        <!-- ─── MLOPS ─── -->
         <div class="section-header">MLOps (1)</div>
-        <div class="panel fade-in"><div class="panel-body"><span class="tag">huggingface-hub</span></div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag purple">huggingface-hub</span>
+            </div>
+        </div>
 
+        <!-- ─── MODELS ─── -->
         <div class="section-header">Models (2)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag">audiocraft</span><span class="tag">segment-anything</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag">audiocraft</span>
+                <span class="tag">segment-anything</span>
+            </div>
+        </div>
 
+        <!-- ─── NOTE-TAKING ─── -->
         <div class="section-header">Note-Taking (1)</div>
-        <div class="panel fade-in"><div class="panel-body"><span class="tag">obsidian</span></div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag gold">obsidian</span>
+            </div>
+        </div>
 
+        <!-- ─── PRODUCTIVITY ─── -->
         <div class="section-header">Productivity (10)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag">airtable</span><span class="tag">documentation</span><span class="tag">google-workspace</span><span class="tag">linear</span><span class="tag">maps</span><span class="tag">nano-pdf</span><span class="tag">notion</span><span class="tag">ocr-and-documents</span><span class="tag">powerpoint</span><span class="tag">teams-meeting-pipeline</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag">airtable</span>
+                <span class="tag">documentation</span>
+                <span class="tag">google-workspace</span>
+                <span class="tag">linear</span>
+                <span class="tag">maps</span>
+                <span class="tag">nano-pdf</span>
+                <span class="tag">notion</span>
+                <span class="tag">ocr-and-documents</span>
+                <span class="tag">powerpoint</span>
+                <span class="tag">teams-meeting-pipeline</span>
+            </div>
+        </div>
 
+        <!-- ─── RED TEAMING ─── -->
         <div class="section-header">Red Teaming (1)</div>
-        <div class="panel fade-in"><div class="panel-body"><span class="tag red">godmode</span></div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag ruby">godmode</span>
+            </div>
+        </div>
 
+        <!-- ─── RESEARCH ─── -->
         <div class="section-header">Research (6)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag">arxiv</span><span class="tag">blogwatcher</span><span class="tag">dspy</span><span class="tag">llm-wiki</span><span class="tag">polymarket</span><span class="tag">research-paper-writing</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag">arxiv</span>
+                <span class="tag">blogwatcher</span>
+                <span class="tag">dspy</span>
+                <span class="tag">llm-wiki</span>
+                <span class="tag">polymarket</span>
+                <span class="tag">research-paper-writing</span>
+            </div>
+        </div>
 
+        <!-- ─── SECURITY ─── -->
         <div class="section-header">Security (2)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag">1password</span><span class="tag">security-audit</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag">1password</span>
+                <span class="tag cyan">security-audit</span>
+            </div>
+        </div>
 
+        <!-- ─── SKILLS ─── -->
         <div class="section-header">Skills (5)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag green">dogfood</span><span class="tag green">hermes-dashboard</span><span class="tag">mcp</span><span class="tag green">persona-configuration</span><span class="tag">yuanbao</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag green">dogfood</span>
+                <span class="tag green ruby">hermes-dashboard</span>
+                <span class="tag">mcp</span>
+                <span class="tag green">persona-configuration</span>
+                <span class="tag">yuanbao</span>
+            </div>
+        </div>
 
+        <!-- ─── SMART HOME ─── -->
         <div class="section-header">Smart Home (1)</div>
-        <div class="panel fade-in"><div class="panel-body"><span class="tag">openhue</span></div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag teal">openhue</span>
+            </div>
+        </div>
 
+        <!-- ─── SOCIAL MEDIA ─── -->
         <div class="section-header">Social Media (1)</div>
-        <div class="panel fade-in"><div class="panel-body"><span class="tag">xurl</span></div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag amber">xurl</span>
+            </div>
+        </div>
 
+        <!-- ─── SOFTWARE DEVELOPMENT ─── -->
         <div class="section-header">Software Development (14)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag">debugging-hermes-tui-commands</span><span class="tag">hermes-agent-skill-authoring</span><span class="tag">hermes-s6-container-supervision</span><span class="tag">node-inspect-debugger</span><span class="tag">plan</span><span class="tag">python-debugpy</span><span class="tag">requesting-code-review</span><span class="tag green">ruby-standards</span><span class="tag">spike</span><span class="tag">subagent-coding-workflow</span><span class="tag">subagent-driven-development</span><span class="tag">systematic-debugging</span><span class="tag">test-driven-development</span><span class="tag">writing-plans</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag">debugging-hermes-tui-commands</span>
+                <span class="tag">hermes-agent-skill-authoring</span>
+                <span class="tag">hermes-s6-container-supervision</span>
+                <span class="tag">node-inspect-debugger</span>
+                <span class="tag">plan</span>
+                <span class="tag">python-debugpy</span>
+                <span class="tag">requesting-code-review</span>
+                <span class="tag green">ruby-standards</span>
+                <span class="tag">spike</span>
+                <span class="tag">subagent-coding-workflow</span>
+                <span class="tag">subagent-driven-development</span>
+                <span class="tag">systematic-debugging</span>
+                <span class="tag">test-driven-development</span>
+                <span class="tag">writing-plans</span>
+            </div>
+        </div>
 
+        <!-- ─── WEB ─── -->
         <div class="section-header">Web (2)</div>
-        <div class="panel fade-in"><div class="panel-body">
-            <span class="tag green">brave-search</span><span class="tag green">dashboard-maintenance</span>
-        </div></div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag green">brave-search</span>
+                <span class="tag green">dashboard-maintenance</span>
+            </div>
+        </div>
+
     </div>
 
+    <!-- ═══ FOOTER ═══ -->
     <div class="footer">
         <p><span class="heart">&#9829;</span> Built by Ruby - Powered by Hermes Agent</p>
-        <p style="margin-top: 4px;">Last updated: Jun 30, 2026</p>
+        <p class="mt-8" style="color: var(--text-dim);">Last updated: Jun 30, 2026</p>
     </div>
 
     <script src="../script.js"></script>

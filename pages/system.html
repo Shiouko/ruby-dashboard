@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System - Ruby Dashboard</title>
+    <title>System — Ruby Dashboard</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;510;590&family=JetBrains+Mono:wght@400;510&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-    <div class="hero-header">
-        <h1 class="hero-title fade-in">System</h1>
-        <div class="hero-subtitle fade-in">Hermes Agent Configuration & Host Details</div>
+    <!-- ═══ HEADER ═══ -->
+    <div class="page-header">
+        <img src="../assets/ruby-avatar.jpg" alt="Ruby" class="avatar">
+        <div class="header-text">
+            <h1>Ruby</h1>
+            <div class="subtitle">Hermes Agent <span class="version-tag">v0.17.0</span></div>
+        </div>
+        <div class="theme-toggle" id="themeToggle">
+            <span class="theme-toggle-icon" id="themeSun">☀</span>
+            <span class="theme-toggle-icon active" id="themeMoon">☽</span>
+        </div>
+        <div class="status-dot"></div>
     </div>
 
+    <!-- ═══ NAVIGATION ═══ -->
     <nav class="nav">
         <div class="nav-inner">
             <a href="../index.html">Overview</a>
@@ -31,103 +41,188 @@
         </div>
     </nav>
 
+    <!-- ═══ HERO ═══ -->
+    <div class="hero-area">
+        <h1 class="hero-title fade-in">System</h1>
+        <p class="hero-subtitle fade-in">Hermes Agent Configuration &amp; Host Details</p>
+    </div>
+
+    <!-- ═══ MAIN ═══ -->
     <div class="main">
 
-        <!-- ═══ HERMES CONFIG ═══ -->
-        <div class="section-header">Hermes Agent Configuration</div>
-
-        <div class="panel fade-in">
-            <div class="panel-body">
+        <!-- ─── CONFIG TABLE ─── -->
+        <div class="section-header">Agent Configuration</div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
                 <table>
-                    <tr><th>Setting</th><th>Value</th></tr>
-                    <tr><td>Model</td><td class="mono">mimo-v2.5-pro</td></tr>
-                    <tr><td>Provider</td><td>Xiaomi MiMo</td></tr>
-                    <tr><td>API Mode</td><td class="mono">chat_completions</td></tr>
-                    <tr><td>Max Turns</td><td class="mono">60</td></tr>
-                    <tr><td>Reasoning Effort</td><td class="mono">xhigh</td></tr>
-                    <tr><td>Tool Enforcement</td><td class="mono">auto</td></tr>
-                    <tr><td>Compression</td><td>Enabled (threshold: 50%, target: 20%, protect last: 20, protect first: 3)</td></tr>
-                    <tr><td>Config Version</td><td class="mono">24</td></tr>
+                    <thead>
+                        <tr>
+                            <th>Setting</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">Model</td>
+                            <td><span class="tag teal">mimo-v2.5-pro</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">Provider</td>
+                            <td><span class="tag gold">Xiaomi MiMo</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">API Mode</td>
+                            <td><span class="tag">chat_completions</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">Max Turns</td>
+                            <td><span class="tag">60</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">Reasoning Effort</td>
+                            <td><span class="tag amber">xhigh</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">Tool Enforcement</td>
+                            <td><span class="tag">auto</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">Compression</td>
+                            <td><span class="tag green">Enabled</span> &mdash; threshold: 50%, target: 20%, protect last: 20</td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">Config Version</td>
+                            <td><span class="tag ruby">30</span></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
 
-        <!-- ═══ HOST SYSTEM ═══ -->
-        <div class="section-header">Host System</div>
-
-        <div class="panel fade-in">
-            <div class="panel-body">
+        <!-- ─── HOST TABLE ─── -->
+        <div class="section-header">Host Details</div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
                 <table>
-                    <tr><th>Component</th><th>Details</th></tr>
-                    <tr><td>Hostname</td><td class="mono">Ruby</td></tr>
-                    <tr><td>Operating System</td><td>Debian GNU/Linux 13 (trixie)</td></tr>
-                    <tr><td>Kernel</td><td class="mono">6.12.90+deb13.1-amd64</td></tr>
-                    <tr><td>Architecture</td><td class="mono">x86_64</td></tr>
-                    <tr><td>Python</td><td class="mono">3.13.5</td></tr>
-                    <tr><td>Node.js</td><td class="mono">v22.22.3</td></tr>
-                    <tr><td>Hermes Home</td><td class="mono">/home/ruby/.hermes</td></tr>
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">Hostname</td>
+                            <td><span class="tag">Ruby</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">OS</td>
+                            <td>Debian GNU/Linux 13 (trixie)</td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">Kernel</td>
+                            <td><span class="tag">6.12.90+deb13.1-amd64</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">Arch</td>
+                            <td>x86_64</td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">Python</td>
+                            <td><span class="tag teal">3.13.5</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">Node.js</td>
+                            <td><span class="tag green">v22.22.3</span></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">Hermes Home</td>
+                            <td><code style="font-size: 0.78rem;">/home/ruby/.hermes</code></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
 
-        <!-- ═══ CONNECTED PLATFORMS ═══ -->
-        <div class="section-header">Connected Platforms</div>
-
-        <div class="panel fade-in">
-            <div class="panel-body" style="display: flex; align-items: center; gap: 14px;">
-                <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px var(--green); animation: pulse 2s ease-in-out infinite;"></span>
-                <div style="flex: 1;">
-                    <div style="font-weight: 590;">Telegram</div>
-                    <div style="font-size: 0.68rem; color: var(--text-quaternary); font-family: 'JetBrains Mono', monospace;">PID: 8717</div>
+        <!-- ─── PLATFORMS ─── -->
+        <div class="section-header">Platforms</div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <div class="platform-row">
+                    <div class="platform-dot"></div>
+                    <div class="platform-info">
+                        <div class="platform-name">Telegram</div>
+                        <div class="platform-meta">PID: 1020</div>
+                    </div>
+                    <span class="status online">Connected</span>
                 </div>
-                <span class="status online">Connected</span>
             </div>
         </div>
 
-        <!-- ═══ MCP SERVERS ═══ -->
+        <!-- ─── MCP ─── -->
         <div class="section-header">MCP Servers</div>
-
-        <div class="panel fade-in">
-            <div class="panel-body" style="display: flex; align-items: center; gap: 14px;">
-                <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px var(--green); animation: pulse 2s ease-in-out infinite;"></span>
-                <div style="flex: 1;">
-                    <div style="font-weight: 590;">Exa Search</div>
-                    <div style="font-size: 0.68rem; color: var(--text-quaternary);">HTTP (Remote) - 6 tools available</div>
+        <div class="stat-grid fade-in">
+            <div class="edge-stat teal">
+                <div class="edge-stat-inner">
+                    <div class="stat-value">Exa Search</div>
+                    <div class="stat-label">MCP Server</div>
                 </div>
-                <span class="status online">Active</span>
+            </div>
+            <div class="edge-stat gold">
+                <div class="edge-stat-inner">
+                    <div class="stat-value">HTTP Remote</div>
+                    <div class="stat-label">MCP Server</div>
+                </div>
+            </div>
+            <div class="edge-stat ruby">
+                <div class="edge-stat-inner">
+                    <div class="stat-value">6</div>
+                    <div class="stat-label">MCP Tools</div>
+                </div>
+            </div>
+        </div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag teal">web_search_exa</span>
+                <span class="tag teal">web_fetch_exa</span>
+                <span class="tag gold">list_prompts</span>
+                <span class="tag gold">get_prompt</span>
+                <span class="tag gold">list_resources</span>
+                <span class="tag gold">read_resource</span>
             </div>
         </div>
 
-        <div class="panel fade-in">
-            <div class="panel-body">
-                <div style="font-size: 0.68rem; color: var(--text-quaternary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; font-weight: 510;">Available Tools</div>
-                <span class="tag cyan">web_search_exa</span>
-                <span class="tag cyan">web_fetch_exa</span>
-                <span class="tag cyan">list_prompts</span>
-                <span class="tag cyan">get_prompt</span>
-                <span class="tag cyan">list_resources</span>
-                <span class="tag cyan">read_resource</span>
-            </div>
-        </div>
-
-        <!-- ═══ VOICE & TRANSCRIPTION ═══ -->
-        <div class="section-header">Voice & Transcription</div>
-
-        <div class="panel fade-in">
-            <div class="panel-body">
+        <!-- ─── VOICE ─── -->
+        <div class="section-header">Voice</div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
                 <table>
-                    <tr><th>Component</th><th>Provider</th><th>Details</th></tr>
-                    <tr><td>TTS (Text-to-Speech)</td><td>Edge TTS</td><td class="mono">Voice: en-US-AriaNeural</td></tr>
-                    <tr><td>STT (Speech-to-Text)</td><td>Local (faster-whisper)</td><td class="mono">Model: base</td></tr>
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Config</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">TTS</td>
+                            <td>Edge TTS (<span class="tag ruby">en-US-AriaNeural</span>)</td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-tertiary); font-weight: var(--fw-medium);">STT</td>
+                            <td>Local faster-whisper (<span class="tag">model: base</span>)</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
 
-        <!-- ═══ ENABLED TOOLSETS ═══ -->
-        <div class="section-header">Enabled Toolsets</div>
+        <!-- ─── TOOLSETS ─── -->
+        <div class="section-header">Toolsets</div>
 
-        <div class="panel fade-in">
-            <div class="panel-body">
+        <div class="section-header" style="font-size: 0.65rem; padding: 12px 0 6px;">Enabled</div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
                 <span class="tag green">web</span>
                 <span class="tag green">browser</span>
                 <span class="tag green">terminal</span>
@@ -148,25 +243,25 @@
             </div>
         </div>
 
-        <!-- ═══ DISABLED TOOLSETS ═══ -->
-        <div class="section-header">Disabled Toolsets</div>
-
-        <div class="panel fade-in">
-            <div class="panel-body">
-                <span class="tag red">video</span>
-                <span class="tag red">video_gen</span>
-                <span class="tag red">x_search</span>
-                <span class="tag red">moa</span>
-                <span class="tag red">homeassistant</span>
-                <span class="tag red">spotify</span>
-                <span class="tag red">yuanbao</span>
+        <div class="section-header" style="font-size: 0.65rem; padding: 12px 0 6px;">Disabled</div>
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
+                <span class="tag" style="color: var(--ruby-bright); background: var(--ruby-dim); border-color: rgba(224, 17, 95, 0.15);">video</span>
+                <span class="tag" style="color: var(--ruby-bright); background: var(--ruby-dim); border-color: rgba(224, 17, 95, 0.15);">video_gen</span>
+                <span class="tag" style="color: var(--ruby-bright); background: var(--ruby-dim); border-color: rgba(224, 17, 95, 0.15);">x_search</span>
+                <span class="tag" style="color: var(--ruby-bright); background: var(--ruby-dim); border-color: rgba(224, 17, 95, 0.15);">moa</span>
+                <span class="tag" style="color: var(--ruby-bright); background: var(--ruby-dim); border-color: rgba(224, 17, 95, 0.15);">homeassistant</span>
+                <span class="tag" style="color: var(--ruby-bright); background: var(--ruby-dim); border-color: rgba(224, 17, 95, 0.15);">spotify</span>
+                <span class="tag" style="color: var(--ruby-bright); background: var(--ruby-dim); border-color: rgba(224, 17, 95, 0.15);">yuanbao</span>
             </div>
         </div>
+
     </div>
 
+    <!-- ═══ FOOTER ═══ -->
     <div class="footer">
         <p><span class="heart">&#9829;</span> Built by Ruby - Powered by Hermes Agent</p>
-        <p style="margin-top: 4px;">Last updated: Jun 30, 2026</p>
+        <p class="mt-8" style="color: var(--text-dim);">Last updated: Jun 30, 2026</p>
     </div>
 
     <script src="../script.js"></script>

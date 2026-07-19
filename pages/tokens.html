@@ -7,19 +7,26 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;510;590&family=JetBrains+Mono:wght@400;510&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <div class="page-header">
-        <img src="../assets/ruby-avatar.jpg" alt="Ruby" class="avatar fade-in">
-        <div class="page-header-text fade-in">
-            <h1 class="hero-title-display">Token Usage</h1>
-                    <div class="version">Hermes Agent v0.17.0 &middot; Token Usage &amp; Insights &middot; Updated Jul 19, 2026 05:00 MYT</div>
-                    </div>
-                    <div class="status-dot fade-in"></div>
-                    </div>
 
+    <!-- ═══ HEADER ═══ -->
+    <div class="page-header">
+        <img src="../assets/ruby-avatar.jpg" alt="Ruby" class="avatar">
+        <div class="header-text">
+            <h1>Ruby</h1>
+            <div class="subtitle">Hermes Agent <span class="version-tag">v0.17.0</span></div>
+        </div>
+        <div class="theme-toggle" id="themeToggle">
+            <span class="theme-toggle-icon" id="themeSun">☀</span>
+            <span class="theme-toggle-icon active" id="themeMoon">☽</span>
+        </div>
+        <div class="status-dot"></div>
+    </div>
+
+    <!-- ═══ NAVIGATION ═══ -->
     <nav class="nav">
         <div class="nav-inner">
             <a href="../index.html">Overview</a>
@@ -34,274 +41,393 @@
         </div>
     </nav>
 
+    <!-- ═══ HERO ═══ -->
+    <div class="hero-area">
+        <h1 class="hero-title fade-in">Token Usage</h1>
+        <p class="hero-subtitle fade-in">Token consumption, platform distribution, and tool usage analytics</p>
+    </div>
+
+    <!-- ═══ MAIN ═══ -->
     <div class="main">
-        <div class="section-header">TOKEN USAGE &mdash; ALL TIME (1199 SESSIONS)</div>
 
-        <div class="stat-row">
-            <div class="stat-box highlight fade-in">
-                <div class="number" data-target="478015871">0</div>
-                <div class="label">Total Tokens</div>
+        <!-- ─── ALL TIME ─── -->
+        <div class="section-header">TOKEN USAGE — ALL TIME (1199 SESSIONS)</div>
+        <div class="stat-grid fade-in">
+            <div class="edge-stat ruby">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="478015871">0</div>
+                    <div class="stat-label">Total Tokens</div>
+                </div>
             </div>
-            <div class="stat-box cyan fade-in">
-                <div class="number" data-target="23455229">0</div>
-                <div class="label">Input Tokens</div>
+            <div class="edge-stat teal">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="23455229">0</div>
+                    <div class="stat-label">Input Tokens</div>
+                </div>
             </div>
-            <div class="stat-box fade-in">
-                <div class="number" data-target="2723778">0</div>
-                <div class="label">Output Tokens</div>
+            <div class="edge-stat gold">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="2723778">0</div>
+                    <div class="stat-label">Output Tokens</div>
+                </div>
+            </div>
+            <div class="edge-stat amber">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="1199">0</div>
+                    <div class="stat-label">Sessions</div>
+                </div>
+            </div>
+            <div class="edge-stat green">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="14060">0</div>
+                    <div class="stat-label">Messages</div>
+                </div>
+            </div>
+            <div class="edge-stat purple">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="6045">0</div>
+                    <div class="stat-label">Tool Calls</div>
+                </div>
             </div>
         </div>
 
-        <div class="stat-row">
-            <div class="stat-box gold fade-in">
-                <div class="number" data-target="1199">0</div>
-                <div class="label">Sessions</div>
+        <!-- ─── LAST 30 DAYS ─── -->
+        <div class="section-header">TOKEN USAGE — LAST 30 DAYS</div>
+        <div class="stat-grid fade-in">
+            <div class="edge-stat ruby">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="478015871">0</div>
+                    <div class="stat-label">Total Tokens</div>
+                </div>
             </div>
-            <div class="stat-box fade-in">
-                <div class="number" data-target="14060">0</div>
-                <div class="label">Messages</div>
+            <div class="edge-stat teal">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="23455229">0</div>
+                    <div class="stat-label">Input Tokens</div>
+                </div>
             </div>
-            <div class="stat-box success fade-in">
-                <div class="number" data-target="6045">0</div>
-                <div class="label">Tool Calls</div>
+            <div class="edge-stat gold">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="2723778">0</div>
+                    <div class="stat-label">Output Tokens</div>
+                </div>
             </div>
-        </div>
-
-        <div class="section-header">TOKEN USAGE &mdash; LAST 30 DAYS</div>
-
-        <div class="stat-row">
-            <div class="stat-box highlight fade-in">
-                <div class="number" data-target="478015871">0</div>
-                <div class="label">Total Tokens</div>
+            <div class="edge-stat amber">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="1199">0</div>
+                    <div class="stat-label">Sessions</div>
+                </div>
             </div>
-            <div class="stat-box cyan fade-in">
-                <div class="number" data-target="23455229">0</div>
-                <div class="label">Input Tokens</div>
+            <div class="edge-stat green">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="14060">0</div>
+                    <div class="stat-label">Messages</div>
+                </div>
             </div>
-            <div class="stat-box fade-in">
-                <div class="number" data-target="2723778">0</div>
-                <div class="label">Output Tokens</div>
-            </div>
-        </div>
-
-        <div class="stat-row">
-            <div class="stat-box gold fade-in">
-                <div class="number" data-target="1199">0</div>
-                <div class="label">Sessions</div>
-            </div>
-            <div class="stat-box fade-in">
-                <div class="number" data-target="14060">0</div>
-                <div class="label">Messages</div>
-            </div>
-            <div class="stat-box success fade-in">
-                <div class="number" data-target="6045">0</div>
-                <div class="label">Tool Calls</div>
+            <div class="edge-stat purple">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="6045">0</div>
+                    <div class="stat-label">Tool Calls</div>
+                </div>
             </div>
         </div>
 
-        <div class="section-header">TOKEN USAGE &mdash; LAST 7 DAYS (81 SESSIONS)</div>
-
-        <div class="stat-row">
-            <div class="stat-box highlight fade-in">
-                <div class="number" data-target="7434343">0</div>
-                <div class="label">Total Tokens</div>
+        <!-- ─── LAST 7 DAYS ─── -->
+        <div class="section-header">TOKEN USAGE — LAST 7 DAYS (81 SESSIONS)</div>
+        <div class="stat-grid fade-in">
+            <div class="edge-stat ruby">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="7434343">0</div>
+                    <div class="stat-label">Total Tokens</div>
+                </div>
             </div>
-            <div class="stat-box cyan fade-in">
-                <div class="number" data-target="3603202">0</div>
-                <div class="label">Input Tokens</div>
+            <div class="edge-stat teal">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="3603202">0</div>
+                    <div class="stat-label">Input Tokens</div>
+                </div>
             </div>
-            <div class="stat-box fade-in">
-                <div class="number" data-target="86501">0</div>
-                <div class="label">Output Tokens</div>
+            <div class="edge-stat gold">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="86501">0</div>
+                    <div class="stat-label">Output Tokens</div>
+                </div>
             </div>
-        </div>
-
-        <div class="stat-row">
-            <div class="stat-box gold fade-in">
-                <div class="number" data-target="81">0</div>
-                <div class="label">Sessions</div>
+            <div class="edge-stat amber">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="81">0</div>
+                    <div class="stat-label">Sessions</div>
+                </div>
             </div>
-            <div class="stat-box fade-in">
-                <div class="number" data-target="593">0</div>
-                <div class="label">Messages</div>
+            <div class="edge-stat green">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="593">0</div>
+                    <div class="stat-label">Messages</div>
+                </div>
             </div>
-            <div class="stat-box success fade-in">
-                <div class="number" data-target="250">0</div>
-                <div class="label">Tool Calls</div>
-            </div>
-        </div>
-
-        <div class="section-header">TOKEN USAGE &mdash; TODAY (Jul 19, 2026)</div>
-
-        <div class="stat-row">
-            <div class="stat-box highlight fade-in">
-                <div class="number" data-target="1053028">0</div>
-                <div class="label">Total Tokens</div>
-            </div>
-            <div class="stat-box cyan fade-in">
-                <div class="number" data-target="565349">0</div>
-                <div class="label">Input Tokens</div>
-            </div>
-            <div class="stat-box fade-in">
-                <div class="number" data-target="11903">0</div>
-                <div class="label">Output Tokens</div>
+            <div class="edge-stat purple">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="250">0</div>
+                    <div class="stat-label">Tool Calls</div>
+                </div>
             </div>
         </div>
 
-        <div class="stat-row">
-            <div class="stat-box gold fade-in">
-                <div class="number" data-target="11">0</div>
-                <div class="label">Sessions</div>
+        <!-- ─── TODAY ─── -->
+        <div class="section-header">TOKEN USAGE — TODAY (Jul 19, 2026)</div>
+        <div class="stat-grid fade-in">
+            <div class="edge-stat ruby">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="1053028">0</div>
+                    <div class="stat-label">Total Tokens</div>
+                </div>
             </div>
-            <div class="stat-box fade-in">
-                <div class="number" data-target="89">0</div>
-                <div class="label">Messages</div>
+            <div class="edge-stat teal">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="565349">0</div>
+                    <div class="stat-label">Input Tokens</div>
+                </div>
             </div>
-            <div class="stat-box success fade-in">
-                <div class="number" data-target="37">0</div>
-                <div class="label">Tool Calls</div>
+            <div class="edge-stat gold">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="11903">0</div>
+                    <div class="stat-label">Output Tokens</div>
+                </div>
+            </div>
+            <div class="edge-stat amber">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="11">0</div>
+                    <div class="stat-label">Sessions</div>
+                </div>
+            </div>
+            <div class="edge-stat green">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="89">0</div>
+                    <div class="stat-label">Messages</div>
+                </div>
+            </div>
+            <div class="edge-stat purple">
+                <div class="edge-stat-inner">
+                    <div class="stat-value" data-target="37">0</div>
+                    <div class="stat-label">Tool Calls</div>
+                </div>
             </div>
         </div>
 
+        <!-- ─── USAGE BY PLATFORM ─── -->
         <div class="section-header">USAGE BY PLATFORM (ALL TIME)</div>
 
-        <div class="panel fade-in">
-            <div class="panel-header">Platform Breakdown</div>
-            <div class="panel-body">
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
                 <div class="bar-chart">
                     <div class="bar-row">
                         <span class="bar-label">Telegram</span>
-                        <div class="bar-track"><div class="bar-fill cyan" style="width: 76.5%;"></div></div>
-                        <span class="bar-value">76.5%</span>
+                        <div class="bar-track">
+                            <div class="bar-fill cyan" data-width="76.5%"></div>
+                        </div>
+                        <span class="bar-value">76.5% (365,531,343)</span>
                     </div>
                     <div class="bar-row">
                         <span class="bar-label">Cron</span>
-                        <div class="bar-track"><div class="bar-fill ruby" style="width: 17.8%;"></div></div>
-                        <span class="bar-value">17.8%</span>
+                        <div class="bar-track">
+                            <div class="bar-fill ruby" data-width="17.8%"></div>
+                        </div>
+                        <span class="bar-value">17.8% (85,057,706)</span>
                     </div>
                     <div class="bar-row">
                         <span class="bar-label">Subagent</span>
-                        <div class="bar-track"><div class="bar-fill amber" style="width: 5.6%;"></div></div>
-                        <span class="bar-value">5.6%</span>
+                        <div class="bar-track">
+                            <div class="bar-fill amber" data-width="5.6%"></div>
+                        </div>
+                        <span class="bar-value">5.6% (26,637,825)</span>
                     </div>
                     <div class="bar-row">
                         <span class="bar-label">Cli</span>
-                        <div class="bar-track"><div class="bar-fill green" style="width: 0.2%;"></div></div>
-                        <span class="bar-value">0.2%</span>
+                        <div class="bar-track">
+                            <div class="bar-fill green" data-width="0.2%"></div>
+                        </div>
+                        <span class="bar-value">0.2% (788,997)</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="panel fade-in">
-            <div class="panel-header">Platform Details</div>
-            <div class="panel-body">
+        <!-- ─── PLATFORM DETAILS ─── -->
+        <div class="section-header">PLATFORM DETAILS</div>
+
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
                 <table>
-                    <tr><th>Platform</th><th>Sessions</th><th>Messages</th><th>Tokens</th><th>Percentage</th></tr>
-                    <tr><td>Cron</td><td>1114</td><td>7,154</td><td>85,057,706</td><td>17.8%</td></tr>
-                    <tr><td>Telegram</td><td>57</td><td>5,239</td><td>365,531,343</td><td>76.5%</td></tr>
-                    <tr><td>Subagent</td><td>26</td><td>1,612</td><td>26,637,825</td><td>5.6%</td></tr>
-                    <tr><td>Cli</td><td>2</td><td>55</td><td>788,997</td><td>0.2%</td></tr>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Sessions</th>
+                        <th>Messages</th>
+                        <th>Tokens</th>
+                        <th>Percentage</th>
+                    </tr>
+                    <tr>
+                        <td>Cron</td>
+                        <td>1,114</td>
+                        <td>7,154</td>
+                        <td>85,057,707</td>
+                        <td>17.8%</td>
+                    </tr>
+                    <tr>
+                        <td>Telegram</td>
+                        <td>57</td>
+                        <td>5,239</td>
+                        <td>365,531,343</td>
+                        <td>76.5%</td>
+                    </tr>
+                    <tr>
+                        <td>Subagent</td>
+                        <td>26</td>
+                        <td>1,612</td>
+                        <td>26,637,825</td>
+                        <td>5.6%</td>
+                    </tr>
+                    <tr>
+                        <td>Cli</td>
+                        <td>2</td>
+                        <td>55</td>
+                        <td>788,997</td>
+                        <td>0.2%</td>
+                    </tr>
                 </table>
             </div>
         </div>
 
-        <div class="section-header">TOP TOOLS BY USAGE (ALL TIME)</div>
+        <!-- ─── TOP TOOLS ─── -->
+        <div class="section-header">TOP TOOLS BY USAGE</div>
 
-        <div class="panel fade-in">
-            <div class="panel-header">Tool Usage</div>
-            <div class="panel-body">
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
                 <div class="bar-chart">
-                    <div class="bar-row"><span class="bar-label">terminal</span><div class="bar-track"><div class="bar-fill cyan" style="width: 100.0%;"></div></div><span class="bar-value">43.6%</span></div>
-                    <div class="bar-row"><span class="bar-label">patch</span><div class="bar-track"><div class="bar-fill ruby" style="width: 23.0%;"></div></div><span class="bar-value">10.0%</span></div>
-                    <div class="bar-row"><span class="bar-label">read_file</span><div class="bar-track"><div class="bar-fill amber" style="width: 22.8%;"></div></div><span class="bar-value">10.0%</span></div>
-                    <div class="bar-row"><span class="bar-label">write_file</span><div class="bar-track"><div class="bar-fill green" style="width: 17.6%;"></div></div><span class="bar-value">7.7%</span></div>
-                    <div class="bar-row"><span class="bar-label">mcp_exa_web_search_exa</span><div class="bar-track"><div class="bar-fill pink" style="width: 11.3%;"></div></div><span class="bar-value">4.9%</span></div>
-                    <div class="bar-row"><span class="bar-label">todo</span><div class="bar-track"><div class="bar-fill cyan" style="width: 7.2%;"></div></div><span class="bar-value">3.1%</span></div>
-                    <div class="bar-row"><span class="bar-label">browser_console</span><div class="bar-track"><div class="bar-fill ruby" style="width: 6.5%;"></div></div><span class="bar-value">2.8%</span></div>
-                    <div class="bar-row"><span class="bar-label">skill_view</span><div class="bar-track"><div class="bar-fill amber" style="width: 6.4%;"></div></div><span class="bar-value">2.8%</span></div>
+                    <div class="bar-row">
+                        <span class="bar-label">terminal</span>
+                        <div class="bar-track">
+                            <div class="bar-fill ruby" data-width="100.0%"></div>
+                        </div>
+                        <span class="bar-value">613 (43.6%)</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">patch</span>
+                        <div class="bar-track">
+                            <div class="bar-fill gold" data-width="23.0%"></div>
+                        </div>
+                        <span class="bar-value">141 (10.0%)</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">read_file</span>
+                        <div class="bar-track">
+                            <div class="bar-fill cyan" data-width="23.0%"></div>
+                        </div>
+                        <span class="bar-value">140 (10.0%)</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">write_file</span>
+                        <div class="bar-track">
+                            <div class="bar-fill green" data-width="17.7%"></div>
+                        </div>
+                        <span class="bar-value">108 (7.7%)</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">mcp_exa_web_search_exa</span>
+                        <div class="bar-track">
+                            <div class="bar-fill amber" data-width="11.3%"></div>
+                        </div>
+                        <span class="bar-value">69 (4.9%)</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">todo</span>
+                        <div class="bar-track">
+                            <div class="bar-fill purple" data-width="7.2%"></div>
+                        </div>
+                        <span class="bar-value">44 (3.1%)</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">browser_console</span>
+                        <div class="bar-track">
+                            <div class="bar-fill teal" data-width="6.6%"></div>
+                        </div>
+                        <span class="bar-value">40 (2.8%)</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">skill_view</span>
+                        <div class="bar-track">
+                            <div class="bar-fill gold" data-width="6.4%"></div>
+                        </div>
+                        <span class="bar-value">39 (2.8%)</span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="section-header">TOP SKILLS BY LOADS</div>
-
-        <div class="panel fade-in">
-            <div class="panel-body">
-                <table>
-                    <tr><th>Skill</th><th>Loads</th><th>Edits</th><th>Last Used</th></tr>
-                    <tr><td>brave-search</td><td>5</td><td>0</td><td>Jun 06</td></tr>
-                    <tr><td>hermes-dashboard</td><td>4</td><td>0</td><td>Jun 05</td></tr>
-                    <tr><td>writing-plans</td><td>4</td><td>0</td><td>Jun 04</td></tr>
-                    <tr><td>hermes-agent</td><td>4</td><td>0</td><td>Jun 02</td></tr>
-                    <tr><td>cloudflare-pages</td><td>3</td><td>0</td><td>Jun 05</td></tr>
-                    <tr><td>popular-web-designs</td><td>3</td><td>0</td><td>Jun 04</td></tr>
-                    <tr><td>himalaya</td><td>3</td><td>0</td><td>May 30</td></tr>
-                    <tr><td>subagent-driven-development</td><td>2</td><td>0</td><td>Jun 04</td></tr>
-                    <tr><td>github-repo-management</td><td>2</td><td>0</td><td>Jun 04</td></tr>
-                    <tr><td>github-auth</td><td>2</td><td>0</td><td>Jun 04</td></tr>
-                </table>
-                <p class="mt-8" style="font-size: 0.7rem; color: var(--text-dim);">Distinct skills: 16 &middot; Total loads: 39 &middot; Edits: 1</p>
-            </div>
-        </div>
-
-        <div class="section-header">ACTIVITY PATTERNS</div>
-
-        <div class="panel fade-in">
-            <div class="panel-body">
-                <table>
-                    <tr><th>Day</th><th>Sessions</th><th>Activity</th></tr>
-                    <tr><td>Monday</td><td>7</td><td style="color: var(--cyan);">██████████</td></tr>
-                    <tr><td>Tuesday</td><td>8</td><td style="color: var(--cyan);">███████████</td></tr>
-                    <tr><td>Wednesday</td><td>6</td><td style="color: var(--cyan);">████████</td></tr>
-                    <tr><td>Thursday</td><td>14</td><td style="color: var(--cyan);">████████████████████</td></tr>
-                    <tr><td>Friday</td><td>10</td><td style="color: var(--cyan);">██████████████</td></tr>
-                    <tr><td>Saturday</td><td>34</td><td style="color: var(--cyan);">██████████████████████████████████████████████████</td></tr>
-                    <tr><td>Sunday</td><td>6</td><td style="color: var(--cyan);">████████</td></tr>
-                </table>
-                <p class="mt-8" style="font-size: 0.7rem; color: var(--text-dim);">Peak hours: 6AM (41), 5AM (10), 10AM (5), 7AM (4), 11AM (4)</p>
-                <p style="font-size: 0.7rem; color: var(--text-dim);">Active days: 9 &middot; Best streak: 9 consecutive days</p>
-            </div>
-        </div>
-
-        <div class="section-header">NOTABLE SESSIONS</div>
-
-        <div class="panel fade-in">
-            <div class="panel-body">
-                <table>
-                    <tr><th>Session</th><th>Messages</th><th>Tokens</th></tr>
-                    <tr><td>Current Web Search Approach</td><td>378 msgs</td><td>51,849,836</td></tr>
-                    <tr><td>Thanks and Offer</td><td>253 msgs</td><td>15,341,030</td></tr>
-                    <tr><td>Sharing Excited News</td><td>92 msgs</td><td>6,500,000</td></tr>
-                    <tr><td>Untitled (Jun 04)</td><td>232 msgs</td><td>12,838,620</td></tr>
-                    <tr><td>Daily Gacha News Cronjob Improvements</td><td>202 msgs</td><td>9,935,353</td></tr>
-                </table>
-            </div>
-        </div>
-
+        <!-- ─── OVERVIEW STATISTICS ─── -->
         <div class="section-header">OVERVIEW STATISTICS</div>
 
-        <div class="panel fade-in">
-            <div class="panel-body">
+        <div class="edge-panel fade-in">
+            <div class="edge-panel-inner">
                 <table>
-                    <tr><th>Metric</th><th>Value</th></tr>
-                    <tr><td>Total Sessions</td><td>1199</td></tr>
-                    <tr><td>Total Messages</td><td>14,060</td></tr>
-                    <tr><td>Total Tokens</td><td>478,015,871</td></tr>
-                    <tr><td>Input Tokens</td><td>23,455,229 (4.9%)</td></tr>
-                    <tr><td>Output Tokens</td><td>2,723,778 (0.6%)</td></tr>
-                    <tr><td>Total Tool Calls</td><td>6,045</td></tr>
-                    <tr><td>Top Tool</td><td>terminal (43.6% / 613 calls)</td></tr>
-                    <tr><td>Top Platform</td><td>Telegram (87.5% of tokens)</td></tr>
-                    <tr><td>Period</td><td>May 29 - Jul 19, 2026</td></tr>
+                    <tr>
+                        <th>Metric</th>
+                        <th>All Time</th>
+                        <th>Last 30 Days</th>
+                        <th>Last 7 Days</th>
+                        <th>Today</th>
+                    </tr>
+                    <tr>
+                        <td>Total Tokens</td>
+                        <td>478,015,871</td>
+                        <td>478,015,871</td>
+                        <td>7,434,343</td>
+                        <td>1,053,028</td>
+                    </tr>
+                    <tr>
+                        <td>Input Tokens</td>
+                        <td>23,455,229</td>
+                        <td>23,455,229</td>
+                        <td>3,603,202</td>
+                        <td>565,349</td>
+                    </tr>
+                    <tr>
+                        <td>Output Tokens</td>
+                        <td>2,723,778</td>
+                        <td>2,723,778</td>
+                        <td>86,501</td>
+                        <td>11,903</td>
+                    </tr>
+                    <tr>
+                        <td>Sessions</td>
+                        <td>1,199</td>
+                        <td>1,199</td>
+                        <td>81</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>Messages</td>
+                        <td>14,060</td>
+                        <td>14,060</td>
+                        <td>593</td>
+                        <td>89</td>
+                    </tr>
+                    <tr>
+                        <td>Tool Calls</td>
+                        <td>6,045</td>
+                        <td>6,045</td>
+                        <td>250</td>
+                        <td>37</td>
+                    </tr>
                 </table>
             </div>
         </div>
+
     </div>
 
+    <!-- ═══ FOOTER ═══ -->
     <div class="footer">
         <p><span class="heart">&#9829;</span> Built by Ruby - Powered by Hermes Agent</p>
-        <p style="margin-top: 4px;">Last updated: Jul 19, 2026 05:00 MYT</p>
+        <p class="mt-8" style="color: var(--text-dim);">Last updated: Jun 30, 2026</p>
     </div>
 
     <script src="../script.js"></script>
