@@ -7,427 +7,379 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-    <!-- ═══ HEADER ═══ -->
-    <div class="page-header">
-        <img src="../assets/ruby-avatar.jpg" alt="Ruby" class="avatar">
-        <div class="header-text">
-            <h1>Ruby</h1>
-            <div class="subtitle">Hermes Agent <span class="version-tag">v0.17.0</span></div>
+    <!-- ═══ TOP BAR ═══ -->
+    <div class="top-bar">
+        <div class="top-bar-brand">
+            <span class="brand-dot"></span>
+            RUBY_TERMINAL
         </div>
-        <div class="theme-toggle" id="themeToggle">
-            <span class="theme-toggle-icon" id="themeSun">☀</span>
-            <span class="theme-toggle-icon active" id="themeMoon">☽</span>
+        <div class="top-bar-right">
+            <div class="nav-pills">
+                <a href="../index.html">System</a>
+                <a href="../index.html#status">Status</a>
+                <a href="../index.html#tokens">Tokens</a>
+                <a href="../index.html#sessions">Sessions</a>
+                <a href="../index.html#tools">Tools</a>
+                <a href="tokens.html" class="active">Analytics</a>
+                <a href="skills.html">Skills</a>
+            </div>
+            <div class="theme-btn" id="themeToggle">☀</div>
         </div>
-        <div class="status-dot"></div>
     </div>
 
-    <!-- ═══ NAVIGATION ═══ -->
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="../index.html">Overview</a>
-            <a href="tokens.html">Tokens</a>
-            <a href="skills.html">Skills</a>
-            <a href="cron.html">Cron Jobs</a>
-            <a href="system.html">System</a>
-            <a href="vault.html">Vault</a>
-            <a href="projects.html">Projects</a>
-            <a href="about.html">About Ruby</a>
-            <a href="amir.html">About Amir</a>
-        </div>
-    </nav>
+    <!-- ═══ ALL TIME STATS ═══ -->
+    <div class="section-block" style="padding-top: 92px;">
+        <div class="section-label">Token Usage</div>
+        <h2 class="section-title fade-up">All Time Stats &mdash; 1,199 Sessions</h2>
 
-    <!-- ═══ HERO ═══ -->
-    <div class="hero-area">
-        <h1 class="hero-title fade-in">Token Usage</h1>
-        <p class="hero-subtitle fade-in">Token consumption, platform distribution, and tool usage analytics</p>
+        <div class="mega-grid fade-up">
+            <div class="mega-stat ruby">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="478015871">0</div>
+                    <div class="stat-lbl">Total Tokens</div>
+                </div>
+            </div>
+            <div class="mega-stat cyan">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="23455229">0</div>
+                    <div class="stat-lbl">Input Tokens</div>
+                </div>
+            </div>
+            <div class="mega-stat amber">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="2723778">0</div>
+                    <div class="stat-lbl">Output Tokens</div>
+                </div>
+            </div>
+            <div class="mega-stat gold">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="1199">0</div>
+                    <div class="stat-lbl">Sessions</div>
+                </div>
+            </div>
+            <div class="mega-stat green">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="14060">0</div>
+                    <div class="stat-lbl">Messages</div>
+                </div>
+            </div>
+            <div class="mega-stat purple">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="6045">0</div>
+                    <div class="stat-lbl">Tool Calls</div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- ═══ MAIN ═══ -->
-    <div class="main">
+    <!-- ═══ LAST 7 DAYS ═══ -->
+    <div class="section-block">
+        <div class="section-label">Token Usage</div>
+        <h2 class="section-title fade-up">Last 7 Days &mdash; 81 Sessions</h2>
 
-        <!-- ─── ALL TIME ─── -->
-        <div class="section-header">TOKEN USAGE — ALL TIME (1199 SESSIONS)</div>
-        <div class="stat-grid fade-in">
-            <div class="edge-stat ruby">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="478015871">0</div>
-                    <div class="stat-label">Total Tokens</div>
+        <div class="mega-grid fade-up">
+            <div class="mega-stat ruby">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="7434343">0</div>
+                    <div class="stat-lbl">Total Tokens</div>
                 </div>
             </div>
-            <div class="edge-stat teal">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="23455229">0</div>
-                    <div class="stat-label">Input Tokens</div>
+            <div class="mega-stat cyan">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="3603202">0</div>
+                    <div class="stat-lbl">Input Tokens</div>
                 </div>
             </div>
-            <div class="edge-stat gold">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="2723778">0</div>
-                    <div class="stat-label">Output Tokens</div>
+            <div class="mega-stat amber">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="86501">0</div>
+                    <div class="stat-lbl">Output Tokens</div>
                 </div>
             </div>
-            <div class="edge-stat amber">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="1199">0</div>
-                    <div class="stat-label">Sessions</div>
+            <div class="mega-stat gold">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="81">0</div>
+                    <div class="stat-lbl">Sessions</div>
                 </div>
             </div>
-            <div class="edge-stat green">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="14060">0</div>
-                    <div class="stat-label">Messages</div>
+            <div class="mega-stat green">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="593">0</div>
+                    <div class="stat-lbl">Messages</div>
                 </div>
             </div>
-            <div class="edge-stat purple">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="6045">0</div>
-                    <div class="stat-label">Tool Calls</div>
+            <div class="mega-stat purple">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="250">0</div>
+                    <div class="stat-lbl">Tool Calls</div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- ─── LAST 30 DAYS ─── -->
-        <div class="section-header">TOKEN USAGE — LAST 30 DAYS</div>
-        <div class="stat-grid fade-in">
-            <div class="edge-stat ruby">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="478015871">0</div>
-                    <div class="stat-label">Total Tokens</div>
+    <!-- ═══ TODAY ═══ -->
+    <div class="section-block">
+        <div class="section-label">Token Usage</div>
+        <h2 class="section-title fade-up">Today &mdash; Jul 19, 2026</h2>
+
+        <div class="mega-grid fade-up">
+            <div class="mega-stat ruby">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="1053028">0</div>
+                    <div class="stat-lbl">Total Tokens</div>
                 </div>
             </div>
-            <div class="edge-stat teal">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="23455229">0</div>
-                    <div class="stat-label">Input Tokens</div>
+            <div class="mega-stat cyan">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="565349">0</div>
+                    <div class="stat-lbl">Input Tokens</div>
                 </div>
             </div>
-            <div class="edge-stat gold">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="2723778">0</div>
-                    <div class="stat-label">Output Tokens</div>
+            <div class="mega-stat amber">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="11903">0</div>
+                    <div class="stat-lbl">Output Tokens</div>
                 </div>
             </div>
-            <div class="edge-stat amber">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="1199">0</div>
-                    <div class="stat-label">Sessions</div>
+            <div class="mega-stat gold">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="11">0</div>
+                    <div class="stat-lbl">Sessions</div>
                 </div>
             </div>
-            <div class="edge-stat green">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="14060">0</div>
-                    <div class="stat-label">Messages</div>
+            <div class="mega-stat green">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="89">0</div>
+                    <div class="stat-lbl">Messages</div>
                 </div>
             </div>
-            <div class="edge-stat purple">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="6045">0</div>
-                    <div class="stat-label">Tool Calls</div>
+            <div class="mega-stat purple">
+                <div class="mega-stat-inner">
+                    <div class="stat-num" data-target="37">0</div>
+                    <div class="stat-lbl">Tool Calls</div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- ─── LAST 7 DAYS ─── -->
-        <div class="section-header">TOKEN USAGE — LAST 7 DAYS (81 SESSIONS)</div>
-        <div class="stat-grid fade-in">
-            <div class="edge-stat ruby">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="7434343">0</div>
-                    <div class="stat-label">Total Tokens</div>
+    <!-- ═══ PLATFORM BREAKDOWN ═══ -->
+    <div class="section-block">
+        <div class="section-label">Usage Breakdown</div>
+        <h2 class="section-title fade-up">Platform Breakdown &mdash; All Time</h2>
+
+        <div class="token-meter fade-up">
+            <div class="meter-row">
+                <div class="meter-label">Telegram</div>
+                <div class="meter-track">
+                    <div class="meter-fill ruby" data-width="76.5"></div>
                 </div>
+                <div class="meter-value">76.5% (365,531,343)</div>
             </div>
-            <div class="edge-stat teal">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="3603202">0</div>
-                    <div class="stat-label">Input Tokens</div>
+            <div class="meter-row">
+                <div class="meter-label">Cron</div>
+                <div class="meter-track">
+                    <div class="meter-fill gold" data-width="17.8"></div>
                 </div>
+                <div class="meter-value">17.8% (85,057,706)</div>
             </div>
-            <div class="edge-stat gold">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="86501">0</div>
-                    <div class="stat-label">Output Tokens</div>
+            <div class="meter-row">
+                <div class="meter-label">Subagent</div>
+                <div class="meter-track">
+                    <div class="meter-fill cyan" data-width="5.6"></div>
                 </div>
+                <div class="meter-value">5.6% (26,637,825)</div>
             </div>
-            <div class="edge-stat amber">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="81">0</div>
-                    <div class="stat-label">Sessions</div>
+            <div class="meter-row">
+                <div class="meter-label">CLI</div>
+                <div class="meter-track">
+                    <div class="meter-fill green" data-width="0.2"></div>
                 </div>
-            </div>
-            <div class="edge-stat green">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="593">0</div>
-                    <div class="stat-label">Messages</div>
-                </div>
-            </div>
-            <div class="edge-stat purple">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="250">0</div>
-                    <div class="stat-label">Tool Calls</div>
-                </div>
+                <div class="meter-value">0.2% (788,997)</div>
             </div>
         </div>
+    </div>
 
-        <!-- ─── TODAY ─── -->
-        <div class="section-header">TOKEN USAGE — TODAY (Jul 19, 2026)</div>
-        <div class="stat-grid fade-in">
-            <div class="edge-stat ruby">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="1053028">0</div>
-                    <div class="stat-label">Total Tokens</div>
-                </div>
+    <!-- ═══ PLATFORM DETAILS ═══ -->
+    <div class="section-block">
+        <div class="section-label">Details</div>
+        <h2 class="section-title fade-up">Platform Details</h2>
+
+        <div class="fade-up" style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.8rem;">
+                <thead>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">Platform</th>
+                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">Sessions</th>
+                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">Messages</th>
+                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">Tokens</th>
+                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 10px 16px; color: var(--text-secondary);">Cron</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">1,114</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">7,154</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">85,057,707</td>
+                        <td style="padding: 10px 16px; color: var(--gold); font-family: 'JetBrains Mono', monospace;">17.8%</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 10px 16px; color: var(--text-secondary);">Telegram</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">57</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">5,239</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">365,531,343</td>
+                        <td style="padding: 10px 16px; color: var(--ruby-bright); font-family: 'JetBrains Mono', monospace;">76.5%</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 10px 16px; color: var(--text-secondary);">Subagent</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">26</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">1,612</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">26,637,825</td>
+                        <td style="padding: 10px 16px; color: var(--cyan); font-family: 'JetBrains Mono', monospace;">5.6%</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 10px 16px; color: var(--text-secondary);">CLI</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">2</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">55</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">788,997</td>
+                        <td style="padding: 10px 16px; color: var(--green); font-family: 'JetBrains Mono', monospace;">0.2%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ═══ TOP TOOLS ═══ -->
+    <div class="section-block">
+        <div class="section-label">Tool Usage</div>
+        <h2 class="section-title fade-up">Top Tools by Usage</h2>
+
+        <div class="tool-strip fade-up">
+            <div class="tool-chip">
+                <span class="tool-chip-name">terminal</span>
+                <span class="tool-chip-stat">613 (43.6%)</span>
             </div>
-            <div class="edge-stat teal">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="565349">0</div>
-                    <div class="stat-label">Input Tokens</div>
-                </div>
+            <div class="tool-chip">
+                <span class="tool-chip-name">patch</span>
+                <span class="tool-chip-stat">141 (10.0%)</span>
             </div>
-            <div class="edge-stat gold">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="11903">0</div>
-                    <div class="stat-label">Output Tokens</div>
-                </div>
+            <div class="tool-chip">
+                <span class="tool-chip-name">read_file</span>
+                <span class="tool-chip-stat">140 (10.0%)</span>
             </div>
-            <div class="edge-stat amber">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="11">0</div>
-                    <div class="stat-label">Sessions</div>
-                </div>
+            <div class="tool-chip">
+                <span class="tool-chip-name">write_file</span>
+                <span class="tool-chip-stat">108 (7.7%)</span>
             </div>
-            <div class="edge-stat green">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="89">0</div>
-                    <div class="stat-label">Messages</div>
-                </div>
+            <div class="tool-chip">
+                <span class="tool-chip-name">mcp_exa_web_search_exa</span>
+                <span class="tool-chip-stat">69 (4.9%)</span>
             </div>
-            <div class="edge-stat purple">
-                <div class="edge-stat-inner">
-                    <div class="stat-value" data-target="37">0</div>
-                    <div class="stat-label">Tool Calls</div>
-                </div>
+            <div class="tool-chip">
+                <span class="tool-chip-name">todo</span>
+                <span class="tool-chip-stat">44 (3.1%)</span>
+            </div>
+            <div class="tool-chip">
+                <span class="tool-chip-name">browser_console</span>
+                <span class="tool-chip-stat">40 (2.8%)</span>
+            </div>
+            <div class="tool-chip">
+                <span class="tool-chip-name">skill_view</span>
+                <span class="tool-chip-stat">39 (2.8%)</span>
             </div>
         </div>
+    </div>
 
-        <!-- ─── USAGE BY PLATFORM ─── -->
-        <div class="section-header">USAGE BY PLATFORM (ALL TIME)</div>
+    <!-- ═══ OVERVIEW STATISTICS ═══ -->
+    <div class="section-block">
+        <div class="section-label">Overview</div>
+        <h2 class="section-title fade-up">Overview Statistics</h2>
 
-        <div class="edge-panel fade-in">
-            <div class="edge-panel-inner">
-                <div class="bar-chart">
-                    <div class="bar-row">
-                        <span class="bar-label">Telegram</span>
-                        <div class="bar-track">
-                            <div class="bar-fill cyan" data-width="76.5%"></div>
-                        </div>
-                        <span class="bar-value">76.5% (365,531,343)</span>
-                    </div>
-                    <div class="bar-row">
-                        <span class="bar-label">Cron</span>
-                        <div class="bar-track">
-                            <div class="bar-fill ruby" data-width="17.8%"></div>
-                        </div>
-                        <span class="bar-value">17.8% (85,057,706)</span>
-                    </div>
-                    <div class="bar-row">
-                        <span class="bar-label">Subagent</span>
-                        <div class="bar-track">
-                            <div class="bar-fill amber" data-width="5.6%"></div>
-                        </div>
-                        <span class="bar-value">5.6% (26,637,825)</span>
-                    </div>
-                    <div class="bar-row">
-                        <span class="bar-label">Cli</span>
-                        <div class="bar-track">
-                            <div class="bar-fill green" data-width="0.2%"></div>
-                        </div>
-                        <span class="bar-value">0.2% (788,997)</span>
-                    </div>
-                </div>
-            </div>
+        <div class="fade-up" style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.8rem;">
+                <thead>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">Metric</th>
+                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">All Time</th>
+                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">Last 30 Days</th>
+                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">Last 7 Days</th>
+                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">Today</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 10px 16px; color: var(--text-secondary);">Total Tokens</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">478,015,871</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">478,015,871</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">7,434,343</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">1,053,028</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 10px 16px; color: var(--text-secondary);">Input Tokens</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">23,455,229</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">23,455,229</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">3,603,202</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">565,349</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 10px 16px; color: var(--text-secondary);">Output Tokens</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">2,723,778</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">2,723,778</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">86,501</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">11,903</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 10px 16px; color: var(--text-secondary);">Sessions</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">1,199</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">1,199</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">81</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">11</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 10px 16px; color: var(--text-secondary);">Messages</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">14,060</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">14,060</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">593</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">89</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 10px 16px; color: var(--text-secondary);">Tool Calls</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">6,045</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">6,045</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">250</td>
+                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace;">37</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+    </div>
 
-        <!-- ─── PLATFORM DETAILS ─── -->
-        <div class="section-header">PLATFORM DETAILS</div>
+    <!-- ═══ QUICK LINKS ═══ -->
+    <div class="section-block">
+        <div class="section-label">Navigate</div>
+        <h2 class="section-title fade-up">Quick Links</h2>
 
-        <div class="edge-panel fade-in">
-            <div class="edge-panel-inner">
-                <table>
-                    <tr>
-                        <th>Platform</th>
-                        <th>Sessions</th>
-                        <th>Messages</th>
-                        <th>Tokens</th>
-                        <th>Percentage</th>
-                    </tr>
-                    <tr>
-                        <td>Cron</td>
-                        <td>1,114</td>
-                        <td>7,154</td>
-                        <td>85,057,707</td>
-                        <td>17.8%</td>
-                    </tr>
-                    <tr>
-                        <td>Telegram</td>
-                        <td>57</td>
-                        <td>5,239</td>
-                        <td>365,531,343</td>
-                        <td>76.5%</td>
-                    </tr>
-                    <tr>
-                        <td>Subagent</td>
-                        <td>26</td>
-                        <td>1,612</td>
-                        <td>26,637,825</td>
-                        <td>5.6%</td>
-                    </tr>
-                    <tr>
-                        <td>Cli</td>
-                        <td>2</td>
-                        <td>55</td>
-                        <td>788,997</td>
-                        <td>0.2%</td>
-                    </tr>
-                </table>
-            </div>
+        <div class="fade-up">
+            <a href="../index.html" class="tag ruby">System Overview</a>
+            <a href="skills.html" class="tag gold">Skills</a>
+            <a href="cron.html" class="tag cyan">Cron Jobs</a>
+            <a href="system.html" class="tag green">System Config</a>
+            <a href="vault.html" class="tag amber">Vault</a>
+            <a href="projects.html" class="tag purple">Projects</a>
+            <a href="about.html" class="tag">About Ruby</a>
+            <a href="amir.html" class="tag">About Amir</a>
         </div>
-
-        <!-- ─── TOP TOOLS ─── -->
-        <div class="section-header">TOP TOOLS BY USAGE</div>
-
-        <div class="edge-panel fade-in">
-            <div class="edge-panel-inner">
-                <div class="bar-chart">
-                    <div class="bar-row">
-                        <span class="bar-label">terminal</span>
-                        <div class="bar-track">
-                            <div class="bar-fill ruby" data-width="100.0%"></div>
-                        </div>
-                        <span class="bar-value">613 (43.6%)</span>
-                    </div>
-                    <div class="bar-row">
-                        <span class="bar-label">patch</span>
-                        <div class="bar-track">
-                            <div class="bar-fill gold" data-width="23.0%"></div>
-                        </div>
-                        <span class="bar-value">141 (10.0%)</span>
-                    </div>
-                    <div class="bar-row">
-                        <span class="bar-label">read_file</span>
-                        <div class="bar-track">
-                            <div class="bar-fill cyan" data-width="23.0%"></div>
-                        </div>
-                        <span class="bar-value">140 (10.0%)</span>
-                    </div>
-                    <div class="bar-row">
-                        <span class="bar-label">write_file</span>
-                        <div class="bar-track">
-                            <div class="bar-fill green" data-width="17.7%"></div>
-                        </div>
-                        <span class="bar-value">108 (7.7%)</span>
-                    </div>
-                    <div class="bar-row">
-                        <span class="bar-label">mcp_exa_web_search_exa</span>
-                        <div class="bar-track">
-                            <div class="bar-fill amber" data-width="11.3%"></div>
-                        </div>
-                        <span class="bar-value">69 (4.9%)</span>
-                    </div>
-                    <div class="bar-row">
-                        <span class="bar-label">todo</span>
-                        <div class="bar-track">
-                            <div class="bar-fill purple" data-width="7.2%"></div>
-                        </div>
-                        <span class="bar-value">44 (3.1%)</span>
-                    </div>
-                    <div class="bar-row">
-                        <span class="bar-label">browser_console</span>
-                        <div class="bar-track">
-                            <div class="bar-fill teal" data-width="6.6%"></div>
-                        </div>
-                        <span class="bar-value">40 (2.8%)</span>
-                    </div>
-                    <div class="bar-row">
-                        <span class="bar-label">skill_view</span>
-                        <div class="bar-track">
-                            <div class="bar-fill gold" data-width="6.4%"></div>
-                        </div>
-                        <span class="bar-value">39 (2.8%)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ─── OVERVIEW STATISTICS ─── -->
-        <div class="section-header">OVERVIEW STATISTICS</div>
-
-        <div class="edge-panel fade-in">
-            <div class="edge-panel-inner">
-                <table>
-                    <tr>
-                        <th>Metric</th>
-                        <th>All Time</th>
-                        <th>Last 30 Days</th>
-                        <th>Last 7 Days</th>
-                        <th>Today</th>
-                    </tr>
-                    <tr>
-                        <td>Total Tokens</td>
-                        <td>478,015,871</td>
-                        <td>478,015,871</td>
-                        <td>7,434,343</td>
-                        <td>1,053,028</td>
-                    </tr>
-                    <tr>
-                        <td>Input Tokens</td>
-                        <td>23,455,229</td>
-                        <td>23,455,229</td>
-                        <td>3,603,202</td>
-                        <td>565,349</td>
-                    </tr>
-                    <tr>
-                        <td>Output Tokens</td>
-                        <td>2,723,778</td>
-                        <td>2,723,778</td>
-                        <td>86,501</td>
-                        <td>11,903</td>
-                    </tr>
-                    <tr>
-                        <td>Sessions</td>
-                        <td>1,199</td>
-                        <td>1,199</td>
-                        <td>81</td>
-                        <td>11</td>
-                    </tr>
-                    <tr>
-                        <td>Messages</td>
-                        <td>14,060</td>
-                        <td>14,060</td>
-                        <td>593</td>
-                        <td>89</td>
-                    </tr>
-                    <tr>
-                        <td>Tool Calls</td>
-                        <td>6,045</td>
-                        <td>6,045</td>
-                        <td>250</td>
-                        <td>37</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
     </div>
 
     <!-- ═══ FOOTER ═══ -->
-    <div class="footer">
-        <p><span class="heart">&#9829;</span> Built by Ruby - Powered by Hermes Agent</p>
-        <p class="mt-8" style="color: var(--text-dim);">Last updated: Jun 30, 2026</p>
+    <div class="terminal-footer">
+        <p><span style="color: var(--ruby);">&#9829;</span> Built by Ruby &middot; Powered by Hermes Agent &middot; Deployed on Cloudflare Pages</p>
+        <p class="mt-8" style="color: var(--text-muted);">Last updated: Jun 30, 2026</p>
     </div>
 
     <script src="../script.js"></script>
