@@ -255,6 +255,7 @@ a:hover { color: var(--cyan); }
     letter-spacing: 0.06em;
     transition: color 0.2s ease, background 0.2s ease;
     clip-path: polygon(0% 3px, 3px 0%, calc(100% - 3px) 0%, 100% 3px, 100% calc(100% - 3px), calc(100% - 3px) 100%, 3px 100%, 0% calc(100% - 3px));
+    white-space: nowrap;
 }
 
 .nav-pills a:hover {
@@ -265,6 +266,27 @@ a:hover { color: var(--cyan); }
 .nav-pills a.active {
     color: var(--ruby-bright);
     background: var(--ruby-dim);
+}
+
+/* Nav divider between anchor links and page links */
+.nav-divider {
+    display: inline-block;
+    width: 1px;
+    height: 20px;
+    background: var(--border);
+    margin: 0 8px;
+    align-self: center;
+}
+
+/* Nav section label */
+.nav-sublabel {
+    font-size: 0.55rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0 8px;
+    align-self: center;
 }
 
 /* ══════════════════════════════════════════════════════
@@ -433,6 +455,17 @@ a:hover { color: var(--cyan); }
     gap: 12px;
 }
 
+/* Fixed 3-column variant for sub-pages with lots of numbers */
+.mega-grid-fixed {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.mega-grid-fixed .mega-stat .stat-num {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+}
+
 .mega-stat {
     background: var(--bg-elevated);
     border: 2px solid var(--border);
@@ -468,6 +501,8 @@ a:hover { color: var(--cyan); }
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.03em;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .mega-stat .stat-lbl {
