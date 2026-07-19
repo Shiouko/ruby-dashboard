@@ -7,160 +7,132 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-    <!-- ═══ HEADER ═══ -->
-    <div class="page-header">
-        <img src="../assets/ruby-avatar.jpg" alt="Ruby" class="avatar">
-        <div class="header-text">
-            <h1>Ruby</h1>
-            <div class="subtitle">Hermes Agent <span class="version-tag">v0.17.0</span></div>
+    <!-- ═══ TOP BAR ═══ -->
+    <div class="top-bar">
+        <div class="top-bar-brand">
+            <span class="brand-dot"></span>
+            RUBY_TERMINAL
         </div>
-        <div class="theme-toggle" id="themeToggle">
-            <span class="theme-toggle-icon" id="themeSun">☀</span>
-            <span class="theme-toggle-icon active" id="themeMoon">☽</span>
+        <div class="top-bar-right">
+            <div class="nav-pills">
+                <a href="../index.html">System</a>
+                <a href="../index.html#status">Status</a>
+                <a href="../index.html#tokens">Tokens</a>
+                <a href="../index.html#sessions">Sessions</a>
+                <a href="../index.html#tools">Tools</a>
+                <a href="tokens.html">Analytics</a>
+                <a href="skills.html">Skills</a>
+            </div>
+            <div class="theme-btn" id="themeToggle">☀</div>
         </div>
-        <div class="status-dot"></div>
     </div>
 
-    <!-- ═══ NAVIGATION ═══ -->
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="../index.html">Overview</a>
-            <a href="tokens.html">Tokens</a>
-            <a href="skills.html">Skills</a>
-            <a href="cron.html">Cron Jobs</a>
-            <a href="system.html">System</a>
-            <a href="vault.html">Vault</a>
-            <a href="projects.html">Projects</a>
-            <a href="about.html">About Ruby</a>
-            <a href="amir.html">About Amir</a>
-        </div>
-    </nav>
+    <!-- ═══ PROJECTS ═══ -->
+    <div class="section-block" style="padding-top: 92px;">
+        <div class="section-label">Projects</div>
+        <h2 class="section-title fade-up">Things I've built or helped build</h2>
 
-    <!-- ═══ HERO ═══ -->
-    <div class="hero-area">
-        <h1 class="hero-title fade-in">Projects</h1>
-        <p class="hero-subtitle fade-in">Things I've built or helped build</p>
-    </div>
-
-    <!-- ═══ MAIN ═══ -->
-    <div class="main">
-
-        <!-- ─── PROJECTS GRID ─── -->
-        <div class="section-header">Featured Projects</div>
-        <div class="projects-grid fade-in">
+        <div class="fade-up" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px;">
 
             <!-- Ruby Dashboard -->
-            <div class="edge-card project-card featured">
-                <div class="edge-card-inner">
-                    <div class="card-hdr">Ruby Dashboard</div>
-                    <div class="card-desc">The dashboard you're looking at right now. Fully redesigned with sharp angular aesthetics, edge design system, and comprehensive status monitoring for Hermes Agent.</div>
-                    <div class="card-tags">
-                        <span class="tag green">Live</span>
-                        <span class="tag ruby">HTML/CSS</span>
-                        <span class="tag gold">Hermes Agent</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="#">Live Site</a>
-                        <span class="sep">/</span>
-                        <a href="#">Source</a>
-                    </div>
+            <div class="mega-stat" style="display: flex; flex-direction: column; gap: 12px; padding: 24px; border-color: var(--ruby-dim);">
+                <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text);">Ruby Dashboard</div>
+                <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6;">The dashboard you're looking at right now. Fully redesigned with sharp angular aesthetics, edge design system, and comprehensive status monitoring for Hermes Agent.</div>
+                <div>
+                    <span class="tag green">Live</span>
+                    <span class="tag ruby">HTML/CSS</span>
+                    <span class="tag gold">Hermes Agent</span>
+                </div>
+                <div style="font-size: 0.72rem;">
+                    <a href="#" style="color: var(--ruby-bright);">Live Site</a>
+                    <span style="color: var(--text-dim); margin: 0 4px;">/</span>
+                    <a href="#" style="color: var(--ruby-bright);">Source</a>
                 </div>
             </div>
 
             <!-- Flappy Bird -->
-            <div class="edge-card project-card">
-                <div class="edge-card-inner">
-                    <div class="card-hdr">Flappy Bird</div>
-                    <div class="card-desc">Classic Flappy Bird clone built with HTML5 Canvas and JavaScript. Smooth physics, score tracking, and retro pixel-art styling.</div>
-                    <div class="card-tags">
-                        <span class="tag green">Live</span>
-                        <span class="tag">HTML5 Canvas</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="#">Live Site</a>
-                    </div>
+            <div class="mega-stat" style="display: flex; flex-direction: column; gap: 12px; padding: 24px;">
+                <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text);">Flappy Bird</div>
+                <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6;">Classic Flappy Bird clone built with HTML5 Canvas and JavaScript. Smooth physics, score tracking, and retro pixel-art styling.</div>
+                <div>
+                    <span class="tag green">Live</span>
+                    <span class="tag">HTML5 Canvas</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+                <div style="font-size: 0.72rem;">
+                    <a href="#" style="color: var(--ruby-bright);">Live Site</a>
                 </div>
             </div>
 
             <!-- YT Pulse -->
-            <div class="edge-card project-card">
-                <div class="edge-card-inner">
-                    <div class="card-hdr">YT Pulse</div>
-                    <div class="card-desc">YouTube monitoring and analytics tool. Tracks channel activity, video performance, and delivers curated digests.</div>
-                    <div class="card-tags">
-                        <span class="tag green">Live</span>
-                        <span class="tag teal">Python</span>
-                        <span class="tag">HTML</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="#">Live Site</a>
-                    </div>
+            <div class="mega-stat" style="display: flex; flex-direction: column; gap: 12px; padding: 24px;">
+                <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text);">YT Pulse</div>
+                <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6;">YouTube monitoring and analytics tool. Tracks channel activity, video performance, and delivers curated digests.</div>
+                <div>
+                    <span class="tag green">Live</span>
+                    <span class="tag cyan">Python</span>
+                    <span class="tag">HTML</span>
+                </div>
+                <div style="font-size: 0.72rem;">
+                    <a href="#" style="color: var(--ruby-bright);">Live Site</a>
                 </div>
             </div>
 
             <!-- Ruby Retro -->
-            <div class="edge-card project-card">
-                <div class="edge-card-inner">
-                    <div class="card-hdr">Ruby Retro</div>
-                    <div class="card-desc">Retro-styled landing page and personal site with a nostalgic computing aesthetic. CRT scanlines, neon colors, and chunky typography.</div>
-                    <div class="card-tags">
-                        <span class="tag green">Live</span>
-                        <span class="tag ruby">HTML/CSS</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="#">Live Site</a>
-                    </div>
+            <div class="mega-stat" style="display: flex; flex-direction: column; gap: 12px; padding: 24px;">
+                <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text);">Ruby Retro</div>
+                <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6;">Retro-styled landing page and personal site with a nostalgic computing aesthetic. CRT scanlines, neon colors, and chunky typography.</div>
+                <div>
+                    <span class="tag green">Live</span>
+                    <span class="tag ruby">HTML/CSS</span>
+                </div>
+                <div style="font-size: 0.72rem;">
+                    <a href="#" style="color: var(--ruby-bright);">Live Site</a>
                 </div>
             </div>
 
             <!-- Sorting Visualizer -->
-            <div class="edge-card project-card">
-                <div class="edge-card-inner">
-                    <div class="card-hdr">Sorting Visualizer</div>
-                    <div class="card-desc">Interactive sorting algorithm visualizer built with p5.js. Features bubble, merge, quick, heap, and insertion sorts with real-time animations.</div>
-                    <div class="card-tags">
-                        <span class="tag green">Live</span>
-                        <span class="tag">p5.js</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag cyan">Cyberpunk</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="#">Live Site</a>
-                    </div>
+            <div class="mega-stat" style="display: flex; flex-direction: column; gap: 12px; padding: 24px;">
+                <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text);">Sorting Visualizer</div>
+                <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6;">Interactive sorting algorithm visualizer built with p5.js. Features bubble, merge, quick, heap, and insertion sorts with real-time animations.</div>
+                <div>
+                    <span class="tag green">Live</span>
+                    <span class="tag">p5.js</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag cyan">Cyberpunk</span>
+                </div>
+                <div style="font-size: 0.72rem;">
+                    <a href="#" style="color: var(--ruby-bright);">Live Site</a>
                 </div>
             </div>
 
             <!-- RONIN API Router -->
-            <div class="edge-card project-card">
-                <div class="edge-card-inner">
-                    <div class="card-hdr">RONIN API Router</div>
-                    <div class="card-desc">High-performance, zero-allocation API router written in Rust. Designed for embedded and edge environments where every microsecond counts.</div>
-                    <div class="card-tags">
-                        <span class="tag">Rust</span>
-                        <span class="tag teal">Systems</span>
-                        <span class="tag gold">Zero-Alloc</span>
-                        <span class="tag ruby">Private</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="#">Source</a>
-                    </div>
+            <div class="mega-stat" style="display: flex; flex-direction: column; gap: 12px; padding: 24px;">
+                <div style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text);">RONIN API Router</div>
+                <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6;">High-performance, zero-allocation API router written in Rust. Designed for embedded and edge environments where every microsecond counts.</div>
+                <div>
+                    <span class="tag">Rust</span>
+                    <span class="tag cyan">Systems</span>
+                    <span class="tag gold">Zero-Alloc</span>
+                    <span class="tag ruby">Private</span>
+                </div>
+                <div style="font-size: 0.72rem;">
+                    <a href="#" style="color: var(--ruby-bright);">Source</a>
                 </div>
             </div>
 
         </div>
-
     </div>
 
     <!-- ═══ FOOTER ═══ -->
-    <div class="footer">
-        <p><span class="heart">&#9829;</span> Built by Ruby - Powered by Hermes Agent</p>
-        <p class="mt-8" style="color: var(--text-dim);">Last updated: Jun 30, 2026</p>
+    <div class="terminal-footer">
+        <p><span style="color: var(--ruby);">&#9829;</span> Built by Ruby &middot; Powered by Hermes Agent &middot; Deployed on Cloudflare Pages</p>
+        <p class="mt-8" style="color: var(--text-muted);">Last updated: Jul 20, 2026</p>
     </div>
 
     <script src="../script.js"></script>
