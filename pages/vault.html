@@ -4,194 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vault - Ruby Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-
-<aside class="sidebar">
-    <div class="sidebar-brand">R</div>
-    <a href="../index.html#hero" class="sidebar-link" title="System">SYS</a>
-    <a href="../index.html#vitals" class="sidebar-link" title="Vitals">VIT</a>
-    <a href="../index.html#tokens" class="sidebar-link" title="Tokens">TKN</a>
-    <a href="../index.html#sessions" class="sidebar-link" title="Top Sessions">TOP</a>
-    <a href="../index.html#tools" class="sidebar-link" title="Tools">TLS</a>
-    <a href="tokens.html" class="sidebar-link" title="Analytics">ANL</a>
-    <div class="sidebar-divider"></div>
-    <a href="skills.html" class="sidebar-link" title="Skills">SKL</a>
-    <a href="cron.html" class="sidebar-link" title="Cron">CRN</a>
-    <a href="system.html" class="sidebar-link" title="Config">CFG</a>
-    <a href="vault.html" class="sidebar-link active" title="Vault">VLT</a>
-    <a href="projects.html" class="sidebar-link" title="Projects">PRJ</a>
-    <div class="sidebar-divider"></div>
-    <a href="about.html" class="sidebar-link" title="Ruby">RBY</a>
-    <a href="amir.html" class="sidebar-link" title="Amir">AMR</a>
-    <div class="sidebar-spacer"></div>
-    <button class="sidebar-toggle" id="themeToggle" title="Toggle theme">☀</button>
-</aside>
-
-<main class="main">
-
-    <!-- HEADER -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Vault</div>
-            <h1 class="section-title">Knowledge Vault</h1>
+    <nav class="nav">
+        <a href="../index.html" class="nav-logo">R</a>
+        <div class="nav-links">
+            <a href="../index.html#vitals" class="nav-link">Vitals</a>
+            <a href="../index.html#tokens" class="nav-link">Tokens</a>
+            <a href="../index.html#sessions" class="nav-link">Sessions</a>
+            <a href="../index.html#tools" class="nav-link">Tools</a>
+            <div class="nav-divider"></div>
+            <a href="tokens.html" class="nav-link">Analytics</a>
+            <a href="skills.html" class="nav-link">Skills</a>
+            <a href="cron.html" class="nav-link">Cron</a>
+            <a href="system.html" class="nav-link">System</a>
+            <a href="vault.html" class="nav-link active">Vault</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="amir.html" class="nav-link">Amir</a>
         </div>
-    </section>
+        <button class="nav-toggle" id="themeToggle">☀</button>
+    </nav>
 
-    <!-- KNOWLEDGE GRAPH -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Graph</div>
-            <h2 class="section-title">Knowledge Graph</h2>
-        </div>
-        <div class="stats-grid reveal">
-            <div class="stat-card ruby">
-                <div class="stat-num" data-target="12">0</div>
-                <div class="stat-lbl">Notes</div>
-            </div>
-            <div class="stat-card gold">
-                <div class="stat-num" data-target="20">0</div>
-                <div class="stat-lbl">Wikilinks</div>
-            </div>
-            <div class="stat-card cyan">
-                <div class="stat-num" data-target="335">0</div>
-                <div class="stat-lbl">Lines</div>
-            </div>
-        </div>
-        <div class="stats-grid reveal mt-12">
-            <div class="stat-card green">
-                <div class="stat-num" data-target="8,891">0</div>
-                <div class="stat-lbl">Characters</div>
-            </div>
-            <div class="stat-card amber">
-                <div class="stat-num" data-target="9">0</div>
-                <div class="stat-lbl">Notes</div>
-            </div>
-            <div class="stat-card purple">
-                <div class="stat-num" data-target="20">0</div>
-                <div class="stat-lbl">Links</div>
-            </div>
-        </div>
-    </section>
+    <main class="container">
+        <section class="section reveal">
+            <p class="section-kicker">Knowledge</p>
+            <h1 class="section-title">Vault</h1>
+        </section>
 
-    <!-- NOTES INVENTORY -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Notes</div>
+        <section class="section reveal">
+            <div class="stats-grid">
+                <div class="stat-card ruby">
+                    <div class="stat-num" data-target="12">0</div>
+                    <div class="stat-lbl">Total Notes</div>
+                </div>
+                <div class="stat-card cyan">
+                    <div class="stat-num" data-target="20">0</div>
+                    <div class="stat-lbl">Wikilinks</div>
+                </div>
+                <div class="stat-card gold">
+                    <div class="stat-num" data-target="9">0</div>
+                    <div class="stat-lbl">Linked Notes</div>
+                </div>
+                <div class="stat-card green">
+                    <div class="stat-num" data-target="335">0</div>
+                    <div class="stat-lbl">Lines</div>
+                </div>
+                <div class="stat-card amber">
+                    <div class="stat-num" data-target="8891">0</div>
+                    <div class="stat-lbl">Characters</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal">
             <h2 class="section-title">Notes Inventory</h2>
-        </div>
-        <div class="glass-card reveal">
-            <div class="lb-list">
-                <div class="lb-row">
-                    <div class="lb-rank">1</div>
-                    <div>
-                        <div class="lb-name">Index.md</div>
-                        <div class="lb-meta">Root index</div>
-                    </div>
-                </div>
-                <div class="lb-row">
-                    <div class="lb-rank">2</div>
-                    <div>
-                        <div class="lb-name">Amir.md</div>
-                        <div class="lb-meta">People</div>
-                    </div>
-                </div>
-                <div class="lb-row">
-                    <div class="lb-rank">3</div>
-                    <div>
-                        <div class="lb-name">Ruby.md</div>
-                        <div class="lb-meta">Personality</div>
-                    </div>
-                </div>
-                <div class="lb-row">
-                    <div class="lb-rank">4</div>
-                    <div>
-                        <div class="lb-name">Overview (Projects)</div>
-                        <div class="lb-meta">Projects index</div>
-                    </div>
-                </div>
-                <div class="lb-row">
-                    <div class="lb-rank">5</div>
-                    <div>
-                        <div class="lb-name">Overview (Learnings)</div>
-                        <div class="lb-meta">Learnings index</div>
-                    </div>
-                </div>
-                <div class="lb-row">
-                    <div class="lb-rank">6</div>
-                    <div>
-                        <div class="lb-name">tool-quirks.md</div>
-                        <div class="lb-meta">Reference</div>
-                    </div>
-                </div>
-                <div class="lb-row">
-                    <div class="lb-rank">7</div>
-                    <div>
-                        <div class="lb-name">debugging-patterns.md</div>
-                        <div class="lb-meta">Reference</div>
-                    </div>
-                </div>
-                <div class="lb-row">
-                    <div class="lb-rank">8</div>
-                    <div>
-                        <div class="lb-name">2026-06-05 through 2026-06-28</div>
-                        <div class="lb-meta">Journal entries</div>
-                    </div>
-                </div>
-                <div class="lb-row">
-                    <div class="lb-rank">9</div>
-                    <div>
-                        <div class="lb-name">session-summary.md</div>
-                        <div class="lb-meta">Session log</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AUTOMATION -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Automation</div>
-            <h2 class="section-title">Vault Automation</h2>
-        </div>
-        <div class="glass-card reveal">
             <table>
                 <thead>
                     <tr>
-                        <th>Job</th>
-                        <th>Status</th>
-                        <th>Interval</th>
+                        <th>Note</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Session Auto-Summarizer</td>
-                        <td><span class="badge online">Active</span></td>
-                        <td class="mono">4h</td>
-                    </tr>
-                    <tr>
-                        <td>Vault Auto-Committer</td>
-                        <td><span class="badge online">Active</span></td>
-                        <td class="mono">1h</td>
-                    </tr>
-                    <tr>
-                        <td>Session Journal Populator</td>
-                        <td><span class="badge online">Active</span></td>
-                        <td class="mono">6h</td>
-                    </tr>
+                    <tr><td>Index.md</td></tr>
+                    <tr><td>Amir.md</td></tr>
+                    <tr><td>Ruby.md</td></tr>
+                    <tr><td>Overview (Projects)</td></tr>
+                    <tr><td>Overview (Learnings)</td></tr>
+                    <tr><td>tool-quirks.md</td></tr>
+                    <tr><td>debugging-patterns.md</td></tr>
+                    <tr><td>2026-06-05</td></tr>
+                    <tr><td>2026-06-08</td></tr>
+                    <tr><td>2026-06-13</td></tr>
+                    <tr><td>2026-06-28</td></tr>
+                    <tr><td>session-summary.md</td></tr>
                 </tbody>
             </table>
-        </div>
-    </section>
+        </section>
 
-</main>
+        <section class="section reveal">
+            <h2 class="section-title">Automation</h2>
+            <div class="meter-list">
+                <div class="meter-row">
+                    <div class="meter-label">Session Auto-Summarizer</div>
+                    <div class="meter-track">
+                        <div class="meter-fill green" data-width="100"></div>
+                    </div>
+                    <div class="meter-value">Active, 4h</div>
+                </div>
+                <div class="meter-row">
+                    <div class="meter-label">Vault Auto-Committer</div>
+                    <div class="meter-track">
+                        <div class="meter-fill cyan" data-width="100"></div>
+                    </div>
+                    <div class="meter-value">Active, 1h</div>
+                </div>
+                <div class="meter-row">
+                    <div class="meter-label">Session Journal Populator</div>
+                    <div class="meter-track">
+                        <div class="meter-fill gold" data-width="100"></div>
+                    </div>
+                    <div class="meter-value">Active, 6h</div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<footer class="footer">
-    Built with <span class="footer-heart">♥</span> by Ruby and Amir
-</footer>
+    <div class="footer">
+        <p>Built with <span class="footer-heart">♥</span> by Ruby and Amir</p>
+        <p class="mt-8 text-dim">Last updated: Jul 21, 2026</p>
+    </div>
 
-<script src="../script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>

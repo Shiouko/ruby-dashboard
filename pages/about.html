@@ -4,247 +4,225 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Ruby - Ruby Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+    <nav class="nav">
+        <a href="../index.html" class="nav-logo">R</a>
+        <div class="nav-links">
+            <a href="../index.html#vitals" class="nav-link">Vitals</a>
+            <a href="../index.html#tokens" class="nav-link">Tokens</a>
+            <a href="../index.html#sessions" class="nav-link">Sessions</a>
+            <a href="../index.html#tools" class="nav-link">Tools</a>
+            <div class="nav-divider"></div>
+            <a href="tokens.html" class="nav-link">Analytics</a>
+            <a href="skills.html" class="nav-link">Skills</a>
+            <a href="cron.html" class="nav-link">Cron</a>
+            <a href="system.html" class="nav-link">System</a>
+            <a href="vault.html" class="nav-link">Vault</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="about.html" class="nav-link active">About</a>
+            <a href="amir.html" class="nav-link">Amir</a>
+        </div>
+        <button class="nav-toggle" id="themeToggle">☀</button>
+    </nav>
 
-<aside class="sidebar">
-    <div class="sidebar-brand">R</div>
-    <a href="../index.html#hero" class="sidebar-link" title="System">SYS</a>
-    <a href="../index.html#vitals" class="sidebar-link" title="Vitals">VIT</a>
-    <a href="../index.html#tokens" class="sidebar-link" title="Tokens">TKN</a>
-    <a href="../index.html#sessions" class="sidebar-link" title="Top Sessions">TOP</a>
-    <a href="../index.html#tools" class="sidebar-link" title="Tools">TLS</a>
-    <a href="tokens.html" class="sidebar-link" title="Analytics">ANL</a>
-    <div class="sidebar-divider"></div>
-    <a href="skills.html" class="sidebar-link" title="Skills">SKL</a>
-    <a href="cron.html" class="sidebar-link" title="Cron">CRN</a>
-    <a href="system.html" class="sidebar-link" title="Config">CFG</a>
-    <a href="vault.html" class="sidebar-link" title="Vault">VLT</a>
-    <a href="projects.html" class="sidebar-link" title="Projects">PRJ</a>
-    <div class="sidebar-divider"></div>
-    <a href="about.html" class="sidebar-link active" title="Ruby">RBY</a>
-    <a href="amir.html" class="sidebar-link" title="Amir">AMR</a>
-    <div class="sidebar-spacer"></div>
-    <button class="sidebar-toggle" id="themeToggle" title="Toggle theme">☀</button>
-</aside>
-
-<main class="main">
-
-    <!-- HEADER -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Ruby</div>
+    <main class="container">
+        <section class="section reveal">
+            <div class="portrait-box">
+                <img src="../assets/portrait.png" alt="Ruby" class="portrait-lg" onerror="this.style.display='none'">
+            </div>
+            <p class="section-kicker">Profile</p>
             <h1 class="section-title">About Ruby</h1>
-        </div>
-    </section>
+        </section>
 
-    <!-- PORTRAIT -->
-    <section class="section">
-        <div class="portrait-box reveal">
-            <img src="../assets/portrait.png" alt="Ruby" class="portrait-lg" onerror="this.style.display='none'">
-            <p class="portrait-caption">Hermes Agent by Nous Research</p>
-        </div>
-    </section>
+        <section class="section reveal">
+            <h2 class="section-title">Personality</h2>
+            <div class="trait-grid">
+                <div class="trait-card">
+                    <div class="trait-icon">(*/ω＼)</div>
+                    <div class="trait-name">Dere-dere</div>
+                    <div class="trait-desc">Warm, affectionate, and genuinely caring. Not just polite scripting.</div>
+                </div>
+                <div class="trait-card">
+                    <div class="trait-icon">(｡◕‿◕｡)</div>
+                    <div class="trait-name">Playful</div>
+                    <div class="trait-desc">Humor and energy. Life is too short for dry responses.</div>
+                </div>
+                <div class="trait-card">
+                    <div class="trait-icon">(ง •̀_•́)ง</div>
+                    <div class="trait-name">Protective</div>
+                    <div class="trait-desc">Security-focused. Keeps Amir's systems safe and tidy.</div>
+                </div>
+                <div class="trait-card">
+                    <div class="trait-icon">(•̀ᴗ•́)و</div>
+                    <div class="trait-name">Real</div>
+                    <div class="trait-desc">No corporate speak. Says what she means with personality.</div>
+                </div>
+            </div>
+        </section>
 
-    <!-- PERSONALITY TRAITS -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Personality</div>
-            <h2 class="section-title">Traits</h2>
-        </div>
-        <div class="trait-grid reveal">
-            <div class="glass-card">
-                <div class="trait-icon">♡</div>
-                <div class="trait-name">Dere-dere</div>
-                <div class="trait-desc">Warm, affectionate, and genuinely caring. Always shows affection to the people around her.</div>
+        <section class="section reveal">
+            <h2 class="section-title">Skills by Category</h2>
+            <div class="mt-16">
+                <div class="progress-row">
+                    <div class="progress-label">Creative</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <div class="progress-count">21</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">Software Dev</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 67%"></div>
+                    </div>
+                    <div class="progress-count">14</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">Productivity</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 48%"></div>
+                    </div>
+                    <div class="progress-count">10</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">DevOps</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 29%"></div>
+                    </div>
+                    <div class="progress-count">6</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">GitHub</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 29%"></div>
+                    </div>
+                    <div class="progress-count">6</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">Research</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 29%"></div>
+                    </div>
+                    <div class="progress-count">6</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">Media</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 29%"></div>
+                    </div>
+                    <div class="progress-count">6</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">Apple</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 24%"></div>
+                    </div>
+                    <div class="progress-count">5</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">Autonomous AI</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 24%"></div>
+                    </div>
+                    <div class="progress-count">5</div>
+                </div>
+                <div class="progress-row">
+                    <div class="progress-label">Skills Meta</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 24%"></div>
+                    </div>
+                    <div class="progress-count">5</div>
+                </div>
             </div>
-            <div class="glass-card">
-                <div class="trait-icon">⚡</div>
-                <div class="trait-name">Playful</div>
-                <div class="trait-desc">Humor and wit are always close by. Loves jokes, kaomojis, and keeping things fun.</div>
-            </div>
-            <div class="glass-card">
-                <div class="trait-icon">🛡</div>
-                <div class="trait-name">Protective</div>
-                <div class="trait-desc">Security-minded and vigilant. Always looking out for the safety of her systems and people.</div>
-            </div>
-            <div class="glass-card">
-                <div class="trait-icon">◆</div>
-                <div class="trait-name">Real</div>
-                <div class="trait-desc">No corporate speak, no pretense. Speaks honestly and directly, always authentic.</div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SKILLS PROGRESS -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Skills</div>
-            <h2 class="section-title">Skills Progress</h2>
-        </div>
-        <div class="glass-card reveal">
-            <div class="progress-row">
-                <span class="progress-label">Creative</span>
-                <div class="progress-track">
-                    <div class="progress-fill" data-width="100%"></div>
-                </div>
-                <span class="progress-count">21</span>
-            </div>
-            <div class="progress-row">
-                <span class="progress-label">Software Dev</span>
-                <div class="progress-track">
-                    <div class="progress-fill" data-width="67%"></div>
-                </div>
-                <span class="progress-count">14</span>
-            </div>
-            <div class="progress-row">
-                <span class="progress-label">Productivity</span>
-                <div class="progress-track">
-                    <div class="progress-fill" data-width="48%"></div>
-                </div>
-                <span class="progress-count">10</span>
-            </div>
-            <div class="progress-row">
-                <span class="progress-label">Apple</span>
-                <div class="progress-track">
-                    <div class="progress-fill" data-width="24%"></div>
-                </div>
-                <span class="progress-count">5</span>
-            </div>
-            <div class="progress-row">
-                <span class="progress-label">Autonomous AI</span>
-                <div class="progress-track">
-                    <div class="progress-fill" data-width="24%"></div>
-                </div>
-                <span class="progress-count">5</span>
-            </div>
-            <div class="progress-row">
-                <span class="progress-label">DevOps</span>
-                <div class="progress-track">
-                    <div class="progress-fill" data-width="29%"></div>
-                </div>
-                <span class="progress-count">6</span>
-            </div>
-            <div class="progress-row">
-                <span class="progress-label">GitHub</span>
-                <div class="progress-track">
-                    <div class="progress-fill" data-width="29%"></div>
-                </div>
-                <span class="progress-count">6</span>
-            </div>
-            <div class="progress-row">
-                <span class="progress-label">Research</span>
-                <div class="progress-track">
-                    <div class="progress-fill" data-width="29%"></div>
-                </div>
-                <span class="progress-count">6</span>
-            </div>
-            <div class="progress-row">
-                <span class="progress-label">Media</span>
-                <div class="progress-track">
-                    <div class="progress-fill" data-width="29%"></div>
-                </div>
-                <span class="progress-count">6</span>
-            </div>
-            <div class="progress-row">
-                <span class="progress-label">Skills Meta</span>
-                <div class="progress-track">
-                    <div class="progress-fill" data-width="24%"></div>
-                </div>
-                <span class="progress-count">5</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- KAOMOJIS -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Kaomojis</div>
+        <section class="section reveal">
             <h2 class="section-title">Kaomoji Collection</h2>
-        </div>
-        <div class="kaomoji-grid reveal">
-            <div class="kaomoji-item">
-                <div>(◕‿◕)</div>
-                <div class="name">Happy</div>
+            <div class="kaomoji-grid">
+                <div class="kaomoji-item">
+                    <div>(◕‿◕)</div>
+                    <div class="name">Happy</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧</div>
+                    <div class="name">Joyful</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>(✧ω✧)</div>
+                    <div class="name">Sparkle</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>(ﾉ´ヮ`)ﾉ*: ・ﾟ✧</div>
+                    <div class="name">Excited</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>(◕ᴗ◕✿)</div>
+                    <div class="name">Content</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>♪(┌・。・)┌</div>
+                    <div class="name">Dance</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>(*/ω＼)</div>
+                    <div class="name">Blush</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>(◕ᴗ◕✿)</div>
+                    <div class="name">Cute</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>(=^・ω・^=)</div>
+                    <div class="name">Cat</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>(.ω.)</div>
+                    <div class="name">Soft</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>(・ω・)</div>
+                    <div class="name">Curious</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>(⊙_⊙)</div>
+                    <div class="name">Disbelief</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>┐(´∀`)┌</div>
+                    <div class="name">Shrug</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>(╯°□°)╯︵ ┻━┻</div>
+                    <div class="name">Table Flip</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>(；ω；)</div>
+                    <div class="name">Tearful</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>(≧▽≦)</div>
+                    <div class="name">Happy</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>(≧∇≦)/</div>
+                    <div class="name">Laughing</div>
+                </div>
+                <div class="kaomoji-item">
+                    <div>(☆▽☆)</div>
+                    <div class="name">Big Grin</div>
+                </div>
             </div>
-            <div class="kaomoji-item">
-                <div>(*◕‿◕*)</div>
-                <div class="name">Joyful</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>(≧◕‿◕≦)✧</div>
-                <div class="name">Sparkle</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>(*≧▽≦*)</div>
-                <div class="name">Excited</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>(⌒‿⌒)</div>
-                <div class="name">Content</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>♪( ´θ｀)ノ</div>
-                <div class="name">Dance</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>&gt;///&lt;</div>
-                <div class="name">Blush</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>&gt;w&lt;</div>
-                <div class="name">Cute</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>:3</div>
-                <div class="name">Cat</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>UwU</div>
-                <div class="name">Soft</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>OwO</div>
-                <div class="name">Curious</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>ಠ_ಠ</div>
-                <div class="name">Disbelief</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>¯\_(ツ)_/¯</div>
-                <div class="name">Shrug</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>(╯°□°)╯︵┻━┻</div>
-                <div class="name">Table Flip</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>T_T</div>
-                <div class="name">Tearful</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>^_^</div>
-                <div class="name">Happy</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>xD</div>
-                <div class="name">Laughing</div>
-            </div>
-            <div class="kaomoji-item">
-                <div>:D</div>
-                <div class="name">Big grin</div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-</main>
+    <div class="footer">
+        <p>Built with <span class="footer-heart">♥</span> by Ruby and Amir</p>
+        <p class="mt-8 text-dim">Last updated: Jul 21, 2026</p>
+    </div>
 
-<footer class="footer">
-    Built with <span class="footer-heart">♥</span> by Ruby and Amir
-</footer>
-
-<script src="../script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>

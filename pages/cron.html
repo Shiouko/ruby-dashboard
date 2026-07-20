@@ -4,127 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cron Jobs - Ruby Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+    <nav class="nav">
+        <a href="../index.html" class="nav-logo">R</a>
+        <div class="nav-links">
+            <a href="../index.html#vitals" class="nav-link">Vitals</a>
+            <a href="../index.html#tokens" class="nav-link">Tokens</a>
+            <a href="../index.html#sessions" class="nav-link">Sessions</a>
+            <a href="../index.html#tools" class="nav-link">Tools</a>
+            <div class="nav-divider"></div>
+            <a href="tokens.html" class="nav-link">Analytics</a>
+            <a href="skills.html" class="nav-link">Skills</a>
+            <a href="cron.html" class="nav-link active">Cron</a>
+            <a href="system.html" class="nav-link">System</a>
+            <a href="vault.html" class="nav-link">Vault</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="amir.html" class="nav-link">Amir</a>
+        </div>
+        <button class="nav-toggle" id="themeToggle">☀</button>
+    </nav>
 
-<aside class="sidebar">
-    <div class="sidebar-brand">R</div>
-    <a href="../index.html#hero" class="sidebar-link" title="System">SYS</a>
-    <a href="../index.html#vitals" class="sidebar-link" title="Vitals">VIT</a>
-    <a href="../index.html#tokens" class="sidebar-link" title="Tokens">TKN</a>
-    <a href="../index.html#sessions" class="sidebar-link" title="Top Sessions">TOP</a>
-    <a href="../index.html#tools" class="sidebar-link" title="Tools">TLS</a>
-    <a href="tokens.html" class="sidebar-link" title="Analytics">ANL</a>
-    <div class="sidebar-divider"></div>
-    <a href="skills.html" class="sidebar-link" title="Skills">SKL</a>
-    <a href="cron.html" class="sidebar-link active" title="Cron">CRN</a>
-    <a href="system.html" class="sidebar-link" title="Config">CFG</a>
-    <a href="vault.html" class="sidebar-link" title="Vault">VLT</a>
-    <a href="projects.html" class="sidebar-link" title="Projects">PRJ</a>
-    <div class="sidebar-divider"></div>
-    <a href="about.html" class="sidebar-link" title="Ruby">RBY</a>
-    <a href="amir.html" class="sidebar-link" title="Amir">AMR</a>
-    <div class="sidebar-spacer"></div>
-    <button class="sidebar-toggle" id="themeToggle" title="Toggle theme">☀</button>
-</aside>
-
-<main class="main">
-
-    <!-- HEADER -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Cron</div>
+    <main class="container">
+        <section class="section reveal">
+            <p class="section-kicker">Automation</p>
             <h1 class="section-title">Cron Jobs</h1>
-        </div>
-        <div class="stats-grid reveal">
-            <div class="stat-card green">
-                <div class="stat-num" data-target="9">0</div>
-                <div class="stat-lbl">Active Jobs</div>
-            </div>
-            <div class="stat-card ruby">
-                <div class="stat-num" data-target="87,102,374">0</div>
-                <div class="stat-lbl">Cron Tokens</div>
-            </div>
-            <div class="stat-card cyan">
-                <div class="stat-num" data-target="17%">0</div>
-                <div class="stat-lbl">Of Total Tokens</div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CRON TABLE -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Schedule</div>
-            <h2 class="section-title">Active Cron Jobs</h2>
-        </div>
-        <div class="glass-card reveal">
+        <section class="section reveal">
+            <div class="stats-grid">
+                <div class="stat-card ruby">
+                    <div class="stat-num" data-target="9">0</div>
+                    <div class="stat-lbl">Active Jobs</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal">
             <table>
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Job</th>
                         <th>Schedule</th>
-                        <th>Type</th>
+                        <th>Description</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Daily World News</td>
                         <td><code>0 6 * * *</code></td>
-                        <td><span class="tag green">Daily</span></td>
+                        <td>News aggregation</td>
                     </tr>
                     <tr>
                         <td>Daily Tech News</td>
                         <td><code>10 6 * * *</code></td>
-                        <td><span class="tag green">Daily</span></td>
+                        <td>Tech headlines</td>
                     </tr>
                     <tr>
                         <td>Daily Gaming News</td>
                         <td><code>15 6 * * *</code></td>
-                        <td><span class="tag green">Daily</span></td>
+                        <td>Gaming updates</td>
                     </tr>
                     <tr>
                         <td>Daily Gacha News</td>
                         <td><code>20 6 * * *</code></td>
-                        <td><span class="tag green">Daily</span></td>
+                        <td>Gacha game news</td>
                     </tr>
                     <tr>
                         <td>Daily Dashboard Update</td>
                         <td><code>0 5 * * *</code></td>
-                        <td><span class="tag green">Daily</span></td>
+                        <td>Refresh dashboard data</td>
                     </tr>
                     <tr>
                         <td>YT Pulse Dashboard Refresh</td>
                         <td><code>0 7 * * *</code></td>
-                        <td><span class="tag green">Daily</span></td>
+                        <td>YouTube analytics</td>
                     </tr>
                     <tr>
                         <td>Session Auto-Summarizer</td>
                         <td><code>every 240m</code></td>
-                        <td><span class="tag cyan">Interval</span></td>
+                        <td>Summarize sessions</td>
                     </tr>
                     <tr>
                         <td>Vault Auto-Committer</td>
                         <td><code>every 60m</code></td>
-                        <td><span class="tag cyan">Interval</span></td>
+                        <td>Commit vault changes</td>
                     </tr>
                     <tr>
                         <td>Session Journal Populator</td>
                         <td><code>every 360m</code></td>
-                        <td><span class="tag cyan">Interval</span></td>
+                        <td>Update session journal</td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-    </section>
+        </section>
+    </main>
 
-</main>
+    <div class="footer">
+        <p>Built with <span class="footer-heart">♥</span> by Ruby and Amir</p>
+        <p class="mt-8 text-dim">Last updated: Jul 21, 2026</p>
+    </div>
 
-<footer class="footer">
-    Built with <span class="footer-heart">♥</span> by Ruby and Amir
-</footer>
-
-<script src="../script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>

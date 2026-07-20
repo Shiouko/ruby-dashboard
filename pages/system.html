@@ -3,250 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Config - Ruby Dashboard</title>
+    <title>System - Ruby Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-
-<aside class="sidebar">
-    <div class="sidebar-brand">R</div>
-    <a href="../index.html#hero" class="sidebar-link" title="System">SYS</a>
-    <a href="../index.html#vitals" class="sidebar-link" title="Vitals">VIT</a>
-    <a href="../index.html#tokens" class="sidebar-link" title="Tokens">TKN</a>
-    <a href="../index.html#sessions" class="sidebar-link" title="Top Sessions">TOP</a>
-    <a href="../index.html#tools" class="sidebar-link" title="Tools">TLS</a>
-    <a href="tokens.html" class="sidebar-link" title="Analytics">ANL</a>
-    <div class="sidebar-divider"></div>
-    <a href="skills.html" class="sidebar-link" title="Skills">SKL</a>
-    <a href="cron.html" class="sidebar-link" title="Cron">CRN</a>
-    <a href="system.html" class="sidebar-link active" title="Config">CFG</a>
-    <a href="vault.html" class="sidebar-link" title="Vault">VLT</a>
-    <a href="projects.html" class="sidebar-link" title="Projects">PRJ</a>
-    <div class="sidebar-divider"></div>
-    <a href="about.html" class="sidebar-link" title="Ruby">RBY</a>
-    <a href="amir.html" class="sidebar-link" title="Amir">AMR</a>
-    <div class="sidebar-spacer"></div>
-    <button class="sidebar-toggle" id="themeToggle" title="Toggle theme">☀</button>
-</aside>
-
-<main class="main">
-
-    <!-- HEADER -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Config</div>
-            <h1 class="section-title">System Configuration</h1>
+    <nav class="nav">
+        <a href="../index.html" class="nav-logo">R</a>
+        <div class="nav-links">
+            <a href="../index.html#vitals" class="nav-link">Vitals</a>
+            <a href="../index.html#tokens" class="nav-link">Tokens</a>
+            <a href="../index.html#sessions" class="nav-link">Sessions</a>
+            <a href="../index.html#tools" class="nav-link">Tools</a>
+            <div class="nav-divider"></div>
+            <a href="tokens.html" class="nav-link">Analytics</a>
+            <a href="skills.html" class="nav-link">Skills</a>
+            <a href="cron.html" class="nav-link">Cron</a>
+            <a href="system.html" class="nav-link active">System</a>
+            <a href="vault.html" class="nav-link">Vault</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="amir.html" class="nav-link">Amir</a>
         </div>
-    </section>
+        <button class="nav-toggle" id="themeToggle">☀</button>
+    </nav>
 
-    <!-- MODEL CONFIG -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Model</div>
-            <h2 class="section-title">Inference Configuration</h2>
-        </div>
-        <div class="glass-card reveal">
+    <main class="container">
+        <section class="section reveal">
+            <p class="section-kicker">Configuration</p>
+            <h1 class="section-title">System</h1>
+        </section>
+
+        <section class="section reveal">
+            <h2 class="section-title">Configuration</h2>
             <table>
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Model</strong></td>
-                        <td class="mono">mimo-v2.5-pro</td>
+                        <td>Model</td>
+                        <td>mimo-v2.5-pro</td>
                     </tr>
                     <tr>
-                        <td><strong>Provider</strong></td>
+                        <td>Provider</td>
                         <td>Xiaomi MiMo</td>
                     </tr>
                     <tr>
-                        <td><strong>API Mode</strong></td>
-                        <td class="mono">chat_completions</td>
+                        <td>API Mode</td>
+                        <td>chat_completions</td>
                     </tr>
                     <tr>
-                        <td><strong>Max Turns</strong></td>
-                        <td class="mono">60</td>
+                        <td>Max Turns</td>
+                        <td>60</td>
                     </tr>
                     <tr>
-                        <td><strong>Reasoning Effort</strong></td>
-                        <td><span class="tag ruby">xhigh</span></td>
+                        <td>Reasoning Effort</td>
+                        <td>xhigh</td>
                     </tr>
                     <tr>
-                        <td><strong>Config Version</strong></td>
-                        <td class="mono">30</td>
+                        <td>Config Version</td>
+                        <td>30</td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-    </section>
+        </section>
 
-    <!-- HOST -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Host</div>
-            <h2 class="section-title">Host Information</h2>
-        </div>
-        <div class="glass-card reveal">
+        <section class="section reveal">
+            <h2 class="section-title">Host</h2>
             <table>
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Hostname</strong></td>
+                        <td>Hostname</td>
                         <td>Ruby</td>
                     </tr>
                     <tr>
-                        <td><strong>OS</strong></td>
+                        <td>OS</td>
                         <td>Debian GNU/Linux 13 (trixie)</td>
                     </tr>
                     <tr>
-                        <td><strong>Kernel</strong></td>
-                        <td class="mono">6.12.90+deb13.1-amd64</td>
+                        <td>Kernel</td>
+                        <td>6.12.90+deb13.1-amd64</td>
                     </tr>
                     <tr>
-                        <td><strong>Architecture</strong></td>
-                        <td class="mono">x86_64</td>
+                        <td>Architecture</td>
+                        <td>x86_64</td>
                     </tr>
                     <tr>
-                        <td><strong>Python</strong></td>
-                        <td class="mono">3.13.5</td>
+                        <td>Python</td>
+                        <td>3.13.5</td>
                     </tr>
                     <tr>
-                        <td><strong>Node.js</strong></td>
-                        <td class="mono">v22.22.3</td>
+                        <td>Node</td>
+                        <td>v22.22.3</td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-    </section>
+        </section>
 
-    <!-- PLATFORMS -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Platforms</div>
-            <h2 class="section-title">Connected Platforms</h2>
-        </div>
-        <div class="platform-block reveal">
-            <div class="platform-dot"></div>
-            <div class="platform-info">
-                <div class="platform-name">Telegram</div>
-                <div class="platform-meta">Last active: Jul 21, 2026 02:08 MYT</div>
-            </div>
-            <span class="badge online">Connected</span>
-        </div>
-    </section>
-
-    <!-- MCP -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">MCP</div>
-            <h2 class="section-title">Model Context Protocol</h2>
-        </div>
-        <div class="glass-card reveal">
-            <h3>Exa Search</h3>
-            <div class="text-dim mt-8">HTTP Remote &middot; 6 tools</div>
-            <div class="tool-grid mt-16">
-                <div class="tool-chip">
-                    <span class="tool-chip-name">web_search_exa</span>
-                    <span class="tool-chip-stat">tool</span>
-                </div>
-                <div class="tool-chip">
-                    <span class="tool-chip-name">web_fetch_exa</span>
-                    <span class="tool-chip-stat">tool</span>
-                </div>
-                <div class="tool-chip">
-                    <span class="tool-chip-name">list_prompts</span>
-                    <span class="tool-chip-stat">tool</span>
-                </div>
-                <div class="tool-chip">
-                    <span class="tool-chip-name">get_prompt</span>
-                    <span class="tool-chip-stat">tool</span>
-                </div>
-                <div class="tool-chip">
-                    <span class="tool-chip-name">list_resources</span>
-                    <span class="tool-chip-stat">tool</span>
-                </div>
-                <div class="tool-chip">
-                    <span class="tool-chip-name">read_resource</span>
-                    <span class="tool-chip-stat">tool</span>
+        <section class="section reveal">
+            <h2 class="section-title">Platforms</h2>
+            <div class="platform-block">
+                <div class="platform-dot"></div>
+                <div class="platform-info">
+                    <div class="platform-name">Telegram</div>
+                    <div class="platform-meta">Connected <span class="badge online">Online</span></div>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="platform-block mt-12">
+                <div class="platform-dot"></div>
+                <div class="platform-info">
+                    <div class="platform-name">Cron</div>
+                    <div class="platform-meta">Active</div>
+                </div>
+            </div>
+        </section>
 
-    <!-- VOICE -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Voice</div>
-            <h2 class="section-title">Voice Configuration</h2>
-        </div>
-        <div class="glass-card reveal">
+        <section class="section reveal">
+            <h2 class="section-title">MCP</h2>
             <table>
+                <thead>
+                    <tr>
+                        <th>Server</th>
+                        <th>Type</th>
+                        <th>Tools</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr>
-                        <td><strong>TTS Engine</strong></td>
-                        <td>Edge TTS</td>
-                    </tr>
-                    <tr>
-                        <td><strong>TTS Voice</strong></td>
-                        <td class="mono">en-US-AriaNeural</td>
-                    </tr>
-                    <tr>
-                        <td><strong>STT Engine</strong></td>
-                        <td>Local faster-whisper</td>
-                    </tr>
-                    <tr>
-                        <td><strong>STT Model</strong></td>
-                        <td class="mono">base</td>
+                        <td>Exa Search</td>
+                        <td>HTTP Remote</td>
+                        <td>6 tools</td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-    </section>
+        </section>
 
-    <!-- TOOLSETS -->
-    <section class="section">
-        <div class="reveal">
-            <div class="section-label">Toolsets</div>
-            <h2 class="section-title">Enabled Toolsets</h2>
-        </div>
-        <div class="glass-card reveal">
-            <h3>Enabled</h3>
-            <div class="mt-12">
-                <span class="tag green">web</span>
-                <span class="tag green">browser</span>
+        <section class="section reveal">
+            <h2 class="section-title">Voice</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Direction</th>
+                        <th>Engine</th>
+                        <th>Voice / Model</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TTS</td>
+                        <td>Edge TTS</td>
+                        <td>en-US-AriaNeural</td>
+                    </tr>
+                    <tr>
+                        <td>STT</td>
+                        <td>Local faster-whisper</td>
+                        <td>base</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section reveal">
+            <h2 class="section-title">Toolsets</h2>
+            <h3 class="mt-16">Enabled</h3>
+            <div class="chip-grid mt-12">
                 <span class="tag green">terminal</span>
-                <span class="tag green">file</span>
-                <span class="tag green">code_execution</span>
-                <span class="tag green">vision</span>
-                <span class="tag green">image_gen</span>
-                <span class="tag green">tts</span>
-                <span class="tag green">skills</span>
+                <span class="tag green">read_file</span>
+                <span class="tag green">write_file</span>
+                <span class="tag green">patch</span>
+                <span class="tag green">search_files</span>
+                <span class="tag green">browser_navigate</span>
+                <span class="tag green">browser_click</span>
+                <span class="tag green">browser_type</span>
+                <span class="tag green">browser_screenshot</span>
+                <span class="tag green">browser_console</span>
+                <span class="tag green">skill_view</span>
                 <span class="tag green">todo</span>
-                <span class="tag green">memory</span>
-                <span class="tag green">session_search</span>
-                <span class="tag green">clarify</span>
-                <span class="tag green">delegation</span>
-                <span class="tag green">cronjob</span>
-                <span class="tag green">messaging</span>
-                <span class="tag green">computer_use</span>
+                <span class="tag green">mcp_exa_web_search_exa</span>
+                <span class="tag green">mcp_exa_web_fetch_exa</span>
             </div>
-        </div>
-        <div class="glass-card reveal mt-12">
-            <h3>Disabled</h3>
-            <div class="mt-12">
-                <span class="tag ruby">video</span>
-                <span class="tag ruby">video_gen</span>
-                <span class="tag ruby">x_search</span>
-                <span class="tag ruby">moa</span>
-                <span class="tag ruby">homeassistant</span>
-                <span class="tag ruby">spotify</span>
-                <span class="tag ruby">yuanbao</span>
+            <h3 class="mt-16">Disabled</h3>
+            <div class="chip-grid mt-12">
+                <span class="tag amber">browser_pdf_save</span>
+                <span class="tag amber">vision_analyze</span>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-</main>
+    <div class="footer">
+        <p>Built with <span class="footer-heart">♥</span> by Ruby and Amir</p>
+        <p class="mt-8 text-dim">Last updated: Jul 21, 2026</p>
+    </div>
 
-<footer class="footer">
-    Built with <span class="footer-heart">♥</span> by Ruby and Amir
-</footer>
-
-<script src="../script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
