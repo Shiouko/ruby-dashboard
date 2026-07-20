@@ -1,198 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Config — Ruby</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>System Config - Ruby Dashboard</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-    <nav class="sidebar">
-        <div class="sidebar-brand">R</div>
-        <a href="../index.html" class="sidebar-link">SYS</a>
-        <a href="../index.html#vitals" class="sidebar-link">VIT</a>
-        <a href="../index.html#tokens" class="sidebar-link">TKN</a>
-        <a href="../index.html#sessions" class="sidebar-link">TOP</a>
-        <a href="../index.html#tools" class="sidebar-link">TLS</a>
-        <div class="sidebar-divider"></div>
-        <a href="tokens.html" class="sidebar-link">ANL</a>
-        <a href="skills.html" class="sidebar-link">SKL</a>
-        <a href="cron.html" class="sidebar-link">CRN</a>
-        <a href="system.html" class="sidebar-link">CFG</a>
-        <a href="vault.html" class="sidebar-link">VLT</a>
-        <a href="projects.html" class="sidebar-link">PRJ</a>
-        <a href="about.html" class="sidebar-link">RBY</a>
-        <a href="amir.html" class="sidebar-link">AMR</a>
-        <div class="sidebar-spacer"></div>
-        <button class="sidebar-toggle" id="themeToggle">☀</button>
-    </nav>
+<aside class="sidebar">
+    <div class="sidebar-brand">R</div>
+    <a href="../index.html#hero" class="sidebar-link" title="System">SYS</a>
+    <a href="../index.html#vitals" class="sidebar-link" title="Vitals">VIT</a>
+    <a href="../index.html#tokens" class="sidebar-link" title="Tokens">TKN</a>
+    <a href="../index.html#sessions" class="sidebar-link" title="Top Sessions">TOP</a>
+    <a href="../index.html#tools" class="sidebar-link" title="Tools">TLS</a>
+    <a href="tokens.html" class="sidebar-link" title="Analytics">ANL</a>
+    <div class="sidebar-divider"></div>
+    <a href="skills.html" class="sidebar-link" title="Skills">SKL</a>
+    <a href="cron.html" class="sidebar-link" title="Cron">CRN</a>
+    <a href="system.html" class="sidebar-link active" title="Config">CFG</a>
+    <a href="vault.html" class="sidebar-link" title="Vault">VLT</a>
+    <a href="projects.html" class="sidebar-link" title="Projects">PRJ</a>
+    <div class="sidebar-divider"></div>
+    <a href="about.html" class="sidebar-link" title="Ruby">RBY</a>
+    <a href="amir.html" class="sidebar-link" title="Amir">AMR</a>
+    <div class="sidebar-spacer"></div>
+    <button class="sidebar-toggle" id="themeToggle" title="Toggle theme">☀</button>
+</aside>
 
-    <div class="main">
+<main class="main">
 
-        <div class="section">
-            <h1 class="section-title">Agent Configuration</h1>
-            <div class="glass-card reveal" style="overflow-x: auto;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Setting</th>
-                            <th>Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Model</td>
-                            <td><span class="tag cyan">mimo-v2.5-pro</span></td>
-                        </tr>
-                        <tr>
-                            <td>Provider</td>
-                            <td><span class="tag gold">Xiaomi MiMo</span></td>
-                        </tr>
-                        <tr>
-                            <td>API Mode</td>
-                            <td><span class="tag">chat_completions</span></td>
-                        </tr>
-                        <tr>
-                            <td>Max Turns</td>
-                            <td><span class="tag">60</span></td>
-                        </tr>
-                        <tr>
-                            <td>Reasoning Effort</td>
-                            <td><span class="tag amber">xhigh</span></td>
-                        </tr>
-                        <tr>
-                            <td>Tool Enforcement</td>
-                            <td><span class="tag">auto</span></td>
-                        </tr>
-                        <tr>
-                            <td>Compression</td>
-                            <td><span class="tag green">Enabled</span> &mdash; threshold: 50%, target: 20%, protect last: 20</td>
-                        </tr>
-                        <tr>
-                            <td>Config Version</td>
-                            <td><span class="tag ruby">30</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- HEADER -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Config</div>
+            <h1 class="section-title">System Configuration</h1>
         </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">Host Details</h2>
-            <div class="glass-card reveal" style="overflow-x: auto;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Property</th>
-                            <th>Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Hostname</td>
-                            <td><span class="tag ruby">Ruby</span></td>
-                        </tr>
-                        <tr>
-                            <td>OS</td>
-                            <td>Debian GNU/Linux 13 (trixie)</td>
-                        </tr>
-                        <tr>
-                            <td>Kernel</td>
-                            <td><span class="mono">6.12.90+deb13.1-amd64</span></td>
-                        </tr>
-                        <tr>
-                            <td>Arch</td>
-                            <td>x86_64</td>
-                        </tr>
-                        <tr>
-                            <td>Python</td>
-                            <td><span class="tag cyan">3.13.5</span></td>
-                        </tr>
-                        <tr>
-                            <td>Node.js</td>
-                            <td><span class="tag green">v22.22.3</span></td>
-                        </tr>
-                        <tr>
-                            <td>Hermes Home</td>
-                            <td><code class="mono">/home/ruby/.hermes</code></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- MODEL CONFIG -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Model</div>
+            <h2 class="section-title">Inference Configuration</h2>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">Platforms</h2>
-            <div class="reveal">
-                <div class="platform-block">
-                    <div class="platform-dot"></div>
-                    <div class="platform-info">
-                        <div class="platform-name">Telegram</div>
-                        <div class="platform-meta">PID: 1020</div>
-                    </div>
-                    <span class="badge online">Connected</span>
-                </div>
-            </div>
+        <div class="glass-card reveal">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>Model</strong></td>
+                        <td class="mono">mimo-v2.5-pro</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Provider</strong></td>
+                        <td>Xiaomi MiMo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>API Mode</strong></td>
+                        <td class="mono">chat_completions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Max Turns</strong></td>
+                        <td class="mono">60</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reasoning Effort</strong></td>
+                        <td><span class="tag ruby">xhigh</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Config Version</strong></td>
+                        <td class="mono">30</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+    </section>
 
-        <div class="section">
+    <!-- HOST -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Host</div>
+            <h2 class="section-title">Host Information</h2>
+        </div>
+        <div class="glass-card reveal">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>Hostname</strong></td>
+                        <td>Ruby</td>
+                    </tr>
+                    <tr>
+                        <td><strong>OS</strong></td>
+                        <td>Debian GNU/Linux 13 (trixie)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kernel</strong></td>
+                        <td class="mono">6.12.90+deb13.1-amd64</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Architecture</strong></td>
+                        <td class="mono">x86_64</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Python</strong></td>
+                        <td class="mono">3.13.5</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Node.js</strong></td>
+                        <td class="mono">v22.22.3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- PLATFORMS -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Platforms</div>
+            <h2 class="section-title">Connected Platforms</h2>
+        </div>
+        <div class="platform-block reveal">
+            <div class="platform-dot"></div>
+            <div class="platform-info">
+                <div class="platform-name">Telegram</div>
+                <div class="platform-meta">Last active: Jul 21, 2026 02:08 MYT</div>
+            </div>
+            <span class="badge online">Connected</span>
+        </div>
+    </section>
+
+    <!-- MCP -->
+    <section class="section">
+        <div class="reveal">
             <div class="section-label">MCP</div>
-            <h2 class="section-title">MCP Servers</h2>
-            <div class="stats-grid reveal" style="margin-bottom: 16px;">
-                <div class="stat-card cyan">
-                    <div class="stat-num" style="font-size: 1rem;">Exa Search</div>
-                    <div class="stat-lbl">MCP Server</div>
+            <h2 class="section-title">Model Context Protocol</h2>
+        </div>
+        <div class="glass-card reveal">
+            <h3>Exa Search</h3>
+            <div class="text-dim mt-8">HTTP Remote &middot; 6 tools</div>
+            <div class="tool-grid mt-16">
+                <div class="tool-chip">
+                    <span class="tool-chip-name">web_search_exa</span>
+                    <span class="tool-chip-stat">tool</span>
                 </div>
-                <div class="stat-card gold">
-                    <div class="stat-num" style="font-size: 1rem;">HTTP Remote</div>
-                    <div class="stat-lbl">MCP Server</div>
+                <div class="tool-chip">
+                    <span class="tool-chip-name">web_fetch_exa</span>
+                    <span class="tool-chip-stat">tool</span>
                 </div>
-                <div class="stat-card ruby">
-                    <div class="stat-num" data-target="6">0</div>
-                    <div class="stat-lbl">MCP Tools</div>
+                <div class="tool-chip">
+                    <span class="tool-chip-name">list_prompts</span>
+                    <span class="tool-chip-stat">tool</span>
                 </div>
-            </div>
-            <div class="reveal">
-                <span class="tag cyan">web_search_exa</span>
-                <span class="tag cyan">web_fetch_exa</span>
-                <span class="tag gold">list_prompts</span>
-                <span class="tag gold">get_prompt</span>
-                <span class="tag gold">list_resources</span>
-                <span class="tag gold">read_resource</span>
+                <div class="tool-chip">
+                    <span class="tool-chip-name">get_prompt</span>
+                    <span class="tool-chip-stat">tool</span>
+                </div>
+                <div class="tool-chip">
+                    <span class="tool-chip-name">list_resources</span>
+                    <span class="tool-chip-stat">tool</span>
+                </div>
+                <div class="tool-chip">
+                    <span class="tool-chip-name">read_resource</span>
+                    <span class="tool-chip-stat">tool</span>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">Voice</h2>
-            <div class="glass-card reveal" style="overflow-x: auto;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Component</th>
-                            <th>Config</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>TTS</td>
-                            <td>Edge TTS (<span class="tag ruby">en-US-AriaNeural</span>)</td>
-                        </tr>
-                        <tr>
-                            <td>STT</td>
-                            <td>Local faster-whisper (<span class="tag">model: base</span>)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <!-- VOICE -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Voice</div>
+            <h2 class="section-title">Voice Configuration</h2>
         </div>
+        <div class="glass-card reveal">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>TTS Engine</strong></td>
+                        <td>Edge TTS</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TTS Voice</strong></td>
+                        <td class="mono">en-US-AriaNeural</td>
+                    </tr>
+                    <tr>
+                        <td><strong>STT Engine</strong></td>
+                        <td>Local faster-whisper</td>
+                    </tr>
+                    <tr>
+                        <td><strong>STT Model</strong></td>
+                        <td class="mono">base</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">Toolsets</h2>
-            <p class="text-dim mb-12" style="font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;">Enabled</p>
-            <div class="reveal" style="margin-bottom: 24px;">
+    <!-- TOOLSETS -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Toolsets</div>
+            <h2 class="section-title">Enabled Toolsets</h2>
+        </div>
+        <div class="glass-card reveal">
+            <h3>Enabled</h3>
+            <div class="mt-12">
                 <span class="tag green">web</span>
                 <span class="tag green">browser</span>
                 <span class="tag green">terminal</span>
@@ -211,8 +226,10 @@
                 <span class="tag green">messaging</span>
                 <span class="tag green">computer_use</span>
             </div>
-            <p class="text-dim mb-12" style="font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;">Disabled</p>
-            <div class="reveal">
+        </div>
+        <div class="glass-card reveal mt-12">
+            <h3>Disabled</h3>
+            <div class="mt-12">
                 <span class="tag ruby">video</span>
                 <span class="tag ruby">video_gen</span>
                 <span class="tag ruby">x_search</span>
@@ -222,14 +239,14 @@
                 <span class="tag ruby">yuanbao</span>
             </div>
         </div>
+    </section>
 
-    </div>
+</main>
 
-    <div class="footer">
-        <p><span class="footer-heart">&#9829;</span> Built by Ruby &middot; Powered by Hermes Agent &middot; Cloudflare Pages</p>
-        <p class="mt-8 text-dim">Last updated: Jul 21, 2026 02:08 MYT</p>
-    </div>
+<footer class="footer">
+    Built with <span class="footer-heart">♥</span> by Ruby and Amir
+</footer>
 
-    <script src="../script.js"></script>
+<script src="../script.js"></script>
 </body>
 </html>

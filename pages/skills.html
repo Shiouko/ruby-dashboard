@@ -1,305 +1,398 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills — Ruby</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Skills - Ruby Dashboard</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-    <nav class="sidebar">
-        <div class="sidebar-brand">R</div>
-        <a href="../index.html" class="sidebar-link">SYS</a>
-        <a href="../index.html#vitals" class="sidebar-link">VIT</a>
-        <a href="../index.html#tokens" class="sidebar-link">TKN</a>
-        <a href="../index.html#sessions" class="sidebar-link">TOP</a>
-        <a href="../index.html#tools" class="sidebar-link">TLS</a>
-        <div class="sidebar-divider"></div>
-        <a href="tokens.html" class="sidebar-link">ANL</a>
-        <a href="skills.html" class="sidebar-link">SKL</a>
-        <a href="cron.html" class="sidebar-link">CRN</a>
-        <a href="system.html" class="sidebar-link">CFG</a>
-        <a href="vault.html" class="sidebar-link">VLT</a>
-        <a href="projects.html" class="sidebar-link">PRJ</a>
-        <a href="about.html" class="sidebar-link">RBY</a>
-        <a href="amir.html" class="sidebar-link">AMR</a>
-        <div class="sidebar-spacer"></div>
-        <button class="sidebar-toggle" id="themeToggle">☀</button>
-    </nav>
+<aside class="sidebar">
+    <div class="sidebar-brand">R</div>
+    <a href="../index.html#hero" class="sidebar-link" title="System">SYS</a>
+    <a href="../index.html#vitals" class="sidebar-link" title="Vitals">VIT</a>
+    <a href="../index.html#tokens" class="sidebar-link" title="Tokens">TKN</a>
+    <a href="../index.html#sessions" class="sidebar-link" title="Top Sessions">TOP</a>
+    <a href="../index.html#tools" class="sidebar-link" title="Tools">TLS</a>
+    <a href="tokens.html" class="sidebar-link" title="Analytics">ANL</a>
+    <div class="sidebar-divider"></div>
+    <a href="skills.html" class="sidebar-link active" title="Skills">SKL</a>
+    <a href="cron.html" class="sidebar-link" title="Cron">CRN</a>
+    <a href="system.html" class="sidebar-link" title="Config">CFG</a>
+    <a href="vault.html" class="sidebar-link" title="Vault">VLT</a>
+    <a href="projects.html" class="sidebar-link" title="Projects">PRJ</a>
+    <div class="sidebar-divider"></div>
+    <a href="about.html" class="sidebar-link" title="Ruby">RBY</a>
+    <a href="amir.html" class="sidebar-link" title="Amir">AMR</a>
+    <div class="sidebar-spacer"></div>
+    <button class="sidebar-toggle" id="themeToggle" title="Toggle theme">☀</button>
+</aside>
 
-    <div class="main">
+<main class="main">
 
-        <div class="section">
+    <!-- HEADER -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Skills</div>
             <h1 class="section-title">Skill Library</h1>
-            <p class="text-dim mb-12">104 skills installed across 23 categories</p>
-            <div class="stats-grid reveal">
-                <div class="stat-card ruby">
-                    <div class="stat-num" data-target="104">0</div>
-                    <div class="stat-lbl">Total Skills</div>
-                </div>
-                <div class="stat-card gold">
-                    <div class="stat-num" data-target="23">0</div>
-                    <div class="stat-lbl">Categories</div>
-                </div>
-                <div class="stat-card cyan">
-                    <div class="stat-num">14</div>
-                    <div class="stat-lbl">Top Category</div>
-                </div>
+        </div>
+        <div class="stats-grid reveal">
+            <div class="stat-card ruby">
+                <div class="stat-num" data-target="104">0</div>
+                <div class="stat-lbl">Skills Installed</div>
+            </div>
+            <div class="stat-card gold">
+                <div class="stat-num" data-target="23">0</div>
+                <div class="stat-lbl">Categories</div>
+            </div>
+            <div class="stat-card cyan">
+                <div class="stat-num" data-target="6,426">0</div>
+                <div class="stat-lbl">Total Uses</div>
             </div>
         </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">Apple <span class="text-dim">(5)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag">apple-notes</span>
-                <span class="tag">apple-reminders</span>
-                <span class="tag ruby">findmy</span>
-                <span class="tag">imessage</span>
-                <span class="tag">macos-computer-use</span>
-            </div>
+    <!-- APPLE -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Apple (5)</div>
+            <h2 class="section-title">Apple</h2>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">Autonomous AI Agents <span class="text-dim">(5)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag">claude-code</span>
-                <span class="tag">codex</span>
-                <span class="tag ruby">hermes-agent</span>
-                <span class="tag">kanban-codex-lane</span>
-                <span class="tag">opencode</span>
-            </div>
+        <div class="glass-card reveal">
+            <span class="tag">apple-notes</span>
+            <span class="tag">apple-reminders</span>
+            <span class="tag">findmy</span>
+            <span class="tag">imessage</span>
+            <span class="tag">macos-computer-use</span>
         </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">Creative <span class="text-dim">(21)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag">architecture-diagram</span>
-                <span class="tag">ascii-art</span>
-                <span class="tag">ascii-video</span>
-                <span class="tag">baoyu-article-illustrator</span>
-                <span class="tag">baoyu-comic</span>
-                <span class="tag">baoyu-infographic</span>
-                <span class="tag">claude-design</span>
-                <span class="tag">comfyui</span>
-                <span class="tag">creative-ideation</span>
-                <span class="tag">design-md</span>
-                <span class="tag">excalidraw</span>
-                <span class="tag">humanizer</span>
-                <span class="tag">manim-video</span>
-                <span class="tag">meme-generation</span>
-                <span class="tag">p5js</span>
-                <span class="tag">pixel-art</span>
-                <span class="tag">popular-web-designs</span>
-                <span class="tag">pretext</span>
-                <span class="tag">sketch</span>
-                <span class="tag">songwriting-and-ai-music</span>
-                <span class="tag">touchdesigner-mcp</span>
-            </div>
+    <!-- AUTONOMOUS AI AGENTS -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Autonomous AI Agents (5)</div>
+            <h2 class="section-title">Autonomous AI Agents</h2>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">Data Science <span class="text-dim">(1)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag green">jupyter-live-kernel</span>
-            </div>
+        <div class="glass-card reveal">
+            <span class="tag cyan">claude-code</span>
+            <span class="tag cyan">codex</span>
+            <span class="tag cyan">hermes-agent</span>
+            <span class="tag cyan">kanban-codex-lane</span>
+            <span class="tag cyan">opencode</span>
         </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">DevOps <span class="text-dim">(6)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag">cloudflare-pages</span>
-                <span class="tag">cronjob-prompt-patterns</span>
-                <span class="tag">docker-management</span>
-                <span class="tag">kanban-orchestrator</span>
-                <span class="tag">kanban-worker</span>
-                <span class="tag">webhook-subscriptions</span>
-            </div>
+    <!-- CREATIVE -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Creative (21)</div>
+            <h2 class="section-title">Creative</h2>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">Email <span class="text-dim">(1)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag cyan">himalaya</span>
-            </div>
+        <div class="glass-card reveal">
+            <span class="tag ruby">architecture-diagram</span>
+            <span class="tag ruby">ascii-art</span>
+            <span class="tag ruby">ascii-video</span>
+            <span class="tag ruby">baoyu-article-illustrator</span>
+            <span class="tag ruby">baoyu-comic</span>
+            <span class="tag ruby">baoyu-infographic</span>
+            <span class="tag ruby">claude-design</span>
+            <span class="tag ruby">comfyui</span>
+            <span class="tag ruby">creative-ideation</span>
+            <span class="tag ruby">design-md</span>
+            <span class="tag ruby">excalidraw</span>
+            <span class="tag ruby">humanizer</span>
+            <span class="tag ruby">manim-video</span>
+            <span class="tag ruby">meme-generation</span>
+            <span class="tag ruby">p5js</span>
+            <span class="tag ruby">pixel-art</span>
+            <span class="tag ruby">popular-web-designs</span>
+            <span class="tag ruby">pretext</span>
+            <span class="tag ruby">sketch</span>
+            <span class="tag ruby">songwriting-and-ai-music</span>
+            <span class="tag ruby">touchdesigner-mcp</span>
         </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">Evaluation <span class="text-dim">(2)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag">lm-evaluation-harness</span>
-                <span class="tag">weights-and-biases</span>
-            </div>
+    <!-- DATA SCIENCE -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Data Science (1)</div>
+            <h2 class="section-title">Data Science</h2>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">Gaming <span class="text-dim">(2)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag">minecraft-modpack-server</span>
-                <span class="tag">pokemon-player</span>
-            </div>
+        <div class="glass-card reveal">
+            <span class="tag green">jupyter-live-kernel</span>
         </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">GitHub <span class="text-dim">(6)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag">codebase-inspection</span>
-                <span class="tag">github-auth</span>
-                <span class="tag">github-code-review</span>
-                <span class="tag">github-issues</span>
-                <span class="tag">github-pr-workflow</span>
-                <span class="tag">github-repo-management</span>
-            </div>
+    <!-- DEVOPS -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">DevOps (6)</div>
+            <h2 class="section-title">DevOps</h2>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">Inference <span class="text-dim">(3)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag">llama-cpp</span>
-                <span class="tag">obliteratus</span>
-                <span class="tag">vllm</span>
-            </div>
+        <div class="glass-card reveal">
+            <span class="tag amber">cloudflare-pages</span>
+            <span class="tag amber">cronjob-prompt-patterns</span>
+            <span class="tag amber">docker-management</span>
+            <span class="tag amber">kanban-orchestrator</span>
+            <span class="tag amber">kanban-worker</span>
+            <span class="tag amber">webhook-subscriptions</span>
         </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">Media <span class="text-dim">(6)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag">gif-search</span>
-                <span class="tag ruby">heartmula</span>
-                <span class="tag">songsee</span>
-                <span class="tag">spotify</span>
-                <span class="tag">youtube-content</span>
-                <span class="tag">youtube-rss</span>
-            </div>
+    <!-- EMAIL -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Email (1)</div>
+            <h2 class="section-title">Email</h2>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">MLOps <span class="text-dim">(1)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag purple">huggingface-hub</span>
-            </div>
+        <div class="glass-card reveal">
+            <span class="tag gold">himalaya</span>
         </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">Models <span class="text-dim">(2)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag">audiocraft</span>
-                <span class="tag">segment-anything</span>
-            </div>
+    <!-- EVALUATION -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Evaluation (2)</div>
+            <h2 class="section-title">Evaluation</h2>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">Note-Taking <span class="text-dim">(1)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag gold">obsidian</span>
-            </div>
+        <div class="glass-card reveal">
+            <span class="tag purple">lm-evaluation-harness</span>
+            <span class="tag purple">weights-and-biases</span>
         </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">Productivity <span class="text-dim">(10)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag">airtable</span>
-                <span class="tag">documentation</span>
-                <span class="tag">google-workspace</span>
-                <span class="tag">linear</span>
-                <span class="tag">maps</span>
-                <span class="tag">nano-pdf</span>
-                <span class="tag">notion</span>
-                <span class="tag">ocr-and-documents</span>
-                <span class="tag">powerpoint</span>
-                <span class="tag">teams-meeting-pipeline</span>
-            </div>
+    <!-- GAMING -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Gaming (2)</div>
+            <h2 class="section-title">Gaming</h2>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">Red Teaming <span class="text-dim">(1)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag ruby">godmode</span>
-            </div>
+        <div class="glass-card reveal">
+            <span class="tag green">minecraft-modpack-server</span>
+            <span class="tag green">pokemon-player</span>
         </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">Research <span class="text-dim">(6)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag">arxiv</span>
-                <span class="tag">blogwatcher</span>
-                <span class="tag">dspy</span>
-                <span class="tag">llm-wiki</span>
-                <span class="tag">polymarket</span>
-                <span class="tag">research-paper-writing</span>
-            </div>
+    <!-- GITHUB -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">GitHub (6)</div>
+            <h2 class="section-title">GitHub</h2>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">Security <span class="text-dim">(2)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag">1password</span>
-                <span class="tag cyan">security-audit</span>
-            </div>
+        <div class="glass-card reveal">
+            <span class="tag cyan">codebase-inspection</span>
+            <span class="tag cyan">github-auth</span>
+            <span class="tag cyan">github-code-review</span>
+            <span class="tag cyan">github-issues</span>
+            <span class="tag cyan">github-pr-workflow</span>
+            <span class="tag cyan">github-repo-management</span>
         </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">Skills (Meta) <span class="text-dim">(5)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag green">dogfood</span>
-                <span class="tag green ruby">hermes-dashboard</span>
-                <span class="tag">mcp</span>
-                <span class="tag green">persona-configuration</span>
-                <span class="tag">yuanbao</span>
-            </div>
+    <!-- INFERENCE -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Inference (3)</div>
+            <h2 class="section-title">Inference</h2>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">Smart Home <span class="text-dim">(1)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag cyan">openhue</span>
-            </div>
+        <div class="glass-card reveal">
+            <span class="tag amber">llama-cpp</span>
+            <span class="tag amber">obliteratus</span>
+            <span class="tag amber">vllm</span>
         </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">Social Media <span class="text-dim">(1)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag amber">xurl</span>
-            </div>
+    <!-- MEDIA -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Media (6)</div>
+            <h2 class="section-title">Media</h2>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">Software Development <span class="text-dim">(14)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag">debugging-hermes-tui-commands</span>
-                <span class="tag">hermes-agent-skill-authoring</span>
-                <span class="tag">hermes-s6-container-supervision</span>
-                <span class="tag">node-inspect-debugger</span>
-                <span class="tag">plan</span>
-                <span class="tag">python-debugpy</span>
-                <span class="tag">requesting-code-review</span>
-                <span class="tag green">ruby-standards</span>
-                <span class="tag">spike</span>
-                <span class="tag">subagent-coding-workflow</span>
-                <span class="tag">subagent-driven-development</span>
-                <span class="tag">systematic-debugging</span>
-                <span class="tag">test-driven-development</span>
-                <span class="tag">writing-plans</span>
-            </div>
+        <div class="glass-card reveal">
+            <span class="tag ruby">gif-search</span>
+            <span class="tag ruby">heartmula</span>
+            <span class="tag ruby">songsee</span>
+            <span class="tag ruby">spotify</span>
+            <span class="tag ruby">youtube-content</span>
+            <span class="tag ruby">youtube-rss</span>
         </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">Web <span class="text-dim">(2)</span></h2>
-            <div class="glass-card reveal">
-                <span class="tag green">brave-search</span>
-                <span class="tag green">dashboard-maintenance</span>
-            </div>
+    <!-- MLOPS -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">MLOps (1)</div>
+            <h2 class="section-title">MLOps</h2>
         </div>
+        <div class="glass-card reveal">
+            <span class="tag gold">huggingface-hub</span>
+        </div>
+    </section>
 
-    </div>
+    <!-- MODELS -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Models (2)</div>
+            <h2 class="section-title">Models</h2>
+        </div>
+        <div class="glass-card reveal">
+            <span class="tag purple">audiocraft</span>
+            <span class="tag purple">segment-anything</span>
+        </div>
+    </section>
 
-    <div class="footer">
-        <p><span class="footer-heart">&#9829;</span> Built by Ruby &middot; Powered by Hermes Agent &middot; Cloudflare Pages</p>
-        <p class="mt-8 text-dim">Last updated: Jul 21, 2026 02:08 MYT</p>
-    </div>
+    <!-- NOTE-TAKING -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Note-Taking (1)</div>
+            <h2 class="section-title">Note-Taking</h2>
+        </div>
+        <div class="glass-card reveal">
+            <span class="tag green">obsidian</span>
+        </div>
+    </section>
 
-    <script src="../script.js"></script>
+    <!-- PRODUCTIVITY -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Productivity (10)</div>
+            <h2 class="section-title">Productivity</h2>
+        </div>
+        <div class="glass-card reveal">
+            <span class="tag gold">airtable</span>
+            <span class="tag gold">documentation</span>
+            <span class="tag gold">google-workspace</span>
+            <span class="tag gold">linear</span>
+            <span class="tag gold">maps</span>
+            <span class="tag gold">nano-pdf</span>
+            <span class="tag gold">notion</span>
+            <span class="tag gold">ocr-and-documents</span>
+            <span class="tag gold">powerpoint</span>
+            <span class="tag gold">teams-meeting-pipeline</span>
+        </div>
+    </section>
+
+    <!-- RED TEAMING -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Red Teaming (1)</div>
+            <h2 class="section-title">Red Teaming</h2>
+        </div>
+        <div class="glass-card reveal">
+            <span class="tag ruby">godmode</span>
+        </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Research (6)</div>
+            <h2 class="section-title">Research</h2>
+        </div>
+        <div class="glass-card reveal">
+            <span class="tag cyan">arxiv</span>
+            <span class="tag cyan">blogwatcher</span>
+            <span class="tag cyan">dspy</span>
+            <span class="tag cyan">llm-wiki</span>
+            <span class="tag cyan">polymarket</span>
+            <span class="tag cyan">research-paper-writing</span>
+        </div>
+    </section>
+
+    <!-- SECURITY -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Security (2)</div>
+            <h2 class="section-title">Security</h2>
+        </div>
+        <div class="glass-card reveal">
+            <span class="tag ruby">1password</span>
+            <span class="tag ruby">security-audit</span>
+        </div>
+    </section>
+
+    <!-- SKILLS META -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Skills (5)</div>
+            <h2 class="section-title">Skills Meta</h2>
+        </div>
+        <div class="glass-card reveal">
+            <span class="tag amber">dogfood</span>
+            <span class="tag amber">hermes-dashboard</span>
+            <span class="tag amber">mcp</span>
+            <span class="tag amber">persona-configuration</span>
+            <span class="tag amber">yuanbao</span>
+        </div>
+    </section>
+
+    <!-- SMART HOME -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Smart Home (1)</div>
+            <h2 class="section-title">Smart Home</h2>
+        </div>
+        <div class="glass-card reveal">
+            <span class="tag green">openhue</span>
+        </div>
+    </section>
+
+    <!-- SOCIAL MEDIA -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Social Media (1)</div>
+            <h2 class="section-title">Social Media</h2>
+        </div>
+        <div class="glass-card reveal">
+            <span class="tag purple">xurl</span>
+        </div>
+    </section>
+
+    <!-- SOFTWARE DEVELOPMENT -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Software Development (14)</div>
+            <h2 class="section-title">Software Development</h2>
+        </div>
+        <div class="glass-card reveal">
+            <span class="tag cyan">debugging-hermes-tui-commands</span>
+            <span class="tag cyan">hermes-agent-skill-authoring</span>
+            <span class="tag cyan">hermes-s6-container-supervision</span>
+            <span class="tag cyan">node-inspect-debugger</span>
+            <span class="tag cyan">plan</span>
+            <span class="tag cyan">python-debugpy</span>
+            <span class="tag cyan">requesting-code-review</span>
+            <span class="tag cyan">ruby-standards</span>
+            <span class="tag cyan">spike</span>
+            <span class="tag cyan">subagent-coding-workflow</span>
+            <span class="tag cyan">subagent-driven-development</span>
+            <span class="tag cyan">systematic-debugging</span>
+            <span class="tag cyan">test-driven-development</span>
+            <span class="tag cyan">writing-plans</span>
+        </div>
+    </section>
+
+    <!-- WEB -->
+    <section class="section">
+        <div class="reveal">
+            <div class="section-label">Web (2)</div>
+            <h2 class="section-title">Web</h2>
+        </div>
+        <div class="glass-card reveal">
+            <span class="tag">brave-search</span>
+            <span class="tag">dashboard-maintenance</span>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    Built with <span class="footer-heart">♥</span> by Ruby and Amir
+</footer>
+
+<script src="../script.js"></script>
 </body>
 </html>
