@@ -1,12 +1,12 @@
 /* ═══════════════════════════════════════════════════════════
-   RUBY v4 — Editorial Luxury · Interactions
+   RUBY v5 — Complete Overhaul · Interactions
    ═══════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', function () {
 
     /* ── Theme Toggle ── */
     var toggle = document.getElementById('themeToggle');
-    var saved = localStorage.getItem('ruby-theme-v4') || 'dark';
+    var saved = localStorage.getItem('ruby-theme-v5') || 'dark';
     document.documentElement.setAttribute('data-theme', saved);
     if (toggle) toggle.textContent = saved === 'dark' ? '☀' : '☽';
 
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var current = document.documentElement.getAttribute('data-theme');
             var next = current === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', next);
-            localStorage.setItem('ruby-theme-v4', next);
+            localStorage.setItem('ruby-theme-v5', next);
             toggle.textContent = next === 'dark' ? '☀' : '☽';
         });
     }
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var page = path.split('/').pop() || 'index.html';
     document.querySelectorAll('.sidebar-link').forEach(function (link) {
         var href = link.getAttribute('href');
-        var hrefPage = href.split('/').pop();
+        var hrefPage = href.split('/').pop().split('#')[0];
         if (hrefPage === page || (page === '' && hrefPage === 'index.html')) {
             link.classList.add('active');
         }
@@ -46,53 +46,32 @@ document.addEventListener('DOMContentLoaded', function () {
     var typingEl = document.querySelector('.hero-typing-text');
     if (typingEl) {
         var fi = 0, ci = 0, del = false;
-
         function type() {
             var f = facts[fi];
-            if (del) {
-                typingEl.textContent = f.substring(0, ci - 1);
-                ci--;
-                setTimeout(type, 25);
-            } else {
-                typingEl.textContent = f.substring(0, ci + 1);
-                ci++;
-                setTimeout(type, 50);
-            }
+            if (del) { typingEl.textContent = f.substring(0, ci - 1); ci--; setTimeout(type, 25); }
+            else { typingEl.textContent = f.substring(0, ci + 1); ci++; setTimeout(type, 50); }
             if (!del && ci === f.length) { del = true; setTimeout(type, 2500); }
             else if (del && ci === 0) { del = false; fi = (fi + 1) % facts.length; setTimeout(type, 300); }
         }
         type();
     }
 
-    /* ── Scroll Reveal (IntersectionObserver) ── */
+    /* ── Scroll Reveal ── */
     if ('IntersectionObserver' in window) {
         var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-
-                    // Animate meter fills
                     var fills = entry.target.querySelectorAll('.meter-fill[data-width]');
-                    fills.forEach(function (f) {
-                        var w = f.getAttribute('data-width');
-                        setTimeout(function () { f.style.width = w; }, 200);
-                    });
-
-                    // Animate progress fills
+                    fills.forEach(function (f) { var w = f.getAttribute('data-width'); setTimeout(function () { f.style.width = w; }, 200); });
                     var pf = entry.target.querySelectorAll('.progress-fill[data-width]');
-                    pf.forEach(function (f) {
-                        var w = f.getAttribute('data-width');
-                        setTimeout(function () { f.style.width = w; }, 200);
-                    });
-
+                    pf.forEach(function (f) { var w = f.getAttribute('data-width'); setTimeout(function () { f.style.width = w; }, 200); });
                     observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
 
-        document.querySelectorAll('.reveal').forEach(function (el) {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
 
         /* ── Counter Animation ── */
         var counterObs = new IntersectionObserver(function (entries) {
@@ -109,9 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             var isFloat = target.includes('.');
                             var duration = 1400;
                             var start = performance.now();
-
                             function ease(t) { return 1 - Math.pow(1 - t, 4); }
-
                             function tick(now) {
                                 var p = Math.min((now - start) / duration, 1);
                                 var v = n * ease(p);
@@ -127,9 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }, { threshold: 0.2 });
 
-        document.querySelectorAll('.stats-grid, .stats-grid-4, .stats-grid-2, .hero-stats').forEach(function (g) {
-            counterObs.observe(g);
-        });
+        document.querySelectorAll('.stats-grid, .stats-grid-4, .stats-grid-2, .hero-stats').forEach(function (g) { counterObs.observe(g); });
     } else {
         document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
     }

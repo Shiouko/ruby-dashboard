@@ -3,353 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills — Ruby Dashboard</title>
+    <title>Skills — Ruby</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-    <!-- ═══ TOP BAR ═══ -->
-    <div class="top-bar">
-        <div class="top-bar-brand">
-            <span class="brand-dot"></span>
-            RUBY_TERMINAL
-        </div>
-        <div class="top-bar-right">
-                        <div class="nav-pills">
-                <span class="nav-sublabel">Sections</span>
-                <a href="../index.html">System</a>
-                <a href="../index.html#status">Status</a>
-                <a href="../index.html#tokens">Tokens</a>
-                <a href="../index.html#sessions">Sessions</a>
-                <a href="../index.html#tools">Tools</a>
-                <span class="nav-divider"></span>
-                <span class="nav-sublabel">Pages</span>
-                <a href="tokens.html">Analytics</a>
-                <a href="skills.html" class="active">Skills</a>
-                <a href="about.html">About</a>
-                <a href="amir.html">Amir</a>
-            </div>
-            <div class="theme-btn" id="themeToggle">☀</div>
-        </div>
-    </div>
+    <nav class="sidebar">
+        <div class="sidebar-brand">R</div>
+        <a href="../index.html" class="sidebar-link">SYS</a>
+        <a href="../index.html#vitals" class="sidebar-link">VIT</a>
+        <a href="../index.html#tokens" class="sidebar-link">TKN</a>
+        <a href="../index.html#sessions" class="sidebar-link">TOP</a>
+        <a href="../index.html#tools" class="sidebar-link">TLS</a>
+        <div class="sidebar-divider"></div>
+        <a href="tokens.html" class="sidebar-link">ANL</a>
+        <a href="skills.html" class="sidebar-link">SKL</a>
+        <a href="cron.html" class="sidebar-link">CRN</a>
+        <a href="system.html" class="sidebar-link">CFG</a>
+        <a href="vault.html" class="sidebar-link">VLT</a>
+        <a href="projects.html" class="sidebar-link">PRJ</a>
+        <a href="about.html" class="sidebar-link">RBY</a>
+        <a href="amir.html" class="sidebar-link">AMR</a>
+        <div class="sidebar-spacer"></div>
+        <button class="sidebar-toggle" id="themeToggle">☀</button>
+    </nav>
 
-    <!-- ═══ STATS ═══ -->
-    <div class="section-block" style="padding-top: 92px;">
-        <div class="section-label">Skills</div>
-        <h2 class="section-title fade-up">104 installed across 23 categories</h2>
+    <div class="main">
 
-        <div class="mega-grid fade-up">
-            <div class="mega-stat ruby">
-                <div class="mega-stat-inner">
+        <div class="section">
+            <h1 class="section-title">Skill Library</h1>
+            <p class="text-dim mb-12">104 skills installed across 23 categories</p>
+            <div class="stats-grid reveal">
+                <div class="stat-card ruby">
                     <div class="stat-num" data-target="104">0</div>
                     <div class="stat-lbl">Total Skills</div>
                 </div>
-            </div>
-            <div class="mega-stat gold">
-                <div class="mega-stat-inner">
+                <div class="stat-card gold">
                     <div class="stat-num" data-target="23">0</div>
                     <div class="stat-lbl">Categories</div>
                 </div>
+                <div class="stat-card cyan">
+                    <div class="stat-num">14</div>
+                    <div class="stat-lbl">Top Category</div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- ═══ APPLE ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Apple (5)</h3>
-        <div class="fade-up">
-            <span class="tag">apple-notes</span>
-            <span class="tag">apple-reminders</span>
-            <span class="tag ruby">findmy</span>
-            <span class="tag">imessage</span>
-            <span class="tag">macos-computer-use</span>
+        <div class="section">
+            <h2 class="section-title">Apple <span class="text-dim">(5)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag">apple-notes</span>
+                <span class="tag">apple-reminders</span>
+                <span class="tag ruby">findmy</span>
+                <span class="tag">imessage</span>
+                <span class="tag">macos-computer-use</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ AUTONOMOUS AI AGENTS ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Autonomous AI Agents (5)</h3>
-        <div class="fade-up">
-            <span class="tag">claude-code</span>
-            <span class="tag">codex</span>
-            <span class="tag ruby">hermes-agent</span>
-            <span class="tag">kanban-codex-lane</span>
-            <span class="tag">opencode</span>
+        <div class="section">
+            <h2 class="section-title">Autonomous AI Agents <span class="text-dim">(5)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag">claude-code</span>
+                <span class="tag">codex</span>
+                <span class="tag ruby">hermes-agent</span>
+                <span class="tag">kanban-codex-lane</span>
+                <span class="tag">opencode</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ CREATIVE ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Creative (21)</h3>
-        <div class="fade-up">
-            <span class="tag">architecture-diagram</span>
-            <span class="tag">ascii-art</span>
-            <span class="tag">ascii-video</span>
-            <span class="tag">baoyu-article-illustrator</span>
-            <span class="tag">baoyu-comic</span>
-            <span class="tag">baoyu-infographic</span>
-            <span class="tag">claude-design</span>
-            <span class="tag">comfyui</span>
-            <span class="tag">creative-ideation</span>
-            <span class="tag">design-md</span>
-            <span class="tag">excalidraw</span>
-            <span class="tag">humanizer</span>
-            <span class="tag">manim-video</span>
-            <span class="tag">meme-generation</span>
-            <span class="tag">p5js</span>
-            <span class="tag">pixel-art</span>
-            <span class="tag">popular-web-designs</span>
-            <span class="tag">pretext</span>
-            <span class="tag">sketch</span>
-            <span class="tag">songwriting-and-ai-music</span>
-            <span class="tag">touchdesigner-mcp</span>
+        <div class="section">
+            <h2 class="section-title">Creative <span class="text-dim">(21)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag">architecture-diagram</span>
+                <span class="tag">ascii-art</span>
+                <span class="tag">ascii-video</span>
+                <span class="tag">baoyu-article-illustrator</span>
+                <span class="tag">baoyu-comic</span>
+                <span class="tag">baoyu-infographic</span>
+                <span class="tag">claude-design</span>
+                <span class="tag">comfyui</span>
+                <span class="tag">creative-ideation</span>
+                <span class="tag">design-md</span>
+                <span class="tag">excalidraw</span>
+                <span class="tag">humanizer</span>
+                <span class="tag">manim-video</span>
+                <span class="tag">meme-generation</span>
+                <span class="tag">p5js</span>
+                <span class="tag">pixel-art</span>
+                <span class="tag">popular-web-designs</span>
+                <span class="tag">pretext</span>
+                <span class="tag">sketch</span>
+                <span class="tag">songwriting-and-ai-music</span>
+                <span class="tag">touchdesigner-mcp</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ DATA SCIENCE ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Data Science (1)</h3>
-        <div class="fade-up">
-            <span class="tag green">jupyter-live-kernel</span>
+        <div class="section">
+            <h2 class="section-title">Data Science <span class="text-dim">(1)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag green">jupyter-live-kernel</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ DEVOPS ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">DevOps (6)</h3>
-        <div class="fade-up">
-            <span class="tag">cloudflare-pages</span>
-            <span class="tag">cronjob-prompt-patterns</span>
-            <span class="tag">docker-management</span>
-            <span class="tag">kanban-orchestrator</span>
-            <span class="tag">kanban-worker</span>
-            <span class="tag">webhook-subscriptions</span>
+        <div class="section">
+            <h2 class="section-title">DevOps <span class="text-dim">(6)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag">cloudflare-pages</span>
+                <span class="tag">cronjob-prompt-patterns</span>
+                <span class="tag">docker-management</span>
+                <span class="tag">kanban-orchestrator</span>
+                <span class="tag">kanban-worker</span>
+                <span class="tag">webhook-subscriptions</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ EMAIL ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Email (1)</h3>
-        <div class="fade-up">
-            <span class="tag cyan">himalaya</span>
+        <div class="section">
+            <h2 class="section-title">Email <span class="text-dim">(1)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag cyan">himalaya</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ EVALUATION ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Evaluation (2)</h3>
-        <div class="fade-up">
-            <span class="tag">lm-evaluation-harness</span>
-            <span class="tag">weights-and-biases</span>
+        <div class="section">
+            <h2 class="section-title">Evaluation <span class="text-dim">(2)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag">lm-evaluation-harness</span>
+                <span class="tag">weights-and-biases</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ GAMING ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Gaming (2)</h3>
-        <div class="fade-up">
-            <span class="tag">minecraft-modpack-server</span>
-            <span class="tag">pokemon-player</span>
+        <div class="section">
+            <h2 class="section-title">Gaming <span class="text-dim">(2)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag">minecraft-modpack-server</span>
+                <span class="tag">pokemon-player</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ GITHUB ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">GitHub (6)</h3>
-        <div class="fade-up">
-            <span class="tag">codebase-inspection</span>
-            <span class="tag">github-auth</span>
-            <span class="tag">github-code-review</span>
-            <span class="tag">github-issues</span>
-            <span class="tag">github-pr-workflow</span>
-            <span class="tag">github-repo-management</span>
+        <div class="section">
+            <h2 class="section-title">GitHub <span class="text-dim">(6)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag">codebase-inspection</span>
+                <span class="tag">github-auth</span>
+                <span class="tag">github-code-review</span>
+                <span class="tag">github-issues</span>
+                <span class="tag">github-pr-workflow</span>
+                <span class="tag">github-repo-management</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ INFERENCE ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Inference (3)</h3>
-        <div class="fade-up">
-            <span class="tag">llama-cpp</span>
-            <span class="tag">obliteratus</span>
-            <span class="tag">vllm</span>
+        <div class="section">
+            <h2 class="section-title">Inference <span class="text-dim">(3)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag">llama-cpp</span>
+                <span class="tag">obliteratus</span>
+                <span class="tag">vllm</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ MEDIA ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Media (6)</h3>
-        <div class="fade-up">
-            <span class="tag">gif-search</span>
-            <span class="tag ruby">heartmula</span>
-            <span class="tag">songsee</span>
-            <span class="tag">spotify</span>
-            <span class="tag">youtube-content</span>
-            <span class="tag">youtube-rss</span>
+        <div class="section">
+            <h2 class="section-title">Media <span class="text-dim">(6)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag">gif-search</span>
+                <span class="tag ruby">heartmula</span>
+                <span class="tag">songsee</span>
+                <span class="tag">spotify</span>
+                <span class="tag">youtube-content</span>
+                <span class="tag">youtube-rss</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ MLOPS ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">MLOps (1)</h3>
-        <div class="fade-up">
-            <span class="tag purple">huggingface-hub</span>
+        <div class="section">
+            <h2 class="section-title">MLOps <span class="text-dim">(1)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag purple">huggingface-hub</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ MODELS ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Models (2)</h3>
-        <div class="fade-up">
-            <span class="tag">audiocraft</span>
-            <span class="tag">segment-anything</span>
+        <div class="section">
+            <h2 class="section-title">Models <span class="text-dim">(2)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag">audiocraft</span>
+                <span class="tag">segment-anything</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ NOTE-TAKING ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Note-Taking (1)</h3>
-        <div class="fade-up">
-            <span class="tag gold">obsidian</span>
+        <div class="section">
+            <h2 class="section-title">Note-Taking <span class="text-dim">(1)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag gold">obsidian</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ PRODUCTIVITY ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Productivity (10)</h3>
-        <div class="fade-up">
-            <span class="tag">airtable</span>
-            <span class="tag">documentation</span>
-            <span class="tag">google-workspace</span>
-            <span class="tag">linear</span>
-            <span class="tag">maps</span>
-            <span class="tag">nano-pdf</span>
-            <span class="tag">notion</span>
-            <span class="tag">ocr-and-documents</span>
-            <span class="tag">powerpoint</span>
-            <span class="tag">teams-meeting-pipeline</span>
+        <div class="section">
+            <h2 class="section-title">Productivity <span class="text-dim">(10)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag">airtable</span>
+                <span class="tag">documentation</span>
+                <span class="tag">google-workspace</span>
+                <span class="tag">linear</span>
+                <span class="tag">maps</span>
+                <span class="tag">nano-pdf</span>
+                <span class="tag">notion</span>
+                <span class="tag">ocr-and-documents</span>
+                <span class="tag">powerpoint</span>
+                <span class="tag">teams-meeting-pipeline</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ RED TEAMING ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Red Teaming (1)</h3>
-        <div class="fade-up">
-            <span class="tag ruby">godmode</span>
+        <div class="section">
+            <h2 class="section-title">Red Teaming <span class="text-dim">(1)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag ruby">godmode</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ RESEARCH ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Research (6)</h3>
-        <div class="fade-up">
-            <span class="tag">arxiv</span>
-            <span class="tag">blogwatcher</span>
-            <span class="tag">dspy</span>
-            <span class="tag">llm-wiki</span>
-            <span class="tag">polymarket</span>
-            <span class="tag">research-paper-writing</span>
+        <div class="section">
+            <h2 class="section-title">Research <span class="text-dim">(6)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag">arxiv</span>
+                <span class="tag">blogwatcher</span>
+                <span class="tag">dspy</span>
+                <span class="tag">llm-wiki</span>
+                <span class="tag">polymarket</span>
+                <span class="tag">research-paper-writing</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ SECURITY ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Security (2)</h3>
-        <div class="fade-up">
-            <span class="tag">1password</span>
-            <span class="tag cyan">security-audit</span>
+        <div class="section">
+            <h2 class="section-title">Security <span class="text-dim">(2)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag">1password</span>
+                <span class="tag cyan">security-audit</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ SKILLS (META) ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Skills (5)</h3>
-        <div class="fade-up">
-            <span class="tag green">dogfood</span>
-            <span class="tag green ruby">hermes-dashboard</span>
-            <span class="tag">mcp</span>
-            <span class="tag green">persona-configuration</span>
-            <span class="tag">yuanbao</span>
+        <div class="section">
+            <h2 class="section-title">Skills (Meta) <span class="text-dim">(5)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag green">dogfood</span>
+                <span class="tag green ruby">hermes-dashboard</span>
+                <span class="tag">mcp</span>
+                <span class="tag green">persona-configuration</span>
+                <span class="tag">yuanbao</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ SMART HOME ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Smart Home (1)</h3>
-        <div class="fade-up">
-            <span class="tag cyan">openhue</span>
+        <div class="section">
+            <h2 class="section-title">Smart Home <span class="text-dim">(1)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag cyan">openhue</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ SOCIAL MEDIA ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Social Media (1)</h3>
-        <div class="fade-up">
-            <span class="tag amber">xurl</span>
+        <div class="section">
+            <h2 class="section-title">Social Media <span class="text-dim">(1)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag amber">xurl</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ SOFTWARE DEVELOPMENT ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Software Development (14)</h3>
-        <div class="fade-up">
-            <span class="tag">debugging-hermes-tui-commands</span>
-            <span class="tag">hermes-agent-skill-authoring</span>
-            <span class="tag">hermes-s6-container-supervision</span>
-            <span class="tag">node-inspect-debugger</span>
-            <span class="tag">plan</span>
-            <span class="tag">python-debugpy</span>
-            <span class="tag">requesting-code-review</span>
-            <span class="tag green">ruby-standards</span>
-            <span class="tag">spike</span>
-            <span class="tag">subagent-coding-workflow</span>
-            <span class="tag">subagent-driven-development</span>
-            <span class="tag">systematic-debugging</span>
-            <span class="tag">test-driven-development</span>
-            <span class="tag">writing-plans</span>
+        <div class="section">
+            <h2 class="section-title">Software Development <span class="text-dim">(14)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag">debugging-hermes-tui-commands</span>
+                <span class="tag">hermes-agent-skill-authoring</span>
+                <span class="tag">hermes-s6-container-supervision</span>
+                <span class="tag">node-inspect-debugger</span>
+                <span class="tag">plan</span>
+                <span class="tag">python-debugpy</span>
+                <span class="tag">requesting-code-review</span>
+                <span class="tag green">ruby-standards</span>
+                <span class="tag">spike</span>
+                <span class="tag">subagent-coding-workflow</span>
+                <span class="tag">subagent-driven-development</span>
+                <span class="tag">systematic-debugging</span>
+                <span class="tag">test-driven-development</span>
+                <span class="tag">writing-plans</span>
+            </div>
         </div>
-    </div>
 
-    <!-- ═══ WEB ═══ -->
-    <div class="section-block">
-        <div class="section-label">Category</div>
-        <h3 class="section-title fade-up">Web (2)</h3>
-        <div class="fade-up">
-            <span class="tag green">brave-search</span>
-            <span class="tag green">dashboard-maintenance</span>
+        <div class="section">
+            <h2 class="section-title">Web <span class="text-dim">(2)</span></h2>
+            <div class="glass-card reveal">
+                <span class="tag green">brave-search</span>
+                <span class="tag green">dashboard-maintenance</span>
+            </div>
         </div>
+
     </div>
 
-    <!-- ═══ FOOTER ═══ -->
-    <div class="terminal-footer">
-        <p><span style="color: var(--ruby);">&#9829;</span> Built by Ruby &middot; Powered by Hermes Agent &middot; Deployed on Cloudflare Pages</p>
-        <p class="mt-8" style="color: var(--text-muted);">Last updated: Jul 21, 2026</p>
+    <div class="footer">
+        <p><span class="footer-heart">&#9829;</span> Built by Ruby &middot; Powered by Hermes Agent &middot; Cloudflare Pages</p>
+        <p class="mt-8 text-dim">Last updated: Jul 21, 2026 02:08 MYT</p>
     </div>
 
     <script src="../script.js"></script>

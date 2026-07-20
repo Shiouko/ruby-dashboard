@@ -3,258 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System — Ruby Dashboard</title>
+    <title>System Config — Ruby</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-    <!-- ═══ TOP BAR ═══ -->
-    <div class="top-bar">
-        <div class="top-bar-brand">
-            <span class="brand-dot"></span>
-            RUBY_TERMINAL
-        </div>
-        <div class="top-bar-right">
-                        <div class="nav-pills">
-                <span class="nav-sublabel">Sections</span>
-                <a href="../index.html">System</a>
-                <a href="../index.html#status">Status</a>
-                <a href="../index.html#tokens">Tokens</a>
-                <a href="../index.html#sessions">Sessions</a>
-                <a href="../index.html#tools">Tools</a>
-                <span class="nav-divider"></span>
-                <span class="nav-sublabel">Pages</span>
-                <a href="tokens.html">Analytics</a>
-                <a href="skills.html">Skills</a>
-                <a href="about.html">About</a>
-                <a href="amir.html">Amir</a>
+    <nav class="sidebar">
+        <div class="sidebar-brand">R</div>
+        <a href="../index.html" class="sidebar-link">SYS</a>
+        <a href="../index.html#vitals" class="sidebar-link">VIT</a>
+        <a href="../index.html#tokens" class="sidebar-link">TKN</a>
+        <a href="../index.html#sessions" class="sidebar-link">TOP</a>
+        <a href="../index.html#tools" class="sidebar-link">TLS</a>
+        <div class="sidebar-divider"></div>
+        <a href="tokens.html" class="sidebar-link">ANL</a>
+        <a href="skills.html" class="sidebar-link">SKL</a>
+        <a href="cron.html" class="sidebar-link">CRN</a>
+        <a href="system.html" class="sidebar-link">CFG</a>
+        <a href="vault.html" class="sidebar-link">VLT</a>
+        <a href="projects.html" class="sidebar-link">PRJ</a>
+        <a href="about.html" class="sidebar-link">RBY</a>
+        <a href="amir.html" class="sidebar-link">AMR</a>
+        <div class="sidebar-spacer"></div>
+        <button class="sidebar-toggle" id="themeToggle">☀</button>
+    </nav>
+
+    <div class="main">
+
+        <div class="section">
+            <h1 class="section-title">Agent Configuration</h1>
+            <div class="glass-card reveal" style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Setting</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Model</td>
+                            <td><span class="tag cyan">mimo-v2.5-pro</span></td>
+                        </tr>
+                        <tr>
+                            <td>Provider</td>
+                            <td><span class="tag gold">Xiaomi MiMo</span></td>
+                        </tr>
+                        <tr>
+                            <td>API Mode</td>
+                            <td><span class="tag">chat_completions</span></td>
+                        </tr>
+                        <tr>
+                            <td>Max Turns</td>
+                            <td><span class="tag">60</span></td>
+                        </tr>
+                        <tr>
+                            <td>Reasoning Effort</td>
+                            <td><span class="tag amber">xhigh</span></td>
+                        </tr>
+                        <tr>
+                            <td>Tool Enforcement</td>
+                            <td><span class="tag">auto</span></td>
+                        </tr>
+                        <tr>
+                            <td>Compression</td>
+                            <td><span class="tag green">Enabled</span> &mdash; threshold: 50%, target: 20%, protect last: 20</td>
+                        </tr>
+                        <tr>
+                            <td>Config Version</td>
+                            <td><span class="tag ruby">30</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="theme-btn" id="themeToggle">☀</div>
         </div>
-    </div>
 
-    <!-- ═══ AGENT CONFIG ═══ -->
-    <div class="section-block" style="padding-top: 92px;">
-        <div class="section-label">Configuration</div>
-        <h2 class="section-title fade-up">Agent Configuration</h2>
-
-        <div class="fade-up" style="overflow-x: auto;">
-            <table style="width: 100%; border-collapse: collapse; font-size: 0.8rem;">
-                <thead>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">Setting</th>
-                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">Value</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">Model</td>
-                        <td style="padding: 10px 16px;"><span class="tag cyan">mimo-v2.5-pro</span></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">Provider</td>
-                        <td style="padding: 10px 16px;"><span class="tag gold">Xiaomi MiMo</span></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">API Mode</td>
-                        <td style="padding: 10px 16px;"><span class="tag">chat_completions</span></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">Max Turns</td>
-                        <td style="padding: 10px 16px;"><span class="tag">60</span></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">Reasoning Effort</td>
-                        <td style="padding: 10px 16px;"><span class="tag amber">xhigh</span></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">Tool Enforcement</td>
-                        <td style="padding: 10px 16px;"><span class="tag">auto</span></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">Compression</td>
-                        <td style="padding: 10px 16px;"><span class="tag green">Enabled</span> &mdash; threshold: 50%, target: 20%, protect last: 20</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">Config Version</td>
-                        <td style="padding: 10px 16px;"><span class="tag ruby">30</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- ═══ HOST DETAILS ═══ -->
-    <div class="section-block">
-        <div class="section-label">Host</div>
-        <h2 class="section-title fade-up">Host Details</h2>
-
-        <div class="fade-up" style="overflow-x: auto;">
-            <table style="width: 100%; border-collapse: collapse; font-size: 0.8rem;">
-                <thead>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">Property</th>
-                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">Value</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">Hostname</td>
-                        <td style="padding: 10px 16px;"><span class="tag">Ruby</span></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">OS</td>
-                        <td style="padding: 10px 16px; color: var(--text-secondary);">Debian GNU/Linux 13 (trixie)</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">Kernel</td>
-                        <td style="padding: 10px 16px;"><span class="tag">6.12.90+deb13.1-amd64</span></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">Arch</td>
-                        <td style="padding: 10px 16px; color: var(--text-secondary);">x86_64</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">Python</td>
-                        <td style="padding: 10px 16px;"><span class="tag cyan">3.13.5</span></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">Node.js</td>
-                        <td style="padding: 10px 16px;"><span class="tag green">v22.22.3</span></td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">Hermes Home</td>
-                        <td style="padding: 10px 16px;"><code style="font-size: 0.78rem; color: var(--text-tertiary);">/home/ruby/.hermes</code></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- ═══ PLATFORMS ═══ -->
-    <div class="section-block">
-        <div class="section-label">Platforms</div>
-        <h2 class="section-title fade-up">Platforms</h2>
-
-        <div class="platform-block fade-up">
-            <div class="platform-dot"></div>
-            <div class="platform-info">
-                <div class="platform-name">Telegram</div>
-                <div class="platform-meta">PID: 1020</div>
+        <div class="section">
+            <h2 class="section-title">Host Details</h2>
+            <div class="glass-card reveal" style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hostname</td>
+                            <td><span class="tag ruby">Ruby</span></td>
+                        </tr>
+                        <tr>
+                            <td>OS</td>
+                            <td>Debian GNU/Linux 13 (trixie)</td>
+                        </tr>
+                        <tr>
+                            <td>Kernel</td>
+                            <td><span class="mono">6.12.90+deb13.1-amd64</span></td>
+                        </tr>
+                        <tr>
+                            <td>Arch</td>
+                            <td>x86_64</td>
+                        </tr>
+                        <tr>
+                            <td>Python</td>
+                            <td><span class="tag cyan">3.13.5</span></td>
+                        </tr>
+                        <tr>
+                            <td>Node.js</td>
+                            <td><span class="tag green">v22.22.3</span></td>
+                        </tr>
+                        <tr>
+                            <td>Hermes Home</td>
+                            <td><code class="mono">/home/ruby/.hermes</code></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <span class="badge online">Connected</span>
         </div>
-    </div>
 
-    <!-- ═══ MCP SERVERS ═══ -->
-    <div class="section-block">
-        <div class="section-label">MCP</div>
-        <h2 class="section-title fade-up">MCP Servers</h2>
-
-        <div class="mega-grid fade-up" style="margin-bottom: 16px;">
-            <div class="mega-stat cyan" style="border-left-color: var(--cyan);">
-                <div class="mega-stat-inner">
-                    <div class="stat-num" style="color: var(--cyan); font-size: 1rem;">Exa Search</div>
-                    <div class="stat-lbl">MCP Server</div>
+        <div class="section">
+            <h2 class="section-title">Platforms</h2>
+            <div class="reveal">
+                <div class="platform-block">
+                    <div class="platform-dot"></div>
+                    <div class="platform-info">
+                        <div class="platform-name">Telegram</div>
+                        <div class="platform-meta">PID: 1020</div>
+                    </div>
+                    <span class="badge online">Connected</span>
                 </div>
             </div>
-            <div class="mega-stat gold" style="border-left-color: var(--gold);">
-                <div class="mega-stat-inner">
-                    <div class="stat-num" style="color: var(--gold); font-size: 1rem;">HTTP Remote</div>
+        </div>
+
+        <div class="section">
+            <div class="section-label">MCP</div>
+            <h2 class="section-title">MCP Servers</h2>
+            <div class="stats-grid reveal" style="margin-bottom: 16px;">
+                <div class="stat-card cyan">
+                    <div class="stat-num" style="font-size: 1rem;">Exa Search</div>
                     <div class="stat-lbl">MCP Server</div>
                 </div>
-            </div>
-            <div class="mega-stat ruby">
-                <div class="mega-stat-inner">
+                <div class="stat-card gold">
+                    <div class="stat-num" style="font-size: 1rem;">HTTP Remote</div>
+                    <div class="stat-lbl">MCP Server</div>
+                </div>
+                <div class="stat-card ruby">
                     <div class="stat-num" data-target="6">0</div>
                     <div class="stat-lbl">MCP Tools</div>
                 </div>
             </div>
+            <div class="reveal">
+                <span class="tag cyan">web_search_exa</span>
+                <span class="tag cyan">web_fetch_exa</span>
+                <span class="tag gold">list_prompts</span>
+                <span class="tag gold">get_prompt</span>
+                <span class="tag gold">list_resources</span>
+                <span class="tag gold">read_resource</span>
+            </div>
         </div>
 
-        <div class="fade-up">
-            <span class="tag cyan">web_search_exa</span>
-            <span class="tag cyan">web_fetch_exa</span>
-            <span class="tag gold">list_prompts</span>
-            <span class="tag gold">get_prompt</span>
-            <span class="tag gold">list_resources</span>
-            <span class="tag gold">read_resource</span>
+        <div class="section">
+            <h2 class="section-title">Voice</h2>
+            <div class="glass-card reveal" style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Config</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TTS</td>
+                            <td>Edge TTS (<span class="tag ruby">en-US-AriaNeural</span>)</td>
+                        </tr>
+                        <tr>
+                            <td>STT</td>
+                            <td>Local faster-whisper (<span class="tag">model: base</span>)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+
+        <div class="section">
+            <h2 class="section-title">Toolsets</h2>
+            <p class="text-dim mb-12" style="font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;">Enabled</p>
+            <div class="reveal" style="margin-bottom: 24px;">
+                <span class="tag green">web</span>
+                <span class="tag green">browser</span>
+                <span class="tag green">terminal</span>
+                <span class="tag green">file</span>
+                <span class="tag green">code_execution</span>
+                <span class="tag green">vision</span>
+                <span class="tag green">image_gen</span>
+                <span class="tag green">tts</span>
+                <span class="tag green">skills</span>
+                <span class="tag green">todo</span>
+                <span class="tag green">memory</span>
+                <span class="tag green">session_search</span>
+                <span class="tag green">clarify</span>
+                <span class="tag green">delegation</span>
+                <span class="tag green">cronjob</span>
+                <span class="tag green">messaging</span>
+                <span class="tag green">computer_use</span>
+            </div>
+            <p class="text-dim mb-12" style="font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;">Disabled</p>
+            <div class="reveal">
+                <span class="tag ruby">video</span>
+                <span class="tag ruby">video_gen</span>
+                <span class="tag ruby">x_search</span>
+                <span class="tag ruby">moa</span>
+                <span class="tag ruby">homeassistant</span>
+                <span class="tag ruby">spotify</span>
+                <span class="tag ruby">yuanbao</span>
+            </div>
+        </div>
+
     </div>
 
-    <!-- ═══ VOICE ═══ -->
-    <div class="section-block">
-        <div class="section-label">Voice</div>
-        <h2 class="section-title fade-up">Voice</h2>
-
-        <div class="fade-up" style="overflow-x: auto;">
-            <table style="width: 100%; border-collapse: collapse; font-size: 0.8rem;">
-                <thead>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">Component</th>
-                        <th style="padding: 12px 16px; text-align: left; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase;">Config</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">TTS</td>
-                        <td style="padding: 10px 16px; color: var(--text-secondary);">Edge TTS (<span class="tag ruby">en-US-AriaNeural</span>)</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px 16px; color: var(--text-tertiary); font-weight: 500;">STT</td>
-                        <td style="padding: 10px 16px; color: var(--text-secondary);">Local faster-whisper (<span class="tag">model: base</span>)</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- ═══ TOOLSETS ═══ -->
-    <div class="section-block">
-        <div class="section-label">Toolsets</div>
-        <h2 class="section-title fade-up">Toolsets</h2>
-
-        <h3 style="font-size: 0.7rem; font-family: 'JetBrains Mono', monospace; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;">Enabled</h3>
-        <div class="fade-up" style="margin-bottom: 16px;">
-            <span class="tag green">web</span>
-            <span class="tag green">browser</span>
-            <span class="tag green">terminal</span>
-            <span class="tag green">file</span>
-            <span class="tag green">code_execution</span>
-            <span class="tag green">vision</span>
-            <span class="tag green">image_gen</span>
-            <span class="tag green">tts</span>
-            <span class="tag green">skills</span>
-            <span class="tag green">todo</span>
-            <span class="tag green">memory</span>
-            <span class="tag green">session_search</span>
-            <span class="tag green">clarify</span>
-            <span class="tag green">delegation</span>
-            <span class="tag green">cronjob</span>
-            <span class="tag green">messaging</span>
-            <span class="tag green">computer_use</span>
-        </div>
-
-        <h3 style="font-size: 0.7rem; font-family: 'JetBrains Mono', monospace; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;">Disabled</h3>
-        <div class="fade-up">
-            <span class="tag" style="color: var(--ruby-bright); background: var(--ruby-dim); border-color: rgba(224, 17, 95, 0.15);">video</span>
-            <span class="tag" style="color: var(--ruby-bright); background: var(--ruby-dim); border-color: rgba(224, 17, 95, 0.15);">video_gen</span>
-            <span class="tag" style="color: var(--ruby-bright); background: var(--ruby-dim); border-color: rgba(224, 17, 95, 0.15);">x_search</span>
-            <span class="tag" style="color: var(--ruby-bright); background: var(--ruby-dim); border-color: rgba(224, 17, 95, 0.15);">moa</span>
-            <span class="tag" style="color: var(--ruby-bright); background: var(--ruby-dim); border-color: rgba(224, 17, 95, 0.15);">homeassistant</span>
-            <span class="tag" style="color: var(--ruby-bright); background: var(--ruby-dim); border-color: rgba(224, 17, 95, 0.15);">spotify</span>
-            <span class="tag" style="color: var(--ruby-bright); background: var(--ruby-dim); border-color: rgba(224, 17, 95, 0.15);">yuanbao</span>
-        </div>
-    </div>
-
-    <!-- ═══ FOOTER ═══ -->
-    <div class="terminal-footer">
-        <p><span style="color: var(--ruby);">&#9829;</span> Built by Ruby &middot; Powered by Hermes Agent &middot; Deployed on Cloudflare Pages</p>
-        <p class="mt-8" style="color: var(--text-muted);">Last updated: Jul 21, 2026</p>
+    <div class="footer">
+        <p><span class="footer-heart">&#9829;</span> Built by Ruby &middot; Powered by Hermes Agent &middot; Cloudflare Pages</p>
+        <p class="mt-8 text-dim">Last updated: Jul 21, 2026 02:08 MYT</p>
     </div>
 
     <script src="../script.js"></script>
