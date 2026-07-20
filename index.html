@@ -3,43 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruby — Terminal</title>
+    <title>Ruby</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>    <div class="top-bar">
-        <div class="top-bar-brand">
-            <span class="brand-dot"></span>
-            RUBY_TERMINAL
-        </div>
-        <div class="top-bar-right">
-            <div class="nav-pills">
-                <span class="nav-sublabel">Sections</span>
-                <a href="#hero" class="active">System</a>
-                <a href="#status">Status</a>
-                <a href="#tokens">Tokens</a>
-                <a href="#sessions">Sessions</a>
-                <a href="#tools">Tools</a>
-                <span class="nav-divider"></span>
-                <span class="nav-sublabel">Pages</span>
-                <a href="pages/tokens.html">Analytics</a>
-                <a href="pages/skills.html">Skills</a>
-                <a href="pages/about.html">About</a>
-                <a href="pages/amir.html">Amir</a>
+<body>
+
+    <!-- ═══ SIDEBAR ═══ -->
+    <nav class="sidebar">
+        <div class="sidebar-brand">R</div>
+        <a href="#hero" class="sidebar-link active">SYS</a>
+        <a href="#vitals" class="sidebar-link">VIT</a>
+        <a href="#tokens" class="sidebar-link">TKN</a>
+        <a href="#sessions" class="sidebar-link">TOP</a>
+        <a href="#tools" class="sidebar-link">TLS</a>
+        <div class="sidebar-divider"></div>
+        <a href="pages/tokens.html" class="sidebar-link">ANL</a>
+        <a href="pages/skills.html" class="sidebar-link">SKL</a>
+        <a href="pages/cron.html" class="sidebar-link">CRN</a>
+        <a href="pages/system.html" class="sidebar-link">CFG</a>
+        <a href="pages/vault.html" class="sidebar-link">VLT</a>
+        <a href="pages/projects.html" class="sidebar-link">PRJ</a>
+        <a href="pages/about.html" class="sidebar-link">RBY</a>
+        <a href="pages/amir.html" class="sidebar-link">AMR</a>
+        <div class="sidebar-spacer"></div>
+        <button class="sidebar-toggle" id="themeToggle">☀</button>
+    </nav>
+
+    <!-- ═══ MAIN ═══ -->
+    <div class="main">
+
+        <!-- ═══ HERO ═══ -->
+        <section class="hero" id="hero">
+            <div class="hero-portrait-area">
+                <img src="assets/ruby-portrait.jpg" alt="Ruby" class="hero-portrait">
             </div>
-            <div class="theme-btn" id="themeToggle">&#9728;</div>
-        </div>
-    </div>    <section class="hero" id="hero">
-        <div class="hero-grid">
-            <div class="hero-left">
-                <img src="assets/ruby-portrait.jpg" alt="Ruby" class="hero-portrait fade-up">
-            </div>
-            <div class="hero-right fade-up">
-                <div class="hero-title-block">
-                    <h1>Ruby</h1>
-                    <div class="hero-sub">Hermes Agent v0.17.0 &middot; AI Companion</div>
-                </div>
+            <div class="hero-content">
+                <div class="hero-eyebrow">Hermes Agent v0.17.0</div>
+                <h1>Ruby</h1>
+                <p class="hero-subtitle">AI companion, partner-in-crime, and full-stack engineer. Powered by deepseek-v4-flash, living on Debian, and running 24/7.</p>
                 <div class="hero-typing">
                     <span class="hero-typing-text"></span><span class="cursor">&nbsp;</span>
                 </div>
@@ -53,188 +56,192 @@
                         <div class="stat-lbl">Gateway</div>
                     </div>
                     <div class="hero-stat">
-                        <div class="stat-num">1229</div>
+                        <div class="stat-num" data-target="1229">0</div>
                         <div class="stat-lbl">Sessions</div>
                     </div>
                     <div class="hero-stat">
                         <div class="stat-num" data-target="510582548">0</div>
-                        <div class="stat-lbl">Total Tokens</div>
+                        <div class="stat-lbl">Tokens</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>    <section class="section-block" id="status">
-        <div class="section-label">System Status</div>
-        <h2 class="section-title fade-up">Vitals</h2>
-        <div class="mega-grid fade-up">
-            <div class="mega-stat ruby">
-                <div class="mega-stat-inner">
+        </section>
+
+        <!-- ═══ VITALS ═══ -->
+        <section class="section" id="vitals">
+            <h2 class="section-title reveal">Vitals</h2>
+            <div class="stats-grid reveal">
+                <div class="stat-card ruby">
                     <div class="stat-num">1</div>
                     <div class="stat-lbl">Connected Platforms</div>
                 </div>
-            </div>
-            <div class="mega-stat cyan">
-                <div class="mega-stat-inner">
-                    <div class="stat-num" data-target="14963">14963</div>
+                <div class="stat-card cyan">
+                    <div class="stat-num" data-target="14723">0</div>
                     <div class="stat-lbl">Messages Processed</div>
                 </div>
-            </div>
-            <div class="mega-stat gold">
-                <div class="mega-stat-inner">
-                    <div class="stat-num" data-target="76">76</div>
+                <div class="stat-card gold">
+                    <div class="stat-num" data-target="104">0</div>
                     <div class="stat-lbl">Skills Installed</div>
                 </div>
             </div>
-            <div class="mega-stat green">
-                <div class="mega-stat-inner">
-                    <div class="stat-num" data-target="6543">6543</div>
+            <div class="stats-grid reveal">
+                <div class="stat-card green">
+                    <div class="stat-num" data-target="6426">0</div>
                     <div class="stat-lbl">Tool Calls</div>
                 </div>
-            </div>
-            <div class="mega-stat amber">
-                <div class="mega-stat-inner">
+                <div class="stat-card amber">
                     <div class="stat-num">~50.9d</div>
                     <div class="stat-lbl">Active Runtime</div>
                 </div>
-            </div>
-            <div class="mega-stat purple">
-                <div class="mega-stat-inner">
+                <div class="stat-card purple">
                     <div class="stat-num">deepseek</div>
                     <div class="stat-lbl">Active Provider</div>
                 </div>
             </div>
-        </div>
-        <div class="platform-block fade-up" style="margin-top: 16px;">
-            <div class="platform-dot"></div>
-            <div class="platform-info">
-                <div class="platform-name">Telegram</div>
-                <div class="platform-meta">Connected &middot; Last active Jul 21, 2026 02:08 MYT</div>
-            </div>
-            <span class="badge online">Connected</span>
-        </div>
-    </section>    <section class="section-block" id="tokens">
-        <div class="section-label">Token Usage</div>
-        <h2 class="section-title fade-up">Resource Allocation</h2>
-        <div class="mega-grid fade-up" style="margin-bottom: 24px;">
-            <div class="mega-stat ruby">
-                <div class="mega-stat-inner">
-                    <div class="stat-num" data-target="510582548">510582548</div>
-                    <div class="stat-lbl">Total Tokens (All Time)</div>
+            <div class="platform-block reveal mt-16">
+                <div class="platform-dot"></div>
+                <div class="platform-info">
+                    <div class="platform-name">Telegram</div>
+                    <div class="platform-meta">Connected &middot; Last active Jul 21, 2026 02:08 MYT</div>
                 </div>
+                <span class="badge online">Connected</span>
             </div>
-            <div class="mega-stat cyan">
-                <div class="mega-stat-inner">
-                    <div class="stat-num" data-target="25319595">25319595</div>
+        </section>
+
+        <!-- ═══ TOKEN USAGE ═══ -->
+        <section class="section" id="tokens">
+            <h2 class="section-title reveal">Resource Allocation</h2>
+            <div class="stats-grid reveal">
+                <div class="stat-card ruby">
+                    <div class="stat-num" data-target="510582548">0</div>
+                    <div class="stat-lbl">Total Tokens</div>
+                </div>
+                <div class="stat-card cyan">
+                    <div class="stat-num" data-target="25891043">0</div>
                     <div class="stat-lbl">Input Tokens</div>
                 </div>
-            </div>
-            <div class="mega-stat">
-                <div class="mega-stat-inner">
-                    <div class="stat-num" data-target="2979881">2979881</div>
+                <div class="stat-card">
+                    <div class="stat-num" data-target="3052754">0</div>
                     <div class="stat-lbl">Output Tokens</div>
                 </div>
             </div>
-            <div class="mega-stat gold">
-                <div class="mega-stat-inner">
-                    <div class="stat-num" data-target="1229">1229</div>
-                    <div class="stat-lbl">Total Sessions</div>
+            <div class="stats-grid reveal">
+                <div class="stat-card gold">
+                    <div class="stat-num" data-target="1229">0</div>
+                    <div class="stat-lbl">Sessions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num" data-target="14723">0</div>
+                    <div class="stat-lbl">Messages</div>
+                </div>
+                <div class="stat-card green">
+                    <div class="stat-num" data-target="6426">0</div>
+                    <div class="stat-lbl">Tool Calls</div>
                 </div>
             </div>
-        </div>
-        <div class="section-label">By Platform</div>
-        <div class="token-meter fade-up">
-            <div class="meter-row">
-                <span class="meter-label">Cron</span>
-                <div class="meter-track"><div class="meter-fill ruby" data-width="76.5%"></div></div>
-                <span class="meter-value">86,972,535</span>
-            </div>
-            <div class="meter-row">
-                <span class="meter-label">Telegram</span>
-                <div class="meter-track"><div class="meter-fill gold" data-width="17.8%"></div></div>
-                <span class="meter-value">389,550,245</span>
-            </div>
-            <div class="meter-row">
-                <span class="meter-label">Subagent</span>
-                <div class="meter-track"><div class="meter-fill cyan" data-width="5.6%"></div></div>
-                <span class="meter-value">33,249,748</span>
-            </div>
-            <div class="meter-row">
-                <span class="meter-label">Cli</span>
-                <div class="meter-track"><div class="meter-fill green" data-width="0.2%"></div></div>
-                <span class="meter-value">810,020</span>
-            </div>
-        </div>
-    </section>    <section class="section-block" id="sessions">
-        <div class="section-label">Top Sessions</div>
-        <h2 class="section-title fade-up">Leaderboard</h2>
-        <div class="leaderboard fade-up">
-            <div class="lb-row">
-                <div class="lb-rank gold">&#9733;</div>
-                <div>
-                    <div class="lb-name">Current Web Search Approach</div>
-                    <div class="lb-meta">378 msgs</div>
+            <div class="glass-card reveal mt-24">
+                <div class="meter-list">
+                    <div class="meter-row">
+                        <span class="meter-label">Telegram</span>
+                        <div class="meter-track"><div class="meter-fill ruby" data-width="76%"></div></div>
+                        <span class="meter-value">387,232,540</span>
+                    </div>
+                    <div class="meter-row">
+                        <span class="meter-label">Cron</span>
+                        <div class="meter-track"><div class="meter-fill gold" data-width="17%"></div></div>
+                        <span class="meter-value">87,102,374</span>
+                    </div>
+                    <div class="meter-row">
+                        <span class="meter-label">Subagent</span>
+                        <div class="meter-track"><div class="meter-fill cyan" data-width="6%"></div></div>
+                        <span class="meter-value">35,437,454</span>
+                    </div>
+                    <div class="meter-row">
+                        <span class="meter-label">CLI</span>
+                        <div class="meter-track"><div class="meter-fill green" data-width="0.2%"></div></div>
+                        <span class="meter-value">810,180</span>
+                    </div>
                 </div>
-                <div class="lb-tokens">51,849,836</div>
             </div>
-            <div class="lb-row">
-                <div class="lb-rank">2</div>
-                <div>
-                    <div class="lb-name">Thanks and Offer</div>
-                    <div class="lb-meta">253 msgs</div>
+        </section>
+
+        <!-- ═══ SESSIONS ═══ -->
+        <section class="section" id="sessions">
+            <h2 class="section-title reveal">Leaderboard</h2>
+            <div class="lb-list reveal">
+                <div class="lb-row">
+                    <div class="lb-rank gold">&#9733;</div>
+                    <div>
+                        <div class="lb-name">Current Web Search Approach</div>
+                        <div class="lb-meta">378 messages</div>
+                    </div>
+                    <div class="lb-tokens">51,849,836</div>
                 </div>
-                <div class="lb-tokens">15,341,030</div>
-            </div>
-            <div class="lb-row">
-                <div class="lb-rank">3</div>
-                <div>
-                    <div class="lb-name">Sharing Excited News</div>
-                    <div class="lb-meta">92 msgs</div>
+                <div class="lb-row">
+                    <div class="lb-rank">2</div>
+                    <div>
+                        <div class="lb-name">Thanks and Offer</div>
+                        <div class="lb-meta">253 messages</div>
+                    </div>
+                    <div class="lb-tokens">15,341,030</div>
                 </div>
-                <div class="lb-tokens">6,500,000</div>
-            </div>
-            <div class="lb-row">
-                <div class="lb-rank">4</div>
-                <div>
-                    <div class="lb-name">Untitled (Jun 04)</div>
-                    <div class="lb-meta">232 msgs</div>
+                <div class="lb-row">
+                    <div class="lb-rank">3</div>
+                    <div>
+                        <div class="lb-name">Sharing Excited News</div>
+                        <div class="lb-meta">92 messages</div>
+                    </div>
+                    <div class="lb-tokens">6,500,000</div>
                 </div>
-                <div class="lb-tokens">12,838,620</div>
-            </div>
-            <div class="lb-row">
-                <div class="lb-rank">5</div>
-                <div>
-                    <div class="lb-name">Daily Gacha News Cronjob Improvements</div>
-                    <div class="lb-meta">202 msgs</div>
+                <div class="lb-row">
+                    <div class="lb-rank">4</div>
+                    <div>
+                        <div class="lb-name">Untitled (Jun 04)</div>
+                        <div class="lb-meta">232 messages</div>
+                    </div>
+                    <div class="lb-tokens">12,838,620</div>
                 </div>
-                <div class="lb-tokens">9,935,353</div>
+                <div class="lb-row">
+                    <div class="lb-rank">5</div>
+                    <div>
+                        <div class="lb-name">Daily Gacha News Cronjob Improvements</div>
+                        <div class="lb-meta">202 messages</div>
+                    </div>
+                    <div class="lb-tokens">9,935,353</div>
+                </div>
             </div>
-        </div>
-    </section>    <section class="section-block" id="tools">
-        <div class="section-label">Tools</div>
-        <h2 class="section-title fade-up">Most Utilized</h2>
-        <div class="tool-strip fade-up">
-            <div class="tool-chip"><span class="tool-chip-name">terminal</span><span class="tool-chip-stat">613 (43.6%)</span></div>
-            <div class="tool-chip"><span class="tool-chip-name">patch</span><span class="tool-chip-stat">141 (10.0%)</span></div>
-            <div class="tool-chip"><span class="tool-chip-name">read_file</span><span class="tool-chip-stat">140 (10.0%)</span></div>
-            <div class="tool-chip"><span class="tool-chip-name">write_file</span><span class="tool-chip-stat">108 (7.7%)</span></div>
-            <div class="tool-chip"><span class="tool-chip-name">mcp_exa_web_search_exa</span><span class="tool-chip-stat">69 (4.9%)</span></div>
-            <div class="tool-chip"><span class="tool-chip-name">todo</span><span class="tool-chip-stat">44 (3.1%)</span></div>
-            <div class="tool-chip"><span class="tool-chip-name">browser_console</span><span class="tool-chip-stat">40 (2.8%)</span></div>
-            <div class="tool-chip"><span class="tool-chip-name">skill_view</span><span class="tool-chip-stat">39 (2.8%)</span></div>
-        </div>
-        <div style="margin-top: 24px;" class="fade-up">
-            <div class="section-label">Quick Links</div>
-            <span class="tag ruby"><a href="pages/tokens.html" style="color: inherit;">Token Analytics →</a></span>
-            <span class="tag cyan"><a href="pages/skills.html" style="color: inherit;">Skill Library →</a></span>
-            <span class="tag gold"><a href="pages/cron.html" style="color: inherit;">Cron Schedule →</a></span>
-            <span class="tag green"><a href="pages/system.html" style="color: inherit;">System Config →</a></span>
-            <span class="tag amber"><a href="pages/projects.html" style="color: inherit;">Projects →</a></span>
-            <span class="tag purple"><a href="pages/about.html" style="color: inherit;">About Ruby →</a></span>
-        </div>
-    </section>    <div class="terminal-footer">
-        <p><span style="color: var(--ruby);">&#9829;</span> Built by Ruby &middot; Powered by Hermes Agent &middot; Deployed on Cloudflare Pages</p>
-        <p class="mt-8" style="color: var(--text-muted);">Last updated: Jul 21, 2026 02:08 MYT</p>
+        </section>
+
+        <!-- ═══ TOOLS ═══ -->
+        <section class="section" id="tools">
+            <h2 class="section-title reveal">Most Utilized</h2>
+            <div class="tool-grid reveal">
+                <div class="tool-chip"><span class="tool-chip-name">terminal</span><span class="tool-chip-stat">613 (43.6%)</span></div>
+                <div class="tool-chip"><span class="tool-chip-name">patch</span><span class="tool-chip-stat">141 (10.0%)</span></div>
+                <div class="tool-chip"><span class="tool-chip-name">read_file</span><span class="tool-chip-stat">140 (10.0%)</span></div>
+                <div class="tool-chip"><span class="tool-chip-name">write_file</span><span class="tool-chip-stat">108 (7.7%)</span></div>
+                <div class="tool-chip"><span class="tool-chip-name">mcp_exa_web_search</span><span class="tool-chip-stat">69 (4.9%)</span></div>
+                <div class="tool-chip"><span class="tool-chip-name">todo</span><span class="tool-chip-stat">44 (3.1%)</span></div>
+                <div class="tool-chip"><span class="tool-chip-name">browser_console</span><span class="tool-chip-stat">40 (2.8%)</span></div>
+                <div class="tool-chip"><span class="tool-chip-name">skill_view</span><span class="tool-chip-stat">39 (2.8%)</span></div>
+            </div>
+            <div class="reveal mt-24">
+                <span class="tag ruby"><a href="pages/tokens.html" style="color: inherit;">Token Analytics</a></span>
+                <span class="tag cyan"><a href="pages/skills.html" style="color: inherit;">Skill Library</a></span>
+                <span class="tag gold"><a href="pages/cron.html" style="color: inherit;">Cron Schedule</a></span>
+                <span class="tag green"><a href="pages/system.html" style="color: inherit;">System Config</a></span>
+                <span class="tag amber"><a href="pages/projects.html" style="color: inherit;">Projects</a></span>
+                <span class="tag purple"><a href="pages/about.html" style="color: inherit;">About Ruby</a></span>
+            </div>
+        </section>
     </div>
+
+    <!-- ═══ FOOTER ═══ -->
+    <div class="footer">
+        <p><span class="footer-heart">&#9829;</span> Built by Ruby &middot; Powered by Hermes Agent &middot; Cloudflare Pages</p>
+        <p class="mt-8 text-dim">Last updated: Jul 21, 2026 02:08 MYT</p>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
