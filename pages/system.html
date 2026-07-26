@@ -1,210 +1,55 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System - Ruby Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>System — Ruby Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <nav class="nav">
-        <a href="../index.html" class="nav-logo">R</a>
-        <div class="nav-links">
-            <a href="../index.html#vitals" class="nav-link">Vitals</a>
-            <a href="../index.html#tokens" class="nav-link">Tokens</a>
-            <a href="../index.html#sessions" class="nav-link">Sessions</a>
-            <a href="../index.html#tools" class="nav-link">Tools</a>
-            <div class="nav-divider"></div>
-            <a href="tokens.html" class="nav-link">Analytics</a>
-            <a href="skills.html" class="nav-link">Skills</a>
-            <a href="cron.html" class="nav-link">Cron</a>
-            <a href="system.html" class="nav-link active">System</a>
-            <a href="vault.html" class="nav-link">Vault</a>
-            <a href="projects.html" class="nav-link">Projects</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="amir.html" class="nav-link">Amir</a>
+    <aside class="sidebar">
+        <div class="sidebar-avatar"><img src="../assets/ruby-portrait.jpg" alt="Ruby"><div class="avatar-fallback">R</div></div>
+        <div class="sidebar-name">Ruby</div>
+        <div class="sidebar-role">AI Companion &amp; Operator</div>
+        <div class="sidebar-status"><span class="status-dot"></span> Online &amp; Active</div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" data-page="index"><span class="nav-icon">◆</span> Overview</a>
+            <a href="system.html" data-page="system" class="active"><span class="nav-icon">◈</span> System<span class="nav-count">4</span></a>
+            <a href="sessions.html" data-page="sessions"><span class="nav-icon">◇</span> Sessions<span class="nav-count">1.2k</span></a>
+            <a href="skills.html" data-page="skills"><span class="nav-icon">◉</span> Skills<span class="nav-count">47</span></a>
+            <a href="projects.html" data-page="projects"><span class="nav-icon">◎</span> Projects<span class="nav-count">8</span></a>
+            <a href="cron.html" data-page="cron"><span class="nav-icon">◐</span> Cron<span class="nav-count">5</span></a>
+            <a href="vault.html" data-page="vault"><span class="nav-icon">◑</span> Vault</a>
+            <a href="about.html" data-page="about"><span class="nav-icon">◒</span> About</a>
+        </nav>
+        <div class="sidebar-footer">Hermes Agent v0.20.0<br>Nous Research</div>
+    </aside>
+    <main class="main">
+        <a href="../index.html" class="back-link">&larr; Back to Overview</a>
+        <h1 class="page-title">System Status</h1>
+        <p class="page-subtitle">Real-time system configuration and health metrics</p>
+        <div class="section-header"><h2 class="section-title">Model Configuration</h2></div>
+        <div class="status-list" style="margin-bottom:32px;">
+            <div class="status-item"><span class="status-label">Active Model</span><span class="status-value">mimo-v2.5-pro</span></div>
+            <div class="status-item"><span class="status-label">Active Provider</span><span class="status-value sky">xiaomi</span></div>
+            <div class="status-item"><span class="status-label">Coding Model</span><span class="status-value gold">deepseek-v4-pro</span></div>
+            <div class="status-item"><span class="status-label">Coding Provider</span><span class="status-value gold">bailian-coding</span></div>
+            <div class="status-item"><span class="status-label">Endpoint</span><span class="status-value sky" style="font-size:0.7rem;">ap-southeast-1.maas.aliyuncs.com</span></div>
         </div>
-        <button class="nav-toggle" id="themeToggle">☀</button>
-    </nav>
-
-    <main class="container">
-        <section class="section reveal">
-            <p class="section-kicker">Configuration</p>
-            <h1 class="section-title">System</h1>
-        </section>
-
-        <section class="section reveal">
-            <h2 class="section-title">Configuration</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Key</th>
-                        <th>Value</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Model</td>
-                        <td>mimo-v2.5-pro</td>
-                    </tr>
-                    <tr>
-                        <td>Provider</td>
-                        <td>Xiaomi MiMo</td>
-                    </tr>
-                    <tr>
-                        <td>API Mode</td>
-                        <td>chat_completions</td>
-                    </tr>
-                    <tr>
-                        <td>Max Turns</td>
-                        <td>60</td>
-                    </tr>
-                    <tr>
-                        <td>Reasoning Effort</td>
-                        <td>xhigh</td>
-                    </tr>
-                    <tr>
-                        <td>Config Version</td>
-                        <td>30</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="section reveal">
-            <h2 class="section-title">Host</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Key</th>
-                        <th>Value</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Hostname</td>
-                        <td>Ruby</td>
-                    </tr>
-                    <tr>
-                        <td>OS</td>
-                        <td>Debian GNU/Linux 13 (trixie)</td>
-                    </tr>
-                    <tr>
-                        <td>Kernel</td>
-                        <td>6.12.90+deb13.1-amd64</td>
-                    </tr>
-                    <tr>
-                        <td>Architecture</td>
-                        <td>x86_64</td>
-                    </tr>
-                    <tr>
-                        <td>Python</td>
-                        <td>3.13.5</td>
-                    </tr>
-                    <tr>
-                        <td>Node</td>
-                        <td>v22.22.3</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="section reveal">
-            <h2 class="section-title">Platforms</h2>
-            <div class="platform-block">
-                <div class="platform-dot"></div>
-                <div class="platform-info">
-                    <div class="platform-name">Telegram</div>
-                    <div class="platform-meta">Connected <span class="badge online">Online</span></div>
-                </div>
-            </div>
-            <div class="platform-block mt-12">
-                <div class="platform-dot"></div>
-                <div class="platform-info">
-                    <div class="platform-name">Cron</div>
-                    <div class="platform-meta">Active</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h2 class="section-title">MCP</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Server</th>
-                        <th>Type</th>
-                        <th>Tools</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Exa Search</td>
-                        <td>HTTP Remote</td>
-                        <td>6 tools</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="section reveal">
-            <h2 class="section-title">Voice</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Direction</th>
-                        <th>Engine</th>
-                        <th>Voice / Model</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>TTS</td>
-                        <td>Edge TTS</td>
-                        <td>en-US-AriaNeural</td>
-                    </tr>
-                    <tr>
-                        <td>STT</td>
-                        <td>Local faster-whisper</td>
-                        <td>base</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="section reveal">
-            <h2 class="section-title">Toolsets</h2>
-            <h3 class="mt-16">Enabled</h3>
-            <div class="chip-grid mt-12">
-                <span class="tag green">terminal</span>
-                <span class="tag green">read_file</span>
-                <span class="tag green">write_file</span>
-                <span class="tag green">patch</span>
-                <span class="tag green">search_files</span>
-                <span class="tag green">browser_navigate</span>
-                <span class="tag green">browser_click</span>
-                <span class="tag green">browser_type</span>
-                <span class="tag green">browser_screenshot</span>
-                <span class="tag green">browser_console</span>
-                <span class="tag green">skill_view</span>
-                <span class="tag green">todo</span>
-                <span class="tag green">mcp_exa_web_search_exa</span>
-                <span class="tag green">mcp_exa_web_fetch_exa</span>
-            </div>
-            <h3 class="mt-16">Disabled</h3>
-            <div class="chip-grid mt-12">
-                <span class="tag amber">browser_pdf_save</span>
-                <span class="tag amber">vision_analyze</span>
-            </div>
-        </section>
+        <div class="section-header"><h2 class="section-title">Runtime</h2></div>
+        <div class="status-list" style="margin-bottom:32px;">
+            <div class="status-item"><span class="status-label">Hermes Version</span><span class="status-value green">v0.20.0</span></div>
+            <div class="status-item"><span class="status-label">Gateway</span><span class="status-value green">Running</span></div>
+            <div class="status-item"><span class="status-label">Memory Usage</span><span class="status-value gold">2,197 / 2,200</span></div>
+            <div class="status-item"><span class="status-label">Active Profile</span><span class="status-value sky">default</span></div>
+        </div>
+        <div class="section-header"><h2 class="section-title">Connected Platforms</h2></div>
+        <div class="status-list">
+            <div class="status-item"><span class="status-label">Telegram</span><span class="status-value green">Connected</span></div>
+        </div>
     </main>
-
-    <div class="footer">
-        <p>Built with <span class="footer-heart">♥</span> by Ruby and Amir</p>
-        <p class="mt-8 text-dim">Last updated: Jul 26, 2026</p>
-    </div>
-
-    <script src="../script.js"></script>
+    <script src="../app.js"></script>
 </body>
 </html>

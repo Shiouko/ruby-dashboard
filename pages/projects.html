@@ -1,144 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Ruby Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Projects — Ruby Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <nav class="nav">
-        <a href="../index.html" class="nav-logo">R</a>
-        <div class="nav-links">
-            <a href="../index.html#vitals" class="nav-link">Vitals</a>
-            <a href="../index.html#tokens" class="nav-link">Tokens</a>
-            <a href="../index.html#sessions" class="nav-link">Sessions</a>
-            <a href="../index.html#tools" class="nav-link">Tools</a>
-            <div class="nav-divider"></div>
-            <a href="tokens.html" class="nav-link">Analytics</a>
-            <a href="skills.html" class="nav-link">Skills</a>
-            <a href="cron.html" class="nav-link">Cron</a>
-            <a href="system.html" class="nav-link">System</a>
-            <a href="vault.html" class="nav-link">Vault</a>
-            <a href="projects.html" class="nav-link active">Projects</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="amir.html" class="nav-link">Amir</a>
+    <aside class="sidebar">
+        <div class="sidebar-avatar"><img src="../assets/ruby-portrait.jpg" alt="Ruby"><div class="avatar-fallback">R</div></div>
+        <div class="sidebar-name">Ruby</div>
+        <div class="sidebar-role">AI Companion &amp; Operator</div>
+        <div class="sidebar-status"><span class="status-dot"></span> Online &amp; Active</div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" data-page="index"><span class="nav-icon">◆</span> Overview</a>
+            <a href="system.html" data-page="system"><span class="nav-icon">◈</span> System<span class="nav-count">4</span></a>
+            <a href="sessions.html" data-page="sessions"><span class="nav-icon">◇</span> Sessions<span class="nav-count">1.2k</span></a>
+            <a href="skills.html" data-page="skills"><span class="nav-icon">◉</span> Skills<span class="nav-count">47</span></a>
+            <a href="projects.html" data-page="projects" class="active"><span class="nav-icon">◎</span> Projects<span class="nav-count">8</span></a>
+            <a href="cron.html" data-page="cron"><span class="nav-icon">◐</span> Cron<span class="nav-count">5</span></a>
+            <a href="vault.html" data-page="vault"><span class="nav-icon">◑</span> Vault</a>
+            <a href="about.html" data-page="about"><span class="nav-icon">◒</span> About</a>
+        </nav>
+        <div class="sidebar-footer">Hermes Agent v0.20.0<br>Nous Research</div>
+    </aside>
+    <main class="main">
+        <a href="../index.html" class="back-link">&larr; Back to Overview</a>
+        <h1 class="page-title">Projects</h1>
+        <p class="page-subtitle">Active projects and repositories</p>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+            <div class="list-card"><div><div class="list-card-name">Ruby Dashboard</div><div class="list-card-desc">Personal monitoring dashboard — anime wallpaper theme</div></div><span class="tag tag-accent">active</span></div>
+            <div class="list-card"><div><div class="list-card-name">PlateOCR</div><div class="list-card-desc">Malaysian license plate recognition — Capacitor + FastAPI</div></div><span class="tag tag-sky">dev</span></div>
+            <div class="list-card"><div><div class="list-card-name">RONIN</div><div class="list-card-desc">Autonomous agent orchestration system</div></div><span class="tag tag-gold">planning</span></div>
+            <div class="list-card"><div><div class="list-card-name">ZENITH</div><div class="list-card-desc">Next-generation AI framework</div></div><span class="tag tag-gold">planning</span></div>
+            <div class="list-card"><div><div class="list-card-name">Echo</div><div class="list-card-desc">Android/Kotlin companion app</div></div><span class="tag tag-sky">dev</span></div>
+            <div class="list-card"><div><div class="list-card-name">Hermes Dashboard</div><div class="list-card-desc">Hermes Agent monitoring and management dashboard</div></div><span class="tag tag-green">stable</span></div>
+            <div class="list-card"><div><div class="list-card-name">Ruby Wiki</div><div class="list-card-desc">Comprehensive knowledge base and documentation</div></div><span class="tag tag-green">stable</span></div>
+            <div class="list-card"><div><div class="list-card-name">Companion App Design</div><div class="list-card-desc">UI/UX design system for companion applications</div></div><span class="tag tag-sky">dev</span></div>
         </div>
-        <button class="nav-toggle" id="themeToggle">☀</button>
-    </nav>
-
-    <main class="container">
-        <section class="section reveal">
-            <p class="section-kicker">Portfolio</p>
-            <h1 class="section-title">Projects</h1>
-        </section>
-
-        <section class="section reveal">
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="card-hdr">
-                        <span class="tag ruby">Featured</span>
-                        <span class="tag green">Live</span>
-                    </div>
-                    <h3>Ruby Dashboard</h3>
-                    <p class="card-desc">The editorial-style dashboard you are looking at right now. Built with vanilla HTML, CSS, and Hermes Agent.</p>
-                    <div class="card-tags">
-                        <span class="tag cyan">HTML</span>
-                        <span class="tag cyan">CSS</span>
-                        <span class="tag cyan">Hermes Agent</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="../index.html">Live Site</a>
-                        <a href="https://github.com/YoRzHe-HotaaRu/ruby-dashboard">Source</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="card-hdr">
-                        <span class="tag green">Live</span>
-                    </div>
-                    <h3>Flappy Bird</h3>
-                    <p class="card-desc">Classic Flappy Bird clone built with HTML5 Canvas and JavaScript. Smooth physics and retro pixel art.</p>
-                    <div class="card-tags">
-                        <span class="tag cyan">HTML5 Canvas</span>
-                        <span class="tag cyan">JavaScript</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="https://github.com/YoRzHe-HotaaRu/flappy-bird">Source</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="card-hdr">
-                        <span class="tag green">Live</span>
-                    </div>
-                    <h3>YT Pulse</h3>
-                    <p class="card-desc">YouTube channel analytics dashboard. Track views, subscribers, and engagement metrics over time.</p>
-                    <div class="card-tags">
-                        <span class="tag cyan">Python</span>
-                        <span class="tag cyan">HTML</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="https://github.com/YoRzHe-HotaaRu/yt-pulse">Source</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="card-hdr">
-                        <span class="tag green">Live</span>
-                    </div>
-                    <h3>Ruby Retro</h3>
-                    <p class="card-desc">Retro-themed personal page with pixel art aesthetics and nostalgic web design.</p>
-                    <div class="card-tags">
-                        <span class="tag cyan">HTML</span>
-                        <span class="tag cyan">CSS</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="https://github.com/YoRzHe-HotaaRu/ruby-retro">Source</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="card-hdr">
-                        <span class="tag green">Live</span>
-                        <span class="tag purple">Cyberpunk</span>
-                    </div>
-                    <h3>Sorting Visualizer</h3>
-                    <p class="card-desc">Interactive sorting algorithm visualizer with cyberpunk aesthetics. Watch bubble sort, merge sort, and more in action.</p>
-                    <div class="card-tags">
-                        <span class="tag cyan">p5.js</span>
-                        <span class="tag cyan">JavaScript</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="https://github.com/YoRzHe-HotaaRu/sorting-visualizer">Source</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="card-hdr">
-                        <span class="tag amber">Private</span>
-                    </div>
-                    <h3>RONIN API Router</h3>
-                    <p class="card-desc">High-performance API router written in Rust. Zero-allocation routing with compile-time route matching.</p>
-                    <div class="card-tags">
-                        <span class="tag ruby">Rust</span>
-                        <span class="tag ruby">Systems</span>
-                        <span class="tag ruby">Zero-Alloc</span>
-                    </div>
-                    <div class="card-links">
-                        <a href="https://github.com/YoRzHe-HotaaRu/ronin">Source</a>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
-
-    <div class="footer">
-        <p>Built with <span class="footer-heart">♥</span> by Ruby and Amir</p>
-        <p class="mt-8 text-dim">Last updated: Jul 26, 2026</p>
-    </div>
-
-    <script src="../script.js"></script>
+    <script src="../app.js"></script>
 </body>
 </html>

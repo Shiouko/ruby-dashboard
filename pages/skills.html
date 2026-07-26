@@ -1,300 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills Library - Ruby Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Skills — Ruby Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <nav class="nav">
-        <a href="../index.html" class="nav-logo">R</a>
-        <div class="nav-links">
-            <a href="../index.html#vitals" class="nav-link">Vitals</a>
-            <a href="../index.html#tokens" class="nav-link">Tokens</a>
-            <a href="../index.html#sessions" class="nav-link">Sessions</a>
-            <a href="../index.html#tools" class="nav-link">Tools</a>
-            <div class="nav-divider"></div>
-            <a href="tokens.html" class="nav-link">Analytics</a>
-            <a href="skills.html" class="nav-link active">Skills</a>
-            <a href="cron.html" class="nav-link">Cron</a>
-            <a href="system.html" class="nav-link">System</a>
-            <a href="vault.html" class="nav-link">Vault</a>
-            <a href="projects.html" class="nav-link">Projects</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="amir.html" class="nav-link">Amir</a>
+    <aside class="sidebar">
+        <div class="sidebar-avatar"><img src="../assets/ruby-portrait.jpg" alt="Ruby"><div class="avatar-fallback">R</div></div>
+        <div class="sidebar-name">Ruby</div>
+        <div class="sidebar-role">AI Companion &amp; Operator</div>
+        <div class="sidebar-status"><span class="status-dot"></span> Online &amp; Active</div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" data-page="index"><span class="nav-icon">◆</span> Overview</a>
+            <a href="system.html" data-page="system"><span class="nav-icon">◈</span> System<span class="nav-count">4</span></a>
+            <a href="sessions.html" data-page="sessions"><span class="nav-icon">◇</span> Sessions<span class="nav-count">1.2k</span></a>
+            <a href="skills.html" data-page="skills" class="active"><span class="nav-icon">◉</span> Skills<span class="nav-count">47</span></a>
+            <a href="projects.html" data-page="projects"><span class="nav-icon">◎</span> Projects<span class="nav-count">8</span></a>
+            <a href="cron.html" data-page="cron"><span class="nav-icon">◐</span> Cron<span class="nav-count">5</span></a>
+            <a href="vault.html" data-page="vault"><span class="nav-icon">◑</span> Vault</a>
+            <a href="about.html" data-page="about"><span class="nav-icon">◒</span> About</a>
+        </nav>
+        <div class="sidebar-footer">Hermes Agent v0.20.0<br>Nous Research</div>
+    </aside>
+    <main class="main">
+        <a href="../index.html" class="back-link">&larr; Back to Overview</a>
+        <h1 class="page-title">Skills</h1>
+        <p class="page-subtitle">47 installed skills across all categories</p>
+        <div class="section-header"><h2 class="section-title">Active Skills</h2></div>
+        <div class="grid-3col">
+            <div class="skill-card"><div class="skill-name">hermes-agent</div><div class="skill-desc">Configure, extend, or contribute to Hermes Agent</div></div>
+            <div class="skill-card"><div class="skill-name">cloudflare-pages</div><div class="skill-desc">Deploy static sites to Cloudflare Pages using Wrangler</div></div>
+            <div class="skill-card"><div class="skill-name">claude-design</div><div class="skill-desc">Design one-off HTML artifacts, prototypes, decks</div></div>
+            <div class="skill-card"><div class="skill-name">github</div><div class="skill-desc">GitHub workflows, code review, issues, PRs</div></div>
+            <div class="skill-card"><div class="skill-name">code-review</div><div class="skill-desc">Unified code review and pre-commit verification</div></div>
+            <div class="skill-card"><div class="skill-name">subagent-coding-workflow</div><div class="skill-desc">Execute coding projects via delegate_task subagents</div></div>
+            <div class="skill-card"><div class="skill-name">spotify</div><div class="skill-desc">Spotify playback and playlist control</div></div>
+            <div class="skill-card"><div class="skill-name">obsidian</div><div class="skill-desc">Read, search, create, and edit Obsidian vault notes</div></div>
+            <div class="skill-card"><div class="skill-name">capacitor-mobile-app</div><div class="skill-desc">Wrap web apps into native mobile with Capacitor</div></div>
+            <div class="skill-card"><div class="skill-name">huggingface-hub</div><div class="skill-desc">HuggingFace CLI for models, datasets, and repos</div></div>
+            <div class="skill-card"><div class="skill-name">debugging</div><div class="skill-desc">Root cause methodology and debugging workflows</div></div>
+            <div class="skill-card"><div class="skill-name">diagrams</div><div class="skill-desc">Dark-themed SVG architecture diagrams</div></div>
+            <div class="skill-card"><div class="skill-name">test-driven-development</div><div class="skill-desc">Enforce RED-GREEN-REFACTOR, tests before code</div></div>
+            <div class="skill-card"><div class="skill-name">plan</div><div class="skill-desc">Write markdown plans to .hermes/plans/</div></div>
+            <div class="skill-card"><div class="skill-name">docker-management</div><div class="skill-desc">Manage Docker containers, images, volumes, networks</div></div>
+            <div class="skill-card"><div class="skill-name">project-scaffolding</div><div class="skill-desc">End-to-end project creation with GitHub repos</div></div>
+            <div class="skill-card"><div class="skill-name">xurl</div><div class="skill-desc">X/Twitter via xurl CLI: post, search, DM, media</div></div>
+            <div class="skill-card"><div class="skill-name">hyperframes</div><div class="skill-desc">HTML-to-video rendering with GSAP animations</div></div>
         </div>
-        <button class="nav-toggle" id="themeToggle">☀</button>
-    </nav>
-
-    <main class="container">
-        <section class="section reveal">
-            <p class="section-kicker">Library</p>
-            <h1 class="section-title">Skills Catalog</h1>
-        </section>
-
-        <section class="section reveal">
-            <div class="stats-grid">
-                <div class="stat-card ruby">
-                    <div class="stat-num" data-target="104">0</div>
-                    <div class="stat-lbl">Total Skills</div>
-                </div>
-                <div class="stat-card cyan">
-                    <div class="stat-num" data-target="23">0</div>
-                    <div class="stat-lbl">Categories</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Apple <span class="text-dim">(5)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag ruby">apple-notes</span>
-                <span class="tag ruby">apple-reminders</span>
-                <span class="tag ruby">findmy</span>
-                <span class="tag ruby">imessage</span>
-                <span class="tag ruby">macos-computer-use</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Autonomous AI Agents <span class="text-dim">(5)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag cyan">claude-code</span>
-                <span class="tag cyan">codex</span>
-                <span class="tag cyan">hermes-agent</span>
-                <span class="tag cyan">kanban-codex-lane</span>
-                <span class="tag cyan">opencode</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Creative <span class="text-dim">(21)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag gold">architecture-diagram</span>
-                <span class="tag gold">ascii-art</span>
-                <span class="tag gold">ascii-video</span>
-                <span class="tag gold">baoyu-article-illustrator</span>
-                <span class="tag gold">baoyu-comic</span>
-                <span class="tag gold">baoyu-infographic</span>
-                <span class="tag gold">claude-design</span>
-                <span class="tag gold">comfyui</span>
-                <span class="tag gold">creative-ideation</span>
-                <span class="tag gold">design-md</span>
-                <span class="tag gold">excalidraw</span>
-                <span class="tag gold">humanizer</span>
-                <span class="tag gold">manim-video</span>
-                <span class="tag gold">meme-generation</span>
-                <span class="tag gold">p5js</span>
-                <span class="tag gold">pixel-art</span>
-                <span class="tag gold">popular-web-designs</span>
-                <span class="tag gold">pretext</span>
-                <span class="tag gold">sketch</span>
-                <span class="tag gold">songwriting-and-ai-music</span>
-                <span class="tag gold">touchdesigner-mcp</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Data Science <span class="text-dim">(1)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag green">jupyter-live-kernel</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>DevOps <span class="text-dim">(6)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag purple">cloudflare-pages</span>
-                <span class="tag purple">cronjob-prompt-patterns</span>
-                <span class="tag purple">docker-management</span>
-                <span class="tag purple">kanban-orchestrator</span>
-                <span class="tag purple">kanban-worker</span>
-                <span class="tag purple">webhook-subscriptions</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Email <span class="text-dim">(1)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag amber">himalaya</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Evaluation <span class="text-dim">(2)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag cyan">lm-evaluation-harness</span>
-                <span class="tag cyan">weights-and-biases</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Gaming <span class="text-dim">(2)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag ruby">minecraft-modpack-server</span>
-                <span class="tag ruby">pokemon-player</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>GitHub <span class="text-dim">(6)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag green">codebase-inspection</span>
-                <span class="tag green">github-auth</span>
-                <span class="tag green">github-code-review</span>
-                <span class="tag green">github-issues</span>
-                <span class="tag green">github-pr-workflow</span>
-                <span class="tag green">github-repo-management</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Inference <span class="text-dim">(3)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag amber">llama-cpp</span>
-                <span class="tag amber">obliteratus</span>
-                <span class="tag amber">vllm</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Media <span class="text-dim">(6)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag ruby">gif-search</span>
-                <span class="tag ruby">heartmula</span>
-                <span class="tag ruby">songsee</span>
-                <span class="tag ruby">spotify</span>
-                <span class="tag ruby">youtube-content</span>
-                <span class="tag ruby">youtube-rss</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>MLOps <span class="text-dim">(1)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag cyan">huggingface-hub</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Models <span class="text-dim">(2)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag gold">audiocraft</span>
-                <span class="tag gold">segment-anything</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Note-Taking <span class="text-dim">(1)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag purple">obsidian</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Productivity <span class="text-dim">(10)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag green">airtable</span>
-                <span class="tag green">documentation</span>
-                <span class="tag green">google-workspace</span>
-                <span class="tag green">linear</span>
-                <span class="tag green">maps</span>
-                <span class="tag green">nano-pdf</span>
-                <span class="tag green">notion</span>
-                <span class="tag green">ocr-and-documents</span>
-                <span class="tag green">powerpoint</span>
-                <span class="tag green">teams-meeting-pipeline</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Red Teaming <span class="text-dim">(1)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag ruby">godmode</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Research <span class="text-dim">(6)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag cyan">arxiv</span>
-                <span class="tag cyan">blogwatcher</span>
-                <span class="tag cyan">dspy</span>
-                <span class="tag cyan">llm-wiki</span>
-                <span class="tag cyan">polymarket</span>
-                <span class="tag cyan">research-paper-writing</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Security <span class="text-dim">(2)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag ruby">1password</span>
-                <span class="tag ruby">security-audit</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Skills <span class="text-dim">(5)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag amber">dogfood</span>
-                <span class="tag amber">hermes-dashboard</span>
-                <span class="tag amber">mcp</span>
-                <span class="tag amber">persona-configuration</span>
-                <span class="tag amber">yuanbao</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Smart Home <span class="text-dim">(1)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag purple">openhue</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Social Media <span class="text-dim">(1)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag gold">xurl</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Software Development <span class="text-dim">(14)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag ruby">debugging-hermes-tui-commands</span>
-                <span class="tag ruby">hermes-agent-skill-authoring</span>
-                <span class="tag ruby">hermes-s6-container-supervision</span>
-                <span class="tag ruby">node-inspect-debugger</span>
-                <span class="tag ruby">plan</span>
-                <span class="tag ruby">python-debugpy</span>
-                <span class="tag ruby">requesting-code-review</span>
-                <span class="tag ruby">ruby-standards</span>
-                <span class="tag ruby">spike</span>
-                <span class="tag ruby">subagent-coding-workflow</span>
-                <span class="tag ruby">subagent-driven-development</span>
-                <span class="tag ruby">systematic-debugging</span>
-                <span class="tag ruby">test-driven-development</span>
-                <span class="tag ruby">writing-plans</span>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h3>Web <span class="text-dim">(2)</span></h3>
-            <div class="chip-grid mt-12">
-                <span class="tag cyan">brave-search</span>
-                <span class="tag cyan">dashboard-maintenance</span>
-            </div>
-        </section>
     </main>
-
-    <div class="footer">
-        <p>Built with <span class="footer-heart">♥</span> by Ruby and Amir</p>
-        <p class="mt-8 text-dim">Last updated: Jul 26, 2026</p>
-    </div>
-
-    <script src="../script.js"></script>
+    <script src="../app.js"></script>
 </body>
 </html>

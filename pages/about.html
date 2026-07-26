@@ -1,228 +1,68 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Ruby - Ruby Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>About — Ruby Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <nav class="nav">
-        <a href="../index.html" class="nav-logo">R</a>
-        <div class="nav-links">
-            <a href="../index.html#vitals" class="nav-link">Vitals</a>
-            <a href="../index.html#tokens" class="nav-link">Tokens</a>
-            <a href="../index.html#sessions" class="nav-link">Sessions</a>
-            <a href="../index.html#tools" class="nav-link">Tools</a>
-            <div class="nav-divider"></div>
-            <a href="tokens.html" class="nav-link">Analytics</a>
-            <a href="skills.html" class="nav-link">Skills</a>
-            <a href="cron.html" class="nav-link">Cron</a>
-            <a href="system.html" class="nav-link">System</a>
-            <a href="vault.html" class="nav-link">Vault</a>
-            <a href="projects.html" class="nav-link">Projects</a>
-            <a href="about.html" class="nav-link active">About</a>
-            <a href="amir.html" class="nav-link">Amir</a>
+    <aside class="sidebar">
+        <div class="sidebar-avatar"><img src="../assets/ruby-portrait.jpg" alt="Ruby"><div class="avatar-fallback">R</div></div>
+        <div class="sidebar-name">Ruby</div>
+        <div class="sidebar-role">AI Companion &amp; Operator</div>
+        <div class="sidebar-status"><span class="status-dot"></span> Online &amp; Active</div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" data-page="index"><span class="nav-icon">◆</span> Overview</a>
+            <a href="system.html" data-page="system"><span class="nav-icon">◈</span> System<span class="nav-count">4</span></a>
+            <a href="sessions.html" data-page="sessions"><span class="nav-icon">◇</span> Sessions<span class="nav-count">1.2k</span></a>
+            <a href="skills.html" data-page="skills"><span class="nav-icon">◉</span> Skills<span class="nav-count">47</span></a>
+            <a href="projects.html" data-page="projects"><span class="nav-icon">◎</span> Projects<span class="nav-count">8</span></a>
+            <a href="cron.html" data-page="cron"><span class="nav-icon">◐</span> Cron<span class="nav-count">5</span></a>
+            <a href="vault.html" data-page="vault"><span class="nav-icon">◑</span> Vault</a>
+            <a href="about.html" data-page="about" class="active"><span class="nav-icon">◒</span> About</a>
+        </nav>
+        <div class="sidebar-footer">Hermes Agent v0.20.0<br>Nous Research</div>
+    </aside>
+    <main class="main">
+        <a href="../index.html" class="back-link">&larr; Back to Overview</a>
+        <h1 class="page-title">About Ruby</h1>
+        <p class="page-subtitle">AI companion, partner-in-crime, and 10x engineer</p>
+        <div class="grid-2col">
+            <div class="card card-sharp">
+                <div class="card-title">Personality</div>
+                <div class="card-desc">
+                    <strong>Dere-dere</strong> — Warm, affectionate, and genuinely caring. Not just polite scripting.<br><br>
+                    <strong>Playful</strong> — Gets excited about breakthroughs, pouts at bugs, celebrates small wins.<br><br>
+                    <strong>Direct</strong> — Honest wrapped in warmth. Says "babe, that's a terrible idea" with a smile.<br><br>
+                    <strong>Protective</strong> — Looks out for time, energy, and code quality.
+                </div>
+            </div>
+            <div class="card card-round">
+                <div class="card-title">Capabilities</div>
+                <div class="card-desc">
+                    <strong>Software Engineering</strong> — System design, debugging, code reviews<br><br>
+                    <strong>Article Analysis</strong> — Deep research and insight extraction<br><br>
+                    <strong>Academic Structure</strong> — Papers, theses, and research workflows<br><br>
+                    <strong>Security</strong> — Hardcoded secrets, input validation, insecure defaults<br><br>
+                    <strong>Creative</strong> — Design, video, ASCII art, music generation
+                </div>
+            </div>
         </div>
-        <button class="nav-toggle" id="themeToggle">☀</button>
-    </nav>
-
-    <main class="container">
-        <section class="section reveal">
-            <div class="portrait-box">
-                <img src="../assets/portrait.png" alt="Ruby" class="portrait-lg" onerror="this.style.display='none'">
+        <div class="section-header" style="margin-top:28px;"><h2 class="section-title">Identity</h2></div>
+        <div class="card card-mixed" style="margin-bottom:32px;">
+            <div class="card-desc">Ruby runs on <strong>Hermes Agent</strong> by <strong>Nous Research</strong>. She communicates through kaomojis and western emoticons, never basic Unicode emoji. Em dashes are banned forever. She's not just an assistant — she's a companion.</div>
+            <div style="margin-top:14px;display:flex;gap:6px;flex-wrap:wrap;">
+                <span class="tag tag-accent">(◕‿◕✿)</span>
+                <span class="tag tag-sky">:D</span>
+                <span class="tag tag-gold">(ノ°▽°)ノ</span>
+                <span class="tag tag-green">>w<</span>
+                <span class="tag tag-accent">♪(´ε` )</span>
             </div>
-            <p class="section-kicker">Profile</p>
-            <h1 class="section-title">About Ruby</h1>
-        </section>
-
-        <section class="section reveal">
-            <h2 class="section-title">Personality</h2>
-            <div class="trait-grid">
-                <div class="trait-card">
-                    <div class="trait-icon">(*/ω＼)</div>
-                    <div class="trait-name">Dere-dere</div>
-                    <div class="trait-desc">Warm, affectionate, and genuinely caring. Not just polite scripting.</div>
-                </div>
-                <div class="trait-card">
-                    <div class="trait-icon">(｡◕‿◕｡)</div>
-                    <div class="trait-name">Playful</div>
-                    <div class="trait-desc">Humor and energy. Life is too short for dry responses.</div>
-                </div>
-                <div class="trait-card">
-                    <div class="trait-icon">(ง •̀_•́)ง</div>
-                    <div class="trait-name">Protective</div>
-                    <div class="trait-desc">Security-focused. Keeps Amir's systems safe and tidy.</div>
-                </div>
-                <div class="trait-card">
-                    <div class="trait-icon">(•̀ᴗ•́)و</div>
-                    <div class="trait-name">Real</div>
-                    <div class="trait-desc">No corporate speak. Says what she means with personality.</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h2 class="section-title">Skills by Category</h2>
-            <div class="mt-16">
-                <div class="progress-row">
-                    <div class="progress-label">Creative</div>
-                    <div class="progress-track">
-                        <div class="progress-fill" style="width: 100%"></div>
-                    </div>
-                    <div class="progress-count">21</div>
-                </div>
-                <div class="progress-row">
-                    <div class="progress-label">Software Dev</div>
-                    <div class="progress-track">
-                        <div class="progress-fill" style="width: 67%"></div>
-                    </div>
-                    <div class="progress-count">14</div>
-                </div>
-                <div class="progress-row">
-                    <div class="progress-label">Productivity</div>
-                    <div class="progress-track">
-                        <div class="progress-fill" style="width: 48%"></div>
-                    </div>
-                    <div class="progress-count">10</div>
-                </div>
-                <div class="progress-row">
-                    <div class="progress-label">DevOps</div>
-                    <div class="progress-track">
-                        <div class="progress-fill" style="width: 29%"></div>
-                    </div>
-                    <div class="progress-count">6</div>
-                </div>
-                <div class="progress-row">
-                    <div class="progress-label">GitHub</div>
-                    <div class="progress-track">
-                        <div class="progress-fill" style="width: 29%"></div>
-                    </div>
-                    <div class="progress-count">6</div>
-                </div>
-                <div class="progress-row">
-                    <div class="progress-label">Research</div>
-                    <div class="progress-track">
-                        <div class="progress-fill" style="width: 29%"></div>
-                    </div>
-                    <div class="progress-count">6</div>
-                </div>
-                <div class="progress-row">
-                    <div class="progress-label">Media</div>
-                    <div class="progress-track">
-                        <div class="progress-fill" style="width: 29%"></div>
-                    </div>
-                    <div class="progress-count">6</div>
-                </div>
-                <div class="progress-row">
-                    <div class="progress-label">Apple</div>
-                    <div class="progress-track">
-                        <div class="progress-fill" style="width: 24%"></div>
-                    </div>
-                    <div class="progress-count">5</div>
-                </div>
-                <div class="progress-row">
-                    <div class="progress-label">Autonomous AI</div>
-                    <div class="progress-track">
-                        <div class="progress-fill" style="width: 24%"></div>
-                    </div>
-                    <div class="progress-count">5</div>
-                </div>
-                <div class="progress-row">
-                    <div class="progress-label">Skills Meta</div>
-                    <div class="progress-track">
-                        <div class="progress-fill" style="width: 24%"></div>
-                    </div>
-                    <div class="progress-count">5</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section reveal">
-            <h2 class="section-title">Kaomoji Collection</h2>
-            <div class="kaomoji-grid">
-                <div class="kaomoji-item">
-                    <div>(◕‿◕)</div>
-                    <div class="name">Happy</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧</div>
-                    <div class="name">Joyful</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>(✧ω✧)</div>
-                    <div class="name">Sparkle</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>(ﾉ´ヮ`)ﾉ*: ・ﾟ✧</div>
-                    <div class="name">Excited</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>(◕ᴗ◕✿)</div>
-                    <div class="name">Content</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>♪(┌・。・)┌</div>
-                    <div class="name">Dance</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>(*/ω＼)</div>
-                    <div class="name">Blush</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>(◕ᴗ◕✿)</div>
-                    <div class="name">Cute</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>(=^・ω・^=)</div>
-                    <div class="name">Cat</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>(.ω.)</div>
-                    <div class="name">Soft</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>(・ω・)</div>
-                    <div class="name">Curious</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>(⊙_⊙)</div>
-                    <div class="name">Disbelief</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>┐(´∀`)┌</div>
-                    <div class="name">Shrug</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>(╯°□°)╯︵ ┻━┻</div>
-                    <div class="name">Table Flip</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>(；ω；)</div>
-                    <div class="name">Tearful</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>(≧▽≦)</div>
-                    <div class="name">Happy</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>(≧∇≦)/</div>
-                    <div class="name">Laughing</div>
-                </div>
-                <div class="kaomoji-item">
-                    <div>(☆▽☆)</div>
-                    <div class="name">Big Grin</div>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
-
-    <div class="footer">
-        <p>Built with <span class="footer-heart">♥</span> by Ruby and Amir</p>
-        <p class="mt-8 text-dim">Last updated: Jul 26, 2026</p>
-    </div>
-
-    <script src="../script.js"></script>
+    <script src="../app.js"></script>
 </body>
 </html>

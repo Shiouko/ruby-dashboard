@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessions — Ruby Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-avatar"><img src="../assets/ruby-portrait.jpg" alt="Ruby"><div class="avatar-fallback">R</div></div>
+        <div class="sidebar-name">Ruby</div>
+        <div class="sidebar-role">AI Companion &amp; Operator</div>
+        <div class="sidebar-status"><span class="status-dot"></span> Online &amp; Active</div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" data-page="index"><span class="nav-icon">◆</span> Overview</a>
+            <a href="system.html" data-page="system"><span class="nav-icon">◈</span> System<span class="nav-count">4</span></a>
+            <a href="sessions.html" data-page="sessions" class="active"><span class="nav-icon">◇</span> Sessions<span class="nav-count">1.2k</span></a>
+            <a href="skills.html" data-page="skills"><span class="nav-icon">◉</span> Skills<span class="nav-count">47</span></a>
+            <a href="projects.html" data-page="projects"><span class="nav-icon">◎</span> Projects<span class="nav-count">8</span></a>
+            <a href="cron.html" data-page="cron"><span class="nav-icon">◐</span> Cron<span class="nav-count">5</span></a>
+            <a href="vault.html" data-page="vault"><span class="nav-icon">◑</span> Vault</a>
+            <a href="about.html" data-page="about"><span class="nav-icon">◒</span> About</a>
+        </nav>
+        <div class="sidebar-footer">Hermes Agent v0.20.0<br>Nous Research</div>
+    </aside>
+    <main class="main">
+        <a href="../index.html" class="back-link">&larr; Back to Overview</a>
+        <h1 class="page-title">Sessions</h1>
+        <p class="page-subtitle">Activity log and session history</p>
+        <div class="metric-strip">
+            <div class="metric-card"><div class="metric-label">Total Sessions</div><div class="metric-value">1,292</div></div>
+            <div class="metric-card"><div class="metric-label">This Week</div><div class="metric-value">23</div></div>
+            <div class="metric-card"><div class="metric-label">Messages</div><div class="metric-value">15,991</div></div>
+            <div class="metric-card"><div class="metric-label">Tool Calls</div><div class="metric-value">7,053</div></div>
+        </div>
+        <div class="section-header"><h2 class="section-title">Recent Activity</h2></div>
+        <div class="card card-round">
+            <div class="activity-item"><div class="activity-dot accent"></div><div class="activity-content"><div class="activity-title">Dashboard revamp with anime wallpaper theme</div><div class="activity-time">Today, 22:10</div></div></div>
+            <div class="activity-item"><div class="activity-dot sky"></div><div class="activity-content"><div class="activity-title">Added bailian-coding provider with deepseek-v4-pro</div><div class="activity-time">Today, 14:23</div></div></div>
+            <div class="activity-item"><div class="activity-dot gold"></div><div class="activity-content"><div class="activity-title">Researched 20+ AI token plan providers</div><div class="activity-time">Jul 26, 11:40</div></div></div>
+            <div class="activity-item"><div class="activity-dot green"></div><div class="activity-content"><div class="activity-title">Updated Hermes from v0.17 to v0.20</div><div class="activity-time">Jul 25, 16:10</div></div></div>
+            <div class="activity-item"><div class="activity-dot accent"></div><div class="activity-content"><div class="activity-title">Editorial dashboard redesign completed</div><div class="activity-time">Jul 24, 20:30</div></div></div>
+            <div class="activity-item"><div class="activity-dot sky"></div><div class="activity-content"><div class="activity-title">HyperFrames video setup and testing</div><div class="activity-time">Jul 23, 15:00</div></div></div>
+        </div>
+    </main>
+    <script src="../app.js"></script>
+</body>
+</html>
